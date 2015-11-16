@@ -1,0 +1,61 @@
+// ==========================================================================
+// = Global Variables
+// ==========================================================================
+
+
+
+// Color Scheme
+// examples based on the official Sass styleguide
+// =============
+
+// Descriptive colors:
+$red                          : red;
+$green                        : green;
+$blue                         : blue;
+$gray                         : #666;
+
+
+// Main color palette
+$color-primary                : $red;
+$color-secondary              : $blue;
+$color-accent                 : $blue;
+$color-shadow                 : rgba($blue, .125);
+$color-note                   : $gray;
+
+$color-font                   : $green;
+
+// Links
+$color-link                   : $color-primary;
+$color-link-hover             : $blue;
+$color-link-visited           : $green;
+
+
+
+// Base Sizes
+
+$base__font-size               : 16;
+$base__line-height             : 24;
+
+$letter-space                  : 0.01;
+$trns-duration                 : 1;
+
+
+// Font Stacks
+
+$font-url--google        : 'http://fonts.googleapis.com/css?family=Lora:100,300,400,700,900';
+$font-family--primary    : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+// Font Weights
+
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+// Path to Assets
+// ==============
+
+$path--rel      : "../img";
