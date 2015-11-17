@@ -14,5 +14,4 @@ function my_custom_login_logo() {
 		    </style>';
 }
 
-
 ?>

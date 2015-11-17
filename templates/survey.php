@@ -12,27 +12,26 @@ get_header(); ?>
 
             // Determine the class that the current user is in
 
-        	$args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
-        	$loop = new WP_Query( $args );
+          	$args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
+          	$loop = new WP_Query( $args );
 
-            $class = 0;
+              $class = 0;
 
-        	while ( $loop->have_posts() ) : $loop->the_post();
+          	while ( $loop->have_posts() ) : $loop->the_post();
 
-        		$students = get_field('students', $post_id);
+          		$students = get_field('students', $post_id);
 
-                foreach ($students as $student) {
-                    if ( $student['student']['ID'] == get_current_user_id() ) {
-                        $class = get_the_id();
-                    }
-                }
+                  foreach ($students as $student) {
+                      if ( $student['student']['ID'] == get_current_user_id() ) {
+                          $class = get_the_id();
+                      }
+                  }
 
-        	endwhile;
+          	endwhile;
 
-        	?>
+          	?>
 
             <?php
-
 
 
             if( have_rows('modules', $class) ):
