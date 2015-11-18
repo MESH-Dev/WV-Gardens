@@ -721,7 +721,7 @@ h3 {
 h4 {
   margin-top: 1.57143em;
   margin-bottom: 2.28571em;
-  color: palette(gray, x-light);
+  color: palette(grey, x-light);
   text-transform: uppercase;
   letter-spacing: 0.01;
   font-weight: 400;
@@ -730,7 +730,7 @@ h4 {
 
 /* line 43, sass/base/_base.scss */
 a {
-  color: palette(gray, dark);
+  color: palette(grey, dark);
   text-decoration: none;
   font-weight: 400;
 }
@@ -750,7 +750,7 @@ blockquote {
   font-weight: 300;
   margin: 1.33333em 0;
   padding: 0 0 0 5%;
-  border-left: solid 0.33333em palette(gray, xx-light);
+  border-left: solid 0.33333em palette(grey, xx-light);
 }
 
 /* line 67, sass/base/_base.scss */
@@ -791,7 +791,7 @@ button {
 
 /* line 106, sass/base/_base.scss */
 footer {
-  border-top: 1px solid palette(gray, xx-light);
+  border-top: 1px solid palette(grey, xx-light);
 }
 /* line 108, sass/base/_base.scss */
 footer p {
@@ -839,6 +839,11 @@ html, body {
   position: absolute;
   z-index: -1;
   top: 0;
+}
+
+/* line 1, sass/layout/_main.scss */
+#teachers, #students {
+  display: none;
 }
 
 /* line 1, sass/modules/_menus.scss */

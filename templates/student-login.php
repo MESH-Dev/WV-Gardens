@@ -29,34 +29,109 @@ get_header(); ?>
 
         ?>
 
+        <select id="schools"></select>
+
+        <select id="teachers"></select>
+
+        <select id="students"></select>
+
 
         <?php wp_login_form(); ?>
 
         <script type="text/javascript">
 
-          var schools = jQuery("<select></select>").attr("id", "schools");
           var optionList = <?php echo json_encode($tax_array); ?>
 
           jQuery.each(optionList, function (i, el) {
-              schools.append("<option>" + el + "</option>");
+              jQuery('#schools').append("<option>" + el + "</option>");
           });
 
-          jQuery('#loginform').prepend(schools);
-
+          jQuery('#loginform').prepend(jQuery('#schools'));
 
           jQuery('#schools').change( function() {
 
-            var s = jQuery('#schools :selected').text();
+            if ( jQuery('#teachers').length ) {
 
-            jQuery.ajax({ url: '<?php bloginfo('template_url'); ?>/functions/select.php', type: "POST", data: { school : s }, success: function(result) {
+              jQuery('#teachers').show();
 
-              var students = jQuery("<select></select>").attr("id", "students");
+              var s = jQuery('#schools :selected').text();
 
-              
+              jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
 
-              jQuery(thing).insertAfter('#schools');
+                jQuery('#teachers').find('option').remove().end();
 
-            }});
+                var data = jQuery.parseJSON(result);
+
+                jQuery.each(data, function(i, item){
+                  jQuery('#teachers').append('<option>' + item + '</option>');
+                });
+
+                // jQuery('#teachers').insertAfter('#schools');
+
+              }});
+
+            } else {
+
+              var s = jQuery('#schools :selected').text();
+
+              jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
+
+                jQuery('#teachers').show();
+
+                var data = jQuery.parseJSON(result);
+
+                jQuery.each(data, function(i, item){
+                  teachers.append('<option>' + item + '</option>');
+                });
+
+                teachers.insertAfter('#schools');
+
+              }});
+
+            }
+
+          });
+
+          jQuery('#teachers').change( function() {
+
+            // if ( jQuery('#students').length ) {
+            //
+            //   var s = jQuery('#teachers :selected').text();
+            //
+            //   jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
+            //
+            //     jQuery(students).find('option').remove().end();
+            //
+            //     var data = jQuery.parseJSON(result);
+            //
+            //     jQuery.each(data, function(i, item){
+            //       jQuery(students).append('<option value="' + item + '">' + item + '</option>');
+            //     });
+            //
+            //     jQuery(students).insertAfter('#teachers');
+            //
+            //   }});
+            //
+            // } else if {
+            //
+            //   var s = jQuery('#teachers :selected').text();
+            //
+            //   jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
+            //
+            //     var students = jQuery("<select></select>").attr("id", "students");
+            //     var data = jQuery.parseJSON(result);
+            //
+            //     jQuery.each(data, function(i, item){
+            //       students.append('<option value="' + item + '">' + item + '</option>');
+            //     });
+            //
+            //     students.insertAfter('#teachers');
+            //
+            //   }});
+            //
+            // }
+
+
 
           });
 
