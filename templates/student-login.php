@@ -7,21 +7,18 @@ get_header(); ?>
 	<div id="primary">
 		<div id="content" role="main">
 
-			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<h1><?php the_title(); ?></h1>
 
         <?php
 
-          // Determine the class that the current user is in
+					// Create the list of schools
 
           $tax = get_terms ( 'school' );
-
           $tax_array = array();
 
           if ( ! empty( $tax ) && ! is_wp_error( $tax ) ){
-
              foreach ( $tax as $t ) {
                array_push($tax_array, $t->name);
              }
@@ -29,111 +26,105 @@ get_header(); ?>
 
         ?>
 
-        <select id="schools"></select>
-
-        <select id="teachers"></select>
-
-        <select id="students"></select>
-
-
-        <?php wp_login_form(); ?>
+				<form action="">
+					<select id="schools"></select><br/>
+					<select id="teachers"></select><br/>
+					<input id="password" style="background:grey;" /><br/>
+					<select id="students"></select><br/>
+					<input id="submit" type="submit" />
+				</form>
 
         <script type="text/javascript">
 
-          var optionList = <?php echo json_encode($tax_array); ?>
+          var schoolList = <?php echo json_encode($tax_array); ?>
 
-          jQuery.each(optionList, function (i, el) {
-              jQuery('#schools').append("<option>" + el + "</option>");
+					jQuery('#schools').append("<option>Select</option>");
+
+          jQuery.each(schoolList, function (i, item) {
+              jQuery('#schools').append("<option>" + item + "</option>");
           });
-
-          jQuery('#loginform').prepend(jQuery('#schools'));
 
           jQuery('#schools').change( function() {
 
-            if ( jQuery('#teachers').length ) {
-
+            if ( jQuery('#teachers').is(":hidden") ) {
               jQuery('#teachers').show();
+						}
 
-              var s = jQuery('#schools :selected').text();
+            jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_classes&school=' + jQuery('#schools :selected').text(), success: function(result) {
 
-              jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
+							jQuery('#teachers').find('option').remove().end();
 
-                jQuery('#teachers').find('option').remove().end();
+							var teacherList = jQuery.parseJSON(result);
 
-                var data = jQuery.parseJSON(result);
+							jQuery('#teachers').append("<option>Select</option>");
 
-                jQuery.each(data, function(i, item){
-                  jQuery('#teachers').append('<option>' + item + '</option>');
-                });
+              jQuery.each(teacherList, function(i, item){
+                jQuery('#teachers').append('<option value="' + item[1] + '">' + item[0] + '</option>');
+              });
 
-                // jQuery('#teachers').insertAfter('#schools');
-
-              }});
-
-            } else {
-
-              var s = jQuery('#schools :selected').text();
-
-              jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
-
-                jQuery('#teachers').show();
-
-                var data = jQuery.parseJSON(result);
-
-                jQuery.each(data, function(i, item){
-                  teachers.append('<option>' + item + '</option>');
-                });
-
-                teachers.insertAfter('#schools');
-
-              }});
-
-            }
+            }});
 
           });
+
+					var password = '';
+					var success = false;
 
           jQuery('#teachers').change( function() {
 
-            // if ( jQuery('#students').length ) {
-            //
-            //   var s = jQuery('#teachers :selected').text();
-            //
-            //   jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
-            //
-            //     jQuery(students).find('option').remove().end();
-            //
-            //     var data = jQuery.parseJSON(result);
-            //
-            //     jQuery.each(data, function(i, item){
-            //       jQuery(students).append('<option value="' + item + '">' + item + '</option>');
-            //     });
-            //
-            //     jQuery(students).insertAfter('#teachers');
-            //
-            //   }});
-            //
-            // } else if {
-            //
-            //   var s = jQuery('#teachers :selected').text();
-            //
-            //   jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=my_special_ajax_call&school=' + s, success: function(result) {
-            //
-            //     var students = jQuery("<select></select>").attr("id", "students");
-            //     var data = jQuery.parseJSON(result);
-            //
-            //     jQuery.each(data, function(i, item){
-            //       students.append('<option value="' + item + '">' + item + '</option>');
-            //     });
-            //
-            //     students.insertAfter('#teachers');
-            //
-            //   }});
-            //
-            // }
+						if ( jQuery('#password').is(":hidden") ) {
+              jQuery('#password').show();
+						}
 
+            jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_password&class=' + jQuery('#teachers :selected').val(), success: function(result) {
 
+							password = result;
+
+            }});
 
           });
+
+					jQuery('#students').change( function() {
+
+						if ( jQuery('#submit').is(":hidden") ) {
+              jQuery('#submit').show();
+						}
+
+            // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_password&class=' + jQuery('#teachers :selected').val(), success: function(result) {
+						//
+						// 	password = result;
+						//
+            // }});
+
+          });
+
+					function getStudentList() {
+						jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_students&class=' + jQuery('#teachers :selected').val(), success: function(result) {
+
+							var studentList = jQuery.parseJSON(result);
+
+							jQuery('#students').append("<option>Select</option>");
+
+							jQuery.each(studentList, function(i, item){
+								jQuery('#students').append('<option value="' + item[0] + '">' + item[0] + '</option>');
+							});
+
+						}});
+					}
+
+					function checkPasswordMatch() {
+
+						var newPassword = jQuery("#password").val();
+
+						if ((password == newPassword) && (success == false)) {
+							success = true;
+							jQuery("#students").show();
+							getStudentList();
+						}
+					}
+
+					jQuery(document).ready(function() {
+						jQuery("#password").keyup(checkPasswordMatch);
+					});
 
 
 

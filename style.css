@@ -842,7 +842,7 @@ html, body {
 }
 
 /* line 1, sass/layout/_main.scss */
-#teachers, #students {
+#teachers, #students, #password, #submit {
   display: none;
 }
 
