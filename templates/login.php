@@ -14,7 +14,7 @@ get_header(); ?>
                 <h1>Game Name</h1>
 
                 <a href="<?php echo wp_login_url(); ?>?user=teacher" title="Login">Teacher</a><br/>
-                <a href="<?php echo wp_login_url(); ?>?user=student" title="Login">Student</a>
+                <a href="<?php echo get_home_url(); ?>/student-login" title="Login">Student</a>
 
             <?php endwhile; ?>
 

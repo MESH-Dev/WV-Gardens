@@ -26,13 +26,14 @@ get_header(); ?>
 
         ?>
 
-				<form action="">
+
 					<select id="schools"></select><br/>
 					<select id="teachers"></select><br/>
 					<input id="password" style="background:grey;" /><br/>
 					<select id="students"></select><br/>
-					<input id="submit" type="submit" />
-				</form>
+					<button id="submit">Submit</button>
+					<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+
 
         <script type="text/javascript">
 
@@ -76,9 +77,7 @@ get_header(); ?>
 						}
 
             jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_password&class=' + jQuery('#teachers :selected').val(), success: function(result) {
-
 							password = result;
-
             }});
 
           });
@@ -88,12 +87,6 @@ get_header(); ?>
 						if ( jQuery('#submit').is(":hidden") ) {
               jQuery('#submit').show();
 						}
-
-            // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_password&class=' + jQuery('#teachers :selected').val(), success: function(result) {
-						//
-						// 	password = result;
-						//
-            // }});
 
           });
 
@@ -126,6 +119,22 @@ get_header(); ?>
 						jQuery("#password").keyup(checkPasswordMatch);
 					});
 
+					jQuery('#submit').on('click', function() {
+
+						alert('here');
+
+						jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=check_login&user=' + jQuery('#students :selected').val(), success: function(result) {
+
+
+							if (result == "success") {
+								window.location.href = "http://stackoverflow.com";
+							} else {
+
+							}
+
+						}});
+
+					});
 
 
         </script>
