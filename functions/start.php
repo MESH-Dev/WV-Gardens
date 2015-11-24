@@ -3,6 +3,8 @@
 //enqueue scripts and styles *use production assets. Dev assets are located in  /css and /js
 function loadup_scripts() {
 	wp_enqueue_script( 'theme-js', get_template_directory_uri().'/js/mesh.js', array('jquery'), '1.0.0', true );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'loadup_scripts' );
 

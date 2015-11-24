@@ -7,32 +7,45 @@ get_header(); ?>
 	<div id="primary">
 		<div id="content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<div class="container">
+					<div class="six columns">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/farmer.png" />
+					</div>
+					<div class="six columns">
 
-				<h1><?php the_title(); ?></h1>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-        <?php
+							<h1><?php the_title(); ?></h1>
 
-					// Create the list of schools
+			        <?php
 
-          $tax = get_terms ( 'school' );
-          $tax_array = array();
+								// Create the list of schools
 
-          if ( ! empty( $tax ) && ! is_wp_error( $tax ) ){
-             foreach ( $tax as $t ) {
-               array_push($tax_array, $t->name);
-             }
-          }
+			          $tax = get_terms ( 'school' );
+			          $tax_array = array();
 
-        ?>
+			          if ( ! empty( $tax ) && ! is_wp_error( $tax ) ){
+			             foreach ( $tax as $t ) {
+			               array_push($tax_array, $t->name);
+			             }
+			          }
+
+		        ?>
 
 
-					<select id="schools"></select><br/>
-					<select id="teachers"></select><br/>
-					<input id="password" style="background:grey;" /><br/>
-					<select id="students"></select><br/>
-					<button id="submit">Submit</button>
-					<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+						<div class="login-form">
+
+							<select id="schools"></select><br/>
+							<select id="teachers"></select><br/>
+							<input id="password" style="background:grey;" /><br/>
+							<select id="students"></select><br/>
+							<button id="submit">Submit</button>
+							<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+
+						</div>
+					</div>
+				</div>
+
 
 
         <script type="text/javascript">
