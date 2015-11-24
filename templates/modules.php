@@ -3,68 +3,77 @@
 */
 get_header(); ?>
 
-<main id="main" class="site-main" role="main">
-
+<div id="primary">
+  <div id="content" role="main">
     <div class="container">
-        <div class="twelve columns">
+        <div class="six columns">
+          <div class="module-section">
+            <div class="module-text">
+              <h1>Hi <span>Jordan!</span></h1>
+              <h1>Select your next <span>"MODULE"</span> to the right to get started!</h1>
+            </div>
+          </div>
+        </div>
+        <div class="six columns">
+          <div class="module-section">
+            <div class="module-list">
+              <?php
 
-            <?php
+              // Determine the class that the current user is in
 
-            // Determine the class that the current user is in
+            	$args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
+            	$loop = new WP_Query( $args );
 
-          	$args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
-          	$loop = new WP_Query( $args );
+              $class = 0;
 
-            $class = 0;
+            	while ( $loop->have_posts() ) : $loop->the_post();
 
-          	while ( $loop->have_posts() ) : $loop->the_post();
+            		$students = get_field('students', $post_id);
 
-          		$students = get_field('students', $post_id);
+                    foreach ($students as $student) {
+                        if ( $student['student']['ID'] == get_current_user_id() ) {
+                            $class = get_the_id();
+                        }
+                    }
 
-                  foreach ($students as $student) {
-                      if ( $student['student']['ID'] == get_current_user_id() ) {
-                          $class = get_the_id();
-                      }
-                  }
+            	endwhile;
 
-          	endwhile;
+            	?>
 
-          	?>
-
-            <?php
+              <?php
 
 
-            if( have_rows('modules', $class) ):
+              if( have_rows('modules', $class) ):
 
-                while ( have_rows('modules', $class) ) : the_row();
+                  while ( have_rows('modules', $class) ) : the_row();
 
-                    // Your loop code
-                    $module = get_sub_field('module', $class);
+                      // Your loop code
+                      $module = get_sub_field('module', $class);
 
-                    ?>
+                      ?>
 
-                    <a href="<?php echo $module->guid; ?>">
-                      <div class='module'>
-                        <?php echo $module->post_title; ?>
-                        
-                      </div>
-                    </a>
+                      <a href="<?php echo $module->guid; ?>">
+                        <div class='module'>
+                          <h2><?php echo $module->post_title; ?></h2>
+                        </div>
+                      </a>
 
-                    <?php
+                      <?php
 
-                endwhile;
+                  endwhile;
 
-            else :
+              else :
 
-                // no rows found
+                  // no rows found
 
-            endif;
+              endif;
 
-            ?>
-
+              ?>
+            </div>
+          </div>
         </div>
     </div>
-
-</main><!-- #main -->
+  </div>
+</div><!-- #main -->
 
 <?php get_footer(); ?>

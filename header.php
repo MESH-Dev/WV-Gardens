@@ -39,10 +39,13 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
+	<script src="https://use.typekit.net/yyp4jff.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 	<?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?>>
 
-	<div id="page" class='hfeed site content-fullscreen'>
+	<div id="page" class='hfeed site content-fullscreen <?php if( is_page_template("templates/student-login.php") or is_page_template("templates/modules.php") ) { echo "light-blue"; } ?>'>

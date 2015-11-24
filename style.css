@@ -598,7 +598,7 @@ select {
   text-transform: none;
 }
 
-/* line 249, sass/base/_normalize.scss */
+/* line 250, sass/base/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -607,25 +607,25 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 260, sass/base/_normalize.scss */
+/* line 261, sass/base/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 268, sass/base/_normalize.scss */
+/* line 269, sass/base/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 278, sass/base/_normalize.scss */
+/* line 279, sass/base/_normalize.scss */
 input {
   line-height: normal;
 }
 
-/* line 284, sass/base/_normalize.scss */
+/* line 285, sass/base/_normalize.scss */
 *
 input[type="checkbox"],
 input[type="radio"] {
@@ -633,13 +633,13 @@ input[type="radio"] {
   padding: 0;
 }
 
-/* line 300, sass/base/_normalize.scss */
+/* line 301, sass/base/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 310, sass/base/_normalize.scss */
+/* line 311, sass/base/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -647,42 +647,42 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 322, sass/base/_normalize.scss */
+/* line 323, sass/base/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 330, sass/base/_normalize.scss */
+/* line 331, sass/base/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 340, sass/base/_normalize.scss */
+/* line 341, sass/base/_normalize.scss */
 legend {
   border: 0;
   padding: 0;
 }
 
-/* line 348, sass/base/_normalize.scss */
+/* line 349, sass/base/_normalize.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 356, sass/base/_normalize.scss */
+/* line 357, sass/base/_normalize.scss */
 optgroup {
   font-weight: bold;
 }
 
-/* line 364, sass/base/_normalize.scss */
+/* line 365, sass/base/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 369, sass/base/_normalize.scss */
+/* line 370, sass/base/_normalize.scss */
 td,
 th {
   padding: 0;
@@ -698,7 +698,7 @@ th {
 body {
   color: green;
   font-size: 16;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "futura-pt";
   line-height: 1.5;
 }
 
@@ -709,7 +709,7 @@ h1 {
 
 /* line 25, sass/base/_base.scss */
 h2 {
-  font-size: 1.625em;
+  font-size: 1.5em;
 }
 
 /* line 29, sass/base/_base.scss */
@@ -844,6 +844,134 @@ html, body {
 /* line 1, sass/layout/_main.scss */
 #teachers, #students, #password, #submit {
   display: none;
+}
+
+/* line 3, sass/layout/_main.scss */
+#primary {
+  padding: 100px 0;
+}
+
+/* line 7, sass/layout/_main.scss */
+.light-blue {
+  background: #83ceff;
+}
+
+/* line 11, sass/layout/_main.scss */
+.bubble {
+  float: left;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  background: url(img/purple.png) no-repeat center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 200px;
+}
+
+/* line 24, sass/layout/_main.scss */
+.bubble-text {
+  color: white;
+  text-align: center;
+}
+
+/* line 29, sass/layout/_main.scss */
+.farmer {
+  float: left;
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+/* line 36, sass/layout/_main.scss */
+.login-form select {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  height: 50px;
+  border: white;
+  overflow: hidden;
+  width: 100%;
+  background: url(img/down_arrow.png) no-repeat right white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-position: right 20px center;
+  padding-left: 20px;
+  text-transform: uppercase;
+  color: #0ed59c;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* line 55, sass/layout/_main.scss */
+.login-form select option {
+  text-transform: lowercase;
+}
+
+/* line 59, sass/layout/_main.scss */
+.login-form input {
+  background: white;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  color: #0ed59c;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 68, sass/layout/_main.scss */
+.module-section {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+/* line 74, sass/layout/_main.scss */
+#submit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: url(img/signin.png) no-repeat right white;
+  background-position: right 20px center;
+  text-align: left;
+  padding-left: 20px;
+  height: 50px;
+  color: #7f3198;
+  font-weight: bold;
+}
+
+/* line 91, sass/layout/_main.scss */
+.module-text {
+  color: white;
+  padding-right: 50px;
+}
+/* line 95, sass/layout/_main.scss */
+.module-text span {
+  color: #7f3198;
+}
+
+/* line 100, sass/layout/_main.scss */
+.module-list {
+  float: left;
+  width: 100%;
+  border: 5px white dashed;
+}
+/* line 105, sass/layout/_main.scss */
+.module-list .module {
+  width: 100%;
+  float: left;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  color: white;
+  text-weight: bold;
+}
+/* line 113, sass/layout/_main.scss */
+.module-list .module h2 {
+  line-height: 0;
 }
 
 /* line 1, sass/modules/_menus.scss */
