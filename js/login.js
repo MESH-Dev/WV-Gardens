@@ -76,13 +76,10 @@ jQuery(document).ready(function() {
 
 jQuery('#submit').on('click', function() {
 
-  alert('here');
-
   jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=check_login&user=' + jQuery('#students :selected').val(), success: function(result) {
 
-
     if (result == "success") {
-      window.location.href = "http://stackoverflow.com";
+      window.location.href = "http://localhost/gardens/modules/";
     } else {
 
     }

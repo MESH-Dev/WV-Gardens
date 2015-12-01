@@ -124,47 +124,47 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-one {
-  padding-left: 90px;
+  margin-left: 90px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-two {
-  padding-left: 180px;
+  margin-left: 180px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-three {
-  padding-left: 270px;
+  margin-left: 270px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-four {
-  padding-left: 360px;
+  margin-left: 360px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-five {
-  padding-left: 450px;
+  margin-left: 450px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-six {
-  padding-left: 540px;
+  margin-left: 540px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-seven {
-  padding-left: 630px;
+  margin-left: 630px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-eight {
-  padding-left: 720px;
+  margin-left: 720px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-nine {
-  padding-left: 810px;
+  margin-left: 810px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-ten {
-  padding-left: 900px;
+  margin-left: 900px;
 }
 /* line 83, sass/grid/_dependencies.scss */
 .container .offset-by-eleven {
-  padding-left: 990px;
+  margin-left: 990px;
 }
 
 /* TABLET (PORTRAIT)
@@ -266,47 +266,47 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-one {
-    padding-left: 64px;
+    margin-left: 64px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-two {
-    padding-left: 128px;
+    margin-left: 128px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-three {
-    padding-left: 192px;
+    margin-left: 192px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-four {
-    padding-left: 256px;
+    margin-left: 256px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-five {
-    padding-left: 320px;
+    margin-left: 320px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-six {
-    padding-left: 384px;
+    margin-left: 384px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-seven {
-    padding-left: 448px;
+    margin-left: 448px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-eight {
-    padding-left: 512px;
+    margin-left: 512px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-nine {
-    padding-left: 576px;
+    margin-left: 576px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-ten {
-    padding-left: 640px;
+    margin-left: 640px;
   }
   /* line 83, sass/grid/_dependencies.scss */
   .container .offset-by-eleven {
-    padding-left: 704px;
+    margin-left: 704px;
   }
 }
 /*  MOBILE (PORTRAIT)
@@ -811,15 +811,16 @@ html, body {
   height: auto !important;
   height: 100%;
   margin: 0 auto -75px;
+  position: relative;
 }
 
-/* line 40, sass/utilities/_mixins.scss */
+/* line 41, sass/utilities/_mixins.scss */
 .content-fullscreen:after {
   content: "";
   display: block;
 }
 
-/* line 44, sass/utilities/_mixins.scss */
+/* line 45, sass/utilities/_mixins.scss */
 #footer-fullscreen, .content-fullscreen:after {
   clear: both;
   position: relative;
@@ -906,7 +907,7 @@ html, body {
 
 /* line 55, sass/layout/_main.scss */
 .login-form select option {
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 /* line 59, sass/layout/_main.scss */
@@ -924,9 +925,10 @@ html, body {
   float: left;
   width: 100%;
   position: relative;
+  min-height: 75px;
 }
 
-/* line 74, sass/layout/_main.scss */
+/* line 75, sass/layout/_main.scss */
 #submit {
   position: absolute;
   right: 0;
@@ -944,23 +946,76 @@ html, body {
   font-weight: bold;
 }
 
-/* line 91, sass/layout/_main.scss */
+/* line 92, sass/layout/_main.scss */
+.next {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: url(img/next_arrow.png) no-repeat right #1cb085;
+  background-position: right 20px center;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 40px;
+  height: 50px;
+  color: #89ffdd;
+  font-weight: bold;
+}
+
+/* line 110, sass/layout/_main.scss */
+.prev {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: url(img/prev_arrow.png) no-repeat right #1cb085;
+  background-position: left 20px center;
+  text-align: left;
+  padding-left: 50px;
+  height: 50px;
+  color: #89ffdd;
+  font-weight: bold;
+}
+
+/* line 127, sass/layout/_main.scss */
+.login-button {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: white;
+  background-position: right 20px center;
+  text-align: center;
+  padding: 10px 20px;
+  height: 50px;
+  color: #7f3198;
+  font-weight: bold;
+}
+
+/* line 142, sass/layout/_main.scss */
 .module-text {
   color: white;
   padding-right: 50px;
 }
-/* line 95, sass/layout/_main.scss */
+/* line 146, sass/layout/_main.scss */
 .module-text span {
   color: #7f3198;
 }
 
-/* line 100, sass/layout/_main.scss */
+/* line 151, sass/layout/_main.scss */
 .module-list {
   float: left;
   width: 100%;
   border: 5px white dashed;
+  border-radius: 10px;
+  padding: 10px 0;
 }
-/* line 105, sass/layout/_main.scss */
+/* line 158, sass/layout/_main.scss */
 .module-list .module {
   width: 100%;
   float: left;
@@ -968,10 +1023,156 @@ html, body {
   text-transform: uppercase;
   color: white;
   text-weight: bold;
+  position: relative;
 }
-/* line 113, sass/layout/_main.scss */
+/* line 167, sass/layout/_main.scss */
 .module-list .module h2 {
   line-height: 0;
+}
+
+/* line 173, sass/layout/_main.scss */
+.checkbox {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+/* line 179, sass/layout/_main.scss */
+.checkmark {
+  position: absolute;
+  right: 19px;
+  top: 5px;
+}
+
+/* line 185, sass/layout/_main.scss */
+.menu-bar {
+  text-transform: uppercase;
+  font-weight: bold;
+  float: left;
+}
+
+/* line 191, sass/layout/_main.scss */
+.menu-game-name {
+  color: white;
+}
+
+/* line 195, sass/layout/_main.scss */
+.menu-module-name {
+  color: #89ffdd;
+}
+
+/* line 199, sass/layout/_main.scss */
+.menu-title {
+  font-weight: bold;
+  float: left;
+  background: #0bac7e;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  z-index: 10;
+  position: relative;
+}
+
+/* line 210, sass/layout/_main.scss */
+.menu-sound {
+  background-color: white;
+  padding: 5px 10px 5px 40px;
+  display: inline-block;
+  float: left;
+  position: relative;
+  border-radius: 20px;
+  left: -30px;
+}
+
+/* line 220, sass/layout/_main.scss */
+.single-modules, .post-type-archive-modules {
+  background: #0ed59c;
+}
+
+/* line 224, sass/layout/_main.scss */
+.progress-plate {
+  background: #0bac7e;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100px;
+  width: 100px;
+}
+/* line 234, sass/layout/_main.scss */
+.progress-plate img {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+}
+
+/* line 241, sass/layout/_main.scss */
+.module-image {
+  text-align: center;
+}
+
+/* line 245, sass/layout/_main.scss */
+.answer {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* line 252, sass/layout/_main.scss */
+.answer-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+/* line 258, sass/layout/_main.scss */
+.question {
+  display: none;
+}
+
+/* line 262, sass/layout/_main.scss */
+.module-number {
+  color: #7f3198;
+  line-height: 0;
+}
+
+/* line 267, sass/layout/_main.scss */
+.answer-text {
+  margin: 10px;
+}
+
+/* line 271, sass/layout/_main.scss */
+.module-food {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* line 276, sass/layout/_main.scss */
+.module-food img {
+  float: left;
+}
+
+/* line 281, sass/layout/_main.scss */
+.page-template-login {
+  background-color: #7f3198;
+  background-image: url(img/vegetables.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 288, sass/layout/_main.scss */
+.login-text {
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  height: 200px;
+  margin-top: -100px;
 }
 
 /* line 1, sass/modules/_menus.scss */

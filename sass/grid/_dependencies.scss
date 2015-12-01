@@ -76,11 +76,11 @@
 @mixin _offset($is-fluid, $colCount, $colWidth) {
 	@if ($is-fluid) {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: percentage( $i / $colCount ); }
+			.offset-by-#{numToString($i)} { margin-left: percentage( $i / $colCount ); }
 		}
 	} @else {
 		@for $i from 1 through ( $colCount - 1 ) {
-			.offset-by-#{numToString($i)} { padding-left: ( $colWidth + 20 ) * $i; }
+			.offset-by-#{numToString($i)} { margin-left: ( $colWidth + 20 ) * $i; }
 		}
 	}
 }

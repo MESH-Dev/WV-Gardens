@@ -1,6 +1,5 @@
-<?php /*
-* Template Name: Modules
-*/
+<?php
+
 get_header(); ?>
 
 <div id="primary">
@@ -14,6 +13,10 @@ get_header(); ?>
                 <h1>Hi <span><?php echo $user_login; ?>!</span></h1>
               <?php } ?>
               <h1>Select your next <span>"MODULE"</span> to the right to get started!</h1>
+            </div>
+            <br/>
+            <div class="module-image">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/halfplate.png" />
             </div>
           </div>
         </div>
@@ -84,5 +87,9 @@ get_header(); ?>
     </div>
   </div>
 </div><!-- #main -->
+
+<div class="module-food">
+  <img src="<?php echo get_template_directory_uri(); ?>/img/food.png" />
+</div>
 
 <?php get_footer(); ?>

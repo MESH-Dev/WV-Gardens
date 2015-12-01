@@ -53,7 +53,7 @@
 }
 
 .login-form select option {
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .login-form input {
@@ -69,6 +69,7 @@
   float: left;
   width: 100%;
   position: relative;
+  min-height: 75px;
 }
 
 #submit {
@@ -88,6 +89,56 @@
   font-weight: bold;
 }
 
+.next {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: url(img/next_arrow.png) no-repeat right #1cb085;
+  background-position: right 20px center;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 40px;
+  height: 50px;
+  color: #89ffdd;
+  font-weight: bold;
+}
+
+.prev {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: url(img/prev_arrow.png) no-repeat right #1cb085;
+  background-position: left 20px center;
+  text-align: left;
+  padding-left: 50px;
+  height: 50px;
+  color: #89ffdd;
+  font-weight: bold;
+}
+
+.login-button {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: white;
+  background-position: right 20px center;
+  text-align: center;
+  padding: 10px 20px;
+  height: 50px;
+  color: $purple;
+  font-weight: bold;
+}
+
+
+
 .module-text {
   color: white;
   padding-right: 50px;
@@ -101,6 +152,8 @@
   float: left;
   width: 100%;
   border: 5px white dashed;
+  border-radius: 10px;
+  padding: 10px 0;
 
   .module {
     width: 100%;
@@ -109,9 +162,137 @@
     text-transform: uppercase;
     color: white;
     text-weight: bold;
+    position: relative;
 
     h2 {
       line-height: 0;
     }
   }
+}
+
+.checkbox {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.checkmark {
+  position: absolute;
+  right: 19px;
+  top: 5px;
+}
+
+.menu-bar {
+  text-transform: uppercase;
+  font-weight: bold;
+  float: left;
+}
+
+.menu-game-name {
+  color: white;
+}
+
+.menu-module-name {
+  color: #89ffdd;
+}
+
+.menu-title {
+  font-weight: bold;
+  float: left;
+  background: #0bac7e;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  z-index: 10;
+  position: relative;
+}
+
+.menu-sound {
+  background-color: white;
+  padding: 5px 10px 5px 40px;
+  display: inline-block;
+  float: left;
+  position: relative;
+  border-radius: 20px;
+  left: -30px;
+}
+
+.single-modules, .post-type-archive-modules {
+  background: #0ed59c;
+}
+
+.progress-plate {
+  background: #0bac7e;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100px;
+  width: 100px;
+
+  img {
+    position: absolute;
+    left: 8px;
+    top: 10px;
+  }
+}
+
+.module-image {
+  text-align: center;
+}
+
+.answer {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+.answer-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+.question {
+  display: none;
+}
+
+.module-number {
+  color: #7f3198;
+  line-height: 0;
+}
+
+.answer-text {
+  margin: 10px;
+}
+
+.module-food {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  img {
+    float: left;
+  }
+}
+
+.page-template-login {
+  background-color: #7f3198;
+  background-image: url(img/vegetables.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-text {
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  height: 200px;
+  margin-top: -100px;
 }

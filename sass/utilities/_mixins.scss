@@ -36,6 +36,7 @@
     height: auto !important;
     height: 100%;
     margin: 0 auto -#{$footer_height};
+    position: relative;
   }
   #{$root_selector}:after {
     content: "";
