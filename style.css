@@ -696,7 +696,7 @@ th {
 
 /* line 10, sass/base/_base.scss */
 body {
-  color: green;
+  color: #0ed59c;
   font-size: 16;
   font-family: "futura-pt";
   line-height: 1.5;
@@ -885,7 +885,7 @@ html, body {
   text-align: left;
 }
 
-/* line 36, sass/layout/_main.scss */
+/* line 38, sass/layout/_main.scss */
 .login-form select {
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -900,35 +900,54 @@ html, body {
   background-position: right 20px center;
   padding-left: 20px;
   text-transform: uppercase;
-  color: #0ed59c;
+  color: #53d8b1;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* line 55, sass/layout/_main.scss */
+/* line 57, sass/layout/_main.scss */
 .login-form select option {
   text-transform: capitalize;
 }
 
-/* line 59, sass/layout/_main.scss */
+/* line 61, sass/layout/_main.scss */
 .login-form input {
   background: white;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-  color: #0ed59c;
+  color: #53d8b1;
   padding-left: 20px;
   margin-bottom: 20px;
 }
 
-/* line 68, sass/layout/_main.scss */
-.module-section {
-  float: left;
-  width: 100%;
-  position: relative;
-  min-height: 75px;
+/* line 70, sass/layout/_main.scss */
+.login-text {
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  height: 200px;
+  margin-top: -100px;
 }
 
-/* line 75, sass/layout/_main.scss */
+/* line 82, sass/layout/_main.scss */
+.login-button {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: white;
+  background-position: right 20px center;
+  text-align: center;
+  padding: 10px 20px;
+  height: 50px;
+  color: #7f3198;
+  font-weight: bold;
+}
+
+/* line 95, sass/layout/_main.scss */
 #submit {
   position: absolute;
   right: 0;
@@ -946,68 +965,17 @@ html, body {
   font-weight: bold;
 }
 
-/* line 92, sass/layout/_main.scss */
-.next {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 200px;
-  background: url(img/next_arrow.png) no-repeat right #1cb085;
-  background-position: right 20px center;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 40px;
-  height: 50px;
-  color: #89ffdd;
-  font-weight: bold;
-}
-
-/* line 110, sass/layout/_main.scss */
-.prev {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 200px;
-  background: url(img/prev_arrow.png) no-repeat right #1cb085;
-  background-position: left 20px center;
-  text-align: left;
-  padding-left: 50px;
-  height: 50px;
-  color: #89ffdd;
-  font-weight: bold;
-}
-
-/* line 127, sass/layout/_main.scss */
-.login-button {
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 200px;
-  background: white;
-  background-position: right 20px center;
-  text-align: center;
-  padding: 10px 20px;
-  height: 50px;
-  color: #7f3198;
-  font-weight: bold;
-}
-
-/* line 142, sass/layout/_main.scss */
+/* line 114, sass/layout/_main.scss */
 .module-text {
   color: white;
   padding-right: 50px;
 }
-/* line 146, sass/layout/_main.scss */
+/* line 118, sass/layout/_main.scss */
 .module-text span {
   color: #7f3198;
 }
 
-/* line 151, sass/layout/_main.scss */
+/* line 123, sass/layout/_main.scss */
 .module-list {
   float: left;
   width: 100%;
@@ -1015,7 +983,7 @@ html, body {
   border-radius: 10px;
   padding: 10px 0;
 }
-/* line 158, sass/layout/_main.scss */
+/* line 130, sass/layout/_main.scss */
 .module-list .module {
   width: 100%;
   float: left;
@@ -1025,47 +993,49 @@ html, body {
   text-weight: bold;
   position: relative;
 }
-/* line 167, sass/layout/_main.scss */
+/* line 139, sass/layout/_main.scss */
 .module-list .module h2 {
   line-height: 0;
 }
 
-/* line 173, sass/layout/_main.scss */
+/* line 145, sass/layout/_main.scss */
 .checkbox {
   position: absolute;
   right: 25px;
   top: 15px;
 }
 
-/* line 179, sass/layout/_main.scss */
+/* line 151, sass/layout/_main.scss */
 .checkmark {
   position: absolute;
   right: 19px;
   top: 5px;
 }
 
-/* line 185, sass/layout/_main.scss */
+/* line 157, sass/layout/_main.scss */
+.module-section {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 75px;
+}
+
+/* line 166, sass/layout/_main.scss */
 .menu-bar {
   text-transform: uppercase;
   font-weight: bold;
   float: left;
 }
 
-/* line 191, sass/layout/_main.scss */
+/* line 172, sass/layout/_main.scss */
 .menu-game-name {
   color: white;
 }
 
-/* line 195, sass/layout/_main.scss */
-.menu-module-name {
-  color: #89ffdd;
-}
-
-/* line 199, sass/layout/_main.scss */
+/* line 176, sass/layout/_main.scss */
 .menu-title {
   font-weight: bold;
   float: left;
-  background: #0bac7e;
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
@@ -1073,7 +1043,7 @@ html, body {
   position: relative;
 }
 
-/* line 210, sass/layout/_main.scss */
+/* line 186, sass/layout/_main.scss */
 .menu-sound {
   background-color: white;
   padding: 5px 10px 5px 40px;
@@ -1084,14 +1054,321 @@ html, body {
   left: -30px;
 }
 
-/* line 220, sass/layout/_main.scss */
-.single-modules, .post-type-archive-modules {
-  background: #0ed59c;
+/* line 196, sass/layout/_main.scss */
+.post-type-archive-modules, .page-template-student-login {
+  background: #83ceff;
 }
 
-/* line 224, sass/layout/_main.scss */
-.progress-plate {
+/* line 200, sass/layout/_main.scss */
+.next {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  font-weight: bold;
+}
+/* line 214, sass/layout/_main.scss */
+.next .next-arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  float: right;
+}
+/* line 221, sass/layout/_main.scss */
+.next .next-text {
+  float: left;
+}
+
+/* line 226, sass/layout/_main.scss */
+.prev {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  font-weight: bold;
+}
+/* line 240, sass/layout/_main.scss */
+.prev .prev-arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  float: left;
+}
+/* line 247, sass/layout/_main.scss */
+.prev .prev-text {
+  float: right;
+}
+
+/* line 252, sass/layout/_main.scss */
+.progress-farm {
+  height: 25px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 259, sass/layout/_main.scss */
+.module-1 {
+  background: #0ed59c;
+}
+/* line 262, sass/layout/_main.scss */
+.module-1 .menu-title {
   background: #0bac7e;
+}
+/* line 265, sass/layout/_main.scss */
+.module-1 .menu-module-name {
+  color: #53d8b1;
+}
+/* line 268, sass/layout/_main.scss */
+.module-1 .menu-sound {
+  color: #0bac7e;
+}
+/* line 271, sass/layout/_main.scss */
+.module-1 .progress-plate {
+  background: #0bac7e;
+}
+/* line 274, sass/layout/_main.scss */
+.module-1 .prev {
+  background-color: #0bac7e;
+  color: #53d8b1;
+}
+/* line 278, sass/layout/_main.scss */
+.module-1 .prev .prev-arrow {
+  border-right: 20px solid #53d8b1;
+}
+/* line 283, sass/layout/_main.scss */
+.module-1 .next {
+  background-position: right 20px center;
+  background-color: white;
+  color: #0bac7e;
+}
+/* line 288, sass/layout/_main.scss */
+.module-1 .next .next-arrow {
+  border-left: 20px solid #0bac7e;
+}
+/* line 294, sass/layout/_main.scss */
+.module-1 .progress-farm {
+  background-color: #7f3198;
+}
+
+/* line 299, sass/layout/_main.scss */
+.module-2 {
+  background: #0072bc;
+}
+/* line 302, sass/layout/_main.scss */
+.module-2 .menu-title {
+  background: #005a94;
+}
+/* line 305, sass/layout/_main.scss */
+.module-2 .menu-module-name {
+  color: #83ceff;
+}
+/* line 308, sass/layout/_main.scss */
+.module-2 .menu-sound {
+  color: #005a94;
+}
+/* line 311, sass/layout/_main.scss */
+.module-2 .progress-plate {
+  background: #005a94;
+}
+/* line 314, sass/layout/_main.scss */
+.module-2 .prev {
+  background-color: #005a94;
+  color: #83ceff;
+}
+/* line 318, sass/layout/_main.scss */
+.module-2 .prev .prev-arrow {
+  border-right: 20px solid #83ceff;
+}
+/* line 323, sass/layout/_main.scss */
+.module-2 .next {
+  background-position: right 20px center;
+  background-color: white;
+  color: #005a94;
+}
+/* line 328, sass/layout/_main.scss */
+.module-2 .next .next-arrow {
+  border-left: 20px solid #005a94;
+}
+
+/* line 335, sass/layout/_main.scss */
+.module-3 {
+  background: #f65163;
+}
+/* line 338, sass/layout/_main.scss */
+.module-3 .menu-title {
+  background: #c04451;
+}
+/* line 341, sass/layout/_main.scss */
+.module-3 .menu-module-name {
+  color: #ffa4ae;
+}
+/* line 344, sass/layout/_main.scss */
+.module-3 .menu-sound {
+  color: #c04451;
+}
+/* line 347, sass/layout/_main.scss */
+.module-3 .progress-plate {
+  background: #c04451;
+}
+/* line 350, sass/layout/_main.scss */
+.module-3 .prev {
+  background-color: #c04451;
+  color: #ffa4ae;
+}
+/* line 354, sass/layout/_main.scss */
+.module-3 .prev .prev-arrow {
+  border-right: 20px solid #ffa4ae;
+}
+/* line 359, sass/layout/_main.scss */
+.module-3 .next {
+  background-position: right 20px center;
+  background-color: white;
+  color: #c04451;
+}
+/* line 364, sass/layout/_main.scss */
+.module-3 .next .next-arrow {
+  border-left: 20px solid #c04451;
+}
+
+/* line 371, sass/layout/_main.scss */
+.module-4 {
+  background: #7f3198;
+}
+/* line 374, sass/layout/_main.scss */
+.module-4 .menu-title {
+  background: #5c007a;
+}
+/* line 377, sass/layout/_main.scss */
+.module-4 .menu-module-name {
+  color: #b473c9;
+}
+/* line 380, sass/layout/_main.scss */
+.module-4 .menu-sound {
+  color: #5c007a;
+}
+/* line 383, sass/layout/_main.scss */
+.module-4 .progress-plate {
+  background: #5c007a;
+}
+/* line 386, sass/layout/_main.scss */
+.module-4 .prev {
+  background-color: #5c007a;
+  color: #b473c9;
+}
+/* line 390, sass/layout/_main.scss */
+.module-4 .prev .prev-arrow {
+  border-right: 20px solid #b473c9;
+}
+/* line 395, sass/layout/_main.scss */
+.module-4 .next {
+  background-position: right 20px center;
+  background-color: white;
+  color: #5c007a;
+}
+/* line 400, sass/layout/_main.scss */
+.module-4 .next .next-arrow {
+  border-left: 20px solid #5c007a;
+}
+
+/* line 407, sass/layout/_main.scss */
+.module-5 {
+  background: #ffcd2b;
+}
+/* line 410, sass/layout/_main.scss */
+.module-5 .menu-title {
+  background: #de9f27;
+}
+/* line 413, sass/layout/_main.scss */
+.module-5 .menu-module-name {
+  color: #ffe07d;
+}
+/* line 416, sass/layout/_main.scss */
+.module-5 .menu-sound {
+  color: #de9f27;
+}
+/* line 419, sass/layout/_main.scss */
+.module-5 .progress-plate {
+  background: #de9f27;
+}
+/* line 422, sass/layout/_main.scss */
+.module-5 .prev {
+  background-color: #de9f27;
+  color: #ffe07d;
+}
+/* line 426, sass/layout/_main.scss */
+.module-5 .prev .prev-arrow {
+  border-right: 20px solid #ffe07d;
+}
+/* line 431, sass/layout/_main.scss */
+.module-5 .next {
+  background-position: right 20px center;
+  background-color: white;
+  color: #de9f27;
+}
+/* line 436, sass/layout/_main.scss */
+.module-5 .next .next-arrow {
+  border-left: 20px solid #de9f27;
+}
+
+/* line 443, sass/layout/_main.scss */
+.module-6 {
+  background: #ff9327;
+}
+/* line 446, sass/layout/_main.scss */
+.module-6 .menu-title {
+  background: #e67300;
+}
+/* line 449, sass/layout/_main.scss */
+.module-6 .menu-module-name {
+  color: #ffb45c;
+}
+/* line 452, sass/layout/_main.scss */
+.module-6 .menu-sound {
+  color: #e67300;
+}
+/* line 455, sass/layout/_main.scss */
+.module-6 .progress-plate {
+  background: #e67300;
+}
+/* line 458, sass/layout/_main.scss */
+.module-6 .prev {
+  background-color: #e67300;
+  color: #ffb45c;
+}
+/* line 462, sass/layout/_main.scss */
+.module-6 .prev .prev-arrow {
+  border-right: 20px solid #ffb45c;
+}
+/* line 467, sass/layout/_main.scss */
+.module-6 .next {
+  background-position: right 20px center;
+  background-color: white;
+  color: #e67300;
+}
+/* line 472, sass/layout/_main.scss */
+.module-6 .next .next-arrow {
+  border-left: 20px solid #e67300;
+}
+
+/* line 479, sass/layout/_main.scss */
+.progress-plate {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: absolute;
@@ -1100,19 +1377,19 @@ html, body {
   height: 100px;
   width: 100px;
 }
-/* line 234, sass/layout/_main.scss */
+/* line 488, sass/layout/_main.scss */
 .progress-plate img {
   position: absolute;
   left: 8px;
   top: 10px;
 }
 
-/* line 241, sass/layout/_main.scss */
+/* line 495, sass/layout/_main.scss */
 .module-image {
   text-align: center;
 }
 
-/* line 245, sass/layout/_main.scss */
+/* line 499, sass/layout/_main.scss */
 .answer {
   text-align: center;
   font-weight: bold;
@@ -1120,41 +1397,41 @@ html, body {
   color: white;
 }
 
-/* line 252, sass/layout/_main.scss */
+/* line 506, sass/layout/_main.scss */
 .answer-image {
   background-repeat: no-repeat;
   background-position: center;
   padding: 20px;
 }
 
-/* line 258, sass/layout/_main.scss */
+/* line 512, sass/layout/_main.scss */
 .question {
   display: none;
 }
 
-/* line 262, sass/layout/_main.scss */
+/* line 516, sass/layout/_main.scss */
 .module-number {
   color: #7f3198;
   line-height: 0;
 }
 
-/* line 267, sass/layout/_main.scss */
+/* line 521, sass/layout/_main.scss */
 .answer-text {
   margin: 10px;
 }
 
-/* line 271, sass/layout/_main.scss */
+/* line 525, sass/layout/_main.scss */
 .module-food {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-/* line 276, sass/layout/_main.scss */
+/* line 530, sass/layout/_main.scss */
 .module-food img {
   float: left;
 }
 
-/* line 281, sass/layout/_main.scss */
+/* line 535, sass/layout/_main.scss */
 .page-template-login {
   background-color: #7f3198;
   background-image: url(img/vegetables.png);
@@ -1162,17 +1439,33 @@ html, body {
   background-size: cover;
 }
 
-/* line 288, sass/layout/_main.scss */
-.login-text {
-  text-align: center;
-  color: white;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  margin-left: -150px;
-  height: 200px;
-  margin-top: -100px;
+/* line 542, sass/layout/_main.scss */
+.progress-farm-point {
+  float: left;
+  height: 25px;
+}
+
+/* line 547, sass/layout/_main.scss */
+.progress-farm-point-sprout {
+  background-image: url(img/sprout-green.png);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+}
+
+/* line 557, sass/layout/_main.scss */
+.progress-farm-point-plant {
+  background-image: url(img/plant-green.png);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+  display: none;
 }
 
 /* line 1, sass/modules/_menus.scss */

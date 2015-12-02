@@ -8,7 +8,7 @@ get_header(); ?>
       <div class="row">
         <div class="twelve columns">
           <div class="menu-bar">
-            <div class="menu-title"><span class="menu-game-name">Game Name</span> <span class="menu-module-name"><?php the_title(); ?></span></div>
+            <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Game Name</span> <span class="menu-module-name"><?php the_title(); ?></span></div></a>
             <div class="menu-sound"><i class="fa fa-volume-up"></i></div>
           </div>
 
@@ -39,7 +39,10 @@ get_header(); ?>
           </div>
           <div class="three columns">
             <div class="module-section">
-              <button class="next" style="display: inline-block;">Dig In!</button>
+              <button class="next" style="display: inline-block;">
+                Dig In!
+                <div class="next-arrow"></div>
+              </button>
             </div>
           </div>
         </div>
@@ -153,12 +156,18 @@ get_header(); ?>
             <div class="row">
               <div class="three columns">
                 <div class="module-section">
-                  <button class="prev" style="display: inline-block;">Previous Question</button>
+                  <button class="prev" style="display: inline-block;">
+                    <div class="prev-text">Previous Question</div>
+                    <div class="prev-arrow"></div>
+                  </button>
                 </div>
               </div>
               <div class="three columns offset-by-six">
                 <div class="module-section">
-                  <button class="next" style="display: inline-block;">Next Question</button>
+                  <button class="next" style="display: inline-block;">
+                    <div class="next-text">Next Question</div>
+                    <div class="next-arrow"></div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -212,6 +221,34 @@ get_header(); ?>
 
 </main><!-- #main -->
 
+<div class="progress-farm">
+  <div class="container">
+    <div class="twelve columns">
+
+      <?php
+
+        for ($x = 0; $x < $i; $x++) {
+
+          ?>
+
+          <div class="progress-farm-point" style="width: <?php echo (100/$i); ?>%">
+            <div class="progress-farm-point-sprout">
+            </div>
+            <div class="progress-farm-point-plant">
+            </div>
+          </div>
+
+          <?php
+
+        }
+
+      ?>
+
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript">
 
 	jQuery('.question-0').show();
@@ -229,6 +266,17 @@ get_header(); ?>
       jQuery(currentQuestion).hide();
       jQuery(nextQuestion).show();
     }
+
+  });
+
+  jQuery('.prev').click(function(){
+
+    var currentQuestion = ('.question-').concat(index);
+    index = index - 1;
+    var prevQuestion = ('.question-').concat(index);
+
+    jQuery(currentQuestion).hide();
+    jQuery(prevQuestion).show();
 
   });
 

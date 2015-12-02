@@ -47,13 +47,14 @@ function create_post_name( $post_id ){
 			$semester = get_the_terms( $post_id , 'semester' );
 			$year = get_the_terms( $post_id, 'theyear' );
 			$school = get_the_terms( $post_id, 'school' );
-			$teacher = get_field('teacher', $post_id);
+			$grade = get_the_terms( $post_id, 'grade' );
 
+			$teacher = get_field('teacher', $post_id);
 
 
 		  	$my_post = array(
 		      'ID'           => $post_id,
-		      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name,
+		      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name,
 		  	);
 
 			// Update the post into the database

@@ -33,6 +33,8 @@
   text-align: left;
 }
 
+// Login
+
 .login-form select {
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -65,11 +67,29 @@
   margin-bottom: 20px;
 }
 
-.module-section {
-  float: left;
-  width: 100%;
-  position: relative;
-  min-height: 75px;
+.login-text {
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  height: 200px;
+  margin-top: -100px;
+}
+
+.login-button {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 200px;
+  background: white;
+  background-position: right 20px center;
+  text-align: center;
+  padding: 10px 20px;
+  height: 50px;
+  color: $purple;
+  font-weight: bold;
 }
 
 #submit {
@@ -89,55 +109,7 @@
   font-weight: bold;
 }
 
-.next {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 200px;
-  background: url(img/next_arrow.png) no-repeat right #1cb085;
-  background-position: right 20px center;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 40px;
-  height: 50px;
-  color: #89ffdd;
-  font-weight: bold;
-}
-
-.prev {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 200px;
-  background: url(img/prev_arrow.png) no-repeat right #1cb085;
-  background-position: left 20px center;
-  text-align: left;
-  padding-left: 50px;
-  height: 50px;
-  color: #89ffdd;
-  font-weight: bold;
-}
-
-.login-button {
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 200px;
-  background: white;
-  background-position: right 20px center;
-  text-align: center;
-  padding: 10px 20px;
-  height: 50px;
-  color: $purple;
-  font-weight: bold;
-}
-
-
+// Modules
 
 .module-text {
   color: white;
@@ -182,6 +154,15 @@
   top: 5px;
 }
 
+.module-section {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 75px;
+}
+
+// Question
+
 .menu-bar {
   text-transform: uppercase;
   font-weight: bold;
@@ -192,14 +173,9 @@
   color: white;
 }
 
-.menu-module-name {
-  color: #89ffdd;
-}
-
 .menu-title {
   font-weight: bold;
   float: left;
-  background: #0bac7e;
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
@@ -217,12 +193,290 @@
   left: -30px;
 }
 
-.single-modules, .post-type-archive-modules {
-  background: #0ed59c;
+.post-type-archive-modules, .page-template-student-login {
+  background: $light-blue;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  font-weight: bold;
+
+  .next-arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    float: right;
+  }
+  .next-text {
+    float: left;
+  }
+}
+
+.prev {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  font-weight: bold;
+
+  .prev-arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    float: left;
+  }
+  .prev-text {
+    float: right;
+  }
+}
+
+.progress-farm {
+  height: 25px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.module-1 {
+  background: $green;
+
+  .menu-title {
+    background: $dark-green;
+  }
+  .menu-module-name {
+    color: $light-green;
+  }
+  .menu-sound {
+    color: $dark-green;
+  }
+  .progress-plate {
+    background: $dark-green;
+  }
+  .prev {
+    background-color: $dark-green;
+    color: $light-green;
+
+    .prev-arrow {
+      border-right: 20px solid $light-green;
+    }
+  }
+
+  .next {
+    background-position: right 20px center;
+    background-color: white;
+    color: $dark-green;
+
+    .next-arrow {
+      border-left: 20px solid $dark-green;
+    }
+
+  }
+
+  .progress-farm {
+    background-color: $purple;
+  }
+}
+
+.module-2 {
+  background: $blue;
+
+  .menu-title {
+    background: $dark-blue;
+  }
+  .menu-module-name {
+    color: $light-blue;
+  }
+  .menu-sound {
+    color: $dark-blue;
+  }
+  .progress-plate {
+    background: $dark-blue;
+  }
+  .prev {
+    background-color: $dark-blue;
+    color: $light-blue;
+
+    .prev-arrow {
+      border-right: 20px solid $light-blue;
+    }
+  }
+
+  .next {
+    background-position: right 20px center;
+    background-color: white;
+    color: $dark-blue;
+
+    .next-arrow {
+      border-left: 20px solid $dark-blue;
+    }
+
+  }
+}
+
+.module-3 {
+  background: $red;
+
+  .menu-title {
+    background: $dark-red;
+  }
+  .menu-module-name {
+    color: $light-red;
+  }
+  .menu-sound {
+    color: $dark-red;
+  }
+  .progress-plate {
+    background: $dark-red;
+  }
+  .prev {
+    background-color: $dark-red;
+    color: $light-red;
+
+    .prev-arrow {
+      border-right: 20px solid $light-red;
+    }
+  }
+
+  .next {
+    background-position: right 20px center;
+    background-color: white;
+    color: $dark-red;
+
+    .next-arrow {
+      border-left: 20px solid $dark-red;
+    }
+
+  }
+}
+
+.module-4 {
+  background: $purple;
+
+  .menu-title {
+    background: $dark-purple;
+  }
+  .menu-module-name {
+    color: $light-purple;
+  }
+  .menu-sound {
+    color: $dark-purple;
+  }
+  .progress-plate {
+    background: $dark-purple;
+  }
+  .prev {
+    background-color: $dark-purple;
+    color: $light-purple;
+
+    .prev-arrow {
+      border-right: 20px solid $light-purple;
+    }
+  }
+
+  .next {
+    background-position: right 20px center;
+    background-color: white;
+    color: $dark-purple;
+
+    .next-arrow {
+      border-left: 20px solid $dark-purple;
+    }
+
+  }
+}
+
+.module-5 {
+  background: $yellow;
+
+  .menu-title {
+    background: $dark-yellow;
+  }
+  .menu-module-name {
+    color: $light-yellow;
+  }
+  .menu-sound {
+    color: $dark-yellow;
+  }
+  .progress-plate {
+    background: $dark-yellow;
+  }
+  .prev {
+    background-color: $dark-yellow;
+    color: $light-yellow;
+
+    .prev-arrow {
+      border-right: 20px solid $light-yellow;
+    }
+  }
+
+  .next {
+    background-position: right 20px center;
+    background-color: white;
+    color: $dark-yellow;
+
+    .next-arrow {
+      border-left: 20px solid $dark-yellow;
+    }
+
+  }
+}
+
+.module-6 {
+  background: $orange;
+
+  .menu-title {
+    background: $dark-orange;
+  }
+  .menu-module-name {
+    color: $light-orange;
+  }
+  .menu-sound {
+    color: $dark-orange;
+  }
+  .progress-plate {
+    background: $dark-orange;
+  }
+  .prev {
+    background-color: $dark-orange;
+    color: $light-orange;
+
+    .prev-arrow {
+      border-right: 20px solid $light-orange;
+    }
+  }
+
+  .next {
+    background-position: right 20px center;
+    background-color: white;
+    color: $dark-orange;
+
+    .next-arrow {
+      border-left: 20px solid $dark-orange;
+    }
+
+  }
 }
 
 .progress-plate {
-  background: #0bac7e;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: absolute;
@@ -285,14 +539,28 @@
   background-size: cover;
 }
 
-.login-text {
-  text-align: center;
-  color: white;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  margin-left: -150px;
-  height: 200px;
-  margin-top: -100px;
+.progress-farm-point {
+  float: left;
+  height: 25px;
+}
+
+.progress-farm-point-sprout {
+  background-image: url(img/sprout-green.png);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+}
+
+.progress-farm-point-plant {
+  background-image: url(img/plant-green.png);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+  display: none;
 }

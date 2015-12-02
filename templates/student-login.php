@@ -146,7 +146,7 @@ get_header(); ?>
 						var url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
 
 						if (result == "success") {
-							window.location.href = "/gardens/modules-page";
+							window.location.href = "/gardens/modules";
 						} else {
 
 						}

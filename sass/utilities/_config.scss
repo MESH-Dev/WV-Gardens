@@ -9,14 +9,31 @@
 // =============
 
 // Descriptive colors:
-$red                          : red;
-$green                        : green;
-$blue                         : blue;
+$red                          : #f65163;
+$dark-red                     : #c04451;
+$light-red                    : #ffa4ae;
+
+$green                        : #0ed59c;
+$light-green                  : #53d8b1;
+$dark-green                   : #0bac7e;
+
+$blue                         : #0072bc;
+$dark-blue                    : #005a94;
+$light-blue                   : #83ceff;
+
 $gray                         : #666;
 
-$light-blue                   : #83ceff;
-$light-green                  : #0ed59c;
+$yellow                       : #ffcd2b;
+$dark-yellow                  : #de9f27;
+$light-yellow                 : #ffe07d;
+
+$orange                       : #ff9327;
+$dark-orange                  : #e67300;
+$light-orange                 : #ffb45c;
+
 $purple                       : #7f3198;
+$dark-purple                  : #5c007a;
+$light-purple                 : #b473c9;
 
 // Main color palette
 $color-primary                : $red;
