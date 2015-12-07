@@ -213,6 +213,44 @@ get_header(); ?>
 
     ?>
 
+    <?php
+
+      if ($post->post_name == "module-1") {
+        $reward1 = "Asparagus";
+        $reward2 = "Broccoli";
+        $reward3 = "Carrot";
+        $reward4 = "Green Beans";
+      }
+      elseif ($post->post_name == "module-2") {
+        $reward1 = "Banana";
+        $reward2 = "Apple";
+        $reward3 = "Orange";
+        $reward4 = "Pear";
+      }
+      elseif ($post->post_name == "module-3") {
+        $reward1 = "Oatmeal";
+        $reward2 = "Bread";
+        $reward3 = "Pasta";
+        $reward4 = "Rice";
+      }
+      elseif($post->post_name == "module-4") {
+        $reward1 = "Ham";
+        $reward2 = "Eggs";
+        $reward3 = "Fish";
+        $reward4 = "Chicken";
+      }
+      elseif($post->post_name == "module-5") {
+        $reward1 = "Yogurt";
+        $reward2 = "Cheese";
+        $reward3 = "Milk";
+        $reward4 = "Ice Cream";
+      }
+      else {
+
+      }
+
+    ?>
+
     <div class="question question-<?php echo $i; ?>">
       <div class="container">
         <div class="row">
@@ -231,54 +269,46 @@ get_header(); ?>
         <div class="row">
           <div class="three columns">
             <div class="reward">
-              <div class="reward-image reward-image-1">
+              <div class="reward-image-container">
+                <div class="reward-image reward-image-1">
+                </div>
               </div>
               <div class="answer-text">
-                Asparagus
-                <?php
-
-                  // if () {
-                  //
-                  // }
-                  // elseif () {
-                  //
-                  // }
-                  // elseif () {
-                  //
-                  // }
-                  // else {
-                  //
-                  // }
-
-                ?>
+                <?php echo $reward1; ?>
               </div>
             </div>
           </div>
           <div class="three columns">
             <div class="reward">
-              <div class="reward-image reward-image-2">
+              <div class="reward-image-container">
+                <div class="reward-image reward-image-2">
+                </div>
               </div>
               <div class="answer-text">
-                Broccoli
+                <?php echo $reward2; ?>
               </div>
             </div>
           </div>
           <div class="three columns">
             <div class="reward">
-              <div class="reward-image reward-image-3">
+              <div class="reward-image-container">
+                <div class="reward-image reward-image-3">
+                </div>
               </div>
               <div class="answer-text">
-                Carrot
+                <?php echo $reward3; ?>
               </div>
             </div>
           </div>
           <div class="three columns">
-            <div class="answer">
+            <div class="reward">
                 <?php // echo get_sub_field('a'); ?>
-                <div class="reward-image reward-image-4">
+                <div class="reward-image-container">
+                  <div class="reward-image reward-image-4">
+                  </div>
                 </div>
                 <div class="answer-text">
-                  Green Beans
+                  <?php echo $reward4; ?>
                 </div>
             </div>
           </div>
