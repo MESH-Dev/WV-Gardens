@@ -1115,7 +1115,7 @@ html, body {
   float: right;
 }
 
-/* line 252, sass/layout/_main.scss */
+/* line 254, sass/layout/_main.scss */
 .progress-farm {
   height: 25px;
   width: 100%;
@@ -1123,251 +1123,442 @@ html, body {
   bottom: 0;
 }
 
-/* line 259, sass/layout/_main.scss */
+/* line 261, sass/layout/_main.scss */
+.progress-farm-point {
+  float: left;
+  height: 25px;
+}
+
+/* line 266, sass/layout/_main.scss */
+.progress-farm-point-sprout {
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+}
+
+/* line 275, sass/layout/_main.scss */
+.progress-farm-point-plant {
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+  display: none;
+}
+
+/* line 285, sass/layout/_main.scss */
 .module-1 {
   background: #0ed59c;
 }
-/* line 262, sass/layout/_main.scss */
+/* line 288, sass/layout/_main.scss */
 .module-1 .menu-title {
   background: #0bac7e;
 }
-/* line 265, sass/layout/_main.scss */
+/* line 291, sass/layout/_main.scss */
 .module-1 .menu-module-name {
   color: #53d8b1;
 }
-/* line 268, sass/layout/_main.scss */
+/* line 294, sass/layout/_main.scss */
 .module-1 .menu-sound {
   color: #0bac7e;
 }
-/* line 271, sass/layout/_main.scss */
+/* line 297, sass/layout/_main.scss */
 .module-1 .progress-plate {
   background: #0bac7e;
 }
-/* line 274, sass/layout/_main.scss */
+/* line 300, sass/layout/_main.scss */
 .module-1 .prev {
   background-color: #0bac7e;
   color: #53d8b1;
 }
-/* line 278, sass/layout/_main.scss */
+/* line 304, sass/layout/_main.scss */
 .module-1 .prev .prev-arrow {
   border-right: 20px solid #53d8b1;
 }
-/* line 283, sass/layout/_main.scss */
+/* line 309, sass/layout/_main.scss */
 .module-1 .next {
   background-position: right 20px center;
   background-color: white;
   color: #0bac7e;
 }
-/* line 288, sass/layout/_main.scss */
+/* line 314, sass/layout/_main.scss */
 .module-1 .next .next-arrow {
   border-left: 20px solid #0bac7e;
 }
-/* line 294, sass/layout/_main.scss */
+/* line 320, sass/layout/_main.scss */
 .module-1 .progress-farm {
   background-color: #7f3198;
 }
+/* line 324, sass/layout/_main.scss */
+.module-1 .progress-farm-point-sprout {
+  background-image: url(img/sprout-green.png);
+}
+/* line 328, sass/layout/_main.scss */
+.module-1 .progress-farm-point-plant {
+  background-image: url(img/plant-green.png);
+}
+/* line 332, sass/layout/_main.scss */
+.module-1 .reward-image-1 {
+  background-image: url(img/asparagus.png);
+}
+/* line 336, sass/layout/_main.scss */
+.module-1 .reward-image-2 {
+  background-image: url(img/broccoli.png);
+}
+/* line 340, sass/layout/_main.scss */
+.module-1 .reward-image-3 {
+  background-image: url(img/carrot.png);
+}
+/* line 344, sass/layout/_main.scss */
+.module-1 .reward-image-4 {
+  background-image: url(img/beans.png);
+}
 
-/* line 299, sass/layout/_main.scss */
+/* line 350, sass/layout/_main.scss */
 .module-2 {
   background: #0072bc;
 }
-/* line 302, sass/layout/_main.scss */
+/* line 353, sass/layout/_main.scss */
 .module-2 .menu-title {
   background: #005a94;
 }
-/* line 305, sass/layout/_main.scss */
+/* line 356, sass/layout/_main.scss */
 .module-2 .menu-module-name {
   color: #83ceff;
 }
-/* line 308, sass/layout/_main.scss */
+/* line 359, sass/layout/_main.scss */
 .module-2 .menu-sound {
   color: #005a94;
 }
-/* line 311, sass/layout/_main.scss */
+/* line 362, sass/layout/_main.scss */
 .module-2 .progress-plate {
   background: #005a94;
 }
-/* line 314, sass/layout/_main.scss */
+/* line 365, sass/layout/_main.scss */
 .module-2 .prev {
   background-color: #005a94;
   color: #83ceff;
 }
-/* line 318, sass/layout/_main.scss */
+/* line 369, sass/layout/_main.scss */
 .module-2 .prev .prev-arrow {
   border-right: 20px solid #83ceff;
 }
-/* line 323, sass/layout/_main.scss */
+/* line 374, sass/layout/_main.scss */
 .module-2 .next {
   background-position: right 20px center;
   background-color: white;
   color: #005a94;
 }
-/* line 328, sass/layout/_main.scss */
+/* line 379, sass/layout/_main.scss */
 .module-2 .next .next-arrow {
   border-left: 20px solid #005a94;
 }
+/* line 385, sass/layout/_main.scss */
+.module-2 .progress-farm {
+  background-color: #ffcd2b;
+}
+/* line 389, sass/layout/_main.scss */
+.module-2 .progress-farm-point-sprout {
+  background-image: url(img/sprout-blue.png);
+}
+/* line 393, sass/layout/_main.scss */
+.module-2 .progress-farm-point-plant {
+  background-image: url(img/plant-blue.png);
+}
+/* line 397, sass/layout/_main.scss */
+.module-2 .reward-image-1 {
+  background-image: url(img/banana.png);
+}
+/* line 401, sass/layout/_main.scss */
+.module-2 .reward-image-2 {
+  background-image: url(img/apple.png);
+}
+/* line 405, sass/layout/_main.scss */
+.module-2 .reward-image-3 {
+  background-image: url(img/orange.png);
+}
+/* line 409, sass/layout/_main.scss */
+.module-2 .reward-image-4 {
+  background-image: url(img/pear.png);
+}
 
-/* line 335, sass/layout/_main.scss */
+/* line 415, sass/layout/_main.scss */
 .module-3 {
   background: #f65163;
 }
-/* line 338, sass/layout/_main.scss */
+/* line 418, sass/layout/_main.scss */
 .module-3 .menu-title {
   background: #c04451;
 }
-/* line 341, sass/layout/_main.scss */
+/* line 421, sass/layout/_main.scss */
 .module-3 .menu-module-name {
   color: #ffa4ae;
 }
-/* line 344, sass/layout/_main.scss */
+/* line 424, sass/layout/_main.scss */
 .module-3 .menu-sound {
   color: #c04451;
 }
-/* line 347, sass/layout/_main.scss */
+/* line 427, sass/layout/_main.scss */
 .module-3 .progress-plate {
   background: #c04451;
 }
-/* line 350, sass/layout/_main.scss */
+/* line 430, sass/layout/_main.scss */
 .module-3 .prev {
   background-color: #c04451;
   color: #ffa4ae;
 }
-/* line 354, sass/layout/_main.scss */
+/* line 434, sass/layout/_main.scss */
 .module-3 .prev .prev-arrow {
   border-right: 20px solid #ffa4ae;
 }
-/* line 359, sass/layout/_main.scss */
+/* line 439, sass/layout/_main.scss */
 .module-3 .next {
   background-position: right 20px center;
   background-color: white;
   color: #c04451;
 }
-/* line 364, sass/layout/_main.scss */
+/* line 444, sass/layout/_main.scss */
 .module-3 .next .next-arrow {
   border-left: 20px solid #c04451;
 }
+/* line 450, sass/layout/_main.scss */
+.module-3 .progress-farm {
+  background-color: #0ed59c;
+}
+/* line 454, sass/layout/_main.scss */
+.module-3 .progress-farm-point-sprout {
+  background-image: url(img/sprout-red.png);
+}
+/* line 458, sass/layout/_main.scss */
+.module-3 .progress-farm-point-plant {
+  background-image: url(img/plant-red.png);
+}
+/* line 462, sass/layout/_main.scss */
+.module-3 .reward-image-1 {
+  background-image: url(img/oatmeal.png);
+}
+/* line 466, sass/layout/_main.scss */
+.module-3 .reward-image-2 {
+  background-image: url(img/bread.png);
+}
+/* line 470, sass/layout/_main.scss */
+.module-3 .reward-image-3 {
+  background-image: url(img/pasta.png);
+}
+/* line 474, sass/layout/_main.scss */
+.module-3 .reward-image-4 {
+  background-image: url(img/rice.png);
+}
 
-/* line 371, sass/layout/_main.scss */
+/* line 479, sass/layout/_main.scss */
 .module-4 {
   background: #7f3198;
 }
-/* line 374, sass/layout/_main.scss */
+/* line 482, sass/layout/_main.scss */
 .module-4 .menu-title {
   background: #5c007a;
 }
-/* line 377, sass/layout/_main.scss */
+/* line 485, sass/layout/_main.scss */
 .module-4 .menu-module-name {
   color: #b473c9;
 }
-/* line 380, sass/layout/_main.scss */
+/* line 488, sass/layout/_main.scss */
 .module-4 .menu-sound {
   color: #5c007a;
 }
-/* line 383, sass/layout/_main.scss */
+/* line 491, sass/layout/_main.scss */
 .module-4 .progress-plate {
   background: #5c007a;
 }
-/* line 386, sass/layout/_main.scss */
+/* line 494, sass/layout/_main.scss */
 .module-4 .prev {
   background-color: #5c007a;
   color: #b473c9;
 }
-/* line 390, sass/layout/_main.scss */
+/* line 498, sass/layout/_main.scss */
 .module-4 .prev .prev-arrow {
   border-right: 20px solid #b473c9;
 }
-/* line 395, sass/layout/_main.scss */
+/* line 503, sass/layout/_main.scss */
 .module-4 .next {
   background-position: right 20px center;
   background-color: white;
   color: #5c007a;
 }
-/* line 400, sass/layout/_main.scss */
+/* line 508, sass/layout/_main.scss */
 .module-4 .next .next-arrow {
   border-left: 20px solid #5c007a;
 }
+/* line 514, sass/layout/_main.scss */
+.module-4 .progress-farm {
+  background-color: #0ed59c;
+}
+/* line 518, sass/layout/_main.scss */
+.module-4 .progress-farm-point-sprout {
+  background-image: url(img/sprout-purple.png);
+}
+/* line 522, sass/layout/_main.scss */
+.module-4 .progress-farm-point-plant {
+  background-image: url(img/plant-purple.png);
+}
+/* line 526, sass/layout/_main.scss */
+.module-4 .reward-image-1 {
+  background-image: url(img/oatmeal.png);
+}
+/* line 530, sass/layout/_main.scss */
+.module-4 .reward-image-2 {
+  background-image: url(img/bread.png);
+}
+/* line 534, sass/layout/_main.scss */
+.module-4 .reward-image-3 {
+  background-image: url(img/pasta.png);
+}
+/* line 538, sass/layout/_main.scss */
+.module-4 .reward-image-4 {
+  background-image: url(img/rice.png);
+}
 
-/* line 407, sass/layout/_main.scss */
+/* line 543, sass/layout/_main.scss */
 .module-5 {
   background: #ffcd2b;
 }
-/* line 410, sass/layout/_main.scss */
+/* line 546, sass/layout/_main.scss */
 .module-5 .menu-title {
   background: #de9f27;
 }
-/* line 413, sass/layout/_main.scss */
+/* line 549, sass/layout/_main.scss */
 .module-5 .menu-module-name {
   color: #ffe07d;
 }
-/* line 416, sass/layout/_main.scss */
+/* line 552, sass/layout/_main.scss */
 .module-5 .menu-sound {
   color: #de9f27;
 }
-/* line 419, sass/layout/_main.scss */
+/* line 555, sass/layout/_main.scss */
 .module-5 .progress-plate {
   background: #de9f27;
 }
-/* line 422, sass/layout/_main.scss */
+/* line 558, sass/layout/_main.scss */
 .module-5 .prev {
   background-color: #de9f27;
   color: #ffe07d;
 }
-/* line 426, sass/layout/_main.scss */
+/* line 562, sass/layout/_main.scss */
 .module-5 .prev .prev-arrow {
   border-right: 20px solid #ffe07d;
 }
-/* line 431, sass/layout/_main.scss */
+/* line 567, sass/layout/_main.scss */
 .module-5 .next {
   background-position: right 20px center;
   background-color: white;
   color: #de9f27;
 }
-/* line 436, sass/layout/_main.scss */
+/* line 572, sass/layout/_main.scss */
 .module-5 .next .next-arrow {
   border-left: 20px solid #de9f27;
 }
+/* line 578, sass/layout/_main.scss */
+.module-5 .progress-farm {
+  background-color: #0072bc;
+}
+/* line 582, sass/layout/_main.scss */
+.module-5 .progress-farm-point-sprout {
+  background-image: url(img/sprout-blue.png);
+}
+/* line 586, sass/layout/_main.scss */
+.module-5 .progress-farm-point-plant {
+  background-image: url(img/plant-blue.png);
+}
+/* line 590, sass/layout/_main.scss */
+.module-5 .reward-image-1 {
+  background-image: url(img/ham.png);
+}
+/* line 594, sass/layout/_main.scss */
+.module-5 .reward-image-2 {
+  background-image: url(img/eggs.png);
+}
+/* line 598, sass/layout/_main.scss */
+.module-5 .reward-image-3 {
+  background-image: url(img/fish.png);
+}
+/* line 602, sass/layout/_main.scss */
+.module-5 .reward-image-4 {
+  background-image: url(img/chicken.png);
+}
 
-/* line 443, sass/layout/_main.scss */
+/* line 607, sass/layout/_main.scss */
 .module-6 {
   background: #ff9327;
 }
-/* line 446, sass/layout/_main.scss */
+/* line 610, sass/layout/_main.scss */
 .module-6 .menu-title {
   background: #e67300;
 }
-/* line 449, sass/layout/_main.scss */
+/* line 613, sass/layout/_main.scss */
 .module-6 .menu-module-name {
   color: #ffb45c;
 }
-/* line 452, sass/layout/_main.scss */
+/* line 616, sass/layout/_main.scss */
 .module-6 .menu-sound {
   color: #e67300;
 }
-/* line 455, sass/layout/_main.scss */
+/* line 619, sass/layout/_main.scss */
 .module-6 .progress-plate {
   background: #e67300;
 }
-/* line 458, sass/layout/_main.scss */
+/* line 622, sass/layout/_main.scss */
 .module-6 .prev {
   background-color: #e67300;
   color: #ffb45c;
 }
-/* line 462, sass/layout/_main.scss */
+/* line 626, sass/layout/_main.scss */
 .module-6 .prev .prev-arrow {
   border-right: 20px solid #ffb45c;
 }
-/* line 467, sass/layout/_main.scss */
+/* line 631, sass/layout/_main.scss */
 .module-6 .next {
   background-position: right 20px center;
   background-color: white;
   color: #e67300;
 }
-/* line 472, sass/layout/_main.scss */
+/* line 636, sass/layout/_main.scss */
 .module-6 .next .next-arrow {
   border-left: 20px solid #e67300;
 }
+/* line 642, sass/layout/_main.scss */
+.module-6 .progress-farm {
+  background-color: #7f3198;
+}
+/* line 646, sass/layout/_main.scss */
+.module-6 .progress-farm-point-sprout {
+  background-image: url(img/sprout-purple.png);
+}
+/* line 650, sass/layout/_main.scss */
+.module-6 .progress-farm-point-plant {
+  background-image: url(img/plant-purple.png);
+}
+/* line 654, sass/layout/_main.scss */
+.module-6 .reward-image-1 {
+  background-image: url(img/yogurt.png);
+}
+/* line 658, sass/layout/_main.scss */
+.module-6 .reward-image-2 {
+  background-image: url(img/cheese.png);
+}
+/* line 662, sass/layout/_main.scss */
+.module-6 .reward-image-3 {
+  background-image: url(img/milk.png);
+}
+/* line 666, sass/layout/_main.scss */
+.module-6 .reward-image-4 {
+  background-image: url(img/icecream.png);
+}
 
-/* line 479, sass/layout/_main.scss */
+/* line 671, sass/layout/_main.scss */
 .progress-plate {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -1377,19 +1568,19 @@ html, body {
   height: 100px;
   width: 100px;
 }
-/* line 488, sass/layout/_main.scss */
+/* line 680, sass/layout/_main.scss */
 .progress-plate img {
   position: absolute;
   left: 8px;
   top: 10px;
 }
 
-/* line 495, sass/layout/_main.scss */
+/* line 687, sass/layout/_main.scss */
 .module-image {
   text-align: center;
 }
 
-/* line 499, sass/layout/_main.scss */
+/* line 691, sass/layout/_main.scss */
 .answer {
   text-align: center;
   font-weight: bold;
@@ -1397,75 +1588,63 @@ html, body {
   color: white;
 }
 
-/* line 506, sass/layout/_main.scss */
+/* line 698, sass/layout/_main.scss */
 .answer-image {
   background-repeat: no-repeat;
   background-position: center;
   padding: 20px;
+  height: 130px;
 }
 
-/* line 512, sass/layout/_main.scss */
+/* line 705, sass/layout/_main.scss */
+.reward {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* line 713, sass/layout/_main.scss */
+.reward-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  height: 140px;
+}
+
+/* line 720, sass/layout/_main.scss */
 .question {
   display: none;
 }
 
-/* line 516, sass/layout/_main.scss */
+/* line 724, sass/layout/_main.scss */
 .module-number {
   color: #7f3198;
   line-height: 0;
 }
 
-/* line 521, sass/layout/_main.scss */
+/* line 729, sass/layout/_main.scss */
 .answer-text {
   margin: 10px;
 }
 
-/* line 525, sass/layout/_main.scss */
+/* line 733, sass/layout/_main.scss */
 .module-food {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-/* line 530, sass/layout/_main.scss */
+/* line 738, sass/layout/_main.scss */
 .module-food img {
   float: left;
 }
 
-/* line 535, sass/layout/_main.scss */
+/* line 743, sass/layout/_main.scss */
 .page-template-login {
   background-color: #7f3198;
   background-image: url(img/vegetables.png);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-/* line 542, sass/layout/_main.scss */
-.progress-farm-point {
-  float: left;
-  height: 25px;
-}
-
-/* line 547, sass/layout/_main.scss */
-.progress-farm-point-sprout {
-  background-image: url(img/sprout-green.png);
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  position: relative;
-  top: -20px;
-}
-
-/* line 557, sass/layout/_main.scss */
-.progress-farm-point-plant {
-  background-image: url(img/plant-green.png);
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 100px;
-  margin: auto;
-  position: relative;
-  top: -20px;
-  display: none;
 }
 
 /* line 1, sass/modules/_menus.scss */

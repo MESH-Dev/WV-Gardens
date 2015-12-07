@@ -2,10 +2,20 @@
 /*
 * Template Name: Student Login
 */
-get_header(); ?>
+
+if ( is_user_logged_in() ) {
+  wp_redirect( get_home_url() . '/modules' );
+    exit;
+}
+
+get_header();
+
+?>
 
 <div id="primary">
 	<div id="content" role="main">
+
+
 
 			<div class="container">
 				<div class="six columns">
@@ -39,19 +49,22 @@ get_header(); ?>
 
 	        		?>
 
-						<div class="login-form">
+							<div class="login-form">
 
-							<select id="schools"></select><br/>
-							<select id="teachers"></select><br/>
-							<input id="password" type="password" /><br/>
-							<select id="students"></select><br/>
-							<button id="submit">Sign In!</button>
-							<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
+								<select id="schools"></select><br/>
+								<select id="teachers"></select><br/>
+								<input id="password" type="password" /><br/>
+								<select id="students"></select><br/>
+								<button id="submit">Sign In!</button>
+								<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
 
-						</div>
+							</div>
+
+						<?php endwhile; ?>
 					</div>
 				</div>
 			</div>
+
 
 
 
@@ -158,7 +171,7 @@ get_header(); ?>
 
       </script>
 
-		<?php endwhile; ?>
+
 
 	</div><!-- #content -->
 </div><!-- #primary -->

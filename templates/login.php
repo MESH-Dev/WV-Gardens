@@ -1,6 +1,12 @@
 <?php /*
 * Template Name: Login
 */
+
+if ( is_user_logged_in() ) {
+  wp_redirect( get_home_url() . '/modules' );
+    exit;
+}
+
 get_header(); ?>
 
 <main id="main" class="site-main" role="main">

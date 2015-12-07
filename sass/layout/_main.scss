@@ -249,11 +249,37 @@
   }
 }
 
+// Progress bar
+
 .progress-farm {
   height: 25px;
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+
+.progress-farm-point {
+  float: left;
+  height: 25px;
+}
+
+.progress-farm-point-sprout {
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+}
+
+.progress-farm-point-plant {
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  top: -20px;
+  display: none;
 }
 
 .module-1 {
@@ -294,6 +320,31 @@
   .progress-farm {
     background-color: $purple;
   }
+
+  .progress-farm-point-sprout {
+    background-image: url(img/sprout-green.png);
+  }
+
+  .progress-farm-point-plant {
+    background-image: url(img/plant-green.png);
+  }
+
+  .reward-image-1 {
+    background-image: url(img/asparagus.png);
+  }
+
+  .reward-image-2 {
+    background-image: url(img/broccoli.png);
+  }
+
+  .reward-image-3 {
+    background-image: url(img/carrot.png);
+  }
+
+  .reward-image-4 {
+    background-image: url(img/beans.png);
+  }
+
 }
 
 .module-2 {
@@ -330,6 +381,35 @@
     }
 
   }
+
+  .progress-farm {
+    background-color: $yellow;
+  }
+
+  .progress-farm-point-sprout {
+    background-image: url(img/sprout-blue.png);
+  }
+
+  .progress-farm-point-plant {
+    background-image: url(img/plant-blue.png);
+  }
+
+  .reward-image-1 {
+    background-image: url(img/banana.png);
+  }
+
+  .reward-image-2 {
+    background-image: url(img/apple.png);
+  }
+
+  .reward-image-3 {
+    background-image: url(img/orange.png);
+  }
+
+  .reward-image-4 {
+    background-image: url(img/pear.png);
+  }
+
 }
 
 .module-3 {
@@ -365,6 +445,34 @@
       border-left: 20px solid $dark-red;
     }
 
+  }
+
+  .progress-farm {
+    background-color: $green;
+  }
+
+  .progress-farm-point-sprout {
+    background-image: url(img/sprout-red.png);
+  }
+
+  .progress-farm-point-plant {
+    background-image: url(img/plant-red.png);
+  }
+
+  .reward-image-1 {
+    background-image: url(img/oatmeal.png);
+  }
+
+  .reward-image-2 {
+    background-image: url(img/bread.png);
+  }
+
+  .reward-image-3 {
+    background-image: url(img/pasta.png);
+  }
+
+  .reward-image-4 {
+    background-image: url(img/rice.png);
   }
 }
 
@@ -402,6 +510,34 @@
     }
 
   }
+
+  .progress-farm {
+    background-color: $green;
+  }
+
+  .progress-farm-point-sprout {
+    background-image: url(img/sprout-purple.png);
+  }
+
+  .progress-farm-point-plant {
+    background-image: url(img/plant-purple.png);
+  }
+
+  .reward-image-1 {
+    background-image: url(img/oatmeal.png);
+  }
+
+  .reward-image-2 {
+    background-image: url(img/bread.png);
+  }
+
+  .reward-image-3 {
+    background-image: url(img/pasta.png);
+  }
+
+  .reward-image-4 {
+    background-image: url(img/rice.png);
+  }
 }
 
 .module-5 {
@@ -437,6 +573,34 @@
       border-left: 20px solid $dark-yellow;
     }
 
+  }
+
+  .progress-farm {
+    background-color: $blue;
+  }
+
+  .progress-farm-point-sprout {
+    background-image: url(img/sprout-blue.png);
+  }
+
+  .progress-farm-point-plant {
+    background-image: url(img/plant-blue.png);
+  }
+
+  .reward-image-1 {
+    background-image: url(img/ham.png);
+  }
+
+  .reward-image-2 {
+    background-image: url(img/eggs.png);
+  }
+
+  .reward-image-3 {
+    background-image: url(img/fish.png);
+  }
+
+  .reward-image-4 {
+    background-image: url(img/chicken.png);
   }
 }
 
@@ -474,6 +638,34 @@
     }
 
   }
+
+  .progress-farm {
+    background-color: $purple;
+  }
+
+  .progress-farm-point-sprout {
+    background-image: url(img/sprout-purple.png);
+  }
+
+  .progress-farm-point-plant {
+    background-image: url(img/plant-purple.png);
+  }
+
+  .reward-image-1 {
+    background-image: url(img/yogurt.png);
+  }
+
+  .reward-image-2 {
+    background-image: url(img/cheese.png);
+  }
+
+  .reward-image-3 {
+    background-image: url(img/milk.png);
+  }
+
+  .reward-image-4 {
+    background-image: url(img/icecream.png);
+  }
 }
 
 .progress-plate {
@@ -507,6 +699,22 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 20px;
+  height: 130px;
+}
+
+.reward {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+
+.reward-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  height: 140px;
 }
 
 .question {
@@ -537,30 +745,4 @@
   background-image: url(img/vegetables.png);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.progress-farm-point {
-  float: left;
-  height: 25px;
-}
-
-.progress-farm-point-sprout {
-  background-image: url(img/sprout-green.png);
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  position: relative;
-  top: -20px;
-}
-
-.progress-farm-point-plant {
-  background-image: url(img/plant-green.png);
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 100px;
-  margin: auto;
-  position: relative;
-  top: -20px;
-  display: none;
 }

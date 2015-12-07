@@ -52,13 +52,69 @@ function create_post_name( $post_id ){
 			$teacher = get_field('teacher', $post_id);
 
 
-		  	$my_post = array(
-		      'ID'           => $post_id,
-		      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name,
-		  	);
+			// This is the list of students previously on the CMS
+
+			$old_students = get_post_meta( $post_id, 'studentlist');
+			update_post_meta( $post_id, 'studentlist1', $old_students );
+
+			// This is the list of students currently on the CMS
+
+			$students = array();
+			$i = 0;
+
+			// check if the repeater field has rows of data
+			if( have_rows('new_students') ):
+
+			 	// loop through the rows of data
+		    while ( have_rows('new_students') ) : the_row();
+
+	        // display a sub field value
+	        $first_name = get_sub_field('first_name');
+					$last_name = get_sub_field('last_name');
+
+					$student = array (
+						'first_name' => $first_name,
+						'last_name' => $last_name
+					);
+
+					$students[$i][] = $student;
+					$i++;
+
+		    endwhile;
+
+			else :
+
+			    // no rows found
+
+			endif;
+
+
+			foreach($students as $student) {
+
+				$is_new_student = true;
+
+				foreach($old_students as $old_student) {
+					if (($student['first_name'] == $old_student['first_name']) && ($student['last_name'] == $old_student['last_name'])) {
+						$is_new_student = false;
+					}
+				}
+
+				if ($is_new_student == true) {
+					update_post_meta( $post_id, 'studentnew', $student['first_name']);
+				}
+
+			}
+
+
+
+	  	$my_post = array(
+	      'ID'           => $post_id,
+	      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name,
+	  	);
 
 			// Update the post into the database
 			wp_update_post( $my_post );
+			update_post_meta( $post_id, 'studentlist', $students );
 
 			// re-hook this function
 			add_action('save_post', 'create_post_name');
@@ -67,6 +123,8 @@ function create_post_name( $post_id ){
 	}
 }
 add_action('save_post', 'create_post_name');
+
+
 
 
 //Register WP Menus

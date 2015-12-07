@@ -1,5 +1,11 @@
 <?php
 
+if ( !is_user_logged_in() ) {
+
+  wp_redirect( get_home_url() );
+    exit;
+}
+
 get_header(); ?>
 
 <main id="main" class="site-main" role="main">
@@ -51,15 +57,15 @@ get_header(); ?>
 
     <?php
 
-    if( have_rows('questions', $class) ):
+    if( have_rows('questions') ):
 
       $i = 0;
 
-      while ( have_rows('questions', $class) ) : the_row();
+      while ( have_rows('questions') ) : the_row();
 
         $i++;
         // Your loop code
-        $question = get_sub_field('question', $class);
+        $question = get_sub_field('question');
 
         ?>
 
@@ -91,66 +97,79 @@ get_header(); ?>
             </div>
             <div class="row">
 
-                <?php
+              <?php if( get_field('question_type', $question->ID) == 'multiple' ): ?>
 
-                if( have_rows('answers', $question->ID) ):
-                  while ( have_rows('answers', $question->ID) ) : the_row();
-
-                    ?>
-
-                      <div class="three columns">
-                        <div class="answer">
-                            <?php // echo get_sub_field('a'); ?>
-                            <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/star.png)" class="answer-image">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/lot.png" />
-                            </div>
-                            <div class="answer-text">
-                              A lot
-                            </div>
-                        </div>
+                <div class="three columns">
+                  <div class="answer">
+                      <?php // echo get_sub_field('a'); ?>
+                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/star.png)" class="answer-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/lot.png" />
                       </div>
-                      <div class="three columns">
-                        <div class="answer">
-                            <?php // echo get_sub_field('b'); ?>
-                            <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/circle.png") class="answer-image">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
-                            </div>
-                            <div class="answer-text">
-                              A little
-                            </div>
-                        </div>
+                      <div class="answer-text">
+                        A lot
                       </div>
-                      <div class="three columns">
-                        <div class="answer">
-                            <?php // echo get_sub_field('c'); ?>
-                            <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/cloud.png") class="answer-image">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
-                            </div>
-                            <div class="answer-text">
-                              Not very much
-                            </div>
-                        </div>
+                  </div>
+                </div>
+                <div class="three columns">
+                  <div class="answer">
+                      <?php // echo get_sub_field('b'); ?>
+                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/circle.png") class="answer-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
                       </div>
-                      <div class="three columns">
-                        <div class="answer">
-                            <?php // echo get_sub_field('d'); ?>
-                            <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/x.png") class="answer-image">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/all.png" />
-                            </div>
-                            <div class="answer-text">
-                              Not at all
-                            </div>
-                        </div>
+                      <div class="answer-text">
+                        A little
                       </div>
+                  </div>
+                </div>
+                <div class="three columns">
+                  <div class="answer">
+                      <?php // echo get_sub_field('c'); ?>
+                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/cloud.png") class="answer-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
+                      </div>
+                      <div class="answer-text">
+                        Not very much
+                      </div>
+                  </div>
+                </div>
+                <div class="three columns">
+                  <div class="answer">
+                      <?php // echo get_sub_field('d'); ?>
+                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/x.png") class="answer-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/all.png" />
+                      </div>
+                      <div class="answer-text">
+                        Not at all
+                      </div>
+                  </div>
+                </div>
 
-                    <?php
+              <?php else: ?>
 
-                  endwhile;
-                else:
+                <div class="three columns offset-by-three">
+                  <div class="answer">
+                      <?php // echo get_sub_field('b'); ?>
+                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/circle.png") class="answer-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
+                      </div>
+                      <div class="answer-text">
+                        Yes
+                      </div>
+                  </div>
+                </div>
+                <div class="three columns">
+                  <div class="answer">
+                      <?php // echo get_sub_field('c'); ?>
+                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/cloud.png") class="answer-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
+                      </div>
+                      <div class="answer-text">
+                        No
+                      </div>
+                  </div>
+                </div>
 
-                endif;
-
-                ?>
+              <?php endif; ?>
 
             </div>
             <div class="row">
@@ -190,6 +209,8 @@ get_header(); ?>
 
     $i++;
 
+
+
     ?>
 
     <div class="question question-<?php echo $i; ?>">
@@ -198,19 +219,80 @@ get_header(); ?>
           <div class="six columns">
             <div class="module-text">
               <h1>Congratulations!</h1>
-              <h1>You've completed <span>GAME NAME</span> and filled your plate with healthy food!</h1>
+              <h1>You've completed <span><?php the_title(); ?></span>. You get to add one <span>veggie</span> to your plate.</h1>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="twelve columns">
+          <div class="six columns">
             <div class="module-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/foodplate.png" />
+              <img src="<?php echo get_template_directory_uri(); ?>/img/farmer.png" />
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="three columns offset-by-nine">
+          <div class="three columns">
+            <div class="reward">
+              <div class="reward-image reward-image-1">
+              </div>
+              <div class="answer-text">
+                Asparagus
+                <?php
+
+                  // if () {
+                  //
+                  // }
+                  // elseif () {
+                  //
+                  // }
+                  // elseif () {
+                  //
+                  // }
+                  // else {
+                  //
+                  // }
+
+                ?>
+              </div>
+            </div>
+          </div>
+          <div class="three columns">
+            <div class="reward">
+              <div class="reward-image reward-image-2">
+              </div>
+              <div class="answer-text">
+                Broccoli
+              </div>
+            </div>
+          </div>
+          <div class="three columns">
+            <div class="reward">
+              <div class="reward-image reward-image-3">
+              </div>
+              <div class="answer-text">
+                Carrot
+              </div>
+            </div>
+          </div>
+          <div class="three columns">
+            <div class="answer">
+                <?php // echo get_sub_field('a'); ?>
+                <div class="reward-image reward-image-4">
+                </div>
+                <div class="answer-text">
+                  Green Beans
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="three columns">
+            <div class="module-section">
+              <button class="prev" style="display: inline-block;">
+                <div class="prev-text">Previous Question</div>
+                <div class="prev-arrow"></div>
+              </button>
+            </div>
+          </div>
+          <div class="three columns offset-by-six">
             <div class="module-section">
               <button class="next" style="display: inline-block;">Print My Full Healthy Plate</button>
             </div>
