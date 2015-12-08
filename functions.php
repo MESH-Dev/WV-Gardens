@@ -167,5 +167,30 @@ function allow_programmatic_login( $user, $username, $password ) {
 add_action( 'wp_ajax_nopriv_check_login', 'check_login' );
 add_action( 'wp_ajax_check_login', 'check_login' );
 
+function save_answer() {
+
+  $answer = '';
+
+  if (isset($_REQUEST['answer'])) {
+    $answer = $_REQUEST['answer'];
+  }
+
+  global $wpdb;
+  $wpdb->insert(
+    'sessions',
+    array(
+  		'module_id' => 1,
+  		'complete' => 0,
+      'answers' => $fivesdrafts[0]
+	  )
+  );
+
+  die;
+
+}
+
+add_action('wp_ajax_save_answer', 'save_answer');
+add_action('wp_ajax_nopriv_save_answer', 'save_answer');
+
 
 ?>

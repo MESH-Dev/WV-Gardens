@@ -100,9 +100,9 @@ get_header(); ?>
               <?php if( get_field('question_type', $question->ID) == 'multiple' ): ?>
 
                 <div class="three columns">
-                  <div class="answer">
+                  <div class="answer answer-1">
                       <?php // echo get_sub_field('a'); ?>
-                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/star.png)" class="answer-image">
+                      <div class="answer-image answer-image-1">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/lot.png" />
                       </div>
                       <div class="answer-text">
@@ -111,9 +111,9 @@ get_header(); ?>
                   </div>
                 </div>
                 <div class="three columns">
-                  <div class="answer">
+                  <div class="answer answer-2">
                       <?php // echo get_sub_field('b'); ?>
-                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/circle.png") class="answer-image">
+                      <div class="answer-image answer-image-2">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
                       </div>
                       <div class="answer-text">
@@ -122,9 +122,9 @@ get_header(); ?>
                   </div>
                 </div>
                 <div class="three columns">
-                  <div class="answer">
+                  <div class="answer answer-3">
                       <?php // echo get_sub_field('c'); ?>
-                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/cloud.png") class="answer-image">
+                      <div class="answer-image answer-image-3">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
                       </div>
                       <div class="answer-text">
@@ -133,9 +133,9 @@ get_header(); ?>
                   </div>
                 </div>
                 <div class="three columns">
-                  <div class="answer">
+                  <div class="answer answer-4">
                       <?php // echo get_sub_field('d'); ?>
-                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/x.png") class="answer-image">
+                      <div class="answer-image answer-image-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/all.png" />
                       </div>
                       <div class="answer-text">
@@ -147,9 +147,9 @@ get_header(); ?>
               <?php else: ?>
 
                 <div class="three columns offset-by-three">
-                  <div class="answer">
+                  <div class="answer answer-2">
                       <?php // echo get_sub_field('b'); ?>
-                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/circle.png") class="answer-image">
+                      <div class="answer-image answer-image-2">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
                       </div>
                       <div class="answer-text">
@@ -158,9 +158,9 @@ get_header(); ?>
                   </div>
                 </div>
                 <div class="three columns">
-                  <div class="answer">
+                  <div class="answer answer-3">
                       <?php // echo get_sub_field('c'); ?>
-                      <div style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/cloud.png") class="answer-image">
+                      <div class="answer-image answer-image-3">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
                       </div>
                       <div class="answer-text">
@@ -209,8 +209,6 @@ get_header(); ?>
 
     $i++;
 
-
-
     ?>
 
     <?php
@@ -240,6 +238,12 @@ get_header(); ?>
         $reward4 = "Chicken";
       }
       elseif($post->post_name == "module-5") {
+        $reward1 = "Yogurt";
+        $reward2 = "Cheese";
+        $reward3 = "Milk";
+        $reward4 = "Ice Cream";
+      }
+      elseif($post->post_name == "module-6") {
         $reward1 = "Yogurt";
         $reward2 = "Cheese";
         $reward3 = "Milk";
@@ -331,6 +335,34 @@ get_header(); ?>
       </div>
     </div>
 
+    <?php $i++; ?>
+
+    <div class="question question-<?php echo $i; ?>">
+      <div class="container">
+        <div class="row">
+          <div class="six columns">
+            <div class="module-text">
+              <h1>Congratulations!</h1>
+              <h1>You've added one <span class="reward-item"></span> to your plate.</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+          <div class="three columns offset-by-nine">
+            <div class="module-section">
+              <button class="next" style="display: inline-block;">
+                Return to Home
+                <div class="next-arrow"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </main><!-- #main -->
 
 <div class="progress-farm">
@@ -378,6 +410,16 @@ get_header(); ?>
       jQuery(currentQuestion).hide();
       jQuery(nextQuestion).show();
     }
+
+    // Store all the answers in an array
+
+    var answers = [];
+    
+
+    // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answer=', success: function(result) {
+    //
+    // }});
+
 
   });
 

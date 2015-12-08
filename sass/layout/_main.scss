@@ -135,6 +135,7 @@
     color: white;
     text-weight: bold;
     position: relative;
+    cursor: pointer;
 
     h2 {
       line-height: 0;
@@ -612,19 +613,19 @@
   }
 
   .reward-image-1 {
-    background-image: url(img/ham.png);
+    background-image: url(img/yogurt.png);
   }
 
   .reward-image-2 {
-    background-image: url(img/eggs.png);
+    background-image: url(img/cheese.png);
   }
 
   .reward-image-3 {
-    background-image: url(img/fish.png);
+    background-image: url(img/milk.png);
   }
 
   .reward-image-4 {
-    background-image: url(img/chicken.png);
+    background-image: url(img/icecream.png);
   }
 }
 
@@ -728,12 +729,102 @@
 
   img {
     height: 95px;
+  }
+}
 
-    &:hover {
+.answer-image-1 {
+  background-image: url(img/star.png);
+
+  &:hover {
+    background-image: url(img/star-hover.png);
+
+    img {
       height: 180px;
       position: relative;
       top: -60px;
     }
+  }
+}
+
+.answer-image-1-hover {
+  background-image: url(img/star-hover.png);
+
+  img {
+    height: 180px;
+    position: relative;
+    top: -60px;
+  }
+}
+
+.answer-image-2 {
+  background-image: url(img/circle.png);
+
+  &:hover {
+    background-image: url(img/little-hover.png);
+
+    img {
+      height: 180px;
+      position: relative;
+      top: -60px;
+    }
+  }
+}
+
+.answer-image-2-hover {
+  background-image: url(img/little-hover.png);
+
+  img {
+    height: 180px;
+    position: relative;
+    top: -60px;
+  }
+}
+
+.answer-image-3 {
+  background-image: url(img/cloud.png);
+
+  &:hover {
+    background-image: url(img/cloud-hover.png);
+
+    img {
+      height: 180px;
+      position: relative;
+      top: -60px;
+    }
+  }
+}
+
+.answer-image-3-hover {
+  background-image: url(img/cloud-hover.png);
+
+  img {
+    height: 180px;
+    position: relative;
+    top: -60px;
+  }
+}
+
+.answer-image-4 {
+  background-image: url(img/x.png);
+
+  &:hover {
+    background-image: url(img/x-hover.png);
+
+    img {
+      height: 180px;
+      position: relative;
+      top: -60px;
+    }
+  }
+}
+
+.answer-image-4-hover {
+  background-image: url(img/x-hover.png);
+
+  img {
+    height: 180px;
+    position: relative;
+    top: -60px;
   }
 }
 
