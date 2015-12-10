@@ -45,10 +45,7 @@ get_header(); ?>
           </div>
           <div class="three columns">
             <div class="module-section">
-              <button class="next" style="display: inline-block;">
-                Dig In!
-                <div class="next-arrow"></div>
-              </button>
+              <button class="next next-active" style="display: inline-block;">Dig In!<div class="next-arrow"></div></button>
             </div>
           </div>
         </div>
@@ -60,10 +57,12 @@ get_header(); ?>
     if( have_rows('questions') ):
 
       $i = 0;
+      $q = 0;
 
       while ( have_rows('questions') ) : the_row();
 
         $i++;
+        $q++;
         // Your loop code
         $question = get_sub_field('question');
 
@@ -105,9 +104,7 @@ get_header(); ?>
                       <div class="answer-image answer-image-1">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/lot.png" />
                       </div>
-                      <div class="answer-text">
-                        A lot
-                      </div>
+                      <div class="answer-text">A lot</div>
                   </div>
                 </div>
                 <div class="three columns">
@@ -116,9 +113,7 @@ get_header(); ?>
                       <div class="answer-image answer-image-2">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
                       </div>
-                      <div class="answer-text">
-                        A little
-                      </div>
+                      <div class="answer-text">A little</div>
                   </div>
                 </div>
                 <div class="three columns">
@@ -127,9 +122,7 @@ get_header(); ?>
                       <div class="answer-image answer-image-3">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
                       </div>
-                      <div class="answer-text">
-                        Not very much
-                      </div>
+                      <div class="answer-text">Not very much</div>
                   </div>
                 </div>
                 <div class="three columns">
@@ -138,9 +131,7 @@ get_header(); ?>
                       <div class="answer-image answer-image-4">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/all.png" />
                       </div>
-                      <div class="answer-text">
-                        Not at all
-                      </div>
+                      <div class="answer-text">Not at all</div>
                   </div>
                 </div>
 
@@ -152,9 +143,7 @@ get_header(); ?>
                       <div class="answer-image answer-image-2">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
                       </div>
-                      <div class="answer-text">
-                        Yes
-                      </div>
+                      <div class="answer-text">Yes</div>
                   </div>
                 </div>
                 <div class="three columns">
@@ -163,9 +152,7 @@ get_header(); ?>
                       <div class="answer-image answer-image-3">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
                       </div>
-                      <div class="answer-text">
-                        No
-                      </div>
+                      <div class="answer-text">No</div>
                   </div>
                 </div>
 
@@ -183,7 +170,7 @@ get_header(); ?>
               </div>
               <div class="three columns offset-by-six">
                 <div class="module-section">
-                  <button class="next" style="display: inline-block;">
+                  <button class="next next-inactive next-active" style="display: inline-block;">
                     <div class="next-text">Next Question</div>
                     <div class="next-arrow"></div>
                   </button>
@@ -272,48 +259,40 @@ get_header(); ?>
         </div>
         <div class="row">
           <div class="three columns">
-            <div class="reward">
+            <div class="reward reward-1">
               <div class="reward-image-container">
                 <div class="reward-image reward-image-1">
                 </div>
               </div>
-              <div class="answer-text">
-                <?php echo $reward1; ?>
-              </div>
+              <div class="reward-text"><?php echo $reward1; ?></div>
             </div>
           </div>
           <div class="three columns">
-            <div class="reward">
+            <div class="reward reward-2">
               <div class="reward-image-container">
                 <div class="reward-image reward-image-2">
                 </div>
               </div>
-              <div class="answer-text">
-                <?php echo $reward2; ?>
-              </div>
+              <div class="reward-text"><?php echo $reward2; ?></div>
             </div>
           </div>
           <div class="three columns">
-            <div class="reward">
+            <div class="reward reward-3">
               <div class="reward-image-container">
                 <div class="reward-image reward-image-3">
                 </div>
               </div>
-              <div class="answer-text">
-                <?php echo $reward3; ?>
-              </div>
+              <div class="reward-text"><?php echo $reward3; ?></div>
             </div>
           </div>
           <div class="three columns">
-            <div class="reward">
+            <div class="reward reward-4">
                 <?php // echo get_sub_field('a'); ?>
                 <div class="reward-image-container">
                   <div class="reward-image reward-image-4">
                   </div>
                 </div>
-                <div class="answer-text">
-                  <?php echo $reward4; ?>
-                </div>
+                <div class="reward-text"><?php echo $reward4; ?></div>
             </div>
           </div>
         </div>
@@ -328,7 +307,7 @@ get_header(); ?>
           </div>
           <div class="three columns offset-by-six">
             <div class="module-section">
-              <button class="next" style="display: inline-block;">Print My Full Healthy Plate</button>
+              <button class="print" style="display: inline-block;">Print My Full Healthy Plate</button>
             </div>
           </div>
         </div>
@@ -353,10 +332,7 @@ get_header(); ?>
         <div class="row">
           <div class="three columns offset-by-nine">
             <div class="module-section">
-              <button class="next" style="display: inline-block;">
-                Return to Home
-                <div class="next-arrow"></div>
-              </button>
+              <button class="next" style="display: inline-block;">Return to Home <div class="next-arrow"></div></button>
             </div>
           </div>
         </div>
@@ -369,13 +345,18 @@ get_header(); ?>
   <div class="container">
     <div class="twelve columns">
 
+      <div class="progress-farmer">
+
+      </div>
+
+
       <?php
 
-        for ($x = 0; $x < $i; $x++) {
+        for ($x = 0; $x < $q; $x++) {
 
           ?>
 
-          <div class="progress-farm-point" style="width: <?php echo (100/$i); ?>%">
+          <div class="progress-farm-point" style="width: <?php echo (100/$q); ?>%">
             <div class="progress-farm-point-sprout">
             </div>
             <div class="progress-farm-point-plant">
@@ -392,13 +373,43 @@ get_header(); ?>
   </div>
 </div>
 
+<?php
+
+  $m = $post->ID;
+
+
+
+?>
+
+<?php
+
+  // Determine the class that the current user is in
+
+  $args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
+  $loop = new WP_Query( $args );
+
+  $class = 0;
+
+  while ( $loop->have_posts() ) : $loop->the_post();
+
+    $students = get_field('students', $post_id);
+
+        foreach ($students as $student) {
+            if ( $student['student']['ID'] == get_current_user_id() ) {
+                $class = get_the_id();
+            }
+        }
+
+  endwhile;
+
+  ?>
 
 <script type="text/javascript">
 
 	jQuery('.question-0').show();
   var index = 0;
 
-  jQuery('.next').click(function(){
+  jQuery('.next-active').click(function(){
 
     if ((jQuery('.question').length - 1) == index) {
 
@@ -413,14 +424,6 @@ get_header(); ?>
 
     // Store all the answers in an array
 
-    var answers = [];
-    
-
-    // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answer=', success: function(result) {
-    //
-    // }});
-
-
   });
 
   jQuery('.prev').click(function(){
@@ -434,6 +437,104 @@ get_header(); ?>
 
   });
 
+
+  var answers = {};
+
+  var t = 0;
+  var p = parseInt('<?php echo (100/$q); ?>');
+  var q = parseInt('<?php echo $q; ?>');
+
+  var questions = [];
+
+  jQuery(".question").each(function() {
+
+    var questionId = jQuery(this).attr('class').split(' ')[1];
+
+    var question = jQuery(this);
+
+    questions.push(0);
+
+    jQuery(this).find(".answer").each(function() {
+
+      jQuery(this).click(function() {
+
+        // Make next button active
+
+        question.find(".next").toggleClass('next-inactive next-active');
+
+        var questionClass = '.' + questionId;
+
+        // First remove the current hovers
+
+        for (var i = 1; i <= 4; i++) {
+          jQuery(questionClass + " .answer-image").removeClass('answer-image-' + i + '-hover');
+        }
+
+        jQuery(questionClass + ' .answer').removeClass('answer-hover');
+
+        // Next, add the new hover
+
+        var answerId = jQuery(this).attr('class').split(' ')[1];
+        answerNum = answerId.substr(answerId.length - 1);
+
+        jQuery(this).find('.answer-image').addClass('answer-image-' + answerNum + '-hover');
+        jQuery(this).addClass('answer-hover');
+
+        answers[questionId.substr(questionId.length - 1)] = jQuery(this).find('.answer-text').text();
+
+        // Next, update the progress bar
+
+        jQuery('.progress-farm-point:eq(' + (questionId.substr(questionId.length - 1) - 1) + ')').find('.progress-farm-point-plant').show();
+        jQuery('.progress-farm-point:eq(' + (questionId.substr(questionId.length - 1) - 1) + ')').find('.progress-farm-point-sprout').hide();
+
+        if ((questions[questionId.substr(questionId.length - 1)] == 0) && (q != (questionId.substr(questionId.length - 1)))) {
+          t = t + p;
+
+          jQuery('.progress-farmer').css('left', t + '%');
+          questions[questionId.substr(questionId.length - 1)] = 1;
+        }
+
+      });
+
+    });
+
+
+    jQuery(this).find(".reward").each(function() {
+
+      jQuery(this).click(function() {
+
+        jQuery(".reward-image").removeClass('reward-image-hover');
+        jQuery('.reward').removeClass('reward-hover');
+
+        // Next, add the new hover
+
+        var rewardId = jQuery(this).attr('class').split(' ')[1];
+        rewardNum = rewardId.substr(rewardId.length - 1);
+
+        jQuery(this).find('.reward-image').addClass('reward-image-hover');
+        jQuery(this).addClass('reward-hover');
+
+      });
+
+    });
+
+
+  });
+
+
+
+
+  jQuery(".print").click(function() {
+
+    var data = JSON.stringify(answers);
+
+    // Add rest of data to string
+
+    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $m; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + jQuery('.reward-hover').find('.reward-text').text(), success: function(result) {
+      alert(result);
+    }});
+
+  });
 
 </script>
 

@@ -42,18 +42,36 @@ get_header(); ?>
 
             		$students = get_field('students', $post_id);
 
-                    foreach ($students as $student) {
-                        if ( $student['student']['ID'] == get_current_user_id() ) {
-                            $class = get_the_id();
-                        }
-                    }
+                foreach ($students as $student) {
+                  if ( $student['student']['ID'] == get_current_user_id() ) {
+                    $class = get_the_id();
+                  }
+                }
 
             	endwhile;
+
+              $modules = get_field('modules', $post_id);
 
             	?>
 
               <?php
 
+              $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
+
+              global $wpdb;
+              $results = $wpdb->get_results( $sql , ARRAY_A );
+
+              $modules = array();
+
+              foreach ( $results as $result ) {
+                array_push($modules, $result['module_id']);
+              }
+
+              // 2nd Method - Utilizing the $GLOBALS superglobal. Does not require global keyword ( but may not be best practice )
+
+              ?>
+
+              <?php
 
               if( have_rows('modules', $class) ):
 
@@ -62,19 +80,33 @@ get_header(); ?>
                       // Your loop code
                       $module = get_sub_field('module', $class);
 
+                      $module_complete = false;
+
+                      if (in_array($module->ID, $modules)) {
+                        $module_complete = true;
+                      }
+
                       ?>
 
-                      <a href="<?php echo $module->guid; ?>">
-                        <div class='module'>
-                          <h2><?php echo $module->post_title; ?></h2>
-                          <div class="checkbox">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/checkbox.png" />
+
+                          <div class='module'>
+                            <?php if ($module_complete == false) { ?>
+                              <a href="<?php echo $module->guid; ?>">
+                            <?php } ?>
+                            <h2><?php echo $module->post_title; ?></h2>
+                            <?php if($module_complete == false) { ?>
+                              </a>
+                            <?php } ?>
+                            <div class="checkbox">
+                              <img src="<?php echo get_template_directory_uri(); ?>/img/checkbox.png" />
+                            </div>
+                            <?php if ($module_complete == true) { ?>
+                              <div class="checkmark">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/checkmark.png" />
+                              </div>
+                            <?php } ?>
                           </div>
-                          <div class="checkmark">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/checkmark.png" />
-                          </div>
-                        </div>
-                      </a>
+
 
                       <?php
 

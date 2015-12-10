@@ -169,19 +169,35 @@ add_action( 'wp_ajax_check_login', 'check_login' );
 
 function save_answer() {
 
-  $answer = '';
+  if (isset($_REQUEST['answers'])) {
+    $answers = $_REQUEST['answers'];
+  }
 
-  if (isset($_REQUEST['answer'])) {
-    $answer = $_REQUEST['answer'];
+  if (isset($_REQUEST['module'])) {
+    $module = $_REQUEST['module'];
+  }
+
+  if (isset($_REQUEST['user'])) {
+    $user = $_REQUEST['user'];
+  }
+
+  if (isset($_REQUEST['class'])) {
+    $class = $_REQUEST['class'];
+  }
+
+  if (isset($_REQUEST['reward'])) {
+    $reward = $_REQUEST['reward'];
   }
 
   global $wpdb;
   $wpdb->insert(
     'sessions',
     array(
-  		'module_id' => 1,
-  		'complete' => 0,
-      'answers' => $fivesdrafts[0]
+      'answers' => $answers,
+      'module_id' => $module,
+      'user_id' => $user,
+      'class_id' => $class,
+      'reward' => $reward
 	  )
   );
 

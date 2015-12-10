@@ -140,6 +140,10 @@
     h2 {
       line-height: 0;
     }
+
+    a {
+      color: white;
+    }
   }
 }
 
@@ -250,6 +254,33 @@
   }
 }
 
+.print {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  font-weight: bold;
+
+  .print-arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    float: right;
+  }
+  .print-text {
+    float: left;
+  }
+}
+
+
 // Progress bar
 
 .progress-farm {
@@ -276,10 +307,10 @@
 .progress-farm-point-plant {
   background-repeat: no-repeat;
   width: 40px;
-  height: 100px;
+  height: 75px;
   margin: auto;
   position: relative;
-  top: -20px;
+  top: -50px;
   display: none;
 }
 
@@ -307,7 +338,7 @@
     }
   }
 
-  .next {
+  .next, .print {
     background-position: right 20px center;
     background-color: white;
     color: $dark-green;
@@ -316,6 +347,10 @@
       border-left: 20px solid $dark-green;
     }
 
+  }
+
+  .progress-farmer {
+    background-image: url(img/farmer-purple.png);
   }
 
   .progress-farm {
@@ -372,7 +407,7 @@
     }
   }
 
-  .next {
+  .next, .print {
     background-position: right 20px center;
     background-color: white;
     color: $dark-blue;
@@ -391,6 +426,10 @@
 
   .progress-farm {
     background-color: $yellow;
+  }
+
+  .progress-farmer {
+    background-image: url(img/farmer-blue.png);
   }
 
   .progress-farm-point-sprout {
@@ -443,7 +482,7 @@
     }
   }
 
-  .next {
+  .next, .print {
     background-position: right 20px center;
     background-color: white;
     color: $dark-red;
@@ -458,6 +497,10 @@
     span {
       color: #0ed59c;
     }
+  }
+
+  .progress-farmer {
+    background-image: url(img/farmer-red.png);
   }
 
   .progress-farm {
@@ -513,7 +556,7 @@
     }
   }
 
-  .next {
+  .next, .print {
     background-position: right 20px center;
     background-color: white;
     color: $dark-purple;
@@ -528,6 +571,10 @@
     span {
       color: #0ed59c;
     }
+  }
+
+  .progress-farmer {
+    background-image: url(img/farmer-purple.png);
   }
 
   .progress-farm {
@@ -583,7 +630,7 @@
     }
   }
 
-  .next {
+  .next, .print {
     background-position: right 20px center;
     background-color: white;
     color: $dark-yellow;
@@ -598,6 +645,10 @@
     span {
       color: #0072bc;
     }
+  }
+
+  .progress-farmer {
+    background-image: url(img/farmer-blue.png);
   }
 
   .progress-farm {
@@ -653,7 +704,7 @@
     }
   }
 
-  .next {
+  .next, .print {
     background-position: right 20px center;
     background-color: white;
     color: $dark-orange;
@@ -662,6 +713,10 @@
       border-left: 20px solid $dark-orange;
     }
 
+  }
+
+  .progress-farmer {
+    background-image: url(img/farmer-purple.png);
   }
 
   .progress-farm {
@@ -857,6 +912,12 @@
   }
 }
 
+.reward-image-hover {
+  height: 200px;
+  padding: 0;
+  top: 0;
+}
+
 .question {
   display: none;
 }
@@ -866,7 +927,7 @@
   line-height: 0;
 }
 
-.answer-text {
+.answer-text, .reward-text {
   margin: 10px;
 }
 
@@ -885,4 +946,17 @@
   background-image: url(img/vegetables.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.progress-farmer {
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  top: -35px;
+}
+
+.next-inactive {
+  opacity: 0.7;
 }
