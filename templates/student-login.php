@@ -159,7 +159,7 @@ get_header();
 						var url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
 
 						if (result == "success") {
-							window.location.href = "/gardens/modules";
+							window.location.href = "<?php echo get_post_type_archive_link( 'modules' ); ?>";
 						} else {
 
 						}
