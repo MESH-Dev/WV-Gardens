@@ -45,7 +45,7 @@ get_header(); ?>
           </div>
           <div class="three columns">
             <div class="module-section">
-              <button class="next next-active" style="display: inline-block;">Dig In!<div class="next-arrow"></div></button>
+              <button class="next" style="display: inline-block;">Dig In!<div class="next-arrow"></div></button>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@ get_header(); ?>
               </div>
               <div class="three columns offset-by-six">
                 <div class="module-section">
-                  <button class="next next-inactive next-active" style="display: inline-block;">
+                  <button class="next" style="display: inline-block;">
                     <div class="next-text">Next Question</div>
                     <div class="next-arrow"></div>
                   </button>
@@ -327,12 +327,16 @@ get_header(); ?>
           </div>
         </div>
         <div class="row">
-
+          <div class="twelve columns">
+            <div class="module-image">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/plate-big.png" />
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="three columns offset-by-nine">
             <div class="module-section">
-              <button class="next" style="display: inline-block;">Return to Home <div class="next-arrow"></div></button>
+              <a href="<?php echo get_home_url(); ?>/modules/"><button class="return" style="display: inline-block;">Return to Home <div class="return-arrow"></div></button></a>
             </div>
           </div>
         </div>
@@ -409,17 +413,20 @@ get_header(); ?>
 	jQuery('.question-0').show();
   var index = 0;
 
-  jQuery('.next-active').click(function(){
+  jQuery('.next').click(function(){
 
     if ((jQuery('.question').length - 1) == index) {
 
     } else {
+
       var currentQuestion = ('.question-').concat(index);
       index = index + 1;
+
       var nextQuestion = ('.question-').concat(index);
 
       jQuery(currentQuestion).hide();
       jQuery(nextQuestion).show();
+
     }
 
     // Store all the answers in an array
@@ -452,6 +459,10 @@ get_header(); ?>
 
     var question = jQuery(this);
 
+    if (questionId != 'question-0') {
+      jQuery(this).find('.next').hide();
+    }
+
     questions.push(0);
 
     jQuery(this).find(".answer").each(function() {
@@ -459,8 +470,6 @@ get_header(); ?>
       jQuery(this).click(function() {
 
         // Make next button active
-
-        question.find(".next").toggleClass('next-inactive next-active');
 
         var questionClass = '.' + questionId;
 
@@ -476,6 +485,8 @@ get_header(); ?>
 
         var answerId = jQuery(this).attr('class').split(' ')[1];
         answerNum = answerId.substr(answerId.length - 1);
+
+        jQuery('.question-' + questionId.substr(questionId.length - 1) + ' .next').show();
 
         jQuery(this).find('.answer-image').addClass('answer-image-' + answerNum + '-hover');
         jQuery(this).addClass('answer-hover');
@@ -514,6 +525,8 @@ get_header(); ?>
         jQuery(this).find('.reward-image').addClass('reward-image-hover');
         jQuery(this).addClass('reward-hover');
 
+        jQuery('.reward-item').text(jQuery(this).find('.reward-text').text());
+
       });
 
     });
@@ -522,19 +535,32 @@ get_header(); ?>
   });
 
 
-
-
   jQuery(".print").click(function() {
+
+    if ((jQuery('.question').length - 1) == index) {
+
+    } else {
+
+      var currentQuestion = ('.question-').concat(index);
+      index = index + 1;
+
+      var nextQuestion = ('.question-').concat(index);
+
+      jQuery(currentQuestion).hide();
+      jQuery(nextQuestion).show();
+
+    }
+
 
     var data = JSON.stringify(answers);
 
     // Add rest of data to string
-
     jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $m; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + jQuery('.reward-hover').find('.reward-text').text(), success: function(result) {
-      alert(result);
+
     }});
 
   });
+
 
 </script>
 

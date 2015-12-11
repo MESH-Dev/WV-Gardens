@@ -280,6 +280,32 @@
   }
 }
 
+.return {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  font-weight: bold;
+
+  .return-arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    float: right;
+  }
+  .return-text {
+    float: left;
+  }
+}
+
 
 // Progress bar
 
@@ -338,7 +364,7 @@
     }
   }
 
-  .next, .print {
+  .next, .print, .return {
     background-position: right 20px center;
     background-color: white;
     color: $dark-green;
@@ -407,7 +433,7 @@
     }
   }
 
-  .next, .print {
+  .next, .print, .return {
     background-position: right 20px center;
     background-color: white;
     color: $dark-blue;
@@ -482,7 +508,7 @@
     }
   }
 
-  .next, .print {
+  .next, .print, .return {
     background-position: right 20px center;
     background-color: white;
     color: $dark-red;
@@ -556,7 +582,7 @@
     }
   }
 
-  .next, .print {
+  .next, .print, .return {
     background-position: right 20px center;
     background-color: white;
     color: $dark-purple;
@@ -630,7 +656,7 @@
     }
   }
 
-  .next, .print {
+  .next, .print, .return {
     background-position: right 20px center;
     background-color: white;
     color: $dark-yellow;
@@ -704,7 +730,7 @@
     }
   }
 
-  .next, .print {
+  .next, .print, .return {
     background-position: right 20px center;
     background-color: white;
     color: $dark-orange;
@@ -955,8 +981,4 @@
   margin: auto;
   position: absolute;
   top: -35px;
-}
-
-.next-inactive {
-  opacity: 0.7;
 }
