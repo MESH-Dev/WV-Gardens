@@ -1,5 +1,3 @@
-
-
 jQuery('#schools').change( function() {
 
   if ( jQuery('#teachers').is(":hidden") ) {

@@ -1671,17 +1671,18 @@ html, body {
 }
 /* line 786, sass/layout/_main.scss */
 .progress-plate img {
-  position: absolute;
-  left: 8px;
+  position: relative;
   top: 10px;
+  padding: 5px;
+  width: 100%;
 }
 
-/* line 793, sass/layout/_main.scss */
+/* line 794, sass/layout/_main.scss */
 .module-image {
   text-align: center;
 }
 
-/* line 797, sass/layout/_main.scss */
+/* line 798, sass/layout/_main.scss */
 .answer {
   text-align: center;
   font-weight: bold;
@@ -1689,7 +1690,7 @@ html, body {
   color: white;
 }
 
-/* line 804, sass/layout/_main.scss */
+/* line 805, sass/layout/_main.scss */
 .answer-image {
   background-repeat: no-repeat;
   background-position: center;
@@ -1697,116 +1698,116 @@ html, body {
   height: 150px;
   position: relative;
 }
-/* line 811, sass/layout/_main.scss */
+/* line 812, sass/layout/_main.scss */
 .answer-image img {
   height: 95px;
 }
 
-/* line 816, sass/layout/_main.scss */
+/* line 817, sass/layout/_main.scss */
 .answer-image-1 {
   background-image: url(img/star.png);
 }
-/* line 819, sass/layout/_main.scss */
+/* line 820, sass/layout/_main.scss */
 .answer-image-1:hover {
   background-image: url(img/star-hover.png);
 }
-/* line 822, sass/layout/_main.scss */
+/* line 823, sass/layout/_main.scss */
 .answer-image-1:hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 830, sass/layout/_main.scss */
+/* line 831, sass/layout/_main.scss */
 .answer-image-1-hover {
   background-image: url(img/star-hover.png);
 }
-/* line 833, sass/layout/_main.scss */
+/* line 834, sass/layout/_main.scss */
 .answer-image-1-hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 840, sass/layout/_main.scss */
+/* line 841, sass/layout/_main.scss */
 .answer-image-2 {
   background-image: url(img/circle.png);
 }
-/* line 843, sass/layout/_main.scss */
+/* line 844, sass/layout/_main.scss */
 .answer-image-2:hover {
   background-image: url(img/little-hover.png);
 }
-/* line 846, sass/layout/_main.scss */
+/* line 847, sass/layout/_main.scss */
 .answer-image-2:hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 854, sass/layout/_main.scss */
+/* line 855, sass/layout/_main.scss */
 .answer-image-2-hover {
   background-image: url(img/little-hover.png);
 }
-/* line 857, sass/layout/_main.scss */
+/* line 858, sass/layout/_main.scss */
 .answer-image-2-hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 864, sass/layout/_main.scss */
+/* line 865, sass/layout/_main.scss */
 .answer-image-3 {
   background-image: url(img/cloud.png);
 }
-/* line 867, sass/layout/_main.scss */
+/* line 868, sass/layout/_main.scss */
 .answer-image-3:hover {
   background-image: url(img/cloud-hover.png);
 }
-/* line 870, sass/layout/_main.scss */
+/* line 871, sass/layout/_main.scss */
 .answer-image-3:hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 878, sass/layout/_main.scss */
+/* line 879, sass/layout/_main.scss */
 .answer-image-3-hover {
   background-image: url(img/cloud-hover.png);
 }
-/* line 881, sass/layout/_main.scss */
+/* line 882, sass/layout/_main.scss */
 .answer-image-3-hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 888, sass/layout/_main.scss */
+/* line 889, sass/layout/_main.scss */
 .answer-image-4 {
   background-image: url(img/x.png);
 }
-/* line 891, sass/layout/_main.scss */
+/* line 892, sass/layout/_main.scss */
 .answer-image-4:hover {
   background-image: url(img/x-hover.png);
 }
-/* line 894, sass/layout/_main.scss */
+/* line 895, sass/layout/_main.scss */
 .answer-image-4:hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 902, sass/layout/_main.scss */
+/* line 903, sass/layout/_main.scss */
 .answer-image-4-hover {
   background-image: url(img/x-hover.png);
 }
-/* line 905, sass/layout/_main.scss */
+/* line 906, sass/layout/_main.scss */
 .answer-image-4-hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 912, sass/layout/_main.scss */
+/* line 913, sass/layout/_main.scss */
 .reward {
   text-align: center;
   font-weight: bold;
@@ -1814,13 +1815,13 @@ html, body {
   color: white;
 }
 
-/* line 919, sass/layout/_main.scss */
+/* line 920, sass/layout/_main.scss */
 .reward-image-container {
   height: 200px;
   position: relative;
 }
 
-/* line 924, sass/layout/_main.scss */
+/* line 925, sass/layout/_main.scss */
 .reward-image {
   background-repeat: no-repeat;
   background-position: center;
@@ -1831,48 +1832,48 @@ html, body {
   position: relative;
   top: 40px;
 }
-/* line 934, sass/layout/_main.scss */
+/* line 935, sass/layout/_main.scss */
 .reward-image:hover {
   height: 200px;
   padding: 0;
   top: 0;
 }
 
-/* line 941, sass/layout/_main.scss */
+/* line 942, sass/layout/_main.scss */
 .reward-image-hover {
   height: 200px;
   padding: 0;
   top: 0;
 }
 
-/* line 947, sass/layout/_main.scss */
+/* line 948, sass/layout/_main.scss */
 .question {
   display: none;
 }
 
-/* line 951, sass/layout/_main.scss */
+/* line 952, sass/layout/_main.scss */
 .module-number {
   color: #7f3198;
   line-height: 0;
 }
 
-/* line 956, sass/layout/_main.scss */
+/* line 957, sass/layout/_main.scss */
 .answer-text, .reward-text {
   margin: 10px;
 }
 
-/* line 960, sass/layout/_main.scss */
+/* line 961, sass/layout/_main.scss */
 .module-food {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-/* line 965, sass/layout/_main.scss */
+/* line 966, sass/layout/_main.scss */
 .module-food img {
   float: left;
 }
 
-/* line 970, sass/layout/_main.scss */
+/* line 971, sass/layout/_main.scss */
 .page-template-login {
   background-color: #7f3198;
   background-image: url(img/vegetables.png);
@@ -1880,7 +1881,7 @@ html, body {
   background-size: cover;
 }
 
-/* line 977, sass/layout/_main.scss */
+/* line 978, sass/layout/_main.scss */
 .progress-farmer {
   background-repeat: no-repeat;
   width: 50px;
@@ -1888,6 +1889,31 @@ html, body {
   margin: auto;
   position: absolute;
   top: -35px;
+}
+
+/* line 991, sass/layout/_main.scss */
+.plate-1 {
+  display: none;
+}
+
+/* line 995, sass/layout/_main.scss */
+.plate-2 {
+  display: none;
+}
+
+/* line 999, sass/layout/_main.scss */
+.plate-3 {
+  display: none;
+}
+
+/* line 1003, sass/layout/_main.scss */
+.plate-4 {
+  display: none;
+}
+
+/* line 1007, sass/layout/_main.scss */
+.plate-5 {
+  display: none;
 }
 
 /* line 1, sass/modules/_menus.scss */

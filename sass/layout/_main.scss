@@ -784,9 +784,10 @@
   width: 100px;
 
   img {
-    position: absolute;
-    left: 8px;
+    position: relative;
     top: 10px;
+    padding: 5px;
+    width: 100%;
   }
 }
 
@@ -981,4 +982,28 @@
   margin: auto;
   position: absolute;
   top: -35px;
+}
+
+.plate-0 {
+
+}
+
+.plate-1 {
+  display: none;
+}
+
+.plate-2 {
+  display: none;
+}
+
+.plate-3 {
+  display: none;
+}
+
+.plate-4 {
+  display: none;
+}
+
+.plate-5 {
+  display: none;
 }

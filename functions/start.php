@@ -7,6 +7,8 @@ function loadup_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'loadup_scripts' );
 
+wp_enqueue_script( 'admin-js', get_template_directory_uri().'/js/admin.js', array('jquery'), '1.0.0', true );
+
 // Add Thumbnail Theme Support
 add_theme_support('post-thumbnails');
 add_image_size('background-fullscreen', 1800, 1200, true);
@@ -54,8 +56,13 @@ function create_post_name( $post_id ){
 
 			// This is the list of students previously on the CMS
 
-			$old_students = get_post_meta( $post_id, 'studentlist');
-			update_post_meta( $post_id, 'studentlist1', $old_students );
+			$prev_students = $_POST['acf']['field_5660aa950d6a2'];
+
+			// for ($i = 0; $i < $prev_students; $i++) {
+			//
+			// }
+
+
 
 			// This is the list of students currently on the CMS
 
@@ -63,10 +70,10 @@ function create_post_name( $post_id ){
 			$i = 0;
 
 			// check if the repeater field has rows of data
-			if( have_rows('new_students') ):
+			if( have_rows('students') ):
 
 			 	// loop through the rows of data
-		    while ( have_rows('new_students') ) : the_row();
+		    while ( have_rows('students') ) : the_row();
 
 	        // display a sub field value
 	        $first_name = get_sub_field('first_name');
@@ -88,23 +95,37 @@ function create_post_name( $post_id ){
 
 			endif;
 
+			update_post_meta($post_id, 'post', get_field('students', $post_id));
 
-			foreach($students as $student) {
 
-				$is_new_student = true;
+			// Check the current list of students against the list of previous students
 
-				foreach($old_students as $old_student) {
-					if (($student['first_name'] == $old_student['first_name']) && ($student['last_name'] == $old_student['last_name'])) {
-						$is_new_student = false;
+			if (!empty($prev_students)) {
+				foreach($students as $student) {
+
+					$j = 0;
+
+					$is_new_student = true;
+
+					foreach($prev_students as $prev_student) {
+						if (($student['first_name'] == $prev_student['first_name']) && ($student['last_name'] == $prev_student['last_name'])) {
+							$is_new_student = false;
+						}
 					}
-				}
 
-				if ($is_new_student == true) {
-					update_post_meta( $post_id, 'studentnew', $student['first_name']);
-				}
+					if ($is_new_student == true) {
+						update_post_meta( $post_id, 'studentnew1', $student['first_name']);
+					}
 
+					$j++;
+
+				}
 			}
 
+
+			// for ($x = 0; $x < $prev_students_count[0]; $x++) {
+		  //   array_push($prev_students, $students);
+			// }
 
 
 	  	$my_post = array(
@@ -114,10 +135,10 @@ function create_post_name( $post_id ){
 
 			// Update the post into the database
 			wp_update_post( $my_post );
-			update_post_meta( $post_id, 'studentlist', $students );
+			// update_post_meta( $post_id, 'studentlist', $students );
 
 			// re-hook this function
-			add_action('save_post', 'create_post_name');
+			add_action('save_post', 'create_post_name', 10);
 
 		}
 	}
@@ -125,6 +146,48 @@ function create_post_name( $post_id ){
 add_action('save_post', 'create_post_name');
 
 
+function update_students_array( $post_id ) {
+
+    // bail early if no ACF data
+    // if( empty($_POST['acf']) ) {
+		//
+    //     return;
+		//
+    // }
+
+		global $wpdb;
+
+		$wpdb->insert(
+	    'students',
+	    array(
+	      'class_id' => $post_id,
+	      'students' => 'test'
+		  )
+	  );
+
+
+    // array of field values
+    // $fields = get_field('students', $post_id);
+		//
+		// $sql = "SELECT * FROM students WHERE class_id = " . $post_id;
+		//
+		//
+		// $results = $wpdb->get_results( $sql , ARRAY_A );
+		//
+		// foreach ( $results as $result ) {
+		//
+		// }
+		//
+    // update_post_meta( $post_id, 'pre', 'testinggg' );
+
+
+
+
+
+}
+
+// run before ACF saves the $_POST['acf'] data
+add_action('save_post', 'update_students_array');
 
 
 //Register WP Menus
