@@ -7,8 +7,6 @@ function loadup_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'loadup_scripts' );
 
-wp_enqueue_script( 'admin-js', get_template_directory_uri().'/js/admin.js', array('jquery'), '1.0.0', true );
-
 // Add Thumbnail Theme Support
 add_theme_support('post-thumbnails');
 add_image_size('background-fullscreen', 1800, 1200, true);

@@ -16,7 +16,7 @@ get_header(); ?>
             <div class="module-text">
               <?php if ( $user_login ) { ?>
                 <!-- text that logged in users will see -->
-                <h1>Hi <span><?php echo $user_login; ?>!</span></h1>
+                <h1>Hi <span><?php echo wp_get_current_user()->user_firstname; ?>!</span></h1>
               <?php } ?>
               <h1>Select your next <span>"MODULE"</span> to the right to get started!</h1>
             </div>

@@ -77,37 +77,15 @@ function get_students() {
     $class = $_REQUEST['class'];
   }
 
-  $args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
-  $loop = new WP_Query( $args );
+  global $wpdb;
+  $students = $wpdb->get_results( "SELECT * FROM students where class_id = '" . $class . "'", ARRAY_A );
 
-  while ( $loop->have_posts() ) : $loop->the_post();
+  $student_array = array();
 
-    $t = (string)get_the_id();
-
-    if ($t == $class) {
-
-      $student_array = array();
-
-      // check if the repeater field has rows of data
-      if( have_rows('students') ):
-
-       	// loop through the rows of data
-          while ( have_rows('students') ) : the_row();
-
-              // display a sub field value
-              array_push($student_array, array(get_sub_field('student')['display_name'], get_sub_field('student')['ID']));
-
-          endwhile;
-
-      else :
-
-          // no rows found
-
-      endif;
-
-    }
-
-  endwhile;
+  foreach( $students as $student ) {
+    $user = get_user_by( 'id', $student['user_id'] );
+    array_push($student_array, array($user->first_name . " " . $user->last_name, $user->user_login));
+  }
 
   echo json_encode($student_array);
 
@@ -129,6 +107,8 @@ function check_login() {
     if (isset($_REQUEST['user'])) {
       $username = $_REQUEST['user'];
     }
+
+
 
     if (programmatic_login($username)) {
       echo "success";
@@ -287,13 +267,24 @@ function students_meta_box_callback( $post ) {
             </tr>
           </thead>';
 
-          echo '<tbody>';
+          echo '<tbody class="table-body">';
 
-          //   <tr class="alternate">
-          //     <td class="column-columnname"></td>
-          //     <td class="column-columnname"></td>
-          //     <td class="column-columnname"></td>
-          //   </tr>
+            global $wpdb;
+            $results = $wpdb->get_results( 'SELECT * FROM students WHERE class_id =' . $post->ID, ARRAY_A );
+
+            foreach ( $results as $result ) {
+
+              $u = get_user_by( 'ID', $result['user_id'] );
+
+              echo "<tr class='row-" . $result['user_id'] . "'>";
+
+                echo "<td class='column-columnname'>" . $u->first_name . "</td>";
+                echo "<td class='column-columnname'>" . $u->last_name . "</td>";
+                echo "<td class='column-columnname'><div class='remove-student dashicons dashicons-no-alt' data-id='" . $result['user_id'] . "' data-class='" . $post->ID . "'></div></td>";
+
+              echo "</tr>";
+
+            }
 
           echo '</tbody>';
 
@@ -374,19 +365,151 @@ function add_student() {
   }
 
   if (isset($_POST['class'])) {
-    $class = $_POST['class'];
+    $class_id = $_POST['class'];
   }
 
   // create a wordpress user
+  $user_name = $first_name . "_" . $last_name . "_" . bin2hex(random_bytes(5));
+	$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+	$user_id = wp_create_user( $user_name, $random_password );
+
+  wp_update_user(array(
+    'ID' => $user_id,
+    'first_name' => $first_name,
+    'last_name' => $last_name,
+    'role' => 'student'
+  ));
 
   // add wordpress id to the students array for the class
+  global $wpdb;
+  $wpdb->insert(
+    'students',
+    array(
+      'class_id' => $class_id,
+      'user_id' => $user_id
+	  )
+  );
 
+  echo $user_id;
   // create this students array
-
-  echo $first_name . " " . $last_name;
 
   die;
 
 }
+
+add_action( 'wp_ajax_remove_student', 'remove_student' );
+add_action( 'wp_ajax_nopriv_remove_student', 'remove_student' );
+
+function remove_student() {
+
+  if (isset($_POST['user_id'])) {
+    $user_id = $_POST['user_id'];
+  }
+
+  if (isset($_POST['class'])) {
+    $class_id = $_POST['class'];
+  }
+
+  // remove student from the students array for the class
+  global $wpdb;
+  $wpdb->delete(
+    'students',
+    array(
+      'class_id' => $class_id,
+      'user_id' => $user_id
+	  )
+  );
+
+  wp_delete_user( $user_id );
+
+  echo $user_id;
+  // create this students array
+
+  die;
+
+}
+
+
+add_action( 'admin_footer', 'my_action_javascript' );
+
+function my_action_javascript() { ?>
+
+  <script type="text/javascript">
+
+  jQuery(document).ready(function($){
+   //Registration metabox
+
+   $('#add-student').click(function(){
+
+     $class_name = $(this).attr('data-class');
+
+     $.ajax({
+       type: "POST",
+       url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php',
+       data: {class:$class_name,
+              first_name: jQuery('#students-first-name').val(),
+              last_name: jQuery('#students-last-name').val(),
+              action:'add_student'}
+     }).done(function(response){
+
+       if(response){
+
+         // respond and append to table
+         $('.table-body').append("<tr class='row-" + response + "'><td class='column-columnname'>" + jQuery('#students-first-name').val() + "</td><td class='column-columnname'>" + jQuery('#students-last-name').val() + "</td><td class='column-columnname'><div class='remove-student dashicons dashicons-no-alt' data-id='" + response + "' data-class='" + $class_name + "'></div></td></tr>");
+
+         $('.row-' + response + ' .remove-student').click(function(){
+
+           $.ajax({
+             type: "POST",
+             url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php',
+             data: {class:$class_name,
+                    user_id:response,
+                    action:'remove_student'}
+           }).done(function(response){
+
+             if(response){
+
+               // respond and append to table
+
+               $(".row-" + response).hide();
+
+             }
+           })
+
+         });
+       }
+     })
+
+   });
+
+   $('.remove-student').click(function(){
+
+     $class_name = $(this).attr('data-class');
+     $user_id = $(this).attr('data-id');
+
+     $.ajax({
+       type: "POST",
+       url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php',
+       data: {class:$class_name,
+              user_id:$user_id,
+              action:'remove_student'}
+     }).done(function(response){
+
+       if(response){
+
+         // respond and append to table
+
+         $(".row-" + response).hide();
+
+       }
+     })
+
+   });
+
+  })
+
+  </script>
+
+<? }
 
 ?>

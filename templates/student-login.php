@@ -53,7 +53,7 @@ get_header();
 
 								<select id="schools"></select><br/>
 								<select id="teachers"></select><br/>
-								<input id="password" type="password" /><br/>
+								<input id="password" type="password" />
 								<select id="students"></select><br/>
 								<button id="submit">Sign In!</button>
 								<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
@@ -124,6 +124,7 @@ get_header();
         });
 
 				function getStudentList() {
+
 					jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=get_students&class=' + jQuery('#teachers :selected').val(), success: function(result) {
 
 						var studentList = jQuery.parseJSON(result);
@@ -131,7 +132,7 @@ get_header();
 						jQuery('#students').append("<option>Select</option>");
 
 						jQuery.each(studentList, function(i, item){
-							jQuery('#students').append('<option value="' + item[0] + '">' + item[0] + '</option>');
+							jQuery('#students').append('<option value="' + item[1] + '">' + item[0] + '</option>');
 						});
 
 					}});
@@ -155,6 +156,7 @@ get_header();
 				jQuery('#submit').on('click', function() {
 
 					jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=check_login&user=' + jQuery('#students :selected').val(), success: function(result) {
+
 
 						var url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
 
