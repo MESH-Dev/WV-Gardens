@@ -17,105 +17,8 @@ get_header(); ?>
             <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Game Name</span> <span class="menu-module-name"><?php the_title(); ?></span></div></a>
             <div class="menu-sound"><i class="fa fa-volume-up"></i></div>
           </div>
-
-          <?php
-
-          // Determine the class that the current user is in
-
-          $args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
-          $loop = new WP_Query( $args );
-
-          $class = 0;
-
-          while ( $loop->have_posts() ) : $loop->the_post();
-
-            $students = get_field('students', $post_id);
-
-            foreach ($students as $student) {
-              if ( $student['student']['ID'] == get_current_user_id() ) {
-                $class = get_the_id();
-              }
-            }
-
-          endwhile;
-
-          $modules = get_field('modules', $post_id);
-
-          ?>
-
-          <?php
-
-          $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
-
-          global $wpdb;
-          $results = $wpdb->get_results( $sql , ARRAY_A );
-
-          $modules = array();
-
-          foreach ( $results as $result ) {
-            array_push($modules, $result['module_id']);
-          }
-
-          // 2nd Method - Utilizing the $GLOBALS superglobal. Does not require global keyword ( but may not be best practice )
-
-          ?>
-
-          <?php
-
-          if( have_rows('modules', $class) ):
-
-              while ( have_rows('modules', $class) ) : the_row();
-
-                  // Your loop code
-                  $module = get_sub_field('module', $class);
-
-                  $module_complete = false;
-
-                  if (in_array($module->ID, $modules)) {
-                    $module_complete = true;
-                  }
-
-                  ?>
-
-
-                      <div class='module'>
-                        <?php if ($module_complete == false) { ?>
-                          <a href="<?php echo $module->guid; ?>">
-                            <?php } ?>
-                            <h2><?php echo $module->post_title; ?></h2>
-                            <?php if($module_complete == false) { ?>
-                          </a>
-                        <?php } ?>
-                        <div class="checkbox">
-                          <img src="<?php echo get_template_directory_uri(); ?>/img/checkbox.png" />
-                        </div>
-                        <?php if ($module_complete == true) { ?>
-                          <div class="checkmark">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/checkmark.png" />
-                          </div>
-                        <?php } ?>
-                      </div>
-
-
-                  <?php
-
-              endwhile;
-
-          else :
-
-              // no rows found
-
-          endif;
-
-          ?>
-
           <div class="progress-plate">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/MyPlate_0Reward.png" class="plate-0" />
-            <img src="<?php echo get_template_directory_uri(); ?>/img/MyPlate_1Reward.png" class="plate-1" />
-            <img src="<?php echo get_template_directory_uri(); ?>/img/MyPlate_2Reward.png" class="plate-2" />
-            <img src="<?php echo get_template_directory_uri(); ?>/img/MyPlate_3Reward.png" class="plate-3" />
-            <img src="<?php echo get_template_directory_uri(); ?>/img/MyPlate_4Reward.png" class="plate-4" />
-            <img src="<?php echo get_template_directory_uri(); ?>/img/MyPlate_5Reward.png" class="plate-5" />
+            <?php get_template_part( 'partials/progress', 'plate' ); ?>
           </div>
         </div>
       </div>
@@ -194,42 +97,49 @@ get_header(); ?>
 
               <?php if( get_field('question_type', $question->ID) == 'multiple' ): ?>
 
-                <div class="three columns">
-                  <div class="answer answer-1">
-                      <?php // echo get_sub_field('a'); ?>
-                      <div class="answer-image answer-image-1">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/lot.png" />
-                      </div>
-                      <div class="answer-text">A lot</div>
-                  </div>
-                </div>
-                <div class="three columns">
-                  <div class="answer answer-2">
-                      <?php // echo get_sub_field('b'); ?>
-                      <div class="answer-image answer-image-2">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
-                      </div>
-                      <div class="answer-text">A little</div>
-                  </div>
-                </div>
-                <div class="three columns">
-                  <div class="answer answer-3">
-                      <?php // echo get_sub_field('c'); ?>
-                      <div class="answer-image answer-image-3">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
-                      </div>
-                      <div class="answer-text">Not very much</div>
-                  </div>
-                </div>
-                <div class="three columns">
-                  <div class="answer answer-4">
-                      <?php // echo get_sub_field('d'); ?>
-                      <div class="answer-image answer-image-4">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/all.png" />
-                      </div>
-                      <div class="answer-text">Not at all</div>
-                  </div>
-                </div>
+                <?php
+
+                  if( have_rows('answers', $question->ID) ):
+
+                      $n = 0;
+
+                      while ( have_rows('answers', $question->ID) ) : the_row();
+
+                        $n++;
+
+                      ?>
+
+                          <div class="three columns">
+                            <div class="answer answer-<?php echo $n; ?>">
+                                <div class="answer-image answer-image-<?php echo $n; ?>">
+
+                                  <?php
+
+                                    $image = get_sub_field('image', $question->ID);
+                                    $size = 'large';
+                                    $thumb = $image['sizes'][ $size ];
+
+                                  ?>
+
+                                  <img src="<?php echo $thumb; ?>" />
+
+                                </div>
+                                <div class="answer-text"><?php echo get_sub_field('answer', $question->ID); ?></div>
+                            </div>
+                          </div>
+
+                      <?php
+
+                      endwhile;
+
+                  else :
+
+                      // no rows found
+
+                  endif;
+
+                ?>
+
 
               <?php else: ?>
 
@@ -425,7 +335,7 @@ get_header(); ?>
         <div class="row">
           <div class="twelve columns">
             <div class="module-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/plate-big.png" />
+
             </div>
           </div>
         </div>
@@ -477,32 +387,16 @@ get_header(); ?>
 
   $m = $post->ID;
 
+  $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
 
+  global $wpdb;
+  $class_row = $wpdb->get_row( $sql , ARRAY_A );
+
+  $class = (int)$class_row['class_id'];
 
 ?>
 
-<?php
 
-  // Determine the class that the current user is in
-
-  $args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
-  $loop = new WP_Query( $args );
-
-  $class = 0;
-
-  while ( $loop->have_posts() ) : $loop->the_post();
-
-    $students = get_field('students', $post_id);
-
-        foreach ($students as $student) {
-            if ( $student['student']['ID'] == get_current_user_id() ) {
-                $class = get_the_id();
-            }
-        }
-
-  endwhile;
-
-  ?>
 
 <script type="text/javascript">
 

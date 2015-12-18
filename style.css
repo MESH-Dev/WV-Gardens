@@ -1891,31 +1891,6 @@ html, body {
   top: -35px;
 }
 
-/* line 991, sass/layout/_main.scss */
-.plate-1 {
-  display: none;
-}
-
-/* line 995, sass/layout/_main.scss */
-.plate-2 {
-  display: none;
-}
-
-/* line 999, sass/layout/_main.scss */
-.plate-3 {
-  display: none;
-}
-
-/* line 1003, sass/layout/_main.scss */
-.plate-4 {
-  display: none;
-}
-
-/* line 1007, sass/layout/_main.scss */
-.plate-5 {
-  display: none;
-}
-
 /* line 1, sass/modules/_menus.scss */
 .main-navigation {
   clear: both;

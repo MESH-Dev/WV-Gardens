@@ -22,7 +22,7 @@ get_header(); ?>
             </div>
             <br/>
             <div class="module-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/halfplate.png" />
+              
             </div>
           </div>
         </div>
@@ -31,41 +31,33 @@ get_header(); ?>
             <div class="module-list">
               <?php
 
-              // Determine the class that the current user is in
+                $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
 
-            	$args = array( 'post_type' => 'classes', 'posts_per_page' => -1 );
-            	$loop = new WP_Query( $args );
+                global $wpdb;
+                $class_row = $wpdb->get_row( $sql , ARRAY_A );
 
-              $class = 0;
+                $class = (int)$class_row['class_id'];
 
-            	while ( $loop->have_posts() ) : $loop->the_post();
+                // Get a list of completed modules
 
-            		$students = get_field('students', $post_id);
-
-                foreach ($students as $student) {
-                  if ( $student['student']['ID'] == get_current_user_id() ) {
-                    $class = get_the_id();
-                  }
-                }
-
-            	endwhile;
-
-              $modules = get_field('modules', $post_id);
+                $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
 
             	?>
 
               <?php
 
-              $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
+                // If it's in sessions, that means it's complete
 
-              global $wpdb;
-              $results = $wpdb->get_results( $sql , ARRAY_A );
+                $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
 
-              $modules = array();
+                global $wpdb;
+                $results = $wpdb->get_results( $sql , ARRAY_A );
 
-              foreach ( $results as $result ) {
-                array_push($modules, $result['module_id']);
-              }
+                $modules = array();
+
+                foreach ( $results as $result ) {
+                  array_push($modules, $result['module_id']);
+                }
 
               // 2nd Method - Utilizing the $GLOBALS superglobal. Does not require global keyword ( but may not be best practice )
 
