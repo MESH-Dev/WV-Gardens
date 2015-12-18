@@ -335,7 +335,7 @@ get_header(); ?>
         <div class="row">
           <div class="twelve columns">
             <div class="module-image">
-
+              <?php get_template_part( 'partials/progress', 'plate' ); ?>
             </div>
           </div>
         </div>
@@ -546,7 +546,7 @@ get_header(); ?>
 
     // Add rest of data to string
     jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $m; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + jQuery('.reward-hover').find('.reward-text').text(), success: function(result) {
-
+      alert(result);
     }});
 
   });
