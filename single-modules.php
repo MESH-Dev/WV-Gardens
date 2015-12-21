@@ -8,7 +8,11 @@ if ( !is_user_logged_in() ) {
 
 get_header(); ?>
 
+
+
 <main id="main" class="site-main" role="main">
+
+    <?php // HEADER SECTION ?>
 
     <div class="container">
       <div class="row">
@@ -24,8 +28,9 @@ get_header(); ?>
       </div>
     </div>
 
+    <?php // WELCOME  ?>
 
-    <div class="question question-0">
+    <div class="welcome">
       <div class="container">
         <div class="row">
           <div class="six columns">
@@ -51,18 +56,17 @@ get_header(); ?>
       </div>
     </div>
 
+    <?php // QUESTIONS ?>
+
     <?php
 
     if( have_rows('questions') ):
 
       $i = 0;
-      $q = 0;
 
       while ( have_rows('questions') ) : the_row();
 
         $i++;
-        $q++;
-        // Your loop code
         $question = get_sub_field('question');
 
         ?>
@@ -79,70 +83,47 @@ get_header(); ?>
               <div class="six columns">
                 <div class="module-image">
                   <?php
-
-                  // vars
-
                     $display_image = get_field('display_image', $question->ID);
-
                     $size = 'large';
                     $thumb = $display_image['sizes'][ $size ];
-
                   ?>
-
                   <img src="<?php echo $thumb; ?>" />
                 </div>
               </div>
             </div>
+
             <div class="row">
 
-              <?php if( get_field('question_type', $question->ID) == 'multiple' ): ?>
+              <?php // MULTIPLE CHOICE ?>
 
-                <?php
-
-                  if( have_rows('answers', $question->ID) ):
-
-                      $n = 0;
-
-                      while ( have_rows('answers', $question->ID) ) : the_row();
-
-                        $n++;
-
-                      ?>
-
-                          <div class="three columns">
-                            <div class="answer answer-<?php echo $n; ?>">
-                                <div class="answer-image answer-image-<?php echo $n; ?>">
-
-                                  <?php
-
-                                    $image = get_sub_field('image', $question->ID);
-                                    $size = 'large';
-                                    $thumb = $image['sizes'][ $size ];
-
-                                  ?>
-
-                                  <img src="<?php echo $thumb; ?>" />
-
-                                </div>
-                                <div class="answer-text"><?php echo get_sub_field('answer', $question->ID); ?></div>
-                            </div>
+              <?php if( get_field('question_type', $question->ID) == 'multiple' ):
+                if( have_rows('answers', $question->ID) ):
+                  $n = 0;
+                  while ( have_rows('answers', $question->ID) ) : the_row();
+                    $n++;
+                  ?>
+                    <div class="three columns">
+                      <div class="answer answer-<?php echo $n; ?>">
+                          <div class="answer-image answer-image-<?php echo $n; ?>">
+                            <?php
+                              $image = get_sub_field('image', $question->ID);
+                              $size = 'large';
+                              $thumb = $image['sizes'][ $size ];
+                            ?>
+                            <img src="<?php echo $thumb; ?>" />
                           </div>
+                          <div class="answer-text"><?php echo get_sub_field('answer', $question->ID); ?></div>
+                      </div>
+                    </div>
 
-                      <?php
+                  <?php
+                  endwhile;
+                endif;
+              ?>
 
-                      endwhile;
-
-                  else :
-
-                      // no rows found
-
-                  endif;
-
-                ?>
-
+              <?php // YES/NO ?>
 
               <?php else: ?>
-
                 <div class="three columns offset-by-three">
                   <div class="answer answer-2">
                       <?php // echo get_sub_field('b'); ?>
@@ -161,10 +142,12 @@ get_header(); ?>
                       <div class="answer-text">No</div>
                   </div>
                 </div>
-
               <?php endif; ?>
 
             </div>
+
+            <?php // QUESTION CONTROLS ?>
+
             <div class="row">
               <div class="three columns">
                 <div class="module-section">
@@ -183,146 +166,185 @@ get_header(); ?>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
         <?php
-
       endwhile;
-
-    else :
-
-        // no rows found
-
     endif;
+    ?>
+
+    <?php // REWARDS ?>
+
+    <?php
+
+    $veggies = array(
+      "single_name" => "veggie",
+      "plural_name" => "veggies",
+      "reward1" => "Asparagus",
+      "reward1_image" => get_template_directory_uri() . "/img/asparagus.png",
+      "reward2" => "Broccoli",
+      "reward2_image" => get_template_directory_uri() . "/img/broccoli.png",
+      "reward3" => "Carrot",
+      "reward3_image" => get_template_directory_uri() . "/img/carrot.png",
+      "reward4" => "Green Beans",
+      "reward4_image" => get_template_directory_uri() . "/img/beans.png"
+    );
+
+    $fruits = array(
+      "single_name" => "fruit",
+      "plural_name" => "fruits",
+      "reward1" => "Banana",
+      "reward1_image" => get_template_directory_uri() . "/img/banana.png",
+      "reward2" => "Apple",
+      "reward2_image" => get_template_directory_uri() . "/img/apple.png",
+      "reward3" => "Orange",
+      "reward3_image" => get_template_directory_uri() . "/img/orange.png",
+      "reward4" => "Pear",
+      "reward4_image" => get_template_directory_uri() . "/img/pear.png"
+    );
+
+    $proteins = array(
+      "single_name" => "protein",
+      "plural_name" => "proteins",
+      "reward1" => "Ham",
+      "reward1_image" => get_template_directory_uri() . "/img/ham.png",
+      "reward2" => "Eggs",
+      "reward2_image" => get_template_directory_uri() . "/img/eggs.png",
+      "reward3" => "Fish",
+      "reward3_image" => get_template_directory_uri() . "/img/fish.png",
+      "reward4" => "Chicken",
+      "reward4_image" => get_template_directory_uri() . "/img/chicken.png"
+    );
+
+    $grains = array(
+      "single_name" => "grain",
+      "plural_name" => "grains",
+      "reward1" => "Oatmeal",
+      "reward1_image" => get_template_directory_uri() . "/img/oatmeal.png",
+      "reward2" => "Bread",
+      "reward2_image" => get_template_directory_uri() . "/img/bread.png",
+      "reward3" => "Pasta",
+      "reward3_image" => get_template_directory_uri() . "/img/pasta.png",
+      "reward4" => "Rice",
+      "reward4_image" => get_template_directory_uri() . "/img/rice.png"
+    );
+
+    $dairy = array(
+      "single_name" => "dairy",
+      "plural_name" => "dairy",
+      "reward1" => "Yogurt",
+      "reward1_image" => get_template_directory_uri() . "/img/yogurt.png",
+      "reward2" => "Cheese",
+      "reward2_image" => get_template_directory_uri() . "/img/cheese.png",
+      "reward3" => "Milk",
+      "reward3_image" => get_template_directory_uri() . "/img/milk.png",
+      "reward4" => "Ice Cream",
+      "reward4_image" => get_template_directory_uri() . "/img/icecream.png"
+    );
+
+    $rewards = [ $veggies, $fruits, $proteins, $grains, $dairy ];
 
     ?>
 
     <?php
+      $i = 0;
 
-    $i++;
+      foreach($rewards as $reward) {
 
-    ?>
+        $i++;
 
-    <?php
+      ?>
 
-      if ($post->post_name == "module-1") {
-        $reward1 = "Asparagus";
-        $reward2 = "Broccoli";
-        $reward3 = "Carrot";
-        $reward4 = "Green Beans";
-      }
-      elseif ($post->post_name == "module-2") {
-        $reward1 = "Banana";
-        $reward2 = "Apple";
-        $reward3 = "Orange";
-        $reward4 = "Pear";
-      }
-      elseif ($post->post_name == "module-3") {
-        $reward1 = "Oatmeal";
-        $reward2 = "Bread";
-        $reward3 = "Pasta";
-        $reward4 = "Rice";
-      }
-      elseif($post->post_name == "module-4") {
-        $reward1 = "Ham";
-        $reward2 = "Eggs";
-        $reward3 = "Fish";
-        $reward4 = "Chicken";
-      }
-      elseif($post->post_name == "module-5") {
-        $reward1 = "Yogurt";
-        $reward2 = "Cheese";
-        $reward3 = "Milk";
-        $reward4 = "Ice Cream";
-      }
-      elseif($post->post_name == "module-6") {
-        $reward1 = "Yogurt";
-        $reward2 = "Cheese";
-        $reward3 = "Milk";
-        $reward4 = "Ice Cream";
-      }
-      else {
-
-      }
-
-    ?>
-
-    <div class="question question-<?php echo $i; ?>">
-      <div class="container">
-        <div class="row">
-          <div class="six columns">
-            <div class="module-text">
-              <h1>Congratulations!</h1>
-              <h1>You've completed <span><?php the_title(); ?></span>. You get to add one <span>veggie</span> to your plate.</h1>
-            </div>
-          </div>
-          <div class="six columns">
-            <div class="module-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/farmer.png" />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="three columns">
-            <div class="reward reward-1">
-              <div class="reward-image-container">
-                <div class="reward-image reward-image-1">
+        <div class="reward reward-<?php echo $i; ?>">
+          <div class="container">
+            <div class="row">
+              <div class="six columns">
+                <div class="module-text">
+                  <h1>Congratulations!</h1>
+                  <h1>You've completed <span><?php the_title(); ?></span>. You get to add one <span><?php echo $reward['single_name']; ?></span> to your plate.</h1>
                 </div>
               </div>
-              <div class="reward-text"><?php echo $reward1; ?></div>
-            </div>
-          </div>
-          <div class="three columns">
-            <div class="reward reward-2">
-              <div class="reward-image-container">
-                <div class="reward-image reward-image-2">
+              <div class="six columns">
+                <div class="module-image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/farmer.png" />
                 </div>
               </div>
-              <div class="reward-text"><?php echo $reward2; ?></div>
             </div>
-          </div>
-          <div class="three columns">
-            <div class="reward reward-3">
-              <div class="reward-image-container">
-                <div class="reward-image reward-image-3">
-                </div>
-              </div>
-              <div class="reward-text"><?php echo $reward3; ?></div>
-            </div>
-          </div>
-          <div class="three columns">
-            <div class="reward reward-4">
-                <?php // echo get_sub_field('a'); ?>
-                <div class="reward-image-container">
-                  <div class="reward-image reward-image-4">
+            <div class="row">
+              <div class="three columns">
+                <div class="reward-answer reward-answer-1">
+                  <div class="reward-image-container">
+                    <div class="reward-image">
+                      <img src="<?php echo $reward['reward1_image'] ?>" />
+                    </div>
                   </div>
+                  <div class="reward-text"><?php echo $reward['reward1']; ?></div>
                 </div>
-                <div class="reward-text"><?php echo $reward4; ?></div>
+              </div>
+              <div class="three columns">
+                <div class="reward-answer reward-answer-2">
+                  <div class="reward-image-container">
+                    <div class="reward-image">
+                      <img src="<?php echo $reward['reward2_image'] ?>" />
+                    </div>
+                  </div>
+                  <div class="reward-text"><?php echo $reward['reward2']; ?></div>
+                </div>
+              </div>
+              <div class="three columns">
+                <div class="reward-answer reward-answer-3">
+                  <div class="reward-image-container">
+                    <div class="reward-image">
+                      <img src="<?php echo $reward['reward3_image'] ?>" />
+                    </div>
+                  </div>
+                  <div class="reward-text"><?php echo $reward['reward3']; ?></div>
+                </div>
+              </div>
+              <div class="three columns">
+                <div class="reward-answer reward-answer-4">
+                    <?php // echo get_sub_field('a'); ?>
+                    <div class="reward-image-container">
+                      <div class="reward-image">
+                        <img src="<?php echo $reward['reward4_image'] ?>" />
+                      </div>
+                    </div>
+                    <div class="reward-text"><?php echo $reward['reward4']; ?></div>
+                </div>
+              </div>
             </div>
+
+            <?php // REWARD CONTROLS ?>
+
+            <div class="row">
+              <div class="three columns">
+                <div class="module-section">
+                  <button class="prev" style="display: inline-block;">
+                    <div class="prev-text">Previous Question</div>
+                    <div class="prev-arrow"></div>
+                  </button>
+                </div>
+              </div>
+              <div class="three columns offset-by-six">
+                <div class="module-section">
+                  <button class="print" style="display: inline-block;">Print My Full Healthy Plate</button>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
-        <div class="row">
-          <div class="three columns">
-            <div class="module-section">
-              <button class="prev" style="display: inline-block;">
-                <div class="prev-text">Previous Question</div>
-                <div class="prev-arrow"></div>
-              </button>
-            </div>
-          </div>
-          <div class="three columns offset-by-six">
-            <div class="module-section">
-              <button class="print" style="display: inline-block;">Print My Full Healthy Plate</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <?php $i++; ?>
+      <?php
+      }
+    ?>
 
-    <div class="question question-<?php echo $i; ?>">
+    <?php // CONGRATULATIONS ?>
+
+    <div class="congratulations">
       <div class="container">
         <div class="row">
           <div class="six columns">
@@ -335,7 +357,9 @@ get_header(); ?>
         <div class="row">
           <div class="twelve columns">
             <div class="module-image">
-              <?php get_template_part( 'partials/progress', 'plate' ); ?>
+              <div class="final-image">
+
+              </div>
             </div>
           </div>
         </div>
@@ -350,6 +374,8 @@ get_header(); ?>
     </div>
 
 </main><!-- #main -->
+
+<?php // PROGRESS fann_get_sarprop_temperature ?>
 
 <div class="progress-farm">
   <div class="container">
@@ -436,6 +462,7 @@ get_header(); ?>
 
 
   var answers = {};
+  var rewards = {};
 
   var t = 0;
   var p = parseInt('<?php echo (100/$q); ?>');
@@ -515,6 +542,8 @@ get_header(); ?>
         jQuery(this).find('.reward-image').addClass('reward-image-hover');
         jQuery(this).addClass('reward-hover');
 
+        rewards[questionId.substr(questionId.length - 1)] = jQuery('.reward-hover').find('.reward-text').text();
+
         jQuery('.reward-item').text(jQuery(this).find('.reward-text').text());
 
       });
@@ -541,12 +570,14 @@ get_header(); ?>
 
     }
 
+    jQuery('.progress-plate').hide();
 
     var data = JSON.stringify(answers);
+    var rewardData = JSON.stringify(rewards);
 
     // Add rest of data to string
-    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $m; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + jQuery('.reward-hover').find('.reward-text').text(), success: function(result) {
-      alert(result);
+    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $m; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+      jQuery('.final-image').html(result);
     }});
 
   });

@@ -49,4 +49,4 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="page" class='hfeed site content-fullscreen <?php if (!is_post_type_archive()) { echo $post->post_name; } ?>'>
+	<div id="page" class='hfeed site content-fullscreen <?php if (!is_post_type_archive()) { echo "module-" . get_order( $post ); } ?>'>

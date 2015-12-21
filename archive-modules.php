@@ -22,7 +22,7 @@ get_header(); ?>
             </div>
             <br/>
             <div class="module-image">
-              <?php get_template_part( 'partials/progress', 'plate' ); ?>
+              <?php get_template_part( 'partials/bigprogress', 'plate' ); ?>
             </div>
           </div>
         </div>

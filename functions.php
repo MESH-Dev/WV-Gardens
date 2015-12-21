@@ -192,9 +192,11 @@ function save_answer() {
     // var_dump(get_current_user_id());
 
     $modules = array();
+    $rewards = array();
 
     foreach ( $results as $result ) {
       array_push($modules, $result['module_id']);
+      array_push($rewards, $result['reward']);
     }
 
 
@@ -340,8 +342,22 @@ function save_answer() {
 
     }
 
-    
 
+    echo '<div class="reward-images">';
+
+      // FOR EACH REWARDS AS REWARD, CREATE AN HTML ELEMENT AND RETURN IT
+
+      $i = 0;
+
+      foreach( $rewards as $reward ) {
+        echo '<div class="reward-image-final-' . $i . '">';
+        echo '<img src="' . get_template_directory_uri() . '/img/' . $reward . '.png" />';
+        echo '</div>';
+
+        $i++;
+      }
+
+    echo '</div>';
 
 
   die;
@@ -558,6 +574,44 @@ function add_student() {
 
   die;
 
+}
+
+function get_order( $post ) {
+  $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
+
+  global $wpdb;
+  $class_row = $wpdb->get_row( $sql , ARRAY_A );
+
+  $class = (int)$class_row['class_id'];
+
+  if( have_rows('modules', $class) ):
+
+    $num = 0;
+    $i = 1;
+
+      while ( have_rows('modules', $class) ) : the_row();
+
+          $module = get_sub_field('module', $class);
+
+          if ($module->ID == $post->ID) {
+            $num = $i;
+          }
+
+          ?>
+
+          <?php
+
+          $i++;
+
+      endwhile;
+
+  else :
+
+      // no rows found
+
+  endif;
+
+  return $num;
 }
 
 add_action( 'wp_ajax_remove_student', 'remove_student' );

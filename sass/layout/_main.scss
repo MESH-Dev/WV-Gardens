@@ -391,22 +391,6 @@
     background-image: url(img/plant-green.png);
   }
 
-  .reward-image-1 {
-    background-image: url(img/asparagus.png);
-  }
-
-  .reward-image-2 {
-    background-image: url(img/broccoli.png);
-  }
-
-  .reward-image-3 {
-    background-image: url(img/carrot.png);
-  }
-
-  .reward-image-4 {
-    background-image: url(img/beans-active.png);
-  }
-
 }
 
 .module-2 {
@@ -464,22 +448,6 @@
 
   .progress-farm-point-plant {
     background-image: url(img/plant-blue.png);
-  }
-
-  .reward-image-1 {
-    background-image: url(img/banana.png);
-  }
-
-  .reward-image-2 {
-    background-image: url(img/apple.png);
-  }
-
-  .reward-image-3 {
-    background-image: url(img/orange.png);
-  }
-
-  .reward-image-4 {
-    background-image: url(img/pear.png);
   }
 
 }
@@ -541,21 +509,6 @@
     background-image: url(img/plant-red.png);
   }
 
-  .reward-image-1 {
-    background-image: url(img/oatmeal.png);
-  }
-
-  .reward-image-2 {
-    background-image: url(img/bread.png);
-  }
-
-  .reward-image-3 {
-    background-image: url(img/pasta.png);
-  }
-
-  .reward-image-4 {
-    background-image: url(img/rice.png);
-  }
 }
 
 .module-4 {
@@ -613,22 +566,6 @@
 
   .progress-farm-point-plant {
     background-image: url(img/plant-purple.png);
-  }
-
-  .reward-image-1 {
-    background-image: url(img/ham.png);
-  }
-
-  .reward-image-2 {
-    background-image: url(img/eggs.png);
-  }
-
-  .reward-image-3 {
-    background-image: url(img/fish.png);
-  }
-
-  .reward-image-4 {
-    background-image: url(img/chicken.png);
   }
 }
 
@@ -689,21 +626,6 @@
     background-image: url(img/plant-blue.png);
   }
 
-  .reward-image-1 {
-    background-image: url(img/yogurt.png);
-  }
-
-  .reward-image-2 {
-    background-image: url(img/cheese.png);
-  }
-
-  .reward-image-3 {
-    background-image: url(img/milk.png);
-  }
-
-  .reward-image-4 {
-    background-image: url(img/icecream.png);
-  }
 }
 
 .module-6 {
@@ -757,21 +679,6 @@
     background-image: url(img/plant-purple.png);
   }
 
-  .reward-image-1 {
-    background-image: url(img/yogurt.png);
-  }
-
-  .reward-image-2 {
-    background-image: url(img/cheese.png);
-  }
-
-  .reward-image-3 {
-    background-image: url(img/milk.png);
-  }
-
-  .reward-image-4 {
-    background-image: url(img/icecream.png);
-  }
 }
 
 .progress-plate {
@@ -910,7 +817,7 @@
   }
 }
 
-.reward {
+.reward-answer {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
@@ -920,23 +827,6 @@
 .reward-image-container {
   height: 200px;
   position: relative;
-}
-
-.reward-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding: 20px;
-  height: 120px;
-  padding: 30px 0;
-  position: relative;
-  top: 40px;
-
-  &:hover {
-    height: 200px;
-    padding: 0;
-    top: 0;
-  }
 }
 
 .reward-image-hover {
@@ -984,38 +874,6 @@
   top: -35px;
 }
 
-
-
-// .remove-icon {
-//   position: relative;
-//     top: -5px;
-//     height: 25px;
-//     width: 25px;
-//     color: #e74c3c;
-//     font-size: 25px;
-//     line-height: 26px;
-//     border: 1px solid #bdc3c7;
-//     border-radius: 31px;
-//     transition: 0.2s all;
-//     -webkit-transition: 0.2s all;
-//     -moz-transition: 0.2s all;
-//     -ms-transition: 0.2s all;
-//     -o-transition: 0.2s all;
-//
-//     &:hover {
-//       cursor: pointer;
-//       background: #c0392b;
-//       color: #ecf0f1;
-//       border: 1px solid #e74c3c;
-//       -webkit-transform: rotate(90deg);
-//       transform: rotate(90deg);
-//       -moz-transform: rotate(90deg);
-//       -ms-transform: rotate(90deg);
-//       -o-transform: rotate(90deg);
-//     }
-//
-//     &:before {
-//       content: "\f335";
-//     }
-//
-// }
+.reward {
+  display: none;
+}
