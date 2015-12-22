@@ -18,7 +18,7 @@ get_header(); ?>
       <div class="row">
         <div class="twelve columns">
           <div class="menu-bar">
-            <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Game Name</span> <span class="menu-module-name"><?php the_title(); ?></span></div></a>
+            <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Sprout's Adventure</span> <span class="menu-module-name"><?php the_title(); ?></span></div></a>
             <div class="menu-sound"><i class="fa fa-volume-up"></i></div>
           </div>
           <div class="progress-plate">
@@ -49,7 +49,7 @@ get_header(); ?>
           </div>
           <div class="three columns">
             <div class="module-section">
-              <button class="next" style="display: inline-block;">Dig In!<div class="next-arrow"></div></button>
+              <button class="start button-control" style="display: inline-block;">Dig In!<div class="next-arrow button-control-arrow"></div></button>
             </div>
           </div>
         </div>
@@ -151,17 +151,17 @@ get_header(); ?>
             <div class="row">
               <div class="three columns">
                 <div class="module-section">
-                  <button class="prev" style="display: inline-block;">
+                  <button class="prev button-control" style="display: inline-block;">
                     <div class="prev-text">Previous Question</div>
-                    <div class="prev-arrow"></div>
+                    <div class="prev-arrow button-control-arrow"></div>
                   </button>
                 </div>
               </div>
               <div class="three columns offset-by-six">
                 <div class="module-section">
-                  <button class="next" style="display: inline-block;">
+                  <button class="next button-control" style="display: inline-block;">
                     <div class="next-text">Next Question</div>
-                    <div class="next-arrow"></div>
+                    <div class="next-arrow button-control-arrow"></div>
                   </button>
                 </div>
               </div>
@@ -321,15 +321,15 @@ get_header(); ?>
             <div class="row">
               <div class="three columns">
                 <div class="module-section">
-                  <button class="prev" style="display: inline-block;">
+                  <button class="prev button-control" style="display: inline-block;">
                     <div class="prev-text">Previous Question</div>
-                    <div class="prev-arrow"></div>
+                    <div class="prev-arrow button-control-arrow"></div>
                   </button>
                 </div>
               </div>
               <div class="three columns offset-by-six">
                 <div class="module-section">
-                  <button class="print" style="display: inline-block;">Print My Full Healthy Plate</button>
+                  <button class="next button-control" style="display: inline-block;">Next</button>
                 </div>
               </div>
             </div>
@@ -341,6 +341,20 @@ get_header(); ?>
       <?php
       }
     ?>
+
+    <?php // BONUS ?>
+
+    <div class="bonus">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <div class="module-image">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/bonus.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <?php // CONGRATULATIONS ?>
 
@@ -358,15 +372,17 @@ get_header(); ?>
           <div class="twelve columns">
             <div class="module-image">
               <div class="final-image">
-
               </div>
             </div>
           </div>
         </div>
+
+        <?php // RETURN CONTROLS ?>
+
         <div class="row">
           <div class="three columns offset-by-nine">
             <div class="module-section">
-              <a href="<?php echo get_home_url(); ?>/modules/"><button class="return" style="display: inline-block;">Return to Home <div class="return-arrow"></div></button></a>
+              <a href="<?php echo get_home_url(); ?>/modules/"><button class="return button-control" style="display: inline-block;">Return to Home <div class="return-arrow button-control-arrow"></div></button></a>
             </div>
           </div>
         </div>
@@ -375,88 +391,353 @@ get_header(); ?>
 
 </main><!-- #main -->
 
-<?php // PROGRESS fann_get_sarprop_temperature ?>
+<?php
+
+// GET THE QUESTIONS
+
+$questions = array();
+$questions_count = count(get_field('questions'));
+
+for ($x = 1; $x <= $questions_count; $x++) {
+  array_push($questions, ".question-" . $x);
+}
+
+// GET THE CLASS
+$sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
+global $wpdb;
+$class_row = $wpdb->get_row( $sql , ARRAY_A );
+$class = (int)$class_row['class_id'];
+
+// GET A LIST OF MODULES
+$sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
+$results = $wpdb->get_results( $sql , ARRAY_A );
+
+$modules_complete = count($results);
+$modules_total = count(get_field('modules', $class));
+
+// 1 MODULE
+
+$mod1_0 = array();
+array_push( $mod1_0, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod1_0, $question);
+}
+array_push( $mod1_0, ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".congratulations" );
+
+// 2 MODULES
+
+$mod2_0 = array();
+array_push( $mod2_0, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod2_0, $question);
+}
+array_push( $mod2_0, "reward-1", "reward-2", "congratulations" );
+
+$mod2_1 = array();
+array_push( $mod2_1, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod2_1, $question);
+}
+array_push( $mod2_1, ".reward-3", ".reward-4", ".bonus", ".reward-5", ".congratulations" );
+
+// 3 MODULES
+
+$mod3_0 = array();
+array_push( $mod3_0, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod3_0, $question);
+}
+array_push( $mod3_0, ".reward-1", ".congratulations" );
+
+$mod3_1 = array();
+array_push( $mod3_1, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod3_1, $question);
+}
+array_push( $mod3_1, ".reward-2", ".bonus", ".reward-3", ".congratulations" );
+
+$mod3_2 = array();
+array_push( $mod3_2, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod3_2, $question);
+}
+array_push( $mod3_2, ".reward-4", ".bonus", ".reward-5", ".congratulations" );
+
+// 4 MODULES
+
+$mod4_0 = array();
+array_push( $mod4_0, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod4_0, $question);
+}
+array_push( $mod4_0, ".reward-1", ".congratulations" );
+
+$mod4_1 = array();
+array_push( $mod4_1, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod4_1, $question);
+}
+array_push( $mod4_1, ".reward-2", ".congratulations" );
+
+$mod4_2 = array();
+array_push( $mod4_2, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod4_2, $question);
+}
+array_push( $mod4_2, ".reward-3", ".congratulations" );
+
+$mod4_3 = array();
+array_push( $mod4_3, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod4_3, $question);
+}
+array_push( $mod4_3, ".reward-4", ".bonus", ".reward-5", ".congratulations" );
+
+// 5 MODULES
+
+$mod5_0 = array();
+array_push( $mod5_0, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod5_0, $question);
+}
+array_push( $mod5_0, ".reward-1", ".congratulations" );
+
+$mod5_1 = array();
+array_push( $mod5_1, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod5_1, $question);
+}
+array_push( $mod5_1, ".reward-2", ".congratulations" );
+
+$mod5_2 = array();
+array_push( $mod5_2, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod5_2, $question);
+}
+array_push( $mod5_2, ".reward-3", ".congratulations" );
+
+$mod5_3 = array();
+array_push( $mod5_3, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod5_3, $question);
+}
+array_push( $mod5_3, ".reward-4", ".congratulations" );
+
+$mod5_4 = array();
+array_push( $mod5_4, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod5_4, $question);
+}
+array_push( $mod5_4, ".reward-5", ".congratulations" );
+
+// 6 MODULES
+
+$mod6_0 = array();
+array_push( $mod6_0, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod6_0, $question);
+}
+array_push( $mod6_0, ".congratulations-no-reward" );
+
+$mod6_1 = array();
+array_push( $mod6_1, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod6_1, $question);
+}
+array_push( $mod6_1, ".reward-1", ".congratulations" );
+
+$mod6_2 = array();
+array_push( $mod6_2, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod6_2, $question);
+}
+array_push( $mod6_2, ".reward-2", ".congratulations" );
+
+$mod6_3 = array();
+array_push( $mod6_3, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod6_3, $question);
+}
+array_push( $mod6_3, ".reward-3", ".congratulations" );
+
+$mod6_4 = array();
+array_push( $mod6_4, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod6_4, $question);
+}
+array_push( $mod6_4, ".reward-4", ".congratulations" );
+
+$mod6_5 = array();
+array_push( $mod6_5, ".welcome" );
+foreach ($questions as $question) {
+  array_push( $mod6_5, $question);
+}
+array_push( $mod6_5, ".reward-5", ".congratulations" );
+
+
+
+// SELECT WHICH TRACK
+
+$track = array();
+
+if (($modules_complete == 0) && ($modules_total == 1)) {
+  $track = $mod1_0;
+}
+
+if (($modules_complete == 0) && ($modules_total == 2)) {
+  $track = $mod2_0;
+}
+if (($modules_complete == 1) && ($modules_total == 2)) {
+  $track = $mod2_1;
+}
+
+if (($modules_complete == 0) && ($modules_total == 3)) {
+  $track = $mod3_0;
+}
+if (($modules_complete == 1) && ($modules_total == 3)) {
+  $track = $mod3_1;
+}
+if (($modules_complete == 2) && ($modules_total == 3)) {
+  $track = $mod3_2;
+}
+
+if (($modules_complete == 0) && ($modules_total == 4)) {
+  $track = $mod4_0;
+}
+if (($modules_complete == 1) && ($modules_total == 4)) {
+  $track = $mod4_1;
+}
+if (($modules_complete == 2) && ($modules_total == 4)) {
+  $track = $mod4_2;
+}
+if (($modules_complete == 3) && ($modules_total == 4)) {
+  $track = $mod4_3;
+}
+
+if (($modules_complete == 0) && ($modules_total == 5)) {
+  $track = $mod5_0;
+}
+if (($modules_complete == 1) && ($modules_total == 5)) {
+  $track = $mod5_1;
+}
+if (($modules_complete == 2) && ($modules_total == 5)) {
+  $track = $mod5_2;
+}
+if (($modules_complete == 3) && ($modules_total == 5)) {
+  $track = $mod5_3;
+}
+if (($modules_complete == 4) && ($modules_total == 5)) {
+  $track = $mod5_4;
+}
+
+if (($modules_complete == 0) && ($modules_total == 6)) {
+  $track = $mod6_0;
+}
+if (($modules_complete == 1) && ($modules_total == 6)) {
+  $track = $mod6_1;
+}
+if (($modules_complete == 2) && ($modules_total == 6)) {
+  $track = $mod6_2;
+}
+if (($modules_complete == 3) && ($modules_total == 6)) {
+  $track = $mod6_3;
+}
+if (($modules_complete == 4) && ($modules_total == 6)) {
+  $track = $mod6_4;
+}
+if (($modules_complete == 5) && ($modules_total == 6)) {
+  $track = $mod6_5;
+}
+
+
+?>
+
+<?php // PROGRESS FARMER ?>
 
 <div class="progress-farm">
   <div class="container">
     <div class="twelve columns">
 
-      <div class="progress-farmer">
+      <div class="progress-farmer"></div>
 
-      </div>
+        <?php
 
-
-      <?php
-
-        for ($x = 0; $x < $q; $x++) {
-
-          ?>
-
-          <div class="progress-farm-point" style="width: <?php echo (100/$q); ?>%">
-            <div class="progress-farm-point-sprout">
+          for ($x = 0; $x < $questions_count; $x++) {
+            ?>
+            <div class="progress-farm-point" style="width: <?php echo (100/$questions_count); ?>%">
+              <div class="progress-farm-point-sprout">
+              </div>
+              <div class="progress-farm-point-plant">
+              </div>
             </div>
-            <div class="progress-farm-point-plant">
-            </div>
-          </div>
-
-          <?php
-
-        }
-
-      ?>
+            <?php
+          }
+        ?>
 
     </div>
   </div>
 </div>
 
-<?php
-
-  $m = $post->ID;
-
-  $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
-
-  global $wpdb;
-  $class_row = $wpdb->get_row( $sql , ARRAY_A );
-
-  $class = (int)$class_row['class_id'];
-
-?>
-
-
-
 <script type="text/javascript">
 
-	jQuery('.question-0').show();
-  var index = 0;
+	jQuery('.bonus').show();
+  var step = 2;
+
+  var track = <?php echo json_encode($track); ?>
+
+  var distanceTraveled = 0;
+  var interval = parseInt('<?php echo (100/$questions_count); ?>');
+  var totalQuestions = parseInt('<?php echo $questions_count; ?>');
+
+  jQuery('.start').click(function(){
+
+    jQuery('.welcome').hide();
+    jQuery('.question-1').show();
+
+  });
 
   jQuery('.next').click(function(){
 
-    if ((jQuery('.question').length - 1) == index) {
+    jQuery(track[step - 1]).hide();
+    jQuery(track[step]).show();
 
-    } else {
+    if (track[step] == ".congratulations") {
+      jQuery('.progress-plate').hide();
 
-      var currentQuestion = ('.question-').concat(index);
-      index = index + 1;
+      var data = JSON.stringify(answers);
+      var rewardData = JSON.stringify(rewards);
 
-      var nextQuestion = ('.question-').concat(index);
-
-      jQuery(currentQuestion).hide();
-      jQuery(nextQuestion).show();
-
+      // Add rest of data to string
+      jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+        jQuery('.final-image').html(result);
+      }});
     }
 
-    // Store all the answers in an array
+    step = step + 1;
+
+    distanceTraveled = distanceTraveled + interval;
+
+    if ((step - 2) < totalQuestions) {
+      jQuery('.progress-farmer').css('left', distanceTraveled + '%');
+    }
+
+
 
   });
 
   jQuery('.prev').click(function(){
 
-    var currentQuestion = ('.question-').concat(index);
-    index = index - 1;
-    var prevQuestion = ('.question-').concat(index);
+    if (step != 2) {
+      step = step - 1;
+      jQuery(track[step]).hide();
+      jQuery(track[step - 1]).show();
 
-    jQuery(currentQuestion).hide();
-    jQuery(prevQuestion).show();
+      distanceTraveled = distanceTraveled - interval;
+
+      if ((step - 2) >= 0) {
+        jQuery('.progress-farmer').css('left', distanceTraveled + '%');
+      }
+    }
 
   });
 
@@ -464,86 +745,62 @@ get_header(); ?>
   var answers = {};
   var rewards = {};
 
-  var t = 0;
-  var p = parseInt('<?php echo (100/$q); ?>');
-  var q = parseInt('<?php echo $q; ?>');
-
-  var questions = [];
-
   jQuery(".question").each(function() {
 
-    var questionId = jQuery(this).attr('class').split(' ')[1];
-
     var question = jQuery(this);
+    var questionClass = '.' + jQuery(this).attr('class').split(' ')[1];
 
-    if (questionId != 'question-0') {
-      jQuery(this).find('.next').hide();
-    }
-
-    questions.push(0);
+    question.find('.next').hide();
 
     jQuery(this).find(".answer").each(function() {
-
       jQuery(this).click(function() {
 
         // Make next button active
-
-        var questionClass = '.' + questionId;
+        question.find('.next').show();
 
         // First remove the current hovers
-
         for (var i = 1; i <= 4; i++) {
-          jQuery(questionClass + " .answer-image").removeClass('answer-image-' + i + '-hover');
+          question.find(".answer-image").removeClass('answer-image-' + i + '-hover');
         }
-
-        jQuery(questionClass + ' .answer').removeClass('answer-hover');
+        question.find('.answer').removeClass('answer-hover');
 
         // Next, add the new hover
-
-        var answerId = jQuery(this).attr('class').split(' ')[1];
-        answerNum = answerId.substr(answerId.length - 1);
-
-        jQuery('.question-' + questionId.substr(questionId.length - 1) + ' .next').show();
+        var answerClass = jQuery(this).attr('class').split(' ')[1];
+        answerNum = answerClass.substr(answerClass.length - 1);
 
         jQuery(this).find('.answer-image').addClass('answer-image-' + answerNum + '-hover');
         jQuery(this).addClass('answer-hover');
 
-        answers[questionId.substr(questionId.length - 1)] = jQuery(this).find('.answer-text').text();
+        answers[step - 1] = jQuery(this).find('.answer-text').text();
 
         // Next, update the progress bar
-
-        jQuery('.progress-farm-point:eq(' + (questionId.substr(questionId.length - 1) - 1) + ')').find('.progress-farm-point-plant').show();
-        jQuery('.progress-farm-point:eq(' + (questionId.substr(questionId.length - 1) - 1) + ')').find('.progress-farm-point-sprout').hide();
-
-        if ((questions[questionId.substr(questionId.length - 1)] == 0) && (q != (questionId.substr(questionId.length - 1)))) {
-          t = t + p;
-
-          jQuery('.progress-farmer').css('left', t + '%');
-          questions[questionId.substr(questionId.length - 1)] = 1;
-        }
+        jQuery('.progress-farm-point:eq(' + (step - 2) + ')').find('.progress-farm-point-plant').show();
+        jQuery('.progress-farm-point:eq(' + (step - 2) + ')').find('.progress-farm-point-sprout').hide();
 
       });
-
     });
+  });
 
+  jQuery(".reward").each(function() {
 
-    jQuery(this).find(".reward").each(function() {
+    var rewardClass = jQuery(this).attr('class').split(' ')[1];
+    var rewardNum = rewardClass.substr(rewardClass.length - 1);
+
+    jQuery(this).find(".reward-answer").each(function() {
 
       jQuery(this).click(function() {
 
-        jQuery(".reward-image").removeClass('reward-image-hover');
-        jQuery('.reward').removeClass('reward-hover');
+        // First, remove the other hovers
+        jQuery(this).find(".reward-image").removeClass('reward-image-hover');
+        jQuery(this).find('.reward-answer').removeClass('reward-hover');
 
-        // Next, add the new hover
-
-        var rewardId = jQuery(this).attr('class').split(' ')[1];
-        rewardNum = rewardId.substr(rewardId.length - 1);
-
+        // Next, add the new hovers
         jQuery(this).find('.reward-image').addClass('reward-image-hover');
         jQuery(this).addClass('reward-hover');
 
-        rewards[questionId.substr(questionId.length - 1)] = jQuery('.reward-hover').find('.reward-text').text();
+        rewards[rewardNum] = jQuery(this).find('.reward-text').text();
 
+        // Assign it to span on next page
         jQuery('.reward-item').text(jQuery(this).find('.reward-text').text());
 
       });
@@ -553,6 +810,7 @@ get_header(); ?>
 
   });
 
+  // SEND IT TO THE DATABASE
 
   jQuery(".print").click(function() {
 
@@ -576,7 +834,7 @@ get_header(); ?>
     var rewardData = JSON.stringify(rewards);
 
     // Add rest of data to string
-    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $m; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
       jQuery('.final-image').html(result);
     }});
 

@@ -16,7 +16,6 @@
   global $wpdb;
   $results = $wpdb->get_results( $sql , ARRAY_A );
 
-  // var_dump(get_current_user_id());
 
   $modules = array();
 

@@ -202,7 +202,7 @@
   background: $light-blue;
 }
 
-.next {
+.button-control {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -216,11 +216,17 @@
   height: 50px;
   font-weight: bold;
 
-  .next-arrow {
+  .button-control-arrow {
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+  }
+}
+
+.next {
+
+  .next-arrow {
     float: right;
   }
   .next-text {
@@ -229,24 +235,7 @@
 }
 
 .prev {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 250px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 50px;
-  font-weight: bold;
-
   .prev-arrow {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
     float: left;
   }
   .prev-text {
@@ -255,24 +244,7 @@
 }
 
 .print {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 250px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 50px;
-  font-weight: bold;
-
   .print-arrow {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
     float: right;
   }
   .print-text {
@@ -281,24 +253,7 @@
 }
 
 .return {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  width: 250px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 50px;
-  font-weight: bold;
-
   .return-arrow {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
     float: right;
   }
   .return-text {
@@ -306,6 +261,11 @@
   }
 }
 
+.start {
+  .next-arrow {
+    float: right;
+  }
+}
 
 // Progress bar
 
@@ -364,7 +324,7 @@
     }
   }
 
-  .next, .print, .return {
+  .next, .print, .return, .start {
     background-position: right 20px center;
     background-color: white;
     color: $dark-green;
@@ -417,7 +377,7 @@
     }
   }
 
-  .next, .print, .return {
+  .next, .print, .return, .start {
     background-position: right 20px center;
     background-color: white;
     color: $dark-blue;
@@ -476,7 +436,7 @@
     }
   }
 
-  .next, .print, .return {
+  .next, .print, .return, .start {
     background-position: right 20px center;
     background-color: white;
     color: $dark-red;
@@ -535,7 +495,7 @@
     }
   }
 
-  .next, .print, .return {
+  .next, .print, .return, .start {
     background-position: right 20px center;
     background-color: white;
     color: $dark-purple;
@@ -593,7 +553,7 @@
     }
   }
 
-  .next, .print, .return {
+  .next, .print, .return, .start {
     background-position: right 20px center;
     background-color: white;
     color: $dark-yellow;
@@ -652,7 +612,7 @@
     }
   }
 
-  .next, .print, .return {
+  .next, .print, .return, .start {
     background-position: right 20px center;
     background-color: white;
     color: $dark-orange;
@@ -839,6 +799,15 @@
   display: none;
 }
 
+.welcome {
+  display: none;
+}
+
+.congratulations {
+  display: none;
+}
+
+
 .module-number {
   color: #7f3198;
   line-height: 0;
@@ -875,5 +844,9 @@
 }
 
 .reward {
+  display: none;
+}
+
+.congratulations {
   display: none;
 }
