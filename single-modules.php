@@ -353,6 +353,14 @@ get_header(); ?>
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="three columns offset-by-nine">
+            <div class="module-section">
+              <button class="next button-control" style="display: inline-block;">Next</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -364,12 +372,14 @@ get_header(); ?>
           <div class="six columns">
             <div class="module-text">
               <h1>Congratulations!</h1>
-              <h1>You've added one <span class="reward-item"></span> to your plate.</h1>
+              <h1>
+                You've added one <span class="reward-item"></span> to your plate.
+              </h1>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="twelve columns">
+          <div class="six offset-by-three columns">
             <div class="module-image">
               <div class="final-image">
               </div>
@@ -680,7 +690,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
 <script type="text/javascript">
 
-	jQuery('.bonus').show();
+	jQuery('.welcome').show();
   var step = 2;
 
   var track = <?php echo json_encode($track); ?>
@@ -707,6 +717,23 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
       var data = JSON.stringify(answers);
       var rewardData = JSON.stringify(rewards);
 
+      var rewardText = "";
+      var len = Object.keys(rewards).length;
+      var i = 1;
+      jQuery.each( rewards, function( key, value ) {
+
+        if (i == len) {
+          rewardText = rewardText.concat(value);
+        } else {
+          rewardText = rewardText.concat(value + " and one ");
+        }
+
+        i = i + 1;
+
+      });
+
+      jQuery('.reward-item').text(rewardText);
+
       // Add rest of data to string
       jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
         jQuery('.final-image').html(result);
@@ -720,8 +747,6 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     if ((step - 2) < totalQuestions) {
       jQuery('.progress-farmer').css('left', distanceTraveled + '%');
     }
-
-
 
   });
 
@@ -740,6 +765,8 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     }
 
   });
+
+
 
 
   var answers = {};

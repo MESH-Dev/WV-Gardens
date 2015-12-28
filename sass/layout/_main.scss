@@ -660,6 +660,7 @@
 
 .module-image {
   text-align: center;
+  position: relative;
 }
 
 .answer {
@@ -849,4 +850,44 @@
 
 .congratulations {
   display: none;
+}
+
+.bonus {
+  display: none;
+}
+
+.reward-images {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.reward-image-final-0 {
+  position: absolute;
+  left: 20px;
+  top: 245px;
+}
+
+.reward-image-final-1 {
+  position: absolute;
+  left: 40px;
+  top: 50px;
+}
+
+.reward-image-final-2 {
+  position: absolute;
+  left: 175px;
+  top: 90px;
+}
+
+.reward-image-final-3 {
+  position: absolute;
+  left: 220px;
+  top: 240px;
+}
+
+.reward-image-final-4 {
+  position: absolute;
+  top: -50px;
+  right: 0;
 }

@@ -196,7 +196,7 @@ function save_answer() {
 
     foreach ( $results as $result ) {
       array_push($modules, $result['module_id']);
-      array_push($rewards, $result['reward']);
+      array_push($rewards, json_decode(str_replace('\\', '', $result["reward"]), true));
     }
 
 
@@ -350,11 +350,80 @@ function save_answer() {
       $i = 0;
 
       foreach( $rewards as $reward ) {
-        echo '<div class="reward-image-final-' . $i . '">';
-        echo '<img src="' . get_template_directory_uri() . '/img/' . $reward . '.png" />';
-        echo '</div>';
+        foreach ($reward as $r) {
 
-        $i++;
+          $r_image = '';
+
+          if ($r == "Asparagus") {
+            $r_image = get_template_directory_uri() . '/img/asparagus.png';
+          }
+          elseif ($r == "Broccoli") {
+            $r_image = get_template_directory_uri() . '/img/broccoli.png';
+          }
+          elseif ($r == "Carrot") {
+            $r_image = get_template_directory_uri() . '/img/carrot.png';
+          }
+          elseif ($r == "Green Beans") {
+            $r_image = get_template_directory_uri() . '/img/beans.png';
+          }
+          elseif ($r == "Banana") {
+            $r_image = get_template_directory_uri() . '/img/banana.png';
+          }
+          elseif ($r == "Apple") {
+            $r_image = get_template_directory_uri() . '/img/apple.png';
+          }
+          elseif ($r == "Orange") {
+            $r_image = get_template_directory_uri() . '/img/orange.png';
+          }
+          elseif ($r == "Pear") {
+            $r_image = get_template_directory_uri() . '/img/pear.png';
+          }
+          elseif ($r == "Ham") {
+            $r_image = get_template_directory_uri() . '/img/ham.png';
+          }
+          elseif ($r == "Eggs") {
+            $r_image = get_template_directory_uri() . '/img/eggs.png';
+          }
+          elseif ($r == "Fish") {
+            $r_image = get_template_directory_uri() . '/img/fish.png';
+          }
+          elseif ($r == "Chicken") {
+            $r_image = get_template_directory_uri() . '/img/chicken.png';
+          }
+          elseif ($r == "Oatmeal") {
+            $r_image = get_template_directory_uri() . '/img/oatmeal.png';
+          }
+          elseif ($r == "Bread") {
+            $r_image = get_template_directory_uri() . '/img/bread.png';
+          }
+          elseif ($r == "Pasta") {
+            $r_image = get_template_directory_uri() . '/img/pasta.png';
+          }
+          elseif ($r == "Rice") {
+            $r_image = get_template_directory_uri() . '/img/rice.png';
+          }
+          elseif ($r == "Yogurt") {
+            $r_image = get_template_directory_uri() . '/img/yogurt.png';
+          }
+          elseif ($r == "Cheese") {
+            $r_image = get_template_directory_uri() . '/img/cheese.png';
+          }
+          elseif ($r == "Milk") {
+            $r_image = get_template_directory_uri() . '/img/milk.png';
+          }
+          elseif ($r == "Ice Cream") {
+            $r_image = get_template_directory_uri() . '/img/icecream.png';
+          }
+          else {
+
+          }
+
+          echo '<div class="reward-image-final-' . $i . '">';
+          echo '<img src="' . $r_image . '" />';
+          echo '</div>';
+
+          $i++;
+        }
       }
 
     echo '</div>';
