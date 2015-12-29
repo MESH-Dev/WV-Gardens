@@ -3,11 +3,11 @@ jQuery(document).ready(function($){
   $snowfall = false;
 
   if ($("#login-flag").length > 0) {
-    if ($snowfall == false) {
+
       $(document).snowfall({
-        image :"http://localhost/gardens/wp-content/themes/WV-Gardens/img/apple.png", minSize: 70, maxSize:100, maxSpeed: 1, flakeCount: 20
+        image :"http://localhost/gardens/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
       });
-      $snowfall = true;
+
 
       $('.snowfall-flakes').each(function(i, el){
         var randomNumber = Math.floor(Math.random() * 21) + 1;
@@ -85,10 +85,7 @@ jQuery(document).ready(function($){
       });
 
 
-    } else {
-      $(document).snowfall('clear');
-      $snowfall = false;
-    }
+
 
   }
 
