@@ -418,7 +418,7 @@ function save_answer() {
 
           }
 
-          echo '<div class="reward-image-final-' . $i . '">';
+          echo '<div class="reward-image-final-' . $i . ' reward-image-final">';
           echo '<img src="' . $r_image . '" />';
           echo '</div>';
 

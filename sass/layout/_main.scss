@@ -72,7 +72,8 @@
   color: white;
   position: relative;
   margin-top: 300px;
-  z-index: 500;
+  z-index: 9999999;
+
 
   h1 {
     font-size: 81px;
@@ -94,6 +95,8 @@
   color: $purple;
   font-weight: bold;
   text-transform: uppercase;
+  z-index: 9999999;
+  position: relative;
 }
 
 #submit {
@@ -684,13 +687,9 @@
   img {
     height: 95px;
   }
-}
-
-.answer-image-1 {
-  background-image: url(img/star.png);
 
   &:hover {
-    background-image: url(img/star-hover.png);
+    background-size: contain;
 
     img {
       height: 180px;
@@ -700,8 +699,8 @@
   }
 }
 
-.answer-image-1-hover {
-  background-image: url(img/star-hover.png);
+.answer-image-hover {
+  background-size: contain;
 
   img {
     height: 180px;
@@ -710,77 +709,230 @@
   }
 }
 
-.answer-image-2 {
-  background-image: url(img/circle.png);
+.module-1 {
 
-  &:hover {
-    background-image: url(img/little-hover.png);
+  // Answer image 1
 
-    img {
-      height: 180px;
-      position: relative;
-      top: -60px;
+  .answer-image-1 {
+    background-image: url(img/star.png);
+
+    &:hover {
+      background-image: url(img/hover/PurpleStar_Hover.png);
     }
   }
-}
-
-.answer-image-2-hover {
-  background-image: url(img/little-hover.png);
-
-  img {
-    height: 180px;
-    position: relative;
-    top: -60px;
+  .answer-image-1-hover {
+    background-image: url(img/hover/PurpleStar_Active.png);
   }
-}
 
-.answer-image-3 {
-  background-image: url(img/cloud.png);
+  // Answer image 2
 
-  &:hover {
-    background-image: url(img/cloud-hover.png);
+  .answer-image-2 {
+    background-image: url(img/circle.png);
 
-    img {
-      height: 180px;
-      position: relative;
-      top: -60px;
+    &:hover {
+      background-image: url(img/hover/PurpleO_Hover.png);
     }
   }
-}
-
-.answer-image-3-hover {
-  background-image: url(img/cloud-hover.png);
-
-  img {
-    height: 180px;
-    position: relative;
-    top: -60px;
+  .answer-image-2-hover {
+    background-image: url(img/hover/PurpleO_Active.png);
   }
-}
 
-.answer-image-4 {
-  background-image: url(img/x.png);
+  // Answer image 3
 
-  &:hover {
-    background-image: url(img/x-hover.png);
+  .answer-image-3 {
+    background-image: url(img/cloud.png);
 
-    img {
-      height: 180px;
-      position: relative;
-      top: -60px;
+    &:hover {
+      background-image: url(img/hover/PurpleCloud_Hover.png);
     }
   }
-}
-
-.answer-image-4-hover {
-  background-image: url(img/x-hover.png);
-
-  img {
-    height: 180px;
-    position: relative;
-    top: -60px;
+  .answer-image-3-hover {
+    background-image: url(img/hover/PurpleCloud_Active.png);
   }
+
+  // Answer image 4
+
+  .answer-image-4 {
+    background-image: url(img/x.png);
+
+    &:hover {
+      background-image: url(img/hover/PurpleX_Hover.png);
+    }
+  }
+  .answer-image-4-hover {
+    background-image: url(img/hover/PurpleX_Active.png);
+  }
+
 }
+
+.module-2 {
+
+  // Answer image 1
+
+  .answer-image-1 {
+    background-image: url(img/star.png);
+
+    &:hover {
+      background-image: url(img/hover/YellowStar_Hover.png);
+    }
+  }
+  .answer-image-1-hover {
+    background-image: url(img/hover/YellowStar_Active.png);
+  }
+
+  // Answer image 2
+
+  .answer-image-2 {
+    background-image: url(img/circle.png);
+
+    &:hover {
+      background-image: url(img/hover/YellowO_Hover.png);
+    }
+  }
+  .answer-image-2-hover {
+    background-image: url(img/hover/YellowO_Active.png);
+  }
+
+  // Answer image 3
+
+  .answer-image-3 {
+    background-image: url(img/cloud.png);
+
+    &:hover {
+      background-image: url(img/hover/YellowCloud_Hover.png);
+    }
+  }
+  .answer-image-3-hover {
+    background-image: url(img/hover/YellowCloud_Active.png);
+  }
+
+  // Answer image 4
+
+  .answer-image-4 {
+    background-image: url(img/x.png);
+
+    &:hover {
+      background-image: url(img/hover/YellowX_Hover.png);
+    }
+  }
+  .answer-image-4-hover {
+    background-image: url(img/hover/YellowX_Active.png);
+  }
+
+}
+
+.module-3, .module-4 {
+
+  // Answer image 1
+
+  .answer-image-1 {
+    background-image: url(img/star.png);
+
+    &:hover {
+      background-image: url(img/hover/MintStar_Hover.png);
+    }
+  }
+  .answer-image-1-hover {
+    background-image: url(img/hover/MintStar_Active.png);
+  }
+
+  // Answer image 2
+
+  .answer-image-2 {
+    background-image: url(img/circle.png);
+
+    &:hover {
+      background-image: url(img/hover/MintO_Hover.png);
+    }
+  }
+  .answer-image-2-hover {
+    background-image: url(img/hover/MintO_Active.png);
+  }
+
+  // Answer image 3
+
+  .answer-image-3 {
+    background-image: url(img/cloud.png);
+
+    &:hover {
+      background-image: url(img/hover/MintCloud_Hover.png);
+    }
+  }
+  .answer-image-3-hover {
+    background-image: url(img/hover/MintCloud_Active.png);
+  }
+
+  // Answer image 4
+
+  .answer-image-4 {
+    background-image: url(img/x.png);
+
+    &:hover {
+      background-image: url(img/hover/MintX_Hover.png);
+    }
+  }
+  .answer-image-4-hover {
+    background-image: url(img/hover/MintX_Active.png);
+  }
+
+}
+
+.module-5 {
+
+  // Answer image 1
+
+  .answer-image-1 {
+    background-image: url(img/star.png);
+
+    &:hover {
+      background-image: url(img/hover/BlueStar_Hover.png);
+    }
+  }
+  .answer-image-1-hover {
+    background-image: url(img/hover/BlueStar_Active.png);
+  }
+
+  // Answer image 2
+
+  .answer-image-2 {
+    background-image: url(img/circle.png);
+
+    &:hover {
+      background-image: url(img/hover/BlueO_Hover.png);
+    }
+  }
+  .answer-image-2-hover {
+    background-image: url(img/hover/BlueO_Active.png);
+  }
+
+  // Answer image 3
+
+  .answer-image-3 {
+    background-image: url(img/cloud.png);
+
+    &:hover {
+      background-image: url(img/hover/BlueCloud_Hover.png);
+    }
+  }
+  .answer-image-3-hover {
+    background-image: url(img/hover/BlueCloud_Active.png);
+  }
+
+  // Answer image 4
+
+  .answer-image-4 {
+    background-image: url(img/x.png);
+
+    &:hover {
+      background-image: url(img/hover/BlueX_Hover.png);
+    }
+  }
+  .answer-image-4-hover {
+    background-image: url(img/hover/BlueX_Active.png);
+  }
+
+}
+
 
 .reward-answer {
   text-align: center;
@@ -833,7 +985,6 @@
 }
 
 .page-template-login {
-  background-color: #7f3198;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -859,42 +1010,58 @@
   display: none;
 }
 
+.complete {
+  display: none;
+}
+
 .reward-images {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
+.reward-image-final {
+  width: 100px;
+}
+
 .reward-image-final-0 {
   position: absolute;
-  left: 20px;
-  top: 245px;
+  left: 55px;
+  top: 275px;
 }
 
 .reward-image-final-1 {
   position: absolute;
-  left: 40px;
-  top: 50px;
+  left: 55px;
+  top: 100px;
 }
 
 .reward-image-final-2 {
   position: absolute;
-  left: 175px;
-  top: 90px;
+  left: 235px;
+  top: 145px;
 }
 
 .reward-image-final-3 {
   position: absolute;
-  left: 220px;
-  top: 240px;
+  left: 230px;
+  top: 290px;
 }
 
 .reward-image-final-4 {
   position: absolute;
-  top: -50px;
-  right: 0;
+  top: -30px;
+  right: 19px;
 }
 
 .center {
   text-align: center;
+}
+
+.bonus-image {
+  margin: 200px 0;
+}
+
+.congratulations-no-reward {
+  display: none;
 }

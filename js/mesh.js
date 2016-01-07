@@ -4,6 +4,28 @@ jQuery(document).ready(function($){
 
   if ($("#login-flag").length > 0) {
 
+      var rn = Math.floor(Math.random() * 4) + 1;
+      var color = "#7f3198";
+
+      if (rn == 1) {
+        color = "#7f3198";
+      }
+      else if (rn == 2) {
+        color = "#f65163";
+      }
+      else if (rn == 3) {
+        color = "#0ed59c";
+      }
+      else if (rn == 4) {
+        color = "#0072bc";
+      }
+      else {
+        color = "#ffcd2b";
+      }
+
+      $('.page-template-login').css('background-color', color);
+      $('.login-button').css('color', color);
+
       $(document).snowfall({
         image :"http://localhost/gardens/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
       });

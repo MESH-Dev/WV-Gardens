@@ -329,7 +329,10 @@ get_header(); ?>
               </div>
               <div class="three columns offset-by-six">
                 <div class="module-section">
-                  <button class="next button-control" style="display: inline-block;">Next</button>
+                  <button class="next button-control" style="display: inline-block;">
+                    <div class="next-text">Next</div>
+                    <div class="next-arrow button-control-arrow"></div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -349,7 +352,9 @@ get_header(); ?>
         <div class="row">
           <div class="twelve columns">
             <div class="module-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/bonus.png" />
+              <div class="bonus-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/bonus.png" />
+              </div>
             </div>
           </div>
         </div>
@@ -357,7 +362,10 @@ get_header(); ?>
         <div class="row">
           <div class="three columns offset-by-nine">
             <div class="module-section">
-              <button class="next button-control" style="display: inline-block;">Next</button>
+              <button class="next button-control" style="display: inline-block;">
+                <div class="next-text">Next</div>
+                <div class="next-arrow button-control-arrow"></div>
+              </button>
             </div>
           </div>
         </div>
@@ -399,6 +407,76 @@ get_header(); ?>
       </div>
     </div>
 
+    <?php // CONGRATULATIONS ?>
+
+    <div class="congratulations-no-reward">
+      <div class="container">
+        <div class="row">
+          <div class="six columns">
+            <div class="module-text">
+              <h1>Congratulations!</h1>
+              <h1>
+                You're one step closer to completing your plate!
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="six offset-by-three columns">
+            <div class="module-image">
+              <div class="final-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <?php // RETURN CONTROLS ?>
+
+        <div class="row">
+          <div class="three columns offset-by-nine">
+            <div class="module-section">
+              <a href="<?php echo get_home_url(); ?>/modules/"><button class="return button-control" style="display: inline-block;">Return to Home <div class="return-arrow button-control-arrow"></div></button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <?php // COMPLETE ?>
+
+    <div class="complete">
+      <div class="container">
+        <div class="row">
+          <div class="six columns">
+            <div class="module-text">
+              <h1>Congratulations!</h1>
+              <h1>
+                You've completed Sprout's Adventure and filled your plate with healthy food!
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="six offset-by-three columns">
+            <div class="module-image">
+              <div class="final-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <?php // RETURN CONTROLS ?>
+
+        <div class="row">
+          <div class="three columns offset-by-nine">
+            <div class="module-section">
+              <a href="<?php echo get_home_url(); ?>/modules/"><button class="return button-control" style="display: inline-block;">Print My Full Healthy Plate <div class="return-arrow button-control-arrow"></div></button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </main><!-- #main -->
 
 <?php
@@ -432,7 +510,7 @@ array_push( $mod1_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod1_0, $question);
 }
-array_push( $mod1_0, ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".congratulations" );
+array_push( $mod1_0, ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".complete" );
 
 // 2 MODULES
 
@@ -448,7 +526,7 @@ array_push( $mod2_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod2_1, $question);
 }
-array_push( $mod2_1, ".reward-3", ".reward-4", ".bonus", ".reward-5", ".congratulations" );
+array_push( $mod2_1, ".reward-3", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
 // 3 MODULES
 
@@ -471,7 +549,7 @@ array_push( $mod3_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_2, $question);
 }
-array_push( $mod3_2, ".reward-4", ".bonus", ".reward-5", ".congratulations" );
+array_push( $mod3_2, ".reward-4", ".bonus", ".reward-5", ".complete" );
 
 // 4 MODULES
 
@@ -501,7 +579,7 @@ array_push( $mod4_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_3, $question);
 }
-array_push( $mod4_3, ".reward-4", ".bonus", ".reward-5", ".congratulations" );
+array_push( $mod4_3, ".reward-4", ".bonus", ".reward-5", ".complete" );
 
 // 5 MODULES
 
@@ -538,7 +616,7 @@ array_push( $mod5_4, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_4, $question);
 }
-array_push( $mod5_4, ".reward-5", ".congratulations" );
+array_push( $mod5_4, ".reward-5", ".complete" );
 
 // 6 MODULES
 
@@ -582,7 +660,7 @@ array_push( $mod6_5, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_5, $question);
 }
-array_push( $mod6_5, ".reward-5", ".congratulations" );
+array_push( $mod6_5, ".reward-5", ".complete" );
 
 
 
@@ -711,7 +789,9 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     jQuery(track[step - 1]).hide();
     jQuery(track[step]).show();
 
-    if (track[step] == ".congratulations") {
+    // console.log(jQuery(track[step]));
+
+    if (track[step] == ".congratulations" || track[step] == ".complete") {
       jQuery('.progress-plate').hide();
 
       var data = JSON.stringify(answers);
@@ -788,6 +868,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
         // First remove the current hovers
         for (var i = 1; i <= 4; i++) {
           question.find(".answer-image").removeClass('answer-image-' + i + '-hover');
+          question.find(".answer-image").removeClass('answer-image-hover');
         }
         question.find('.answer').removeClass('answer-hover');
 
@@ -796,6 +877,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
         answerNum = answerClass.substr(answerClass.length - 1);
 
         jQuery(this).find('.answer-image').addClass('answer-image-' + answerNum + '-hover');
+        jQuery(this).find('.answer-image').addClass('answer-image-hover');
         jQuery(this).addClass('answer-hover');
 
         answers[step - 1] = jQuery(this).find('.answer-text').text();
@@ -813,9 +895,15 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     var rewardClass = jQuery(this).attr('class').split(' ')[1];
     var rewardNum = rewardClass.substr(rewardClass.length - 1);
 
+    var reward = jQuery(this);
+
+    reward.find('.next').hide();
+
     jQuery(this).find(".reward-answer").each(function() {
 
       jQuery(this).click(function() {
+
+        reward.find('.next').show();
 
         // First, remove the other hovers
         jQuery(this).find(".reward-image").removeClass('reward-image-hover');
