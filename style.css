@@ -1790,62 +1790,83 @@ html, body {
 }
 
 /* line 944, sass/layout/_main.scss */
-.reward-image-container {
-  height: 200px;
-  position: relative;
+.reward-image {
+  margin: auto;
+  display: table-cell;
+  vertical-align: middle;
+  height: 250px;
+}
+/* line 950, sass/layout/_main.scss */
+.reward-image img {
+  width: 100px;
+}
+/* line 953, sass/layout/_main.scss */
+.reward-image img:hover {
+  width: 150px;
 }
 
-/* line 949, sass/layout/_main.scss */
+/* line 959, sass/layout/_main.scss */
+.reward-image-container {
+  height: 175px;
+  position: relative;
+  display: table;
+  width: 100%;
+}
+
+/* line 966, sass/layout/_main.scss */
 .reward-image-hover {
-  height: 200px;
   padding: 0;
   top: 0;
 }
+/* line 970, sass/layout/_main.scss */
+.reward-image-hover img {
+  width: 150px;
+}
 
-/* line 955, sass/layout/_main.scss */
+/* line 975, sass/layout/_main.scss */
 .question {
   display: none;
 }
 
-/* line 959, sass/layout/_main.scss */
+/* line 979, sass/layout/_main.scss */
 .welcome {
   display: none;
 }
 
-/* line 963, sass/layout/_main.scss */
+/* line 983, sass/layout/_main.scss */
 .congratulations {
   display: none;
 }
 
-/* line 968, sass/layout/_main.scss */
+/* line 988, sass/layout/_main.scss */
 .module-number {
   color: #7f3198;
   line-height: 0;
 }
 
-/* line 973, sass/layout/_main.scss */
+/* line 993, sass/layout/_main.scss */
 .answer-text, .reward-text {
   margin: 10px;
 }
 
-/* line 977, sass/layout/_main.scss */
+/* line 997, sass/layout/_main.scss */
 .module-food {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-/* line 982, sass/layout/_main.scss */
+/* line 1002, sass/layout/_main.scss */
 .module-food img {
   float: left;
 }
 
-/* line 987, sass/layout/_main.scss */
+/* line 1007, sass/layout/_main.scss */
 .page-template-login {
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 992, sass/layout/_main.scss */
+/* line 1012, sass/layout/_main.scss */
 .progress-farmer {
   background-repeat: no-repeat;
   width: 50px;
@@ -1855,84 +1876,84 @@ html, body {
   top: -35px;
 }
 
-/* line 1001, sass/layout/_main.scss */
+/* line 1021, sass/layout/_main.scss */
 .reward {
   display: none;
 }
 
-/* line 1005, sass/layout/_main.scss */
+/* line 1025, sass/layout/_main.scss */
 .congratulations {
   display: none;
 }
 
-/* line 1009, sass/layout/_main.scss */
+/* line 1029, sass/layout/_main.scss */
 .bonus {
   display: none;
 }
 
-/* line 1013, sass/layout/_main.scss */
+/* line 1033, sass/layout/_main.scss */
 .complete {
   display: none;
 }
 
-/* line 1017, sass/layout/_main.scss */
+/* line 1037, sass/layout/_main.scss */
 .reward-images {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-/* line 1023, sass/layout/_main.scss */
+/* line 1043, sass/layout/_main.scss */
 .reward-image-final {
   width: 100px;
 }
 
-/* line 1027, sass/layout/_main.scss */
+/* line 1047, sass/layout/_main.scss */
 .reward-image-final-0 {
   position: absolute;
   left: 55px;
   top: 275px;
 }
 
-/* line 1033, sass/layout/_main.scss */
+/* line 1053, sass/layout/_main.scss */
 .reward-image-final-1 {
   position: absolute;
   left: 55px;
   top: 100px;
 }
 
-/* line 1039, sass/layout/_main.scss */
+/* line 1059, sass/layout/_main.scss */
 .reward-image-final-2 {
   position: absolute;
   left: 235px;
   top: 145px;
 }
 
-/* line 1045, sass/layout/_main.scss */
+/* line 1065, sass/layout/_main.scss */
 .reward-image-final-3 {
   position: absolute;
   left: 230px;
   top: 290px;
 }
 
-/* line 1051, sass/layout/_main.scss */
+/* line 1071, sass/layout/_main.scss */
 .reward-image-final-4 {
   position: absolute;
   top: -30px;
   right: 19px;
 }
 
-/* line 1057, sass/layout/_main.scss */
+/* line 1077, sass/layout/_main.scss */
 .center {
   text-align: center;
 }
 
-/* line 1061, sass/layout/_main.scss */
+/* line 1081, sass/layout/_main.scss */
 .bonus-image {
   margin: 200px 0;
 }
 
-/* line 1065, sass/layout/_main.scss */
+/* line 1085, sass/layout/_main.scss */
 .congratulations-no-reward {
   display: none;
 }

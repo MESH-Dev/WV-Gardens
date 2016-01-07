@@ -908,6 +908,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
         // First, remove the other hovers
         jQuery(this).find(".reward-image").removeClass('reward-image-hover');
         jQuery(this).find('.reward-answer').removeClass('reward-hover');
+        jQuery(".reward-image").removeClass('reward-image-hover');
 
         // Next, add the new hovers
         jQuery(this).find('.reward-image').addClass('reward-image-hover');

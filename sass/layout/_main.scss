@@ -941,15 +941,35 @@
   color: white;
 }
 
+.reward-image {
+  margin: auto;
+  display: table-cell;
+  vertical-align: middle;
+  height: 250px;
+
+  img {
+    width: 100px;
+
+    &:hover {
+      width: 150px;
+    }
+  }
+}
+
 .reward-image-container {
-  height: 200px;
+  height: 175px;
   position: relative;
+  display: table;
+  width: 100%;
 }
 
 .reward-image-hover {
-  height: 200px;
   padding: 0;
   top: 0;
+
+  img {
+    width: 150px;
+  }
 }
 
 .question {
