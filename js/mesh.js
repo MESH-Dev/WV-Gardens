@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
       $('.login-button').css('color', color);
 
       $(document).snowfall({
-        image :"http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
+        image :"http://localhost/gardens/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
       });
 
 
@@ -103,7 +103,7 @@ jQuery(document).ready(function($){
 
         }
 
-        $(this).attr("src", "http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/" + newSrc);
+        $(this).attr("src", "http://localhost/gardens/wp-content/themes/WV-Gardens/img/" + newSrc);
       });
 
 
