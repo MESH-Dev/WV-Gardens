@@ -21,11 +21,13 @@ get_header(); ?>
           </div>
         </div>
       </div>
-      <div class="four columns offset-by-two center">
-        <a href="<?php echo wp_login_url(); ?>?user=teacher" title="Login" class="login-button">Teacher Login</a>
-      </div>
-      <div class="four columns center">
-        <a href="<?php echo get_home_url(); ?>/student-login" title="Login" class="login-button">Student Login</a>
+      <div class="row">
+        <div class="four columns offset-by-two center">
+          <a href="<?php echo wp_login_url(); ?>?user=teacher" title="Login" class="login-button">Teacher Login</a>
+        </div>
+        <div class="four columns center">
+          <a href="<?php echo get_home_url(); ?>/student-login" title="Login" class="login-button">Student Login</a>
+        </div>
       </div>
 
     </div>

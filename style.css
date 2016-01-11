@@ -925,7 +925,7 @@ html, body {
   text-align: center;
   color: white;
   position: relative;
-  margin-top: 300px;
+  margin-top: 250px;
   z-index: 9999999;
 }
 /* line 78, sass/layout/_main.scss */
