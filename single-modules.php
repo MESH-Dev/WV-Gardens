@@ -239,7 +239,7 @@ get_header(); ?>
       "reward2" => "Cheese",
       "reward2_image" => get_template_directory_uri() . "/img/cheese.png",
       "reward3" => "Milk",
-      "reward3_image" => get_template_directory_uri() . "/img/milk.png",
+      "reward3_image" => get_template_directory_uri() . "/img/Milk.png",
       "reward4" => "Ice Cream",
       "reward4_image" => get_template_directory_uri() . "/img/icecream.png"
     );
