@@ -79,7 +79,7 @@ jQuery(document).ready(function($){
           newSrc = 'Milk.png';
         }
         else if (randomNumber == 15) {
-          newSrc = 'noodles.png';
+          newSrc = 'Noodles.png';
         }
         else if (randomNumber == 16) {
           newSrc = 'orange.png';
