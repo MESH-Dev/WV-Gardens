@@ -224,8 +224,8 @@ endif;
           elseif ($r == "Chicken") {
             $r_image = get_template_directory_uri() . '/img/chicken.png';
           }
-          elseif ($r == "Oatmeal") {
-            $r_image = get_template_directory_uri() . '/img/oatmeal.png';
+          elseif ($r == "Noodles") {
+            $r_image = get_template_directory_uri() . '/img/noodles.png';
           }
           elseif ($r == "Bread") {
             $r_image = get_template_directory_uri() . '/img/bread.png';

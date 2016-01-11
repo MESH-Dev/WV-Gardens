@@ -221,8 +221,8 @@ get_header(); ?>
     $grains = array(
       "single_name" => "grain",
       "plural_name" => "grains",
-      "reward1" => "Oatmeal",
-      "reward1_image" => get_template_directory_uri() . "/img/oatmeal.png",
+      "reward1" => "Noodles",
+      "reward1_image" => get_template_directory_uri() . "/img/Noodles.png",
       "reward2" => "Bread",
       "reward2_image" => get_template_directory_uri() . "/img/bread.png",
       "reward3" => "Pasta",
@@ -907,7 +907,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
         // First, remove the other hovers
         jQuery(this).find(".reward-image").removeClass('reward-image-hover');
-        jQuery(this).find('.reward-answer').removeClass('reward-hover');
+        jQuery('.reward-answer').removeClass('reward-hover');
         jQuery(".reward-image").removeClass('reward-image-hover');
 
         // Next, add the new hovers

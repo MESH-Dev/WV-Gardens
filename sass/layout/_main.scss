@@ -687,14 +687,20 @@
   img {
     height: 95px;
   }
+}
+
+.answer {
+  cursor: pointer;
 
   &:hover {
-    background-size: contain;
+    .answer-image {
+      background-size: contain;
 
-    img {
-      height: 180px;
-      position: relative;
-      top: -60px;
+      img {
+        height: 180px;
+        position: relative;
+        top: -60px;
+      }
     }
   }
 }
@@ -713,54 +719,104 @@
 
   // Answer image 1
 
-  .answer-image-1 {
-    background-image: url(img/star.png);
+  .answer-1 {
+    .answer-image-1 {
+      background-image: url(img/star.png);
 
-    &:hover {
-      background-image: url(img/hover/PurpleStar_Hover.png);
     }
-  }
-  .answer-image-1-hover {
-    background-image: url(img/hover/PurpleStar_Active.png);
+    .answer-image-1-hover {
+      background-image: url(img/hover/PurpleStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+    &:hover {
+      .answer-image-1 {
+        background-image: url(img/hover/PurpleStar_Hover.png);
+      }
+
+      .answer-text {
+        color: $purple;
+      }
+    }
   }
 
   // Answer image 2
 
-  .answer-image-2 {
-    background-image: url(img/circle.png);
-
-    &:hover {
-      background-image: url(img/hover/PurpleO_Hover.png);
+  .answer-2 {
+    .answer-image-2 {
+      background-image: url(img/circle.png);
     }
-  }
-  .answer-image-2-hover {
-    background-image: url(img/hover/PurpleO_Active.png);
+    .answer-image-2-hover {
+      background-image: url(img/hover/PurpleO_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+    &:hover {
+      .answer-image-2 {
+        background-image: url(img/hover/PurpleO_Hover.png);
+      }
+      .answer-text {
+        color: $purple;
+      }
+    }
   }
 
   // Answer image 3
 
-  .answer-image-3 {
-    background-image: url(img/cloud.png);
-
-    &:hover {
-      background-image: url(img/hover/PurpleCloud_Hover.png);
+  .answer-3 {
+    .answer-image-3 {
+      background-image: url(img/cloud.png);
     }
-  }
-  .answer-image-3-hover {
-    background-image: url(img/hover/PurpleCloud_Active.png);
+    .answer-image-3-hover {
+      background-image: url(img/hover/PurpleCloud_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+    &:hover {
+      .answer-image-3 {
+        background-image: url(img/hover/PurpleCloud_Hover.png);
+      }
+      .answer-text {
+        color: $purple;
+      }
+    }
   }
 
   // Answer image 4
 
-  .answer-image-4 {
-    background-image: url(img/x.png);
-
+  .answer-4 {
+    .answer-image-4 {
+      background-image: url(img/x.png);
+    }
+    .answer-image-4-hover {
+      background-image: url(img/hover/PurpleX_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
     &:hover {
-      background-image: url(img/hover/PurpleX_Hover.png);
+      .answer-image-4 {
+        background-image: url(img/hover/PurpleX_Hover.png);
+      }
+      .answer-text {
+        color: $purple;
+      }
     }
   }
-  .answer-image-4-hover {
-    background-image: url(img/hover/PurpleX_Active.png);
+
+  .reward-answer:hover, .reward-hover .reward-text {
+    color: $purple;
   }
 
 }
@@ -769,54 +825,102 @@
 
   // Answer image 1
 
-  .answer-image-1 {
-    background-image: url(img/star.png);
-
-    &:hover {
-      background-image: url(img/hover/YellowStar_Hover.png);
+  .answer-1 {
+    .answer-image-1 {
+      background-image: url(img/star.png);
     }
-  }
-  .answer-image-1-hover {
-    background-image: url(img/hover/YellowStar_Active.png);
+    .answer-image-1-hover {
+      background-image: url(img/hover/YellowStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $yellow;
+      }
+    }
+    &:hover {
+      .answer-image-1 {
+        background-image: url(img/hover/YellowStar_Hover.png);
+      }
+      .answer-text {
+        color: $yellow;
+      }
+    }
   }
 
   // Answer image 2
 
-  .answer-image-2 {
-    background-image: url(img/circle.png);
-
-    &:hover {
-      background-image: url(img/hover/YellowO_Hover.png);
+  .answer-2 {
+    .answer-image-2 {
+      background-image: url(img/circle.png);
     }
-  }
-  .answer-image-2-hover {
-    background-image: url(img/hover/YellowO_Active.png);
+    .answer-image-2-hover {
+      background-image: url(img/hover/YellowO_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $yellow;
+      }
+    }
+    &:hover {
+      .answer-image-2 {
+        background-image: url(img/hover/YellowO_Hover.png);
+      }
+      .answer-text {
+        color: $yellow;
+      }
+    }
   }
 
   // Answer image 3
 
-  .answer-image-3 {
-    background-image: url(img/cloud.png);
-
-    &:hover {
-      background-image: url(img/hover/YellowCloud_Hover.png);
+  .answer-3 {
+    .answer-image-3 {
+      background-image: url(img/cloud.png);
     }
-  }
-  .answer-image-3-hover {
-    background-image: url(img/hover/YellowCloud_Active.png);
+    .answer-image-3-hover {
+      background-image: url(img/hover/YellowCloud_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $yellow;
+      }
+    }
+    &:hover {
+      .answer-image-3 {
+        background-image: url(img/hover/YellowCloud_Hover.png);
+      }
+      .answer-text {
+        color: $yellow;
+      }
+    }
   }
 
   // Answer image 4
 
-  .answer-image-4 {
-    background-image: url(img/x.png);
-
+  .answer-4 {
+    .answer-image-4 {
+      background-image: url(img/x.png);
+    }
+    .answer-image-4-hover {
+      background-image: url(img/hover/YellowX_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $yellow;
+      }
+    }
     &:hover {
-      background-image: url(img/hover/YellowX_Hover.png);
+      .answer-image-4 {
+        background-image: url(img/hover/YellowX_Hover.png);
+      }
+      .answer-text {
+        color: $yellow;
+      }
     }
   }
-  .answer-image-4-hover {
-    background-image: url(img/hover/YellowX_Active.png);
+
+  .reward-answer:hover, .reward-hover .reward-text {
+    color: $yellow;
   }
 
 }
@@ -825,54 +929,102 @@
 
   // Answer image 1
 
-  .answer-image-1 {
-    background-image: url(img/star.png);
-
-    &:hover {
-      background-image: url(img/hover/MintStar_Hover.png);
+  .answer-1 {
+    .answer-image-1 {
+      background-image: url(img/star.png);
     }
-  }
-  .answer-image-1-hover {
-    background-image: url(img/hover/MintStar_Active.png);
+    .answer-image-1-hover {
+      background-image: url(img/hover/MintStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $green;
+      }
+    }
+    &:hover {
+      .answer-image-1 {
+        background-image: url(img/hover/MintStar_Hover.png);
+      }
+      .answer-text {
+        color: $green;
+      }
+    }
   }
 
   // Answer image 2
 
-  .answer-image-2 {
-    background-image: url(img/circle.png);
-
-    &:hover {
-      background-image: url(img/hover/MintO_Hover.png);
+  .answer-2 {
+    .answer-image-2 {
+      background-image: url(img/circle.png);
     }
-  }
-  .answer-image-2-hover {
-    background-image: url(img/hover/MintO_Active.png);
+    .answer-image-2-hover {
+      background-image: url(img/hover/MintO_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $green;
+      }
+    }
+    &:hover {
+      .answer-image-2 {
+        background-image: url(img/hover/MintO_Hover.png);
+      }
+      .answer-text {
+        color: $green;
+      }
+    }
   }
 
   // Answer image 3
 
-  .answer-image-3 {
-    background-image: url(img/cloud.png);
-
-    &:hover {
-      background-image: url(img/hover/MintCloud_Hover.png);
+  .answer-3 {
+    .answer-image-3 {
+      background-image: url(img/cloud.png);
     }
-  }
-  .answer-image-3-hover {
-    background-image: url(img/hover/MintCloud_Active.png);
+    .answer-image-3-hover {
+      background-image: url(img/hover/MintCloud_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $green;
+      }
+    }
+    &:hover {
+      .answer-image-3 {
+        background-image: url(img/hover/MintCloud_Hover.png);
+      }
+      .answer-text {
+        color: $green;
+      }
+    }
   }
 
   // Answer image 4
 
-  .answer-image-4 {
-    background-image: url(img/x.png);
-
+  .answer-4 {
+    .answer-image-4 {
+      background-image: url(img/x.png);
+    }
+    .answer-image-4-hover {
+      background-image: url(img/hover/MintX_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $green;
+      }
+    }
     &:hover {
-      background-image: url(img/hover/MintX_Hover.png);
+      .answer-image-4 {
+        background-image: url(img/hover/MintX_Hover.png);
+      }
+      .answer-text {
+        color: $green;
+      }
     }
   }
-  .answer-image-4-hover {
-    background-image: url(img/hover/MintX_Active.png);
+
+  .reward-answer:hover, .reward-hover .reward-text {
+    color: $green;
   }
 
 }
@@ -881,54 +1033,102 @@
 
   // Answer image 1
 
-  .answer-image-1 {
-    background-image: url(img/star.png);
-
-    &:hover {
-      background-image: url(img/hover/BlueStar_Hover.png);
+  .answer-1 {
+    .answer-image-1 {
+      background-image: url(img/star.png);
     }
-  }
-  .answer-image-1-hover {
-    background-image: url(img/hover/BlueStar_Active.png);
+    .answer-image-1-hover {
+      background-image: url(img/hover/BlueStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $blue;
+      }
+    }
+    &:hover {
+      .answer-image-1 {
+        background-image: url(img/hover/BlueStar_Hover.png);
+      }
+      .answer-text {
+        color: $blue;
+      }
+    }
   }
 
   // Answer image 2
 
-  .answer-image-2 {
-    background-image: url(img/circle.png);
-
-    &:hover {
-      background-image: url(img/hover/BlueO_Hover.png);
+  .answer-2 {
+    .answer-image-2 {
+      background-image: url(img/circle.png);
     }
-  }
-  .answer-image-2-hover {
-    background-image: url(img/hover/BlueO_Active.png);
+    .answer-image-2-hover {
+      background-image: url(img/hover/BlueO_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $blue;
+      }
+    }
+    &:hover {
+      .answer-image-2 {
+        background-image: url(img/hover/BlueO_Hover.png);
+      }
+      .answer-text {
+        color: $blue;
+      }
+    }
   }
 
   // Answer image 3
 
-  .answer-image-3 {
-    background-image: url(img/cloud.png);
-
-    &:hover {
-      background-image: url(img/hover/BlueCloud_Hover.png);
+  .answer-3 {
+    .answer-image-3 {
+      background-image: url(img/cloud.png);
     }
-  }
-  .answer-image-3-hover {
-    background-image: url(img/hover/BlueCloud_Active.png);
+    .answer-image-3-hover {
+      background-image: url(img/hover/BlueCloud_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $blue;
+      }
+    }
+    &:hover {
+      .answer-image-3 {
+        background-image: url(img/hover/BlueCloud_Hover.png);
+      }
+      .answer-text {
+        color: $blue;
+      }
+    }
   }
 
   // Answer image 4
 
-  .answer-image-4 {
-    background-image: url(img/x.png);
-
+  .answer-4 {
+    .answer-image-4 {
+      background-image: url(img/x.png);
+    }
+    .answer-image-4-hover {
+      background-image: url(img/hover/BlueX_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $blue;
+      }
+    }
     &:hover {
-      background-image: url(img/hover/BlueX_Hover.png);
+      .answer-image-4 {
+        background-image: url(img/hover/BlueX_Hover.png);
+      }
+      .answer-text {
+        color: $blue;
+      }
     }
   }
-  .answer-image-4-hover {
-    background-image: url(img/hover/BlueX_Active.png);
+
+  .reward-answer:hover, .reward-hover .reward-text {
+    color: $blue;
   }
 
 }
@@ -945,7 +1145,6 @@
   margin: auto;
   display: table-cell;
   vertical-align: middle;
-  height: 250px;
 
   img {
     width: 100px;
@@ -955,6 +1154,7 @@
     }
   }
 }
+
 
 .reward-image-container {
   height: 175px;
@@ -1020,6 +1220,7 @@
 
 .reward {
   display: none;
+  cursor: pointer;
 }
 
 .congratulations {
@@ -1058,8 +1259,8 @@
 
 .reward-image-final-2 {
   position: absolute;
-  left: 235px;
-  top: 145px;
+  left: 240px;
+  top: 120px;
 }
 
 .reward-image-final-3 {
@@ -1070,8 +1271,8 @@
 
 .reward-image-final-4 {
   position: absolute;
-  top: -30px;
-  right: 19px;
+  top: 15px;
+  right: 20px;
 }
 
 .center {
