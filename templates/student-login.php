@@ -22,7 +22,7 @@ get_header();
 					<div class="module-section">
 						<div class="bubble">
 							<div class="bubble-text">
-								<h1>Welcome to<br/>GAME TITLE!</h1>
+								<h1>Welcome to<br/>Sprout's Adventure!</h1>
 							</div>
 						</div>
 						<div class="farmer">
