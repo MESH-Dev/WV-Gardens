@@ -26,7 +26,7 @@ jQuery(document).ready(function($){
       $('.page-template-login').css('background-color', color);
       $('.login-button').css('color', color);
 
-      $(document).snowfall({
+      $('#page').snowfall({
         image :"http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
       });
 
