@@ -4,6 +4,9 @@ include('functions/start.php');
 
 include('functions/clean.php');
 
+// Hide admin bar
+show_admin_bar( false );
+
 //Custon wp-admin logo
 function my_custom_login_logo() {
   echo '<style type="text/css">

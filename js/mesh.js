@@ -6,25 +6,38 @@ jQuery(document).ready(function($){
 
       var rn = Math.floor(Math.random() * 4) + 1;
       var color = "#7f3198";
+      var dark_color = "#5c007a";
 
       if (rn == 1) {
         color = "#7f3198";
+        dark_color = "#5c007a";
       }
       else if (rn == 2) {
         color = "#f65163";
+        dark_color = "#c04451";
       }
       else if (rn == 3) {
         color = "#0ed59c";
+        dark_color = "#0bac7e";
       }
       else if (rn == 4) {
         color = "#0072bc";
+        dark_color = "005a94";
       }
       else {
         color = "#ffcd2b";
+        dark_color = "de9f27";
       }
 
       $('.page-template-login').css('background-color', color);
       $('.login-button').css('color', color);
+      $('.login-button').hover(function() {
+        $(this).css('background-color', dark_color);
+        $(this).css('color', 'white');
+      }, function() {
+        $(this).css('background-color', 'white');
+        $(this).css('color', color);
+      });
 
       $('#page').snowfall({
         image :"http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10

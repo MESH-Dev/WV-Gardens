@@ -72,7 +72,7 @@ get_header();
 
         var schoolList = <?php echo json_encode($tax_array); ?>
 
-				jQuery('#schools').append("<option>Select</option>");
+				jQuery('#schools').append("<option>Select your school</option>");
 
         jQuery.each(schoolList, function (i, item) {
             jQuery('#schools').append("<option>" + item + "</option>");
@@ -90,7 +90,7 @@ get_header();
 
 						var teacherList = jQuery.parseJSON(result);
 
-						jQuery('#teachers').append("<option>Select</option>");
+						jQuery('#teachers').append("<option>Select your class</option>");
 
             jQuery.each(teacherList, function(i, item){
               jQuery('#teachers').append('<option value="' + item[1] + '">' + item[0] + '</option>');
@@ -129,7 +129,7 @@ get_header();
 
 						var studentList = jQuery.parseJSON(result);
 
-						jQuery('#students').append("<option>Select</option>");
+						jQuery('#students').append("<option>Select your name</option>");
 
 						jQuery.each(studentList, function(i, item){
 							jQuery('#students').append('<option value="' + item[1] + '">' + item[0] + '</option>');
