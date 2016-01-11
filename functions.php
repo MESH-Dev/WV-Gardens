@@ -409,7 +409,7 @@ function save_answer() {
             $r_image = get_template_directory_uri() . '/img/cheese.png';
           }
           elseif ($r == "Milk") {
-            $r_image = get_template_directory_uri() . '/img/milk.png';
+            $r_image = get_template_directory_uri() . '/img/Milk.png';
           }
           elseif ($r == "Ice Cream") {
             $r_image = get_template_directory_uri() . '/img/icecream.png';

@@ -76,7 +76,7 @@ jQuery(document).ready(function($){
           newSrc = 'icecream.png';
         }
         else if (randomNumber == 14) {
-          newSrc = 'milk.png';
+          newSrc = 'Milk.png';
         }
         else if (randomNumber == 15) {
           newSrc = 'noodles.png';
