@@ -19,7 +19,7 @@ get_header(); ?>
         <div class="twelve columns">
           <div class="menu-bar">
             <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Sprout's Adventure</span> <span class="menu-module-name"><?php the_title(); ?></span></div></a>
-            <div class="menu-sound"><i class="fa fa-volume-up"></i></div>
+            <!-- <div class="menu-sound"><i class="fa fa-volume-up"></i></div> -->
           </div>
           <div class="progress-plate">
             <?php get_template_part( 'partials/progress', 'plate' ); ?>

@@ -154,6 +154,10 @@
 
     a {
       color: white;
+
+      &:hover {
+        color: $purple;
+      }
     }
   }
 }
@@ -333,6 +337,15 @@
     .prev-arrow {
       border-right: 20px solid $light-green;
     }
+
+    &:hover {
+      background-color: white;
+      color: $dark-green;
+
+      .prev-arrow {
+        border-right: 20px solid $dark-green;
+      }
+    }
   }
 
   .next, .print, .return, .start {
@@ -342,6 +355,15 @@
 
     .next-arrow {
       border-left: 20px solid $dark-green;
+    }
+
+    &:hover {
+      background-color: $dark-green;
+      color: white;
+
+      .next-arrow {
+        border-left: 20px solid white;
+      }
     }
 
   }
@@ -386,6 +408,15 @@
     .prev-arrow {
       border-right: 20px solid $light-blue;
     }
+
+    &:hover {
+      background-color: white;
+      color: $dark-blue;
+
+      .prev-arrow {
+        border-right: 20px solid $dark-blue;
+      }
+    }
   }
 
   .next, .print, .return, .start {
@@ -395,6 +426,15 @@
 
     .next-arrow {
       border-left: 20px solid $dark-blue;
+    }
+
+    &:hover {
+      background-color: $dark-blue;
+      color: white;
+
+      .next-arrow {
+        border-left: 20px solid white;
+      }
     }
 
   }
@@ -445,6 +485,15 @@
     .prev-arrow {
       border-right: 20px solid $light-red;
     }
+
+    &:hover {
+      background-color: white;
+      color: $dark-red;
+
+      .prev-arrow {
+        border-right: 20px solid $dark-red;
+      }
+    }
   }
 
   .next, .print, .return, .start {
@@ -454,6 +503,15 @@
 
     .next-arrow {
       border-left: 20px solid $dark-red;
+    }
+
+    &:hover {
+      background-color: $dark-red;
+      color: white;
+
+      .next-arrow {
+        border-left: 20px solid white;
+      }
     }
 
   }
@@ -504,6 +562,15 @@
     .prev-arrow {
       border-right: 20px solid $light-purple;
     }
+
+    &:hover {
+      background-color: white;
+      color: $dark-purple;
+
+      .prev-arrow {
+        border-right: 20px solid $dark-purple;
+      }
+    }
   }
 
   .next, .print, .return, .start {
@@ -513,6 +580,15 @@
 
     .next-arrow {
       border-left: 20px solid $dark-purple;
+    }
+
+    &:hover {
+      background-color: $dark-purple;
+      color: white;
+
+      .next-arrow {
+        border-left: 20px solid white;
+      }
     }
 
   }
@@ -562,6 +638,15 @@
     .prev-arrow {
       border-right: 20px solid $light-yellow;
     }
+
+    &:hover {
+      background-color: white;
+      color: $dark-yellow;
+
+      .prev-arrow {
+        border-right: 20px solid $dark-yellow;
+      }
+    }
   }
 
   .next, .print, .return, .start {
@@ -571,6 +656,15 @@
 
     .next-arrow {
       border-left: 20px solid $dark-yellow;
+    }
+
+    &:hover {
+      background-color: $dark-yellow;
+      color: white;
+
+      .next-arrow {
+        border-left: 20px solid white;
+      }
     }
 
   }
@@ -621,6 +715,15 @@
     .prev-arrow {
       border-right: 20px solid $light-orange;
     }
+
+    &:hover {
+      background-color: white;
+      color: $dark-orange;
+
+      .prev-arrow {
+        border-right: 20px solid $dark-orange;
+      }
+    }
   }
 
   .next, .print, .return, .start {
@@ -630,6 +733,15 @@
 
     .next-arrow {
       border-left: 20px solid $dark-orange;
+    }
+
+    &:hover {
+      background-color: $dark-orange;
+      color: white;
+
+      .next-arrow {
+        border-left: 20px solid white;
+      }
     }
 
   }
