@@ -107,13 +107,32 @@
   -webkit-border-radius: 20px;
   border-radius: 20px;
   width: 200px;
-  background: url(img/signin.png) no-repeat right white;
+  background-color: white;
   background-position: right 20px center;
   text-align: left;
   padding-left: 20px;
   height: 50px;
   color: $purple;
   font-weight: bold;
+  padding-right: 20px;
+
+  .submit-arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    float: right;
+    border-left: 20px solid $purple;
+  }
+
+  &:hover {
+    color: white;
+    background: url(img/signin.png) no-repeat right $purple;
+
+    .submit-arrow {
+      border-left: 20px solid white;
+    }
+  }
 }
 
 #page {

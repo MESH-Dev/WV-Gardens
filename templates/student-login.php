@@ -55,7 +55,10 @@ get_header();
 								<select id="teachers"></select><br/>
 								<input id="password" type="password" />
 								<select id="students"></select><br/>
-								<button id="submit">Sign In!</button>
+								<button id="submit">
+                  Sign In!
+                  <div class="submit-arrow"></div>
+                </button>
 								<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
 
 							</div>

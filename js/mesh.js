@@ -22,11 +22,11 @@ jQuery(document).ready(function($){
       }
       else if (rn == 4) {
         color = "#0072bc";
-        dark_color = "005a94";
+        dark_color = "#005a94";
       }
       else {
         color = "#ffcd2b";
-        dark_color = "de9f27";
+        dark_color = "#de9f27";
       }
 
       $('.page-template-login').css('background-color', color);
