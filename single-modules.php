@@ -97,7 +97,7 @@ get_header(); ?>
               <?php // MULTIPLE CHOICE ?>
 
               <?php if( get_field('question_type', $question->ID) == 'multiple' ):
-                $answers_count = count(get_field('answers'));
+                $answers_count = count(get_field('answers', $question->ID));
                 if( have_rows('answers', $question->ID) ):
                   $n = 0;
                   while ( have_rows('answers', $question->ID) ) : the_row();
