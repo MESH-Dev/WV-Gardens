@@ -103,7 +103,7 @@ get_header(); ?>
                   while ( have_rows('answers', $question->ID) ) : the_row();
                     $n++;
                   ?>
-                    <div class="<?php if ($answers_count == 3) { echo "four"; } else { echo "three"; } ?> columns">
+                    <div class="<?php if ($answers_count == 3) { echo "four"; } elseif ($answers_count == 5) { echo "two"; if ($n == 1 { echo " offset-by-one"; }) } else { echo "three"; } ?> columns">
                       <div class="answer answer-<?php echo $n; ?> animated">
                           <?php
                             $image = get_sub_field('image', $question->ID);
