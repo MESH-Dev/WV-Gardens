@@ -164,14 +164,15 @@ get_header();
 
 					jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=check_login&user=' + jQuery('#students :selected').val(), success: function(result) {
 
-
 						var url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
 
-						if (result == "success") {
-							window.location.href = "<?php echo get_post_type_archive_link( 'modules' ); ?>";
-						} else {
+            alert(result);
 
-						}
+            if (result == "first") {
+              window.location.href = "<?php echo get_permalink(get_page_by_title('Intro')->ID); ?>";
+            } else {
+              window.location.href = "<?php echo get_post_type_archive_link( 'modules' ); ?>";
+            }
 
 					}});
 

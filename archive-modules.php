@@ -18,7 +18,7 @@ get_header(); ?>
                 <!-- text that logged in users will see -->
                 <h1>Hi <span><?php echo wp_get_current_user()->user_firstname; ?>!</span></h1>
               <?php } ?>
-              <h1>Select your next <span>"MODULE"</span> to the right to get started!</h1>
+              <h1>Start your next <span>adventure</span> to the right!</h1>
             </div>
             <br/>
             <div class="modules-image">
@@ -115,7 +115,7 @@ get_header(); ?>
             </div>
             <?php if ($module_next) { ?>
             <a href="<?php echo $module_next; ?>">
-              <div class="module-next">Start Next Module</div>
+              <div class="module-next">Start Your Next Adventure!</div>
             </a>
             <?php } ?>
           </div>

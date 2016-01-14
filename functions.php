@@ -111,10 +111,15 @@ function check_login() {
       $username = $_REQUEST['user'];
     }
 
-
+    $user_id = get_user_by('login', $username)->ID;
 
     if (programmatic_login($username)) {
-      echo "success";
+      if (get_user_meta($user_id, 'first_time', true) == 0) {
+        echo 'first';
+      }
+      else {
+        echo "not";
+      }
     } else {
       echo "failure";
     }
@@ -630,6 +635,8 @@ function add_student() {
     'last_name' => $last_name,
     'role' => 'student'
   ));
+
+  update_user_meta($user_id, 'first_time', 0);
 
   // add wordpress id to the students array for the class
   global $wpdb;
