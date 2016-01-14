@@ -104,14 +104,16 @@ get_header(); ?>
                   ?>
                     <div class="three columns">
                       <div class="answer answer-<?php echo $n; ?> animated">
+                          <?php
+                            $image = get_sub_field('image', $question->ID);
+                            $size = 'large';
+                            $thumb = $image['sizes'][ $size ];
+                          ?>
+                          <?php if (get_sub_field('image', $question->ID)) { ?>
                           <div class="answer-image answer-image-<?php echo $n; ?>">
-                            <?php
-                              $image = get_sub_field('image', $question->ID);
-                              $size = 'large';
-                              $thumb = $image['sizes'][ $size ];
-                            ?>
                             <img src="<?php echo $thumb; ?>" />
                           </div>
+                          <?php } ?>
                           <div class="answer-text"><?php echo get_sub_field('answer', $question->ID); ?></div>
                       </div>
                     </div>
@@ -445,7 +447,7 @@ get_header(); ?>
 
               <div class="final-image">
               </div>
-            
+
           </div>
         </div>
 
