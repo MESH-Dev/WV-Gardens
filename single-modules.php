@@ -97,12 +97,13 @@ get_header(); ?>
               <?php // MULTIPLE CHOICE ?>
 
               <?php if( get_field('question_type', $question->ID) == 'multiple' ):
+                $answers_count = count(get_field('answers'));
                 if( have_rows('answers', $question->ID) ):
                   $n = 0;
                   while ( have_rows('answers', $question->ID) ) : the_row();
                     $n++;
                   ?>
-                    <div class="three columns">
+                    <div class="<?php if ($answers_count == 3) { echo "four"; } else { echo "three"; } ?> columns">
                       <div class="answer answer-<?php echo $n; ?> animated">
                           <?php
                             $image = get_sub_field('image', $question->ID);

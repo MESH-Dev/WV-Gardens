@@ -21,7 +21,7 @@ get_header(); ?>
               <h1>Select your next <span>"MODULE"</span> to the right to get started!</h1>
             </div>
             <br/>
-            <div class="module-image">
+            <div class="modules-image">
               <?php get_template_part( 'partials/bigprogress', 'plate' ); ?>
             </div>
           </div>
