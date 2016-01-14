@@ -274,6 +274,10 @@
   background: $light-blue;
 }
 
+.page-template-intro {
+  background: $light-blue;
+}
+
 .button-control {
   position: absolute;
   right: 0;
@@ -1485,4 +1489,22 @@
 
 .congratulations-no-reward {
   display: none;
+}
+
+.intro-image, .intro-cloud-image {
+  text-align: center;
+  margin: 25px;
+  float: left;
+  width: 100%;
+}
+
+.intro {
+  .next {
+    background-color: white;
+    color: $purple;
+
+    .next-arrow {
+      border-left: 20px solid $purple;
+    }
+  }
 }
