@@ -103,7 +103,7 @@ get_header(); ?>
                     $n++;
                   ?>
                     <div class="three columns">
-                      <div class="answer answer-<?php echo $n; ?>">
+                      <div class="answer answer-<?php echo $n; ?> animated">
                           <div class="answer-image answer-image-<?php echo $n; ?>">
                             <?php
                               $image = get_sub_field('image', $question->ID);
@@ -125,18 +125,18 @@ get_header(); ?>
 
               <?php else: ?>
                 <div class="three columns offset-by-three">
-                  <div class="answer answer-2">
+                  <div class="answer answer-2 animated">
                       <?php // echo get_sub_field('b'); ?>
-                      <div class="answer-image answer-image-2">
+                      <div class="answer-image answer-image-2 bounceIn">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/little.png" />
                       </div>
                       <div class="answer-text">Yes</div>
                   </div>
                 </div>
                 <div class="three columns">
-                  <div class="answer answer-3">
+                  <div class="answer answer-3 animated">
                       <?php // echo get_sub_field('c'); ?>
-                      <div class="answer-image answer-image-3">
+                      <div class="answer-image answer-image-3" bounceIn>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/much.png" />
                       </div>
                       <div class="answer-text">No</div>
@@ -353,7 +353,61 @@ get_header(); ?>
           <div class="twelve columns">
             <div class="module-image">
               <div class="bonus-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/bonus.png" />
+                <img src="<?php echo get_template_directory_uri(); ?>/img/bonus.png" class="animated" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="three columns offset-by-nine">
+            <div class="module-section">
+              <button class="next button-control" style="display: inline-block;">
+                <div class="next-text">Next</div>
+                <div class="next-arrow button-control-arrow"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <?php // WOOHOO ?>
+
+    <div class="woohoo">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <div class="module-image">
+              <div class="bonus-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/woohoo.png" class="animated" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="three columns offset-by-nine">
+            <div class="module-section">
+              <button class="next button-control" style="display: inline-block;">
+                <div class="next-text">Next</div>
+                <div class="next-arrow button-control-arrow"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <?php // YAY ?>
+
+    <div class="yay">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <div class="module-image">
+              <div class="bonus-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/yay.png" class="animated" />
               </div>
             </div>
           </div>
@@ -406,6 +460,8 @@ get_header(); ?>
         </div>
       </div>
     </div>
+
+
 
     <?php // CONGRATULATIONS ?>
 
@@ -510,7 +566,7 @@ array_push( $mod1_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod1_0, $question);
 }
-array_push( $mod1_0, ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".complete" );
+array_push( $mod1_0, ".yay", ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".complete" );
 
 // 2 MODULES
 
@@ -519,14 +575,14 @@ array_push( $mod2_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod2_0, $question);
 }
-array_push( $mod2_0, "reward-1", "reward-2", "congratulations" );
+array_push( $mod2_0, ".woohoo", ".reward-1", ".reward-2", ".congratulations" );
 
 $mod2_1 = array();
 array_push( $mod2_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod2_1, $question);
 }
-array_push( $mod2_1, ".reward-3", ".reward-4", ".bonus", ".reward-5", ".complete" );
+array_push( $mod2_1, ".yay", ".reward-3", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
 // 3 MODULES
 
@@ -535,21 +591,21 @@ array_push( $mod3_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_0, $question);
 }
-array_push( $mod3_0, ".reward-1", ".congratulations" );
+array_push( $mod3_0, ".woohoo", ".reward-1", ".congratulations" );
 
 $mod3_1 = array();
 array_push( $mod3_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_1, $question);
 }
-array_push( $mod3_1, ".reward-2", ".bonus", ".reward-3", ".congratulations" );
+array_push( $mod3_1, ".yay", ".reward-2", ".bonus", ".reward-3", ".congratulations" );
 
 $mod3_2 = array();
 array_push( $mod3_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_2, $question);
 }
-array_push( $mod3_2, ".reward-4", ".bonus", ".reward-5", ".complete" );
+array_push( $mod3_2, ".woohoo", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
 // 4 MODULES
 
@@ -558,28 +614,28 @@ array_push( $mod4_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_0, $question);
 }
-array_push( $mod4_0, ".reward-1", ".congratulations" );
+array_push( $mod4_0, ".yay", ".reward-1", ".congratulations" );
 
 $mod4_1 = array();
 array_push( $mod4_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_1, $question);
 }
-array_push( $mod4_1, ".reward-2", ".congratulations" );
+array_push( $mod4_1, ".woohoo", ".reward-2", ".congratulations" );
 
 $mod4_2 = array();
 array_push( $mod4_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_2, $question);
 }
-array_push( $mod4_2, ".reward-3", ".congratulations" );
+array_push( $mod4_2, ".yay", ".reward-3", ".congratulations" );
 
 $mod4_3 = array();
 array_push( $mod4_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_3, $question);
 }
-array_push( $mod4_3, ".reward-4", ".bonus", ".reward-5", ".complete" );
+array_push( $mod4_3, ".woohoo", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
 // 5 MODULES
 
@@ -588,35 +644,35 @@ array_push( $mod5_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_0, $question);
 }
-array_push( $mod5_0, ".reward-1", ".congratulations" );
+array_push( $mod5_0, ".yay", ".reward-1", ".congratulations" );
 
 $mod5_1 = array();
 array_push( $mod5_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_1, $question);
 }
-array_push( $mod5_1, ".reward-2", ".congratulations" );
+array_push( $mod5_1, ".woohoo", ".reward-2", ".congratulations" );
 
 $mod5_2 = array();
 array_push( $mod5_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_2, $question);
 }
-array_push( $mod5_2, ".reward-3", ".congratulations" );
+array_push( $mod5_2, ".yay", ".reward-3", ".congratulations" );
 
 $mod5_3 = array();
 array_push( $mod5_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_3, $question);
 }
-array_push( $mod5_3, ".reward-4", ".congratulations" );
+array_push( $mod5_3, ".woohoo", ".reward-4", ".congratulations" );
 
 $mod5_4 = array();
 array_push( $mod5_4, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_4, $question);
 }
-array_push( $mod5_4, ".reward-5", ".complete" );
+array_push( $mod5_4, ".yay", ".reward-5", ".complete" );
 
 // 6 MODULES
 
@@ -625,42 +681,42 @@ array_push( $mod6_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_0, $question);
 }
-array_push( $mod6_0, ".congratulations-no-reward" );
+array_push( $mod6_0, ".woohoo", ".congratulations-no-reward" );
 
 $mod6_1 = array();
 array_push( $mod6_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_1, $question);
 }
-array_push( $mod6_1, ".reward-1", ".congratulations" );
+array_push( $mod6_1, ".yay", ".reward-1", ".congratulations" );
 
 $mod6_2 = array();
 array_push( $mod6_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_2, $question);
 }
-array_push( $mod6_2, ".reward-2", ".congratulations" );
+array_push( $mod6_2, ".woohoo", ".reward-2", ".congratulations" );
 
 $mod6_3 = array();
 array_push( $mod6_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_3, $question);
 }
-array_push( $mod6_3, ".reward-3", ".congratulations" );
+array_push( $mod6_3, ".yay", ".reward-3", ".congratulations" );
 
 $mod6_4 = array();
 array_push( $mod6_4, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_4, $question);
 }
-array_push( $mod6_4, ".reward-4", ".congratulations" );
+array_push( $mod6_4, ".woohoo", ".reward-4", ".congratulations" );
 
 $mod6_5 = array();
 array_push( $mod6_5, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_5, $question);
 }
-array_push( $mod6_5, ".reward-5", ".complete" );
+array_push( $mod6_5, ".yay", ".reward-5", ".complete" );
 
 
 
@@ -769,7 +825,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 <script type="text/javascript">
 
 	jQuery('.welcome').show();
-  var step = 2;
+  var step = 1;
 
   var track = <?php echo json_encode($track); ?>
 
@@ -782,6 +838,10 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     jQuery('.welcome').hide();
     jQuery('.question-1').show();
 
+    jQuery(track[step]).find('.answer').addClass('bounceIn');
+
+    step = step + 1;
+
   });
 
   jQuery('.next').click(function(){
@@ -789,7 +849,9 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     jQuery(track[step - 1]).hide();
     jQuery(track[step]).show();
 
-    // console.log(jQuery(track[step]));
+    jQuery(track[step]).find('.answer').addClass('bounceIn');
+
+    jQuery(track[step]).find('.bonus-image img').addClass('bounceIn');
 
     if (track[step] == ".congratulations" || track[step] == ".complete") {
       jQuery('.progress-plate').hide();

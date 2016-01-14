@@ -22,7 +22,7 @@ get_header();
 					<div class="module-section">
 						<div class="bubble">
 							<div class="bubble-text">
-								<h1>Welcome to<br/>Sprout's Adventure!</h1>
+                <h1>Welcome to<br/>Sprout's Adventure!</h1>
 							</div>
 						</div>
 						<div class="farmer">
@@ -53,7 +53,7 @@ get_header();
 
 								<select id="schools"></select><br/>
 								<select id="teachers"></select><br/>
-								<input id="password" type="password" />
+								<input id="password" type="password" placeholder="Type in your password" />
 								<select id="students"></select><br/>
 								<button id="submit">
                   Sign In!
@@ -75,7 +75,7 @@ get_header();
 
         var schoolList = <?php echo json_encode($tax_array); ?>
 
-				jQuery('#schools').append("<option>Select your school</option>");
+				jQuery('#schools').append("<option>Your school</option>");
 
         jQuery.each(schoolList, function (i, item) {
             jQuery('#schools').append("<option>" + item + "</option>");
@@ -93,7 +93,7 @@ get_header();
 
 						var teacherList = jQuery.parseJSON(result);
 
-						jQuery('#teachers').append("<option>Select your class</option>");
+						jQuery('#teachers').append("<option>Your teacher's name</option>");
 
             jQuery.each(teacherList, function(i, item){
               jQuery('#teachers').append('<option value="' + item[1] + '">' + item[0] + '</option>');
@@ -121,6 +121,10 @@ get_header();
 				jQuery('#students').change( function() {
 
 					if ( jQuery('#submit').is(":hidden") ) {
+
+            jQuery('.bubble-text').empty();
+            jQuery('.bubble-text').append("<h1>You're all set!<br/>Click Sign In!</h1>");
+
             jQuery('#submit').show();
 					}
 
@@ -172,6 +176,26 @@ get_header();
 					}});
 
 				});
+
+        jQuery('#schools').focus(function() {
+          jQuery('.bubble-text').empty();
+          jQuery('.bubble-text').append("<h1>To start the game<br/>choose your school!</h1>");
+        });
+
+        jQuery('#teachers').focus(function() {
+          jQuery('.bubble-text').empty();
+          jQuery('.bubble-text').append("<h1>Now choose your<br/>teacher's name!</h1>");
+        });
+
+        jQuery('#password').focus(function() {
+          jQuery('.bubble-text').empty();
+          jQuery('.bubble-text').append("<h1>Type the password<br/>from your teacher!</h1>");
+        });
+
+        jQuery('#students').focus(function() {
+          jQuery('.bubble-text').empty();
+          jQuery('.bubble-text').append("<h1>Last, choose<br/>your name!</h1>");
+        });
 
 
       </script>

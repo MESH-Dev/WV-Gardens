@@ -65,6 +65,8 @@ get_header(); ?>
 
               <?php
 
+              $module_found = false;
+
               if( have_rows('modules', $class) ):
 
                   while ( have_rows('modules', $class) ) : the_row();
@@ -78,27 +80,26 @@ get_header(); ?>
                         $module_complete = true;
                       }
 
+                      if ($module_complete == false) {
+                        if ($module_found == false) {
+                          $module_next = $module->guid;
+                          $module_found = true;
+                        }
+                      }
+
                       ?>
 
-
-                          <div class='module'>
-                            <?php if ($module_complete == false) { ?>
-                              <a href="<?php echo $module->guid; ?>">
-                            <?php } ?>
-                            <h2><?php echo $module->post_title; ?></h2>
-                            <?php if($module_complete == false) { ?>
-                              </a>
-                            <?php } ?>
-                            <div class="checkbox">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/checkbox.png" />
-                            </div>
-                            <?php if ($module_complete == true) { ?>
-                              <div class="checkmark">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/checkmark.png" />
-                              </div>
-                            <?php } ?>
+                        <div class='module'>
+                          <h2><?php echo $module->post_title; ?></h2>
+                          <div class="checkbox">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/checkbox.png" />
                           </div>
-
+                          <?php if ($module_complete == true) { ?>
+                            <div class="checkmark">
+                              <img src="<?php echo get_template_directory_uri(); ?>/img/checkmark.png" />
+                            </div>
+                          <?php } ?>
+                        </div>
 
                       <?php
 
@@ -112,6 +113,11 @@ get_header(); ?>
 
               ?>
             </div>
+            <?php if ($module_next) { ?>
+            <a href="<?php echo $module_next; ?>">
+              <div class="module-next">Start Next Module</div>
+            </a>
+            <?php } ?>
           </div>
         </div>
     </div>

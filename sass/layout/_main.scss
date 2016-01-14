@@ -65,6 +65,24 @@
   color: $light-green;
   padding-left: 20px;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.login-form input::-webkit-input-placeholder {
+  color: $light-green !important;
+}
+
+.login-form input:-moz-placeholder { /* Firefox 18- */
+  color: $light-green !important;
+}
+
+.login-form input::-moz-placeholder {  /* Firefox 19+ */
+  color: $light-green !important;
+}
+
+.login-form input:-ms-input-placeholder {
+  color: $light-green !important;
 }
 
 .login-text {
@@ -156,6 +174,7 @@
   border: 5px white dashed;
   border-radius: 10px;
   padding: 10px 0;
+  margin-bottom: 20px;
 
   .module {
     width: 100%;
@@ -165,7 +184,6 @@
     color: white;
     text-weight: bold;
     position: relative;
-    cursor: pointer;
 
     h2 {
       line-height: 0;
@@ -178,6 +196,26 @@
         color: $purple;
       }
     }
+  }
+}
+
+.module-next {
+  float: left;
+  width: 100%;
+  border-radius: 25px;
+  background: #FFF none repeat scroll right 20px center;
+  text-align: center;
+  padding: 15px 25px;
+  height: 50px;
+  z-index: 9999999;
+  position: relative;
+  color: $purple;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $purple;
+    color: white;
   }
 }
 
@@ -810,6 +848,8 @@
   font-weight: bold;
   text-transform: uppercase;
   color: white;
+  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+  animation-delay: 2s;
 }
 
 .answer-image {
@@ -1370,6 +1410,14 @@
   display: none;
 }
 
+.woohoo {
+  display: none;
+}
+
+.yay {
+  display: none;
+}
+
 .reward-images {
   position: absolute;
   top: 0;
@@ -1416,6 +1464,10 @@
 
 .bonus-image {
   margin: 200px 0;
+
+  img {
+
+  }
 }
 
 .congratulations-no-reward {

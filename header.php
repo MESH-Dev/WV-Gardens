@@ -31,7 +31,8 @@
 	<!-- CSS
 	================================================== -->
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css" />
 
 	<!-- Favicons
 	================================================== -->
@@ -39,6 +40,7 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
 
 	<script src="https://use.typekit.net/yyp4jff.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
