@@ -166,6 +166,8 @@ get_header();
 
 						var url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
 
+            alert(result);
+
             if (result == "first") {
               window.location.href = "<?php echo get_permalink(get_page_by_title('Intro')->ID); ?>";
             } else {
