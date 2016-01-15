@@ -11,13 +11,13 @@ get_header(); ?>
       <div class="row">
         <div class="six columns">
           <div class="module-section">
-            <div class="intro-image intro-image-1">
+            <div class="intro-image intro-image-1 intro-image-top">
               <img src="<?php echo get_template_directory_uri(); ?>/img/food-cloud.png" class="animated" />
             </div>
-            <div class="intro-image intro-image-2">
+            <div class="intro-image intro-image-2 intro-image-top">
               <img src="<?php echo get_template_directory_uri(); ?>/img/small-plate.png" class="animated" />
             </div>
-            <div class="intro-image">
+            <div class="intro-image intro-image-bottom">
               <img src="<?php echo get_template_directory_uri(); ?>/img/hungry.png" class="animated" />
             </div>
           </div>

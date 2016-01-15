@@ -2324,37 +2324,47 @@ html, body {
 /* line 1491, sass/layout/_main.scss */
 .intro-image {
   text-align: center;
-  margin: 25px;
   float: left;
   width: 100%;
-  height: 350px;
 }
 
-/* line 1499, sass/layout/_main.scss */
+/* line 1497, sass/layout/_main.scss */
+.intro-image-top {
+  height: 350px;
+  margin: 25px;
+}
+
+/* line 1502, sass/layout/_main.scss */
+.intro-image-bottom {
+  height: 235px;
+  margin: 50px 0 0;
+}
+
+/* line 1507, sass/layout/_main.scss */
 .intro-image-2 {
   display: none;
 }
 
-/* line 1504, sass/layout/_main.scss */
+/* line 1512, sass/layout/_main.scss */
 .intro .next, .intro .start {
   background-color: white;
   color: #7f3198;
 }
-/* line 1508, sass/layout/_main.scss */
+/* line 1516, sass/layout/_main.scss */
 .intro .next .next-arrow, .intro .start .next-arrow {
   border-left: 20px solid #7f3198;
 }
-/* line 1512, sass/layout/_main.scss */
+/* line 1520, sass/layout/_main.scss */
 .intro .next:hover, .intro .start:hover {
   background-color: #7f3198;
   color: white;
 }
-/* line 1516, sass/layout/_main.scss */
+/* line 1524, sass/layout/_main.scss */
 .intro .next:hover .next-arrow, .intro .start:hover .next-arrow {
   border-left: 20px solid white;
 }
 
-/* line 1524, sass/layout/_main.scss */
+/* line 1532, sass/layout/_main.scss */
 .intro-bubble {
   float: left;
   position: relative;
@@ -2366,14 +2376,14 @@ html, body {
   appearance: none;
 }
 
-/* line 1535, sass/layout/_main.scss */
+/* line 1543, sass/layout/_main.scss */
 .intro-bubble-1 {
   background: url(img/purple-bubble.png) no-repeat center;
   height: 285px;
   padding: 25px;
 }
 
-/* line 1541, sass/layout/_main.scss */
+/* line 1549, sass/layout/_main.scss */
 .intro-bubble-2 {
   background: url(img/purple-bubble-2.png) no-repeat center;
   display: none;

@@ -1490,10 +1490,18 @@
 
 .intro-image {
   text-align: center;
-  margin: 25px;
   float: left;
   width: 100%;
+}
+
+.intro-image-top {
   height: 350px;
+  margin: 25px;
+}
+
+.intro-image-bottom {
+  height: 235px;
+  margin: 50px 0 0;
 }
 
 .intro-image-2 {
