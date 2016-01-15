@@ -11,8 +11,11 @@ get_header(); ?>
       <div class="row">
         <div class="six columns">
           <div class="module-section">
-            <div class="intro-image">
+            <div class="intro-image intro-image-1">
               <img src="<?php echo get_template_directory_uri(); ?>/img/food-cloud.png" class="animated" />
+            </div>
+            <div class="intro-image intro-image-2">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/small-plate.png" class="animated" />
             </div>
             <div class="intro-image">
               <img src="<?php echo get_template_directory_uri(); ?>/img/hungry.png" class="animated" />
@@ -21,11 +24,22 @@ get_header(); ?>
         </div>
         <div class="six columns">
           <div class="module-section">
-            <div class="intro-cloud-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/purple-bubble.png" class="animated" />
+            <div class="intro-bubble intro-bubble-1">
+              <div class="bubble-text">
+                <h1>Hey! I'm Sprout.<br/>I love healthy foods!</h1>
+              </div>
+            </div>
+            <div class="intro-bubble intro-bubble-2">
+              <div class="bubble-text">
+                <h1>Help me fill up your healthy plate by answering questions. Let's get started!</h1>
+              </div>
             </div>
             <button class="next button-control" style="display: inline-block;">
               <div class="next-text">Next</div>
+              <div class="next-arrow button-control-arrow"></div>
+            </button>
+            <button class="start button-control" style="display: inline-block;">
+              <div class="next-text">Get Started!</div>
               <div class="next-arrow button-control-arrow"></div>
             </button>
           </div>
@@ -35,5 +49,24 @@ get_header(); ?>
   </div>
 
 </main><!-- #main -->
+
+<script type="text/javascript">
+
+	jQuery(".intro .next").click(function() {
+    jQuery(".intro-bubble-1").hide();
+    jQuery(".intro-bubble-2").show();
+    jQuery(".intro-image-1").hide();
+    jQuery(".intro-image-2").show();
+    jQuery(this).hide();
+    jQuery(".intro .start").show();
+  });
+
+  jQuery(".intro .start").hide();
+
+  jQuery(".intro .start").click(function() {
+    window.location.href = "<?php echo get_post_type_archive_link( 'modules' ); ?>";
+  });
+
+</script>
 
 <?php get_footer(); ?>

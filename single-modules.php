@@ -482,10 +482,8 @@ get_header(); ?>
         </div>
         <div class="row">
           <div class="six offset-by-three columns">
-
-              <div class="final-image">
-              </div>
-            
+            <div class="final-image">
+            </div>
           </div>
         </div>
 
