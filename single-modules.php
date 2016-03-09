@@ -876,9 +876,9 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
       jQuery('.reward-item').text(rewardText);
 
       // Add rest of data to string
-      jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
-        jQuery('.final-image').html(result);
-      }});
+      // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+      //   jQuery('.final-image').html(result);
+      // }});
     }
 
     step = step + 1;
@@ -1007,13 +1007,13 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
     jQuery('.progress-plate').hide();
 
-    var data = JSON.stringify(answers);
-    var rewardData = JSON.stringify(rewards);
-
-    // Add rest of data to string
-    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
-      jQuery('.final-image').html(result);
-    }});
+    // var data = JSON.stringify(answers);
+    // var rewardData = JSON.stringify(rewards);
+    //
+    // // Add rest of data to string
+    // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+    //   jQuery('.final-image').html(result);
+    // }});
 
   });
 
