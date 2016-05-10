@@ -1134,19 +1134,43 @@ html, body {
   position: relative;
   border-radius: 20px;
   left: -30px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  cursor: pointer;
+}
+/* line 278, sass/layout/_main.scss */
+.menu-sound:hover i {
+  color: #929292;
+}
+/* line 282, sass/layout/_main.scss */
+.menu-sound:hover .menu-label {
+  display: inline;
+  margin-left: 30px;
+  color: #929292;
+  font-size: 12px;
+}
+/* line 288, sass/layout/_main.scss */
+.menu-sound:hover .menu-label i {
+  color: #0ed59c;
+  margin-right: 5px;
 }
 
-/* line 273, sass/layout/_main.scss */
+/* line 297, sass/layout/_main.scss */
+.menu-label {
+  display: none;
+}
+
+/* line 301, sass/layout/_main.scss */
 .post-type-archive-modules, .page-template-student-login {
   background: #83ceff;
 }
 
-/* line 277, sass/layout/_main.scss */
+/* line 305, sass/layout/_main.scss */
 .page-template-intro {
   background: #83ceff;
 }
 
-/* line 281, sass/layout/_main.scss */
+/* line 309, sass/layout/_main.scss */
 .button-control {
   position: absolute;
   right: 0;
@@ -1161,7 +1185,7 @@ html, body {
   height: 50px;
   font-weight: bold;
 }
-/* line 295, sass/layout/_main.scss */
+/* line 323, sass/layout/_main.scss */
 .button-control .button-control-arrow {
   width: 0;
   height: 0;
@@ -1169,49 +1193,49 @@ html, body {
   border-bottom: 10px solid transparent;
 }
 
-/* line 303, sass/layout/_main.scss */
+/* line 331, sass/layout/_main.scss */
 .next-arrow {
   float: right;
 }
 
-/* line 306, sass/layout/_main.scss */
+/* line 334, sass/layout/_main.scss */
 .next-text {
   float: left;
 }
 
-/* line 311, sass/layout/_main.scss */
+/* line 339, sass/layout/_main.scss */
 .prev .prev-arrow {
   float: left;
 }
-/* line 314, sass/layout/_main.scss */
+/* line 342, sass/layout/_main.scss */
 .prev .prev-text {
   float: right;
 }
 
-/* line 320, sass/layout/_main.scss */
+/* line 348, sass/layout/_main.scss */
 .print .print-arrow {
   float: right;
 }
-/* line 323, sass/layout/_main.scss */
+/* line 351, sass/layout/_main.scss */
 .print .print-text {
   float: left;
 }
 
-/* line 329, sass/layout/_main.scss */
+/* line 357, sass/layout/_main.scss */
 .return .return-arrow {
   float: right;
 }
-/* line 332, sass/layout/_main.scss */
+/* line 360, sass/layout/_main.scss */
 .return .return-text {
   float: left;
 }
 
-/* line 338, sass/layout/_main.scss */
+/* line 366, sass/layout/_main.scss */
 .start .next-arrow {
   float: right;
 }
 
-/* line 345, sass/layout/_main.scss */
+/* line 373, sass/layout/_main.scss */
 .progress-farm {
   height: 25px;
   width: 100%;
@@ -1219,13 +1243,13 @@ html, body {
   bottom: 0;
 }
 
-/* line 352, sass/layout/_main.scss */
+/* line 380, sass/layout/_main.scss */
 .progress-farm-point {
   float: left;
   height: 25px;
 }
 
-/* line 357, sass/layout/_main.scss */
+/* line 385, sass/layout/_main.scss */
 .progress-farm-point-sprout {
   background-repeat: no-repeat;
   width: 40px;
@@ -1235,7 +1259,7 @@ html, body {
   top: -20px;
 }
 
-/* line 366, sass/layout/_main.scss */
+/* line 394, sass/layout/_main.scss */
 .progress-farm-point-plant {
   background-repeat: no-repeat;
   width: 40px;
@@ -1246,467 +1270,467 @@ html, body {
   display: none;
 }
 
-/* line 376, sass/layout/_main.scss */
+/* line 404, sass/layout/_main.scss */
 .module-1 {
   background: #0ed59c;
 }
-/* line 379, sass/layout/_main.scss */
+/* line 407, sass/layout/_main.scss */
 .module-1 .menu-title {
   background: #0bac7e;
 }
-/* line 382, sass/layout/_main.scss */
+/* line 410, sass/layout/_main.scss */
 .module-1 .menu-module-name {
   color: #53d8b1;
 }
-/* line 385, sass/layout/_main.scss */
+/* line 413, sass/layout/_main.scss */
 .module-1 .menu-sound {
   color: #0bac7e;
 }
-/* line 388, sass/layout/_main.scss */
+/* line 416, sass/layout/_main.scss */
 .module-1 .progress-plate {
   background: #0bac7e;
 }
-/* line 391, sass/layout/_main.scss */
+/* line 419, sass/layout/_main.scss */
 .module-1 .prev {
   background-color: #0bac7e;
   color: #53d8b1;
 }
-/* line 395, sass/layout/_main.scss */
+/* line 423, sass/layout/_main.scss */
 .module-1 .prev .prev-arrow {
   border-right: 20px solid #53d8b1;
 }
-/* line 399, sass/layout/_main.scss */
+/* line 427, sass/layout/_main.scss */
 .module-1 .prev:hover {
   background-color: white;
   color: #0bac7e;
 }
-/* line 403, sass/layout/_main.scss */
+/* line 431, sass/layout/_main.scss */
 .module-1 .prev:hover .prev-arrow {
   border-right: 20px solid #0bac7e;
 }
-/* line 409, sass/layout/_main.scss */
+/* line 437, sass/layout/_main.scss */
 .module-1 .next, .module-1 .print, .module-1 .return, .module-1 .start {
   background-position: right 20px center;
   background-color: white;
   color: #0bac7e;
 }
-/* line 414, sass/layout/_main.scss */
+/* line 442, sass/layout/_main.scss */
 .module-1 .next .next-arrow, .module-1 .print .next-arrow, .module-1 .return .next-arrow, .module-1 .start .next-arrow {
   border-left: 20px solid #0bac7e;
 }
-/* line 418, sass/layout/_main.scss */
+/* line 446, sass/layout/_main.scss */
 .module-1 .next:hover, .module-1 .print:hover, .module-1 .return:hover, .module-1 .start:hover {
   background-color: #0bac7e;
   color: white;
 }
-/* line 422, sass/layout/_main.scss */
+/* line 450, sass/layout/_main.scss */
 .module-1 .next:hover .next-arrow, .module-1 .print:hover .next-arrow, .module-1 .return:hover .next-arrow, .module-1 .start:hover .next-arrow {
   border-left: 20px solid white;
 }
-/* line 429, sass/layout/_main.scss */
+/* line 457, sass/layout/_main.scss */
 .module-1 .progress-farmer {
   background-image: url(img/farmer-purple.png);
 }
-/* line 433, sass/layout/_main.scss */
+/* line 461, sass/layout/_main.scss */
 .module-1 .progress-farm {
   background-color: #7f3198;
 }
-/* line 437, sass/layout/_main.scss */
+/* line 465, sass/layout/_main.scss */
 .module-1 .progress-farm-point-sprout {
   background-image: url(img/sprout-green.png);
 }
-/* line 441, sass/layout/_main.scss */
+/* line 469, sass/layout/_main.scss */
 .module-1 .progress-farm-point-plant {
   background-image: url(img/plant-green.png);
 }
 
-/* line 447, sass/layout/_main.scss */
+/* line 475, sass/layout/_main.scss */
 .module-2 {
   background: #0072bc;
 }
-/* line 450, sass/layout/_main.scss */
+/* line 478, sass/layout/_main.scss */
 .module-2 .menu-title {
   background: #005a94;
 }
-/* line 453, sass/layout/_main.scss */
+/* line 481, sass/layout/_main.scss */
 .module-2 .menu-module-name {
   color: #83ceff;
 }
-/* line 456, sass/layout/_main.scss */
+/* line 484, sass/layout/_main.scss */
 .module-2 .menu-sound {
   color: #005a94;
 }
-/* line 459, sass/layout/_main.scss */
+/* line 487, sass/layout/_main.scss */
 .module-2 .progress-plate {
   background: #005a94;
 }
-/* line 462, sass/layout/_main.scss */
+/* line 490, sass/layout/_main.scss */
 .module-2 .prev {
   background-color: #005a94;
   color: #83ceff;
 }
-/* line 466, sass/layout/_main.scss */
+/* line 494, sass/layout/_main.scss */
 .module-2 .prev .prev-arrow {
   border-right: 20px solid #83ceff;
 }
-/* line 470, sass/layout/_main.scss */
+/* line 498, sass/layout/_main.scss */
 .module-2 .prev:hover {
   background-color: white;
   color: #005a94;
 }
-/* line 474, sass/layout/_main.scss */
+/* line 502, sass/layout/_main.scss */
 .module-2 .prev:hover .prev-arrow {
   border-right: 20px solid #005a94;
 }
-/* line 480, sass/layout/_main.scss */
+/* line 508, sass/layout/_main.scss */
 .module-2 .next, .module-2 .print, .module-2 .return, .module-2 .start {
   background-position: right 20px center;
   background-color: white;
   color: #005a94;
 }
-/* line 485, sass/layout/_main.scss */
+/* line 513, sass/layout/_main.scss */
 .module-2 .next .next-arrow, .module-2 .print .next-arrow, .module-2 .return .next-arrow, .module-2 .start .next-arrow {
   border-left: 20px solid #005a94;
 }
-/* line 489, sass/layout/_main.scss */
+/* line 517, sass/layout/_main.scss */
 .module-2 .next:hover, .module-2 .print:hover, .module-2 .return:hover, .module-2 .start:hover {
   background-color: #005a94;
   color: white;
 }
-/* line 493, sass/layout/_main.scss */
+/* line 521, sass/layout/_main.scss */
 .module-2 .next:hover .next-arrow, .module-2 .print:hover .next-arrow, .module-2 .return:hover .next-arrow, .module-2 .start:hover .next-arrow {
   border-left: 20px solid white;
 }
-/* line 501, sass/layout/_main.scss */
+/* line 529, sass/layout/_main.scss */
 .module-2 .module-text span {
   color: #ffcd2b;
 }
-/* line 506, sass/layout/_main.scss */
+/* line 534, sass/layout/_main.scss */
 .module-2 .progress-farm {
   background-color: #ffcd2b;
 }
-/* line 510, sass/layout/_main.scss */
+/* line 538, sass/layout/_main.scss */
 .module-2 .progress-farmer {
   background-image: url(img/farmer-blue.png);
 }
-/* line 514, sass/layout/_main.scss */
+/* line 542, sass/layout/_main.scss */
 .module-2 .progress-farm-point-sprout {
   background-image: url(img/sprout-blue.png);
 }
-/* line 518, sass/layout/_main.scss */
+/* line 546, sass/layout/_main.scss */
 .module-2 .progress-farm-point-plant {
   background-image: url(img/plant-blue.png);
 }
 
-/* line 524, sass/layout/_main.scss */
+/* line 552, sass/layout/_main.scss */
 .module-3 {
   background: #f65163;
 }
-/* line 527, sass/layout/_main.scss */
+/* line 555, sass/layout/_main.scss */
 .module-3 .menu-title {
   background: #c04451;
 }
-/* line 530, sass/layout/_main.scss */
+/* line 558, sass/layout/_main.scss */
 .module-3 .menu-module-name {
   color: #ffa4ae;
 }
-/* line 533, sass/layout/_main.scss */
+/* line 561, sass/layout/_main.scss */
 .module-3 .menu-sound {
   color: #c04451;
 }
-/* line 536, sass/layout/_main.scss */
+/* line 564, sass/layout/_main.scss */
 .module-3 .progress-plate {
   background: #c04451;
 }
-/* line 539, sass/layout/_main.scss */
+/* line 567, sass/layout/_main.scss */
 .module-3 .prev {
   background-color: #c04451;
   color: #ffa4ae;
 }
-/* line 543, sass/layout/_main.scss */
+/* line 571, sass/layout/_main.scss */
 .module-3 .prev .prev-arrow {
   border-right: 20px solid #ffa4ae;
 }
-/* line 547, sass/layout/_main.scss */
+/* line 575, sass/layout/_main.scss */
 .module-3 .prev:hover {
   background-color: white;
   color: #c04451;
 }
-/* line 551, sass/layout/_main.scss */
+/* line 579, sass/layout/_main.scss */
 .module-3 .prev:hover .prev-arrow {
   border-right: 20px solid #c04451;
 }
-/* line 557, sass/layout/_main.scss */
+/* line 585, sass/layout/_main.scss */
 .module-3 .next, .module-3 .print, .module-3 .return, .module-3 .start {
   background-position: right 20px center;
   background-color: white;
   color: #c04451;
 }
-/* line 562, sass/layout/_main.scss */
+/* line 590, sass/layout/_main.scss */
 .module-3 .next .next-arrow, .module-3 .print .next-arrow, .module-3 .return .next-arrow, .module-3 .start .next-arrow {
   border-left: 20px solid #c04451;
 }
-/* line 566, sass/layout/_main.scss */
+/* line 594, sass/layout/_main.scss */
 .module-3 .next:hover, .module-3 .print:hover, .module-3 .return:hover, .module-3 .start:hover {
   background-color: #c04451;
   color: white;
 }
-/* line 570, sass/layout/_main.scss */
+/* line 598, sass/layout/_main.scss */
 .module-3 .next:hover .next-arrow, .module-3 .print:hover .next-arrow, .module-3 .return:hover .next-arrow, .module-3 .start:hover .next-arrow {
   border-left: 20px solid white;
 }
-/* line 578, sass/layout/_main.scss */
+/* line 606, sass/layout/_main.scss */
 .module-3 .module-text span {
   color: #0ed59c;
 }
-/* line 583, sass/layout/_main.scss */
+/* line 611, sass/layout/_main.scss */
 .module-3 .progress-farmer {
   background-image: url(img/farmer-red.png);
 }
-/* line 587, sass/layout/_main.scss */
+/* line 615, sass/layout/_main.scss */
 .module-3 .progress-farm {
   background-color: #0ed59c;
 }
-/* line 591, sass/layout/_main.scss */
+/* line 619, sass/layout/_main.scss */
 .module-3 .progress-farm-point-sprout {
   background-image: url(img/sprout-red.png);
 }
-/* line 595, sass/layout/_main.scss */
+/* line 623, sass/layout/_main.scss */
 .module-3 .progress-farm-point-plant {
   background-image: url(img/plant-red.png);
 }
 
-/* line 601, sass/layout/_main.scss */
+/* line 629, sass/layout/_main.scss */
 .module-4 {
   background: #7f3198;
 }
-/* line 604, sass/layout/_main.scss */
+/* line 632, sass/layout/_main.scss */
 .module-4 .menu-title {
   background: #5c007a;
 }
-/* line 607, sass/layout/_main.scss */
+/* line 635, sass/layout/_main.scss */
 .module-4 .menu-module-name {
   color: #b473c9;
 }
-/* line 610, sass/layout/_main.scss */
+/* line 638, sass/layout/_main.scss */
 .module-4 .menu-sound {
   color: #5c007a;
 }
-/* line 613, sass/layout/_main.scss */
+/* line 641, sass/layout/_main.scss */
 .module-4 .progress-plate {
   background: #5c007a;
 }
-/* line 616, sass/layout/_main.scss */
+/* line 644, sass/layout/_main.scss */
 .module-4 .prev {
   background-color: #5c007a;
   color: #b473c9;
 }
-/* line 620, sass/layout/_main.scss */
+/* line 648, sass/layout/_main.scss */
 .module-4 .prev .prev-arrow {
   border-right: 20px solid #b473c9;
 }
-/* line 624, sass/layout/_main.scss */
+/* line 652, sass/layout/_main.scss */
 .module-4 .prev:hover {
   background-color: white;
   color: #5c007a;
 }
-/* line 628, sass/layout/_main.scss */
+/* line 656, sass/layout/_main.scss */
 .module-4 .prev:hover .prev-arrow {
   border-right: 20px solid #5c007a;
 }
-/* line 634, sass/layout/_main.scss */
+/* line 662, sass/layout/_main.scss */
 .module-4 .next, .module-4 .print, .module-4 .return, .module-4 .start {
   background-position: right 20px center;
   background-color: white;
   color: #5c007a;
 }
-/* line 639, sass/layout/_main.scss */
+/* line 667, sass/layout/_main.scss */
 .module-4 .next .next-arrow, .module-4 .print .next-arrow, .module-4 .return .next-arrow, .module-4 .start .next-arrow {
   border-left: 20px solid #5c007a;
 }
-/* line 643, sass/layout/_main.scss */
+/* line 671, sass/layout/_main.scss */
 .module-4 .next:hover, .module-4 .print:hover, .module-4 .return:hover, .module-4 .start:hover {
   background-color: #5c007a;
   color: white;
 }
-/* line 647, sass/layout/_main.scss */
+/* line 675, sass/layout/_main.scss */
 .module-4 .next:hover .next-arrow, .module-4 .print:hover .next-arrow, .module-4 .return:hover .next-arrow, .module-4 .start:hover .next-arrow {
   border-left: 20px solid white;
 }
-/* line 655, sass/layout/_main.scss */
+/* line 683, sass/layout/_main.scss */
 .module-4 .module-text span {
   color: #0ed59c;
 }
-/* line 660, sass/layout/_main.scss */
+/* line 688, sass/layout/_main.scss */
 .module-4 .progress-farmer {
   background-image: url(img/farmer-purple.png);
 }
-/* line 664, sass/layout/_main.scss */
+/* line 692, sass/layout/_main.scss */
 .module-4 .progress-farm {
   background-color: #0ed59c;
 }
-/* line 668, sass/layout/_main.scss */
+/* line 696, sass/layout/_main.scss */
 .module-4 .progress-farm-point-sprout {
   background-image: url(img/sprout-purple.png);
 }
-/* line 672, sass/layout/_main.scss */
+/* line 700, sass/layout/_main.scss */
 .module-4 .progress-farm-point-plant {
   background-image: url(img/plant-purple.png);
 }
 
-/* line 677, sass/layout/_main.scss */
+/* line 705, sass/layout/_main.scss */
 .module-5 {
   background: #ffcd2b;
 }
-/* line 680, sass/layout/_main.scss */
+/* line 708, sass/layout/_main.scss */
 .module-5 .menu-title {
   background: #de9f27;
 }
-/* line 683, sass/layout/_main.scss */
+/* line 711, sass/layout/_main.scss */
 .module-5 .menu-module-name {
   color: #ffe07d;
 }
-/* line 686, sass/layout/_main.scss */
+/* line 714, sass/layout/_main.scss */
 .module-5 .menu-sound {
   color: #de9f27;
 }
-/* line 689, sass/layout/_main.scss */
+/* line 717, sass/layout/_main.scss */
 .module-5 .progress-plate {
   background: #de9f27;
 }
-/* line 692, sass/layout/_main.scss */
+/* line 720, sass/layout/_main.scss */
 .module-5 .prev {
   background-color: #de9f27;
   color: #ffe07d;
 }
-/* line 696, sass/layout/_main.scss */
+/* line 724, sass/layout/_main.scss */
 .module-5 .prev .prev-arrow {
   border-right: 20px solid #ffe07d;
 }
-/* line 700, sass/layout/_main.scss */
+/* line 728, sass/layout/_main.scss */
 .module-5 .prev:hover {
   background-color: white;
   color: #de9f27;
 }
-/* line 704, sass/layout/_main.scss */
+/* line 732, sass/layout/_main.scss */
 .module-5 .prev:hover .prev-arrow {
   border-right: 20px solid #de9f27;
 }
-/* line 710, sass/layout/_main.scss */
+/* line 738, sass/layout/_main.scss */
 .module-5 .next, .module-5 .print, .module-5 .return, .module-5 .start {
   background-position: right 20px center;
   background-color: white;
   color: #de9f27;
 }
-/* line 715, sass/layout/_main.scss */
+/* line 743, sass/layout/_main.scss */
 .module-5 .next .next-arrow, .module-5 .print .next-arrow, .module-5 .return .next-arrow, .module-5 .start .next-arrow {
   border-left: 20px solid #de9f27;
 }
-/* line 719, sass/layout/_main.scss */
+/* line 747, sass/layout/_main.scss */
 .module-5 .next:hover, .module-5 .print:hover, .module-5 .return:hover, .module-5 .start:hover {
   background-color: #de9f27;
   color: white;
 }
-/* line 723, sass/layout/_main.scss */
+/* line 751, sass/layout/_main.scss */
 .module-5 .next:hover .next-arrow, .module-5 .print:hover .next-arrow, .module-5 .return:hover .next-arrow, .module-5 .start:hover .next-arrow {
   border-left: 20px solid white;
 }
-/* line 731, sass/layout/_main.scss */
+/* line 759, sass/layout/_main.scss */
 .module-5 .module-text span {
   color: #0072bc;
 }
-/* line 736, sass/layout/_main.scss */
+/* line 764, sass/layout/_main.scss */
 .module-5 .progress-farmer {
   background-image: url(img/farmer-blue.png);
 }
-/* line 740, sass/layout/_main.scss */
+/* line 768, sass/layout/_main.scss */
 .module-5 .progress-farm {
   background-color: #0072bc;
 }
-/* line 744, sass/layout/_main.scss */
+/* line 772, sass/layout/_main.scss */
 .module-5 .progress-farm-point-sprout {
   background-image: url(img/sprout-blue.png);
 }
-/* line 748, sass/layout/_main.scss */
+/* line 776, sass/layout/_main.scss */
 .module-5 .progress-farm-point-plant {
   background-image: url(img/plant-blue.png);
 }
 
-/* line 754, sass/layout/_main.scss */
+/* line 782, sass/layout/_main.scss */
 .module-6 {
   background: #ff9327;
 }
-/* line 757, sass/layout/_main.scss */
+/* line 785, sass/layout/_main.scss */
 .module-6 .menu-title {
   background: #e67300;
 }
-/* line 760, sass/layout/_main.scss */
+/* line 788, sass/layout/_main.scss */
 .module-6 .menu-module-name {
   color: #ffb45c;
 }
-/* line 763, sass/layout/_main.scss */
+/* line 791, sass/layout/_main.scss */
 .module-6 .menu-sound {
   color: #e67300;
 }
-/* line 766, sass/layout/_main.scss */
+/* line 794, sass/layout/_main.scss */
 .module-6 .progress-plate {
   background: #e67300;
 }
-/* line 769, sass/layout/_main.scss */
+/* line 797, sass/layout/_main.scss */
 .module-6 .prev {
   background-color: #e67300;
   color: #ffb45c;
 }
-/* line 773, sass/layout/_main.scss */
+/* line 801, sass/layout/_main.scss */
 .module-6 .prev .prev-arrow {
   border-right: 20px solid #ffb45c;
 }
-/* line 777, sass/layout/_main.scss */
+/* line 805, sass/layout/_main.scss */
 .module-6 .prev:hover {
   background-color: white;
   color: #e67300;
 }
-/* line 781, sass/layout/_main.scss */
+/* line 809, sass/layout/_main.scss */
 .module-6 .prev:hover .prev-arrow {
   border-right: 20px solid #e67300;
 }
-/* line 787, sass/layout/_main.scss */
+/* line 815, sass/layout/_main.scss */
 .module-6 .next, .module-6 .print, .module-6 .return, .module-6 .start {
   background-position: right 20px center;
   background-color: white;
   color: #e67300;
 }
-/* line 792, sass/layout/_main.scss */
+/* line 820, sass/layout/_main.scss */
 .module-6 .next .next-arrow, .module-6 .print .next-arrow, .module-6 .return .next-arrow, .module-6 .start .next-arrow {
   border-left: 20px solid #e67300;
 }
-/* line 796, sass/layout/_main.scss */
+/* line 824, sass/layout/_main.scss */
 .module-6 .next:hover, .module-6 .print:hover, .module-6 .return:hover, .module-6 .start:hover {
   background-color: #e67300;
   color: white;
 }
-/* line 800, sass/layout/_main.scss */
+/* line 828, sass/layout/_main.scss */
 .module-6 .next:hover .next-arrow, .module-6 .print:hover .next-arrow, .module-6 .return:hover .next-arrow, .module-6 .start:hover .next-arrow {
   border-left: 20px solid white;
 }
-/* line 807, sass/layout/_main.scss */
+/* line 835, sass/layout/_main.scss */
 .module-6 .progress-farmer {
   background-image: url(img/farmer-purple.png);
 }
-/* line 811, sass/layout/_main.scss */
+/* line 839, sass/layout/_main.scss */
 .module-6 .progress-farm {
   background-color: #7f3198;
 }
-/* line 815, sass/layout/_main.scss */
+/* line 843, sass/layout/_main.scss */
 .module-6 .progress-farm-point-sprout {
   background-image: url(img/sprout-purple.png);
 }
-/* line 819, sass/layout/_main.scss */
+/* line 847, sass/layout/_main.scss */
 .module-6 .progress-farm-point-plant {
   background-image: url(img/plant-purple.png);
 }
 
-/* line 825, sass/layout/_main.scss */
+/* line 853, sass/layout/_main.scss */
 .progress-plate {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -1716,7 +1740,7 @@ html, body {
   height: 100px;
   width: 100px;
 }
-/* line 834, sass/layout/_main.scss */
+/* line 862, sass/layout/_main.scss */
 .progress-plate img {
   position: relative;
   top: 10px;
@@ -1724,19 +1748,19 @@ html, body {
   width: 100%;
 }
 
-/* line 842, sass/layout/_main.scss */
+/* line 870, sass/layout/_main.scss */
 .module-image {
   text-align: center;
   position: relative;
   height: 300px;
   margin-bottom: 50px;
 }
-/* line 848, sass/layout/_main.scss */
+/* line 876, sass/layout/_main.scss */
 .module-image img {
   height: 100%;
 }
 
-/* line 853, sass/layout/_main.scss */
+/* line 881, sass/layout/_main.scss */
 .modules-image {
   text-align: center;
   position: relative;
@@ -1744,7 +1768,7 @@ html, body {
   margin-bottom: 50px;
 }
 
-/* line 860, sass/layout/_main.scss */
+/* line 888, sass/layout/_main.scss */
 .answer {
   text-align: center;
   font-weight: bold;
@@ -1755,7 +1779,7 @@ html, body {
   animation-delay: 2s;
 }
 
-/* line 869, sass/layout/_main.scss */
+/* line 897, sass/layout/_main.scss */
 .answer-image {
   background-repeat: no-repeat;
   background-position: center;
@@ -1763,378 +1787,378 @@ html, body {
   height: 150px;
   position: relative;
 }
-/* line 876, sass/layout/_main.scss */
+/* line 904, sass/layout/_main.scss */
 .answer-image img {
   height: 95px;
 }
 
-/* line 881, sass/layout/_main.scss */
+/* line 909, sass/layout/_main.scss */
 .answer {
   cursor: pointer;
 }
-/* line 885, sass/layout/_main.scss */
+/* line 913, sass/layout/_main.scss */
 .answer:hover .answer-image {
   background-size: contain;
 }
-/* line 888, sass/layout/_main.scss */
+/* line 916, sass/layout/_main.scss */
 .answer:hover .answer-image img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 897, sass/layout/_main.scss */
+/* line 925, sass/layout/_main.scss */
 .answer-image-hover {
   background-size: contain;
 }
-/* line 900, sass/layout/_main.scss */
+/* line 928, sass/layout/_main.scss */
 .answer-image-hover img {
   height: 180px;
   position: relative;
   top: -60px;
 }
 
-/* line 912, sass/layout/_main.scss */
+/* line 940, sass/layout/_main.scss */
 .module-1 .answer-1 .answer-image-1 {
   background-image: url(img/star.png);
 }
-/* line 916, sass/layout/_main.scss */
+/* line 944, sass/layout/_main.scss */
 .module-1 .answer-1 .answer-image-1-hover {
   background-image: url(img/hover/PurpleStar_Active.png) !important;
 }
-/* line 920, sass/layout/_main.scss */
+/* line 948, sass/layout/_main.scss */
 .module-1 .answer-1.answer-hover .answer-text {
   color: #7f3198;
 }
-/* line 925, sass/layout/_main.scss */
+/* line 953, sass/layout/_main.scss */
 .module-1 .answer-1:hover .answer-image-1 {
   background-image: url(img/hover/PurpleStar_Hover.png);
 }
-/* line 929, sass/layout/_main.scss */
+/* line 957, sass/layout/_main.scss */
 .module-1 .answer-1:hover .answer-text {
   color: #7f3198;
 }
-/* line 938, sass/layout/_main.scss */
+/* line 966, sass/layout/_main.scss */
 .module-1 .answer-2 .answer-image-2 {
   background-image: url(img/circle.png);
 }
-/* line 941, sass/layout/_main.scss */
+/* line 969, sass/layout/_main.scss */
 .module-1 .answer-2 .answer-image-2-hover {
   background-image: url(img/hover/PurpleO_Active.png) !important;
 }
-/* line 945, sass/layout/_main.scss */
+/* line 973, sass/layout/_main.scss */
 .module-1 .answer-2.answer-hover .answer-text {
   color: #7f3198;
 }
-/* line 950, sass/layout/_main.scss */
+/* line 978, sass/layout/_main.scss */
 .module-1 .answer-2:hover .answer-image-2 {
   background-image: url(img/hover/PurpleO_Hover.png);
 }
-/* line 953, sass/layout/_main.scss */
+/* line 981, sass/layout/_main.scss */
 .module-1 .answer-2:hover .answer-text {
   color: #7f3198;
 }
-/* line 962, sass/layout/_main.scss */
+/* line 990, sass/layout/_main.scss */
 .module-1 .answer-3 .answer-image-3 {
   background-image: url(img/cloud.png);
 }
-/* line 965, sass/layout/_main.scss */
+/* line 993, sass/layout/_main.scss */
 .module-1 .answer-3 .answer-image-3-hover {
   background-image: url(img/hover/PurpleCloud_Active.png) !important;
 }
-/* line 969, sass/layout/_main.scss */
+/* line 997, sass/layout/_main.scss */
 .module-1 .answer-3.answer-hover .answer-text {
   color: #7f3198;
 }
-/* line 974, sass/layout/_main.scss */
+/* line 1002, sass/layout/_main.scss */
 .module-1 .answer-3:hover .answer-image-3 {
   background-image: url(img/hover/PurpleCloud_Hover.png);
 }
-/* line 977, sass/layout/_main.scss */
+/* line 1005, sass/layout/_main.scss */
 .module-1 .answer-3:hover .answer-text {
   color: #7f3198;
 }
-/* line 986, sass/layout/_main.scss */
+/* line 1014, sass/layout/_main.scss */
 .module-1 .answer-4 .answer-image-4 {
   background-image: url(img/x.png);
 }
-/* line 989, sass/layout/_main.scss */
+/* line 1017, sass/layout/_main.scss */
 .module-1 .answer-4 .answer-image-4-hover {
   background-image: url(img/hover/PurpleX_Active.png) !important;
 }
-/* line 993, sass/layout/_main.scss */
+/* line 1021, sass/layout/_main.scss */
 .module-1 .answer-4.answer-hover .answer-text {
   color: #7f3198;
 }
-/* line 998, sass/layout/_main.scss */
+/* line 1026, sass/layout/_main.scss */
 .module-1 .answer-4:hover .answer-image-4 {
   background-image: url(img/hover/PurpleX_Hover.png);
 }
-/* line 1001, sass/layout/_main.scss */
+/* line 1029, sass/layout/_main.scss */
 .module-1 .answer-4:hover .answer-text {
   color: #7f3198;
 }
-/* line 1007, sass/layout/_main.scss */
+/* line 1035, sass/layout/_main.scss */
 .module-1 .reward-answer:hover, .module-1 .reward-hover .reward-text {
   color: #7f3198;
 }
 
-/* line 1018, sass/layout/_main.scss */
+/* line 1046, sass/layout/_main.scss */
 .module-2 .answer-1 .answer-image-1 {
   background-image: url(img/star.png);
 }
-/* line 1021, sass/layout/_main.scss */
+/* line 1049, sass/layout/_main.scss */
 .module-2 .answer-1 .answer-image-1-hover {
   background-image: url(img/hover/YellowStar_Active.png) !important;
 }
-/* line 1025, sass/layout/_main.scss */
+/* line 1053, sass/layout/_main.scss */
 .module-2 .answer-1.answer-hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1030, sass/layout/_main.scss */
+/* line 1058, sass/layout/_main.scss */
 .module-2 .answer-1:hover .answer-image-1 {
   background-image: url(img/hover/YellowStar_Hover.png);
 }
-/* line 1033, sass/layout/_main.scss */
+/* line 1061, sass/layout/_main.scss */
 .module-2 .answer-1:hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1042, sass/layout/_main.scss */
+/* line 1070, sass/layout/_main.scss */
 .module-2 .answer-2 .answer-image-2 {
   background-image: url(img/circle.png);
 }
-/* line 1045, sass/layout/_main.scss */
+/* line 1073, sass/layout/_main.scss */
 .module-2 .answer-2 .answer-image-2-hover {
   background-image: url(img/hover/YellowO_Active.png) !important;
 }
-/* line 1049, sass/layout/_main.scss */
+/* line 1077, sass/layout/_main.scss */
 .module-2 .answer-2.answer-hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1054, sass/layout/_main.scss */
+/* line 1082, sass/layout/_main.scss */
 .module-2 .answer-2:hover .answer-image-2 {
   background-image: url(img/hover/YellowO_Hover.png);
 }
-/* line 1057, sass/layout/_main.scss */
+/* line 1085, sass/layout/_main.scss */
 .module-2 .answer-2:hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1066, sass/layout/_main.scss */
+/* line 1094, sass/layout/_main.scss */
 .module-2 .answer-3 .answer-image-3 {
   background-image: url(img/cloud.png);
 }
-/* line 1069, sass/layout/_main.scss */
+/* line 1097, sass/layout/_main.scss */
 .module-2 .answer-3 .answer-image-3-hover {
   background-image: url(img/hover/YellowCloud_Active.png) !important;
 }
-/* line 1073, sass/layout/_main.scss */
+/* line 1101, sass/layout/_main.scss */
 .module-2 .answer-3.answer-hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1078, sass/layout/_main.scss */
+/* line 1106, sass/layout/_main.scss */
 .module-2 .answer-3:hover .answer-image-3 {
   background-image: url(img/hover/YellowCloud_Hover.png);
 }
-/* line 1081, sass/layout/_main.scss */
+/* line 1109, sass/layout/_main.scss */
 .module-2 .answer-3:hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1090, sass/layout/_main.scss */
+/* line 1118, sass/layout/_main.scss */
 .module-2 .answer-4 .answer-image-4 {
   background-image: url(img/x.png);
 }
-/* line 1093, sass/layout/_main.scss */
+/* line 1121, sass/layout/_main.scss */
 .module-2 .answer-4 .answer-image-4-hover {
   background-image: url(img/hover/YellowX_Active.png) !important;
 }
-/* line 1097, sass/layout/_main.scss */
+/* line 1125, sass/layout/_main.scss */
 .module-2 .answer-4.answer-hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1102, sass/layout/_main.scss */
+/* line 1130, sass/layout/_main.scss */
 .module-2 .answer-4:hover .answer-image-4 {
   background-image: url(img/hover/YellowX_Hover.png);
 }
-/* line 1105, sass/layout/_main.scss */
+/* line 1133, sass/layout/_main.scss */
 .module-2 .answer-4:hover .answer-text {
   color: #ffcd2b;
 }
-/* line 1111, sass/layout/_main.scss */
+/* line 1139, sass/layout/_main.scss */
 .module-2 .reward-answer:hover, .module-2 .reward-hover .reward-text {
   color: #ffcd2b;
 }
 
-/* line 1122, sass/layout/_main.scss */
+/* line 1150, sass/layout/_main.scss */
 .module-3 .answer-1 .answer-image-1, .module-4 .answer-1 .answer-image-1 {
   background-image: url(img/star.png);
 }
-/* line 1125, sass/layout/_main.scss */
+/* line 1153, sass/layout/_main.scss */
 .module-3 .answer-1 .answer-image-1-hover, .module-4 .answer-1 .answer-image-1-hover {
   background-image: url(img/hover/MintStar_Active.png) !important;
 }
-/* line 1129, sass/layout/_main.scss */
+/* line 1157, sass/layout/_main.scss */
 .module-3 .answer-1.answer-hover .answer-text, .module-4 .answer-1.answer-hover .answer-text {
   color: #0ed59c;
 }
-/* line 1134, sass/layout/_main.scss */
+/* line 1162, sass/layout/_main.scss */
 .module-3 .answer-1:hover .answer-image-1, .module-4 .answer-1:hover .answer-image-1 {
   background-image: url(img/hover/MintStar_Hover.png);
 }
-/* line 1137, sass/layout/_main.scss */
+/* line 1165, sass/layout/_main.scss */
 .module-3 .answer-1:hover .answer-text, .module-4 .answer-1:hover .answer-text {
   color: #0ed59c;
 }
-/* line 1146, sass/layout/_main.scss */
+/* line 1174, sass/layout/_main.scss */
 .module-3 .answer-2 .answer-image-2, .module-4 .answer-2 .answer-image-2 {
   background-image: url(img/circle.png);
 }
-/* line 1149, sass/layout/_main.scss */
+/* line 1177, sass/layout/_main.scss */
 .module-3 .answer-2 .answer-image-2-hover, .module-4 .answer-2 .answer-image-2-hover {
   background-image: url(img/hover/MintO_Active.png) !important;
 }
-/* line 1153, sass/layout/_main.scss */
+/* line 1181, sass/layout/_main.scss */
 .module-3 .answer-2.answer-hover .answer-text, .module-4 .answer-2.answer-hover .answer-text {
   color: #0ed59c;
 }
-/* line 1158, sass/layout/_main.scss */
+/* line 1186, sass/layout/_main.scss */
 .module-3 .answer-2:hover .answer-image-2, .module-4 .answer-2:hover .answer-image-2 {
   background-image: url(img/hover/MintO_Hover.png);
 }
-/* line 1161, sass/layout/_main.scss */
+/* line 1189, sass/layout/_main.scss */
 .module-3 .answer-2:hover .answer-text, .module-4 .answer-2:hover .answer-text {
   color: #0ed59c;
 }
-/* line 1170, sass/layout/_main.scss */
+/* line 1198, sass/layout/_main.scss */
 .module-3 .answer-3 .answer-image-3, .module-4 .answer-3 .answer-image-3 {
   background-image: url(img/cloud.png);
 }
-/* line 1173, sass/layout/_main.scss */
+/* line 1201, sass/layout/_main.scss */
 .module-3 .answer-3 .answer-image-3-hover, .module-4 .answer-3 .answer-image-3-hover {
   background-image: url(img/hover/MintCloud_Active.png) !important;
 }
-/* line 1177, sass/layout/_main.scss */
+/* line 1205, sass/layout/_main.scss */
 .module-3 .answer-3.answer-hover .answer-text, .module-4 .answer-3.answer-hover .answer-text {
   color: #0ed59c;
 }
-/* line 1182, sass/layout/_main.scss */
+/* line 1210, sass/layout/_main.scss */
 .module-3 .answer-3:hover .answer-image-3, .module-4 .answer-3:hover .answer-image-3 {
   background-image: url(img/hover/MintCloud_Hover.png);
 }
-/* line 1185, sass/layout/_main.scss */
+/* line 1213, sass/layout/_main.scss */
 .module-3 .answer-3:hover .answer-text, .module-4 .answer-3:hover .answer-text {
   color: #0ed59c;
 }
-/* line 1194, sass/layout/_main.scss */
+/* line 1222, sass/layout/_main.scss */
 .module-3 .answer-4 .answer-image-4, .module-4 .answer-4 .answer-image-4 {
   background-image: url(img/x.png);
 }
-/* line 1197, sass/layout/_main.scss */
+/* line 1225, sass/layout/_main.scss */
 .module-3 .answer-4 .answer-image-4-hover, .module-4 .answer-4 .answer-image-4-hover {
   background-image: url(img/hover/MintX_Active.png) !important;
 }
-/* line 1201, sass/layout/_main.scss */
+/* line 1229, sass/layout/_main.scss */
 .module-3 .answer-4.answer-hover .answer-text, .module-4 .answer-4.answer-hover .answer-text {
   color: #0ed59c;
 }
-/* line 1206, sass/layout/_main.scss */
+/* line 1234, sass/layout/_main.scss */
 .module-3 .answer-4:hover .answer-image-4, .module-4 .answer-4:hover .answer-image-4 {
   background-image: url(img/hover/MintX_Hover.png);
 }
-/* line 1209, sass/layout/_main.scss */
+/* line 1237, sass/layout/_main.scss */
 .module-3 .answer-4:hover .answer-text, .module-4 .answer-4:hover .answer-text {
   color: #0ed59c;
 }
-/* line 1215, sass/layout/_main.scss */
+/* line 1243, sass/layout/_main.scss */
 .module-3 .reward-answer:hover, .module-3 .reward-hover .reward-text, .module-4 .reward-answer:hover, .module-4 .reward-hover .reward-text {
   color: #0ed59c;
 }
 
-/* line 1226, sass/layout/_main.scss */
+/* line 1254, sass/layout/_main.scss */
 .module-5 .answer-1 .answer-image-1 {
   background-image: url(img/star.png);
 }
-/* line 1229, sass/layout/_main.scss */
+/* line 1257, sass/layout/_main.scss */
 .module-5 .answer-1 .answer-image-1-hover {
   background-image: url(img/hover/BlueStar_Active.png) !important;
 }
-/* line 1233, sass/layout/_main.scss */
+/* line 1261, sass/layout/_main.scss */
 .module-5 .answer-1.answer-hover .answer-text {
   color: #0072bc;
 }
-/* line 1238, sass/layout/_main.scss */
+/* line 1266, sass/layout/_main.scss */
 .module-5 .answer-1:hover .answer-image-1 {
   background-image: url(img/hover/BlueStar_Hover.png);
 }
-/* line 1241, sass/layout/_main.scss */
+/* line 1269, sass/layout/_main.scss */
 .module-5 .answer-1:hover .answer-text {
   color: #0072bc;
 }
-/* line 1250, sass/layout/_main.scss */
+/* line 1278, sass/layout/_main.scss */
 .module-5 .answer-2 .answer-image-2 {
   background-image: url(img/circle.png);
 }
-/* line 1253, sass/layout/_main.scss */
+/* line 1281, sass/layout/_main.scss */
 .module-5 .answer-2 .answer-image-2-hover {
   background-image: url(img/hover/BlueO_Active.png) !important;
 }
-/* line 1257, sass/layout/_main.scss */
+/* line 1285, sass/layout/_main.scss */
 .module-5 .answer-2.answer-hover .answer-text {
   color: #0072bc;
 }
-/* line 1262, sass/layout/_main.scss */
+/* line 1290, sass/layout/_main.scss */
 .module-5 .answer-2:hover .answer-image-2 {
   background-image: url(img/hover/BlueO_Hover.png);
 }
-/* line 1265, sass/layout/_main.scss */
+/* line 1293, sass/layout/_main.scss */
 .module-5 .answer-2:hover .answer-text {
   color: #0072bc;
 }
-/* line 1274, sass/layout/_main.scss */
+/* line 1302, sass/layout/_main.scss */
 .module-5 .answer-3 .answer-image-3 {
   background-image: url(img/cloud.png);
 }
-/* line 1277, sass/layout/_main.scss */
+/* line 1305, sass/layout/_main.scss */
 .module-5 .answer-3 .answer-image-3-hover {
   background-image: url(img/hover/BlueCloud_Active.png) !important;
 }
-/* line 1281, sass/layout/_main.scss */
+/* line 1309, sass/layout/_main.scss */
 .module-5 .answer-3.answer-hover .answer-text {
   color: #0072bc;
 }
-/* line 1286, sass/layout/_main.scss */
+/* line 1314, sass/layout/_main.scss */
 .module-5 .answer-3:hover .answer-image-3 {
   background-image: url(img/hover/BlueCloud_Hover.png);
 }
-/* line 1289, sass/layout/_main.scss */
+/* line 1317, sass/layout/_main.scss */
 .module-5 .answer-3:hover .answer-text {
   color: #0072bc;
 }
-/* line 1298, sass/layout/_main.scss */
+/* line 1326, sass/layout/_main.scss */
 .module-5 .answer-4 .answer-image-4 {
   background-image: url(img/x.png);
 }
-/* line 1301, sass/layout/_main.scss */
+/* line 1329, sass/layout/_main.scss */
 .module-5 .answer-4 .answer-image-4-hover {
   background-image: url(img/hover/BlueX_Active.png) !important;
 }
-/* line 1305, sass/layout/_main.scss */
+/* line 1333, sass/layout/_main.scss */
 .module-5 .answer-4.answer-hover .answer-text {
   color: #0072bc;
 }
-/* line 1310, sass/layout/_main.scss */
+/* line 1338, sass/layout/_main.scss */
 .module-5 .answer-4:hover .answer-image-4 {
   background-image: url(img/hover/BlueX_Hover.png);
 }
-/* line 1313, sass/layout/_main.scss */
+/* line 1341, sass/layout/_main.scss */
 .module-5 .answer-4:hover .answer-text {
   color: #0072bc;
 }
-/* line 1319, sass/layout/_main.scss */
+/* line 1347, sass/layout/_main.scss */
 .module-5 .reward-answer:hover, .module-5 .reward-hover .reward-text {
   color: #0072bc;
 }
 
-/* line 1326, sass/layout/_main.scss */
+/* line 1354, sass/layout/_main.scss */
 .reward-answer {
   text-align: center;
   font-weight: bold;
@@ -2142,22 +2166,22 @@ html, body {
   color: white;
 }
 
-/* line 1333, sass/layout/_main.scss */
+/* line 1361, sass/layout/_main.scss */
 .reward-image {
   margin: auto;
   display: table-cell;
   vertical-align: middle;
 }
-/* line 1338, sass/layout/_main.scss */
+/* line 1366, sass/layout/_main.scss */
 .reward-image img {
   width: 100px;
 }
-/* line 1341, sass/layout/_main.scss */
+/* line 1369, sass/layout/_main.scss */
 .reward-image img:hover {
   width: 150px;
 }
 
-/* line 1348, sass/layout/_main.scss */
+/* line 1376, sass/layout/_main.scss */
 .reward-image-container {
   height: 175px;
   position: relative;
@@ -2165,60 +2189,60 @@ html, body {
   width: 100%;
 }
 
-/* line 1355, sass/layout/_main.scss */
+/* line 1383, sass/layout/_main.scss */
 .reward-image-hover {
   padding: 0;
   top: 0;
 }
-/* line 1359, sass/layout/_main.scss */
+/* line 1387, sass/layout/_main.scss */
 .reward-image-hover img {
   width: 150px;
 }
 
-/* line 1364, sass/layout/_main.scss */
+/* line 1392, sass/layout/_main.scss */
 .question {
   display: none;
 }
 
-/* line 1368, sass/layout/_main.scss */
+/* line 1396, sass/layout/_main.scss */
 .welcome {
   display: none;
 }
 
-/* line 1372, sass/layout/_main.scss */
+/* line 1400, sass/layout/_main.scss */
 .congratulations {
   display: none;
 }
 
-/* line 1377, sass/layout/_main.scss */
+/* line 1405, sass/layout/_main.scss */
 .module-number {
   color: #7f3198;
   line-height: 0;
 }
 
-/* line 1382, sass/layout/_main.scss */
+/* line 1410, sass/layout/_main.scss */
 .answer-text, .reward-text {
   margin: 10px;
 }
 
-/* line 1386, sass/layout/_main.scss */
+/* line 1414, sass/layout/_main.scss */
 .module-food {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-/* line 1391, sass/layout/_main.scss */
+/* line 1419, sass/layout/_main.scss */
 .module-food img {
   float: left;
 }
 
-/* line 1396, sass/layout/_main.scss */
+/* line 1424, sass/layout/_main.scss */
 .page-template-login {
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 1401, sass/layout/_main.scss */
+/* line 1429, sass/layout/_main.scss */
 .progress-farmer {
   background-repeat: no-repeat;
   width: 50px;
@@ -2228,143 +2252,143 @@ html, body {
   top: -35px;
 }
 
-/* line 1410, sass/layout/_main.scss */
+/* line 1438, sass/layout/_main.scss */
 .reward {
   display: none;
   cursor: pointer;
 }
 
-/* line 1415, sass/layout/_main.scss */
+/* line 1443, sass/layout/_main.scss */
 .congratulations {
   display: none;
 }
 
-/* line 1419, sass/layout/_main.scss */
+/* line 1447, sass/layout/_main.scss */
 .bonus {
   display: none;
 }
 
-/* line 1423, sass/layout/_main.scss */
+/* line 1451, sass/layout/_main.scss */
 .complete {
   display: none;
 }
 
-/* line 1427, sass/layout/_main.scss */
+/* line 1455, sass/layout/_main.scss */
 .woohoo {
   display: none;
 }
 
-/* line 1431, sass/layout/_main.scss */
+/* line 1459, sass/layout/_main.scss */
 .yay {
   display: none;
 }
 
-/* line 1435, sass/layout/_main.scss */
+/* line 1463, sass/layout/_main.scss */
 .reward-images {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-/* line 1441, sass/layout/_main.scss */
+/* line 1469, sass/layout/_main.scss */
 .reward-image-final {
   width: 100px;
 }
 
-/* line 1445, sass/layout/_main.scss */
+/* line 1473, sass/layout/_main.scss */
 .reward-image-final-0 {
   position: absolute;
   left: 55px;
   top: 275px;
 }
 
-/* line 1451, sass/layout/_main.scss */
+/* line 1479, sass/layout/_main.scss */
 .reward-image-final-1 {
   position: absolute;
   left: 55px;
   top: 100px;
 }
 
-/* line 1457, sass/layout/_main.scss */
+/* line 1485, sass/layout/_main.scss */
 .reward-image-final-2 {
   position: absolute;
   left: 240px;
   top: 120px;
 }
 
-/* line 1463, sass/layout/_main.scss */
+/* line 1491, sass/layout/_main.scss */
 .reward-image-final-3 {
   position: absolute;
   left: 230px;
   top: 290px;
 }
 
-/* line 1469, sass/layout/_main.scss */
+/* line 1497, sass/layout/_main.scss */
 .reward-image-final-4 {
   position: absolute;
   top: 15px;
   right: 20px;
 }
 
-/* line 1475, sass/layout/_main.scss */
+/* line 1503, sass/layout/_main.scss */
 .center {
   text-align: center;
 }
 
-/* line 1479, sass/layout/_main.scss */
+/* line 1507, sass/layout/_main.scss */
 .bonus-image {
   margin: 200px 0;
 }
 
-/* line 1487, sass/layout/_main.scss */
+/* line 1515, sass/layout/_main.scss */
 .congratulations-no-reward {
   display: none;
 }
 
-/* line 1491, sass/layout/_main.scss */
+/* line 1519, sass/layout/_main.scss */
 .intro-image {
   text-align: center;
   float: left;
   width: 100%;
 }
 
-/* line 1497, sass/layout/_main.scss */
+/* line 1525, sass/layout/_main.scss */
 .intro-image-top {
   height: 350px;
   margin: 25px;
 }
 
-/* line 1502, sass/layout/_main.scss */
+/* line 1530, sass/layout/_main.scss */
 .intro-image-bottom {
   height: 235px;
   margin: 50px 0 0;
 }
 
-/* line 1507, sass/layout/_main.scss */
+/* line 1535, sass/layout/_main.scss */
 .intro-image-2 {
   display: none;
 }
 
-/* line 1512, sass/layout/_main.scss */
+/* line 1540, sass/layout/_main.scss */
 .intro .next, .intro .start {
   background-color: white;
   color: #7f3198;
 }
-/* line 1516, sass/layout/_main.scss */
+/* line 1544, sass/layout/_main.scss */
 .intro .next .next-arrow, .intro .start .next-arrow {
   border-left: 20px solid #7f3198;
 }
-/* line 1520, sass/layout/_main.scss */
+/* line 1548, sass/layout/_main.scss */
 .intro .next:hover, .intro .start:hover {
   background-color: #7f3198;
   color: white;
 }
-/* line 1524, sass/layout/_main.scss */
+/* line 1552, sass/layout/_main.scss */
 .intro .next:hover .next-arrow, .intro .start:hover .next-arrow {
   border-left: 20px solid white;
 }
 
-/* line 1532, sass/layout/_main.scss */
+/* line 1560, sass/layout/_main.scss */
 .intro-bubble {
   float: left;
   position: relative;
@@ -2376,14 +2400,14 @@ html, body {
   appearance: none;
 }
 
-/* line 1543, sass/layout/_main.scss */
+/* line 1571, sass/layout/_main.scss */
 .intro-bubble-1 {
   background: url(img/purple-bubble.png) no-repeat center;
   height: 285px;
   padding: 25px;
 }
 
-/* line 1549, sass/layout/_main.scss */
+/* line 1577, sass/layout/_main.scss */
 .intro-bubble-2 {
   background: url(img/purple-bubble-2.png) no-repeat center;
   display: none;

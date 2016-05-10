@@ -268,6 +268,34 @@
   position: relative;
   border-radius: 20px;
   left: -30px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  cursor: pointer;
+
+
+  &:hover {
+
+      i {
+          color: #929292;
+      }
+
+      .menu-label {
+          display: inline;
+          margin-left: 30px;
+          color: #929292;
+          font-size: 12px;
+
+          i {
+              color: #0ed59c;
+              margin-right: 5px;
+          }
+      }
+  }
+
+}
+
+.menu-label {
+    display: none;
 }
 
 .post-type-archive-modules, .page-template-student-login {

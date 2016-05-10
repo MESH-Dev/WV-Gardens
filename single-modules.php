@@ -19,7 +19,12 @@ get_header(); ?>
         <div class="twelve columns">
           <div class="menu-bar">
             <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Sprout's Adventure</span> <span class="menu-module-name"><?php the_title(); ?></span></div></a>
-            <!-- <div class="menu-sound"><i class="fa fa-volume-up"></i></div> -->
+            <div class="menu-sound play">
+                <i class="fa fa-volume-up"></i>
+                <div class="menu-label">
+                    <i class="fa fa-play"></i> On
+                </div>
+            </div>
           </div>
           <div class="progress-plate">
             <?php get_template_part( 'partials/progress', 'plate' ); ?>
@@ -27,6 +32,8 @@ get_header(); ?>
         </div>
       </div>
     </div>
+
+
 
     <?php // WELCOME  ?>
 
@@ -69,7 +76,48 @@ get_header(); ?>
         $i++;
         $question = get_sub_field('question');
 
+        // GET THE CLASS
+        $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
+        global $wpdb;
+        $class_row = $wpdb->get_row( $sql , ARRAY_A );
+        $class = (int)$class_row['class_id'];
+
         ?>
+
+        <audio class="audioDemo" id="audio-<?php echo $i; ?>">
+           <source src="<?php echo get_field('audio', $question->ID); ?>" type="audio/mpeg">
+        </audio>
+
+
+
+        <?php if (get_field('autoplay_audio', $class)) { ?>
+
+            <script>
+
+                jQuery('.start').click(function(){
+                  var res = 'audio-' + <?php echo $i; ?>;
+                  document.getElementById(res).play();
+                });
+
+                jQuery('.next').click(function(){
+                  var res = 'audio-' + <?php echo $i; ?>;
+                  document.getElementById(res).play();
+                });
+
+            </script>
+
+        <?php } else { ?>
+
+            <script>
+
+                jQuery('.play').click(function(){
+                  var res = 'audio-' + <?php echo $i; ?>;
+                  document.getElementById(res).play();
+                });
+
+            </script>
+
+        <?php } ?>
 
         <div class="question question-<?php echo $i; ?>">
           <div class="container">
@@ -849,7 +897,6 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
     jQuery(track[step]).show();
 
     jQuery(track[step]).find('.answer').addClass('bounceIn');
-
     jQuery(track[step]).find('.bonus-image img').addClass('bounceIn');
 
     if (track[step] == ".congratulations" || track[step] == ".complete") {
@@ -1017,6 +1064,11 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
   });
 
+  jQuery(".menu-sound").mouseenter(function() {
+      jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
+  }).mouseleave(function() {
+      jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
+  });
 
 </script>
 
