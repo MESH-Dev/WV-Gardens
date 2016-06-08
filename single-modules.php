@@ -33,7 +33,7 @@ get_header(); ?>
     <div class="welcome">
       <div class="container">
         <div class="row">
-          <div class="six columns">
+          <div class="nine columns">
             <div class="module-text">
               <h1>Welcome to <span><?php the_title(); ?>!</span> Add healthy food to your plate today by answering the following questions.</h1>
             </div>
@@ -74,13 +74,13 @@ get_header(); ?>
         <div class="question question-<?php echo $i; ?>">
           <div class="container">
             <div class="row">
-              <div class="six columns">
+              <div class="eight columns">
                 <div class="module-text">
                   <h3 class="module-number"><?php echo $i; ?>.</h3>
                   <h1><?php echo $question->post_title; ?></h1>
                 </div>
               </div>
-              <div class="six columns">
+              <div class="four columns">
                 <div class="module-image">
                   <?php
                     $display_image = get_field('display_image', $question->ID);
@@ -263,14 +263,14 @@ get_header(); ?>
         <div class="reward reward-<?php echo $i; ?>">
           <div class="container">
             <div class="row">
-              <div class="six columns">
+              <div class="eight columns">
                 <div class="module-text">
                   <h1>Congratulations!</h1>
                   <h1>You've completed <span><?php the_title(); ?></span>. You get to add one <span><?php echo $reward['single_name']; ?></span> to your plate.</h1>
                 </div>
               </div>
-              <div class="six columns">
-                <div class="module-image">
+              <div class="four columns">
+                <div class="module-image module-image-reward">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/farmer.png" />
                 </div>
               </div>
@@ -434,7 +434,7 @@ get_header(); ?>
     <div class="congratulations">
       <div class="container">
         <div class="row">
-          <div class="six columns">
+          <div class="twelve columns">
             <div class="module-text">
               <h1>Congratulations!</h1>
               <h1>
@@ -471,7 +471,7 @@ get_header(); ?>
     <div class="congratulations-no-reward">
       <div class="container">
         <div class="row">
-          <div class="six columns">
+          <div class="twelve columns">
             <div class="module-text">
               <h1>Congratulations!</h1>
               <h1>
@@ -504,7 +504,7 @@ get_header(); ?>
     <div class="complete">
       <div class="container">
         <div class="row">
-          <div class="six columns">
+          <div class="twelve columns">
             <div class="module-text">
               <h1>Congratulations!</h1>
               <h1>
@@ -823,6 +823,8 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
 <script type="text/javascript">
 
+  jQuery(document).ready(function($){
+
 	jQuery('.welcome').show();
   var step = 1;
 
@@ -831,6 +833,130 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
   var distanceTraveled = 0;
   var interval = parseInt('<?php echo (100/$questions_count); ?>');
   var totalQuestions = parseInt('<?php echo $questions_count; ?>');
+
+  function stopTheRain(){
+    $('#page').snowfall('clear');
+  }
+
+  function makeItRain(){
+
+    var rn = Math.floor(Math.random() * 4) + 1;
+    var color = "#7f3198";
+    var dark_color = "#5c007a";
+
+    if (rn == 1) {
+     color = "#7f3198";
+     dark_color = "#5c007a";
+    }
+    else if (rn == 2) {
+     color = "#f65163";
+     dark_color = "#c04451";
+    }
+    else if (rn == 3) {
+     color = "#0ed59c";
+     dark_color = "#0bac7e";
+    }
+    else if (rn == 4) {
+     color = "#0072bc";
+     dark_color = "#005a94";
+    }
+    else {
+     color = "#ffcd2b";
+     dark_color = "#de9f27";
+    }
+
+    $('.page-template-login').css('background-color', color);
+    $('.login-button').css('color', color);
+    $('.login-button').hover(function() {
+     $(this).css('background-color', dark_color);
+     $(this).css('color', 'white');
+    }, function() {
+     $(this).css('background-color', 'white');
+     $(this).css('color', color);
+    });
+
+    $('#page').snowfall({
+     image :"http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
+    });
+
+
+    $('.snowfall-flakes').each(function(i, el){
+     var randomNumber = Math.floor(Math.random() * 21) + 1;
+
+     var newSrc = "";
+
+     if (randomNumber == 1) {
+       newSrc = 'apple.png';
+     }
+     else if (randomNumber == 2) {
+       newSrc = 'asparagus.png';
+     }
+     else if (randomNumber == 3) {
+       newSrc = 'banana.png';
+     }
+     else if (randomNumber == 4) {
+       newSrc = 'beans.png';
+     }
+     else if (randomNumber == 5) {
+       newSrc = 'bread.png';
+     }
+     else if (randomNumber == 6) {
+       newSrc = 'broccoli.png';
+     }
+     else if (randomNumber == 7) {
+       newSrc = 'carrot.png';
+     }
+     else if (randomNumber == 8) {
+       newSrc = 'cheese.png';
+     }
+     else if (randomNumber == 9) {
+       newSrc = 'chicken.png';
+     }
+     else if (randomNumber == 10) {
+       newSrc = 'eggs.png';
+     }
+     else if (randomNumber == 11) {
+       newSrc = 'fish.png';
+     }
+     else if (randomNumber == 12) {
+       newSrc = 'ham.png';
+     }
+     else if (randomNumber == 13) {
+       newSrc = 'icecream.png';
+     }
+     else if (randomNumber == 14) {
+       newSrc = 'Milk.png';
+     }
+     else if (randomNumber == 15) {
+       newSrc = 'Noodles.png';
+     }
+     else if (randomNumber == 16) {
+       newSrc = 'orange.png';
+     }
+     else if (randomNumber == 17) {
+       newSrc = 'pasta.png';
+     }
+     else if (randomNumber == 18) {
+       newSrc = 'pear.png';
+     }
+     else if (randomNumber == 19) {
+       newSrc = 'pear.png';
+     }
+     else if (randomNumber == 20) {
+       newSrc = 'rice.png';
+     }
+     else if (randomNumber == 21) {
+       newSrc = 'yogurt.png';
+     }
+     else {
+
+     }
+
+     $(this).attr("src", "http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/" + newSrc);
+    });
+
+  }
+
 
   jQuery('.start').click(function(){
 
@@ -847,6 +973,12 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
     jQuery(track[step - 1]).hide();
     jQuery(track[step]).show();
+
+    if (track[step] == ".yay" || track[step] == ".woohoo") {
+      makeItRain();
+    } else {
+      stopTheRain();
+    }
 
     jQuery(track[step]).find('.answer').addClass('bounceIn');
 
@@ -876,9 +1008,9 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
       jQuery('.reward-item').text(rewardText);
 
       // Add rest of data to string
-      // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
-      //   jQuery('.final-image').html(result);
-      // }});
+      jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+        jQuery('.final-image').html(result);
+      }});
     }
 
     step = step + 1;
@@ -1007,16 +1139,17 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
     jQuery('.progress-plate').hide();
 
-    // var data = JSON.stringify(answers);
-    // var rewardData = JSON.stringify(rewards);
-    //
+    var data = JSON.stringify(answers);
+    var rewardData = JSON.stringify(rewards);
+
     // // Add rest of data to string
-    // jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
-    //   jQuery('.final-image').html(result);
-    // }});
+    jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
+      jQuery('.final-image').html(result);
+    }});
 
   });
 
+});
 
 </script>
 

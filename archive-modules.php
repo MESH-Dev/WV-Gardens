@@ -122,10 +122,11 @@ get_header(); ?>
         </div>
     </div>
   </div>
-</div><!-- #main -->
 
 <div class="module-food">
   <img src="<?php echo get_template_directory_uri(); ?>/img/food.png" />
 </div>
+
+</div><!-- #main -->
 
 <?php get_footer(); ?>

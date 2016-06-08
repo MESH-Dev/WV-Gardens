@@ -116,7 +116,7 @@ endif;
         echo '<img src="' . get_template_directory_uri() . '/img/MyPlate_3Reward.png" />';
       }
       elseif ($modules_complete == 4) {
-        echo '<img src="' . get_template_directory_uri() . '/img/MyPlate_4Reward.png" />';
+        echo '<img src="' . get_template_directory_uri() . '/img/MyPlate_5Reward.png" />';
       }
       else {
 
