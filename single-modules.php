@@ -71,7 +71,7 @@ get_header(); ?>
 
         ?>
 
-        <div class="question question-<?php echo $i; ?>">
+        <div class="question question-<?php echo $i; ?> <?php echo $question->ID; ?>">
           <div class="container">
             <div class="row">
               <div class="eight columns">
@@ -1049,6 +1049,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
     var question = jQuery(this);
     var questionClass = '.' + jQuery(this).attr('class').split(' ')[1];
+    var questionId = jQuery(this).attr('class').split(' ')[2];
 
     question.find('.next').hide();
 
@@ -1073,7 +1074,7 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
         jQuery(this).find('.answer-image').addClass('answer-image-hover');
         jQuery(this).addClass('answer-hover');
 
-        answers[step - 1] = jQuery(this).find('.answer-text').text();
+        answers[questionId] = jQuery(this).find('.answer-text').text();
 
         // Next, update the progress bar
         jQuery('.progress-farm-point:eq(' + (step - 2) + ')').find('.progress-farm-point-plant').show();
