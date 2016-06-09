@@ -15,8 +15,6 @@ get_header();
 <div id="primary">
 	<div id="content" role="main">
 
-
-
 			<div class="container">
 				<div class="six columns">
 					<div class="module-section">

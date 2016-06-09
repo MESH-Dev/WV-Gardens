@@ -8,8 +8,20 @@ if ( !is_user_logged_in() ) {
 
 get_header(); ?>
 
-<div id="primary">
+<div>
   <div id="content" role="main">
+    <div class="container">
+      <div class="twelve columns">
+        <div class="menu-bar">
+          <a href="<?php echo get_home_url(); ?>/modules/"><div class="menu-title"><span class="menu-game-name">Sprout's Adventure</span></div></a>
+        </div>
+        <div class="module-tools">
+          <div class="menu-tool">
+            <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
         <div class="six columns">
           <div class="module-section">

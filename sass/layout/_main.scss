@@ -249,6 +249,8 @@
   text-transform: uppercase;
   font-weight: bold;
   float: left;
+  font-size: 12px;
+  letter-spacing: 0.08em;
 }
 
 .menu-game-name {
@@ -277,35 +279,34 @@
   -webkit-transition: 1s;
   cursor: pointer;
 
+  i {
+      color: #929292;
+  }
 
-  &:hover {
+  .menu-label {
+      display: inline;
+      margin-left: 15px;
+      color: #929292;
+      font-size: 12px;
 
       i {
-          color: #929292;
-      }
-
-      .menu-label {
-          display: inline;
-          margin-left: 30px;
-          color: #929292;
-          font-size: 12px;
-
-          i {
-              color: #0ed59c;
-              margin-right: 5px;
-          }
+          color: #0ed59c;
+          margin-right: 5px;
       }
   }
 
+
 }
 
-.menu-label {
-    display: none;
-}
 
 .post-type-archive-modules, .page-template-student-login {
   background: $light-blue;
+
+  .menu-title {
+    background: $dark-blue;
+  }
 }
+
 
 .page-template-intro {
   background: $light-blue;
@@ -1598,4 +1599,46 @@
 
 .module-image-reward {
   width: 200px;
+}
+
+.module-tools {
+  float: right;
+  padding: 5px 0px;
+  border-radius: 20px;
+  display: inline-block;
+  z-index: 10;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  text-align: right;
+
+  a {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.menu-tools {
+  float: left;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  right: 100px;
+
+  a {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.menu-tool {
+  display: inline;
+  padding-right: 20px;
 }

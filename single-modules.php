@@ -22,18 +22,28 @@ get_header(); ?>
             <div class="menu-sound play">
                 <i class="fa fa-volume-up"></i>
                 <div class="menu-label">
-                    <i class="fa fa-play"></i> On
+                    <i class="fa fa-play"></i> Play
+                </div>
+            </div>
+            <div class="menu-sound stop">
+                <i class="fa fa-volume-up"></i>
+                <div class="menu-label">
+                    <i class="fa fa-pause"></i> Pause
                 </div>
             </div>
           </div>
           <div class="progress-plate">
             <?php get_template_part( 'partials/progress', 'plate' ); ?>
           </div>
+          <div class="menu-tools">
+            <div class="menu-tool"><a href="<?php echo get_home_url(); ?>/modules/">View my plate</a></div>
+            <div class="menu-tool">
+              <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-
 
     <?php // WELCOME  ?>
 
@@ -89,35 +99,37 @@ get_header(); ?>
         </audio>
 
 
-
         <?php if (get_field('autoplay_audio', $class)) { ?>
 
-            <script>
+          <script>
 
-                jQuery('.start').click(function(){
-                  var res = 'audio-' + <?php echo $i; ?>;
-                  document.getElementById(res).play();
-                });
+            // jQuery(document).ready(function($){
+            //   $('.play').hide();
+            // });
+            //
+            // var res = 'audio-' + <?php echo $i; ?>;
+            // document.getElementById(res).play();
 
-                jQuery('.next').click(function(){
-                  var res = 'audio-' + <?php echo $i; ?>;
-                  document.getElementById(res).play();
-                });
-
-            </script>
+          </script>
 
         <?php } else { ?>
 
-            <script>
+          <script>
 
-                jQuery('.play').click(function(){
-                  var res = 'audio-' + <?php echo $i; ?>;
-                  document.getElementById(res).play();
-                });
+            // jQuery(document).ready(function($){
+            //   $('.stop').hide();
+            // });
 
-            </script>
+          </script>
 
         <?php } ?>
+
+        <script>
+          jQuery(document).ready(function($){
+            $('.stop').hide();
+          });
+        </script>
+
 
         <div class="question question-<?php echo $i; ?>">
           <div class="container">
@@ -1005,7 +1017,6 @@ jQuery(document).ready(function($){
 
   }
 
-
   jQuery('.start').click(function(){
 
     jQuery('.welcome').hide();
@@ -1014,6 +1025,24 @@ jQuery(document).ready(function($){
     jQuery(track[step]).find('.answer').addClass('bounceIn');
 
     step = step + 1;
+
+    jQuery('.play').click(function(){
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).play();
+      $(this).toggle();
+      $('.stop').toggle();
+    });
+
+    jQuery('.stop').click(function(){
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).pause();
+      document.getElementById(res).load();
+
+      $('.play').toggle();
+      $(this).toggle();
+    });
+
+
 
   });
 
@@ -1068,6 +1097,30 @@ jQuery(document).ready(function($){
       jQuery('.progress-farmer').css('left', distanceTraveled + '%');
     }
 
+    var stop = 'audio-' + (step - 2);
+    document.getElementById(stop).pause();
+    document.getElementById(stop).load();
+
+    $('.play').show();
+    $('.stop').hide();
+
+    jQuery('.play').click(function(){
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).play();
+
+      $(this).hide();
+      $('.stop').show();
+    });
+
+    jQuery('.stop').click(function(){
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).pause();
+      document.getElementById(res).load();
+
+      $(this).hide();
+      $('.play').show();
+    });
+
   });
 
   jQuery('.prev').click(function(){
@@ -1083,6 +1136,30 @@ jQuery(document).ready(function($){
         jQuery('.progress-farmer').css('left', distanceTraveled + '%');
       }
     }
+
+    var stop = 'audio-' + (step);
+    document.getElementById(stop).pause();
+    document.getElementById(stop).load();
+
+    $('.play').show();
+    $('.stop').hide();
+
+    jQuery('.play').click(function(){
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).play();
+
+      $('.stop').show();
+      $(this).hide();
+    });
+
+    jQuery('.stop').click(function(){
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).pause();
+      document.getElementById(res).load();
+
+      $('.play').show();
+      $(this).hide();
+    });
 
   });
 
@@ -1196,11 +1273,11 @@ jQuery(document).ready(function($){
 
   });
 
-  jQuery(".menu-sound").mouseenter(function() {
-      jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
-  }).mouseleave(function() {
-      jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
-  });
+  // jQuery(".menu-sound").mouseenter(function() {
+  //     jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
+  // }).mouseleave(function() {
+  //     jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
+  // });
 
 
 });
