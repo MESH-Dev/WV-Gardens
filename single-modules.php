@@ -885,6 +885,8 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 
 jQuery(document).ready(function($){
 
+  jQuery('.play').hide();
+
 	jQuery('.welcome').show();
   var step = 1;
 
@@ -1019,6 +1021,8 @@ jQuery(document).ready(function($){
 
   jQuery('.start').click(function(){
 
+    jQuery('.play').show();
+
     jQuery('.welcome').hide();
     jQuery('.question-1').show();
 
@@ -1041,8 +1045,6 @@ jQuery(document).ready(function($){
       $('.play').toggle();
       $(this).toggle();
     });
-
-
 
   });
 
