@@ -1791,13 +1791,13 @@ html, body {
 .answer-image {
   background-repeat: no-repeat;
   background-position: center;
-  padding: 20px;
+  padding: 20px 0;
   height: 150px;
   position: relative;
 }
 /* line 913, sass/layout/_main.scss */
 .answer-image img {
-  height: 95px;
+  height: 80%;
 }
 
 /* line 918, sass/layout/_main.scss */
@@ -1810,9 +1810,9 @@ html, body {
 }
 /* line 925, sass/layout/_main.scss */
 .answer:hover .answer-image img {
-  height: 180px;
+  height: 100%;
   position: relative;
-  top: -60px;
+  top: 0px;
 }
 
 /* line 934, sass/layout/_main.scss */
@@ -1821,9 +1821,9 @@ html, body {
 }
 /* line 937, sass/layout/_main.scss */
 .answer-image-hover img {
-  height: 180px;
+  height: 100%;
   position: relative;
-  top: -60px;
+  top: 0px;
 }
 
 /* line 949, sass/layout/_main.scss */

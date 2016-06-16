@@ -906,12 +906,12 @@
 .answer-image {
   background-repeat: no-repeat;
   background-position: center;
-  padding: 20px;
+  padding: 20px 0;
   height: 150px;
   position: relative;
 
   img {
-    height: 95px;
+    height: 80%;
   }
 }
 
@@ -923,9 +923,9 @@
       background-size: contain;
 
       img {
-        height: 180px;
+        height: 100%;
         position: relative;
-        top: -60px;
+        top: 0px;
       }
     }
   }
@@ -935,9 +935,9 @@
   background-size: contain;
 
   img {
-    height: 180px;
+    height: 100%;
     position: relative;
-    top: -60px;
+    top: 0px;
   }
 }
 
