@@ -54,7 +54,7 @@ get_header();
 								<input id="password" type="password" placeholder="Type in your password" />
 								<select id="students"></select><br/>
 								<button id="submit">
-                  Sign In!
+                  Get Started!
                   <div class="submit-arrow"></div>
                 </button>
 								<?php wp_nonce_field( 'ajax-login-nonce', 'security' ); ?>
@@ -121,7 +121,7 @@ get_header();
 					if ( jQuery('#submit').is(":hidden") ) {
 
             jQuery('.bubble-text').empty();
-            jQuery('.bubble-text').append("<h1>You're all set!<br/>Click Sign In!</h1>");
+            jQuery('.bubble-text').append("<h1>You're all set!<br/>Let's get started!</h1>");
 
             jQuery('#submit').show();
 					}

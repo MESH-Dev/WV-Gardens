@@ -96,6 +96,11 @@
   h1 {
     font-size: 81px;
     text-transform: uppercase;
+
+    @include mq($tablet-width, 'max-width') {
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
 }
 
@@ -115,6 +120,12 @@
   text-transform: uppercase;
   z-index: 9999999;
   position: relative;
+
+  @include mq($tablet-width, 'max-width') {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+  }
 }
 
 #submit {
@@ -1640,5 +1651,11 @@
 
 .menu-tool {
   display: inline;
+  padding-right: 20px;
+}
+
+.modules-image-left {
+  width: 50%;
+  float: left;
   padding-right: 20px;
 }

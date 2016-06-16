@@ -15,15 +15,15 @@
 
 @mixin mq($breakpoint, $query: 'min-width', $type: 'screen') { // breakpoint can be a variable
   // if media queries are not supported
-  @if $fix-mqs {
-    @if $fix-mqs >= $breakpoint { // ...and if the fixed breakpoint is greater than query...
-      @content; // ...output the content the user gave us.
-    }
-  }
+  // @if $fix-mqs {
+  //  @if $fix-mqs >= $breakpoint { // ...and if the fixed breakpoint is greater than query...
+  //    @content; // ...output the content the user gave us.
+  //  }
+  // }
   // Otherwise, output it using a regular media query
-  @else {
+  // @else {
     @media #{$type} and (#{$query}: #{$breakpoint}) { @content; }
-  }
+  // }
  }
 
 
