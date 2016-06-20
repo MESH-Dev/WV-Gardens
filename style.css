@@ -2438,13 +2438,18 @@ html, body {
   height: 289px;
   background-size: cover;
 }
+/* line 1606, sass/layout/_main.scss */
+.intro-bubble-2 .bubble-text h1 {
+  font-size: 2em;
+  margin: 1em 0;
+}
 
-/* line 1612, sass/layout/_main.scss */
+/* line 1613, sass/layout/_main.scss */
 .module-image-reward {
   width: 200px;
 }
 
-/* line 1616, sass/layout/_main.scss */
+/* line 1617, sass/layout/_main.scss */
 .module-tools {
   float: right;
   padding: 5px 0px;
@@ -2458,13 +2463,13 @@ html, body {
   margin-bottom: 20px;
   text-align: right;
 }
-/* line 1629, sass/layout/_main.scss */
+/* line 1630, sass/layout/_main.scss */
 .module-tools a {
   color: white;
   font-weight: bold;
 }
 
-/* line 1635, sass/layout/_main.scss */
+/* line 1636, sass/layout/_main.scss */
 .menu-tools {
   float: left;
   padding: 5px 10px;
@@ -2477,19 +2482,19 @@ html, body {
   letter-spacing: 0.08em;
   right: 100px;
 }
-/* line 1647, sass/layout/_main.scss */
+/* line 1648, sass/layout/_main.scss */
 .menu-tools a {
   color: white;
   font-weight: bold;
 }
 
-/* line 1653, sass/layout/_main.scss */
+/* line 1654, sass/layout/_main.scss */
 .menu-tool {
   display: inline;
   padding-right: 20px;
 }
 
-/* line 1658, sass/layout/_main.scss */
+/* line 1659, sass/layout/_main.scss */
 .modules-image-left {
   width: 50%;
   float: left;

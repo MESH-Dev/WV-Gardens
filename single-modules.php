@@ -131,7 +131,7 @@ get_header(); ?>
         </script>
 
 
-        <div class="question question-<?php echo $i; ?>">
+        <div class="question question-<?php echo $i; ?> <?php echo $question->ID; ?>">
           <div class="container">
             <div class="row">
               <div class="eight columns">
@@ -1175,6 +1175,7 @@ jQuery(document).ready(function($){
 
     var question = jQuery(this);
     var questionClass = '.' + jQuery(this).attr('class').split(' ')[1];
+    var questionNum = jQuery(this).attr('class').split(' ')[2];
 
     question.find('.next').hide();
 
@@ -1199,7 +1200,7 @@ jQuery(document).ready(function($){
         jQuery(this).find('.answer-image').addClass('answer-image-hover');
         jQuery(this).addClass('answer-hover');
 
-        answers[step - 1] = jQuery(this).find('.answer-text').text();
+        answers[questionNum] = jQuery(this).find('.answer-text').text();
 
         // Next, update the progress bar
         jQuery('.progress-farm-point:eq(' + (step - 2) + ')').find('.progress-farm-point-plant').show();
