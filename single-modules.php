@@ -618,7 +618,7 @@ $results = $wpdb->get_results( $sql , ARRAY_A );
 $modules_complete = count($results);
 $modules_total = count(get_field('modules', $class));
 
-// 1 MODULE
+// IF THERE IS ONLY 1 MODULE, USE THIS TRACK
 
 $mod1_0 = array();
 array_push( $mod1_0, ".welcome" );
@@ -627,7 +627,7 @@ foreach ($questions as $question) {
 }
 array_push( $mod1_0, ".yay", ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".complete" );
 
-// 2 MODULES
+// IF THERE ARE ONLY 2 MODULES, USE THIS TRACK
 
 $mod2_0 = array();
 array_push( $mod2_0, ".welcome" );
@@ -643,7 +643,7 @@ foreach ($questions as $question) {
 }
 array_push( $mod2_1, ".yay", ".reward-3", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
-// 3 MODULES
+// IF THERE ARE ONLY 3 MODULES, USE THIS TRACK
 
 $mod3_0 = array();
 array_push( $mod3_0, ".welcome" );
@@ -666,7 +666,7 @@ foreach ($questions as $question) {
 }
 array_push( $mod3_2, ".woohoo", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
-// 4 MODULES
+// IF THERE ARE 4 MODULES, USE THIS TRACK
 
 $mod4_0 = array();
 array_push( $mod4_0, ".welcome" );
@@ -696,7 +696,7 @@ foreach ($questions as $question) {
 }
 array_push( $mod4_3, ".woohoo", ".reward-4", ".bonus", ".reward-5", ".complete" );
 
-// 5 MODULES
+// IF THERE ARE 5 MODULES, USE THIS TRACK
 
 $mod5_0 = array();
 array_push( $mod5_0, ".welcome" );
@@ -733,7 +733,7 @@ foreach ($questions as $question) {
 }
 array_push( $mod5_4, ".yay", ".reward-5", ".complete" );
 
-// 6 MODULES
+// IF THERE ARE 6 MODULES, USE THIS TRACK
 
 $mod6_0 = array();
 array_push( $mod6_0, ".welcome" );

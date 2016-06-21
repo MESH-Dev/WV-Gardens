@@ -1053,6 +1053,31 @@
     }
   }
 
+  .answer-5 {
+
+    .answer-image-5 {
+      background-image: url(img/star.png);
+    }
+    .answer-image-5-hover {
+      background-image: url(img/hover/PurpleStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+
+    &:hover {
+      .answer-image-5 {
+        background-image: url(img/hover/PurpleStar_Hover.png);
+      }
+
+      .answer-text {
+        color: $purple;
+      }
+    }
+  }
+
   .reward-answer:hover, .reward-hover .reward-text {
     color: $purple;
   }
@@ -1153,6 +1178,31 @@
       }
       .answer-text {
         color: $yellow;
+      }
+    }
+  }
+
+  .answer-5 {
+
+    .answer-image-5 {
+      background-image: url(img/star.png);
+    }
+    .answer-image-5-hover {
+      background-image: url(img/hover/PurpleStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+
+    &:hover {
+      .answer-image-5 {
+        background-image: url(img/hover/PurpleStar_Hover.png);
+      }
+
+      .answer-text {
+        color: $purple;
       }
     }
   }
@@ -1261,6 +1311,31 @@
     }
   }
 
+  .answer-5 {
+
+    .answer-image-5 {
+      background-image: url(img/star.png);
+    }
+    .answer-image-5-hover {
+      background-image: url(img/hover/PurpleStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+
+    &:hover {
+      .answer-image-5 {
+        background-image: url(img/hover/PurpleStar_Hover.png);
+      }
+
+      .answer-text {
+        color: $purple;
+      }
+    }
+  }
+
   .reward-answer:hover, .reward-hover .reward-text {
     color: $green;
   }
@@ -1361,6 +1436,31 @@
       }
       .answer-text {
         color: $blue;
+      }
+    }
+  }
+
+  .answer-5 {
+
+    .answer-image-5 {
+      background-image: url(img/star.png);
+    }
+    .answer-image-5-hover {
+      background-image: url(img/hover/PurpleStar_Active.png) !important;
+    }
+    &.answer-hover {
+      .answer-text {
+        color: $purple;
+      }
+    }
+
+    &:hover {
+      .answer-image-5 {
+        background-image: url(img/hover/PurpleStar_Hover.png);
+      }
+
+      .answer-text {
+        color: $purple;
       }
     }
   }

@@ -29,6 +29,41 @@ add_role( 'facilitator', 'Garden Facilitator', $teacher_permissions);
 add_role( 'teacher', 'Teacher', $teacher_permissions);
 add_role( 'student', 'Student', $teacher_permissions);
 
+// Our custom post type function
+function create_posttype() {
+
+	register_post_type( 'movies',
+	// CPT Options
+		array(
+			'labels' => array(
+				'name' => __( 'Movies' ),
+				'singular_name' => __( 'Movie' )
+			),
+			'public' => true,
+			'capability_type' => 'movie',
+			'capabilities' => array(
+				'publish_posts' => 'publish_movies',
+				'edit_posts' => 'edit_movies',
+				'edit_others_posts' => 'edit_others_movies',
+				'read_private_posts' => 'read_private_movies',
+				'edit_post' => 'edit_movie',
+				'delete_post' => 'delete_movie',
+				'read_post' => 'read_movie',
+			),
+		)
+	);
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+
+function add_capability() {
+    // gets the author role
+    $role = get_role( 'teacher' );
+    // This only works, because it accesses the class instance.
+    // $role->add_cap( 'edit_movie' );
+}
+add_action( 'admin_init', 'add_capability');
+
 remove_role( 'subscriber' );
 remove_role( 'editor' );
 remove_role( 'contributor' );
