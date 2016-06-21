@@ -1188,21 +1188,21 @@
       background-image: url(img/star.png);
     }
     .answer-image-5-hover {
-      background-image: url(img/hover/PurpleStar_Active.png) !important;
+      background-image: url(img/hover/YellowStar_Active.png) !important;
     }
     &.answer-hover {
       .answer-text {
-        color: $purple;
+        color: $yellow;
       }
     }
 
     &:hover {
       .answer-image-5 {
-        background-image: url(img/hover/PurpleStar_Hover.png);
+        background-image: url(img/hover/YellowStar_Hover.png);
       }
 
       .answer-text {
-        color: $purple;
+        color: $yellow;
       }
     }
   }
@@ -1317,21 +1317,21 @@
       background-image: url(img/star.png);
     }
     .answer-image-5-hover {
-      background-image: url(img/hover/PurpleStar_Active.png) !important;
+      background-image: url(img/hover/MintStar_Active.png) !important;
     }
     &.answer-hover {
       .answer-text {
-        color: $purple;
+        color: $green;
       }
     }
 
     &:hover {
       .answer-image-5 {
-        background-image: url(img/hover/PurpleStar_Hover.png);
+        background-image: url(img/hover/MintStar_Hover.png);
       }
 
       .answer-text {
-        color: $purple;
+        color: $green;
       }
     }
   }
@@ -1446,21 +1446,21 @@
       background-image: url(img/star.png);
     }
     .answer-image-5-hover {
-      background-image: url(img/hover/PurpleStar_Active.png) !important;
+      background-image: url(img/hover/BlueStar_Active.png) !important;
     }
     &.answer-hover {
       .answer-text {
-        color: $purple;
+        color: $blue;
       }
     }
 
     &:hover {
       .answer-image-5 {
-        background-image: url(img/hover/PurpleStar_Hover.png);
+        background-image: url(img/hover/BlueStar_Hover.png);
       }
 
       .answer-text {
-        color: $purple;
+        color: $blue;
       }
     }
   }

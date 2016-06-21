@@ -2033,19 +2033,19 @@ html, body {
 }
 /* line 1190, sass/layout/_main.scss */
 .module-2 .answer-5 .answer-image-5-hover {
-  background-image: url(img/hover/PurpleStar_Active.png) !important;
+  background-image: url(img/hover/YellowStar_Active.png) !important;
 }
 /* line 1194, sass/layout/_main.scss */
 .module-2 .answer-5.answer-hover .answer-text {
-  color: #7f3198;
+  color: #ffcd2b;
 }
 /* line 1200, sass/layout/_main.scss */
 .module-2 .answer-5:hover .answer-image-5 {
-  background-image: url(img/hover/PurpleStar_Hover.png);
+  background-image: url(img/hover/YellowStar_Hover.png);
 }
 /* line 1204, sass/layout/_main.scss */
 .module-2 .answer-5:hover .answer-text {
-  color: #7f3198;
+  color: #ffcd2b;
 }
 /* line 1210, sass/layout/_main.scss */
 .module-2 .reward-answer:hover, .module-2 .reward-hover .reward-text {
@@ -2138,19 +2138,19 @@ html, body {
 }
 /* line 1319, sass/layout/_main.scss */
 .module-3 .answer-5 .answer-image-5-hover, .module-4 .answer-5 .answer-image-5-hover {
-  background-image: url(img/hover/PurpleStar_Active.png) !important;
+  background-image: url(img/hover/MintStar_Active.png) !important;
 }
 /* line 1323, sass/layout/_main.scss */
 .module-3 .answer-5.answer-hover .answer-text, .module-4 .answer-5.answer-hover .answer-text {
-  color: #7f3198;
+  color: #0ed59c;
 }
 /* line 1329, sass/layout/_main.scss */
 .module-3 .answer-5:hover .answer-image-5, .module-4 .answer-5:hover .answer-image-5 {
-  background-image: url(img/hover/PurpleStar_Hover.png);
+  background-image: url(img/hover/MintStar_Hover.png);
 }
 /* line 1333, sass/layout/_main.scss */
 .module-3 .answer-5:hover .answer-text, .module-4 .answer-5:hover .answer-text {
-  color: #7f3198;
+  color: #0ed59c;
 }
 /* line 1339, sass/layout/_main.scss */
 .module-3 .reward-answer:hover, .module-3 .reward-hover .reward-text, .module-4 .reward-answer:hover, .module-4 .reward-hover .reward-text {
@@ -2243,19 +2243,19 @@ html, body {
 }
 /* line 1448, sass/layout/_main.scss */
 .module-5 .answer-5 .answer-image-5-hover {
-  background-image: url(img/hover/PurpleStar_Active.png) !important;
+  background-image: url(img/hover/BlueStar_Active.png) !important;
 }
 /* line 1452, sass/layout/_main.scss */
 .module-5 .answer-5.answer-hover .answer-text {
-  color: #7f3198;
+  color: #0072bc;
 }
 /* line 1458, sass/layout/_main.scss */
 .module-5 .answer-5:hover .answer-image-5 {
-  background-image: url(img/hover/PurpleStar_Hover.png);
+  background-image: url(img/hover/BlueStar_Hover.png);
 }
 /* line 1462, sass/layout/_main.scss */
 .module-5 .answer-5:hover .answer-text {
-  color: #7f3198;
+  color: #0072bc;
 }
 /* line 1468, sass/layout/_main.scss */
 .module-5 .reward-answer:hover, .module-5 .reward-hover .reward-text {
