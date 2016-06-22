@@ -19,22 +19,36 @@ add_image_size('small', 120, '', true); // Small Thumbnail
 add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
 
+add_action( 'admin_init', 'my_remove_menu_pages' );
+function my_remove_menu_pages() {
+
+    global $user_ID;
+
+    if ( current_user_can( 'teacher' ) ) {
+			remove_menu_page( 'edit-comments.php' );
+			remove_menu_page( 'edit.php' );
+			remove_menu_page( 'tools.php' );
+    }
+}
+
 $teacher_permissions = array (
         'read'         => true,  // true allows this capability
         'edit_posts'   => true,
         'delete_posts' => false, // Use false to explicitly deny
-	);
+);
 
 add_role( 'facilitator', 'Garden Facilitator', $teacher_permissions);
 add_role( 'teacher', 'Teacher', $teacher_permissions);
 add_role( 'student', 'Student', $teacher_permissions);
 
+$teacher = get_role( 'teacher' );
+$teacher->add_cap( 'edit_class' );
+$teacher->add_cap( 'publish_classes' );
 
 function add_capability() {
     // gets the author role
     $role = get_role( 'teacher' );
     // This only works, because it accesses the class instance.
-    // $role->add_cap( 'edit_movie' );
 }
 add_action( 'admin_init', 'add_capability');
 

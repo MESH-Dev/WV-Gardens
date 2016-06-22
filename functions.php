@@ -4,6 +4,8 @@ include('functions/start.php');
 
 include('functions/clean.php');
 
+include('functions/custom.php');
+
 // Hide admin bar
 show_admin_bar( false );
 
