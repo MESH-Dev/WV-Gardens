@@ -1011,6 +1011,8 @@ jQuery(document).ready(function($){
 
   }
 
+
+  //CLICK TO START FIRST QUESTION ---------------------------------------------------------------------------------------------------------------------
   jQuery('.start').click(function(){
 
     jQuery('.play').show();
@@ -1040,6 +1042,7 @@ jQuery(document).ready(function($){
 
   });
 
+  //CLICK TO NEXT QUESTION ------------------------------------------------------------------------------------------------------------------------
   jQuery('.next').click(function(){
 
     jQuery(track[step - 1]).hide();
@@ -1115,19 +1118,24 @@ jQuery(document).ready(function($){
       $('.play').show();
     });
 
+    //AUTO PLAY ON CLICK NEXT
+    if(autoplay)
+    {
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).play();
+      jQuery('.play').hide();
+      $('.stop').show();
+    }
 
-    //play on click (autoplay)
-    console.log(autoplay);
-    var res = 'audio-' + (step - 1);
-    document.getElementById(res).play();
-
-    jQuery('.play').hide();
-    $('.stop').show();
 
 
 
   });
 
+
+
+
+  //CLICK TO PREVIOUS QUESTION ---------------------------------------------------------------------------------------------------------------------
   jQuery('.prev').click(function(){
 
     if (step != 2) {
@@ -1165,6 +1173,15 @@ jQuery(document).ready(function($){
       $('.play').show();
       $(this).hide();
     });
+
+    //AUTO PLAY ON CLICK NEXT
+    if(autoplay)
+    {
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).play();
+      jQuery('.play').hide();
+      $('.stop').show();
+    }
 
   });
 
