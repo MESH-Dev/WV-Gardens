@@ -17,7 +17,7 @@ get_header(); ?>
         </div>
         <div class="module-tools">
           <div class="menu-tool">
-            <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+            <a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
           </div>
         </div>
       </div>

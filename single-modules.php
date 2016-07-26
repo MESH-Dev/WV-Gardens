@@ -38,7 +38,7 @@ get_header(); ?>
           <div class="menu-tools">
             <div class="menu-tool"><a href="<?php echo get_home_url(); ?>/modules/">View my plate</a></div>
             <div class="menu-tool">
-              <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+              <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
             </div>
           </div>
         </div>
