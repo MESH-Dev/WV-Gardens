@@ -51,14 +51,9 @@ function add_capability() {
     // gets the author role
     $role = get_role( 'teacher' );
     // This only works, because it accesses the class instance.
+ 
 
-    $admin_role = get_role( 'administrator' );
-    var_dump($admin_role);
-
-
-
-
-
+ 
 }
 add_action( 'admin_init', 'add_capability');
 
@@ -163,6 +158,7 @@ function create_post_name( $post_id ){
 	  	$my_post = array(
 	      'ID'           => $post_id,
 	      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name,
+	      'post_author'  => $teacher['ID']
 	  	);
 
 			// Update the post into the database
