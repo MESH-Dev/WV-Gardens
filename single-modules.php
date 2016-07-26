@@ -100,7 +100,7 @@ get_header(); ?>
 
 
         <?php if (get_field('autoplay_audio', $class)) { ?>
-          <h1>AUTOPALY</h1>
+          
           <script>
 
             // jQuery(document).ready(function($){
@@ -1122,6 +1122,15 @@ jQuery(document).ready(function($){
       $(this).hide();
       $('.play').show();
     });
+
+    //play on click (autoplay)
+    var res = 'audio-' + (step - 1);
+    document.getElementById(res).play();
+
+    $(this).hide();
+    $('.stop').show();
+
+
 
   });
 
