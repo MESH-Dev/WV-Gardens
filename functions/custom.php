@@ -34,7 +34,6 @@ function register_modules_posttype() {
 		'rewrite' 			=> array('slug' => 'modules', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
-		'menu_icon' 		=> 'http://localhost/gardens/wp-content/plugins/easy-content-types//includes/images/icon.png',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('modules',$post_type_args);
@@ -73,7 +72,6 @@ function register_questions_posttype() {
 		'rewrite' 			=> array('slug' => 'questions', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
-		'menu_icon' 		=> 'http://localhost/gardens/wp-content/plugins/easy-content-types//includes/images/icon.png',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('questions',$post_type_args);
@@ -112,7 +110,6 @@ function register_classes_posttype() {
 		'rewrite' 			=> array('slug' => 'classes', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
-		'menu_icon' 		=> 'http://localhost/gardens/wp-content/plugins/easy-content-types//includes/images/icon.png',
 		'taxonomies'		=> $taxonomies,
     'capabilities' => array(
         'edit_post' => 'edit_class',
