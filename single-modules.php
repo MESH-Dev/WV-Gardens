@@ -102,13 +102,7 @@ get_header(); ?>
         <?php if (get_field('autoplay_audio', $class)) { ?>
           
           <script>
-
-            // jQuery(document).ready(function($){
-            //   $('.play').hide();
-            // });
-            //
-            // var res = 'audio-' + <?php echo $i; ?>;
-            // document.getElementById(res).play();
+            var autoplay = true;
 
           </script>
 
@@ -116,9 +110,7 @@ get_header(); ?>
 
           <script>
 
-            // jQuery(document).ready(function($){
-            //   $('.stop').hide();
-            // });
+            var autoplay = false;
 
           </script>
 
@@ -1123,11 +1115,13 @@ jQuery(document).ready(function($){
       $('.play').show();
     });
 
+
     //play on click (autoplay)
+    console.log(autoplay);
     var res = 'audio-' + (step - 1);
     document.getElementById(res).play();
 
-    $(this).hide();
+    jQuery('.play').hide();
     $('.stop').show();
 
 
