@@ -2,6 +2,7 @@
 * Template Name: Survey
 */
 get_header(); ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/chartist.css" />
 
 <main id="main" class="site-main" role="main">
 
