@@ -45,10 +45,20 @@ $teacher = get_role( 'teacher' );
 $teacher->add_cap( 'edit_class' );
 $teacher->add_cap( 'publish_classes' );
 
+
+
 function add_capability() {
     // gets the author role
     $role = get_role( 'teacher' );
     // This only works, because it accesses the class instance.
+
+    $admin_role = get_role( 'administrator' );
+    var_dump($admin_role);
+
+
+
+
+
 }
 add_action( 'admin_init', 'add_capability');
 

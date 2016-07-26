@@ -77,6 +77,7 @@ function register_questions_posttype() {
 	 register_post_type('questions',$post_type_args);
 }
 add_action('init', 'register_questions_posttype');// registration code for classes post type
+
 function register_classes_posttype() {
 	$labels = array(
 		'name' 				=> _x( 'Classes', 'post type general name' ),
@@ -111,12 +112,7 @@ function register_classes_posttype() {
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
 		'taxonomies'		=> $taxonomies,
-    'capabilities' => array(
-        'edit_post' => 'edit_class',
-        'edit_posts' => 'edit_classes',
-        'publish_posts' => 'publish_classes',
-        'delete_post' => 'delete_class'
-    )
+	    
 	 );
 	 register_post_type('classes',$post_type_args);
 }
