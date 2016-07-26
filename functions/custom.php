@@ -96,7 +96,7 @@ function register_classes_posttype() {
 
 	$taxonomies = array();
 
-	$supports = array('title','editor','author','thumbnail','excerpt','custom-fields','comments','revisions');
+	//$supports = array('title','editor','author','thumbnail','excerpt','custom-fields','comments','revisions');
 
 	$post_type_args = array(
 		'labels' 			=> $labels,
@@ -109,14 +109,14 @@ function register_classes_posttype() {
 		'has_archive' 		=> true,
 		'hierarchical' 		=> false,
 		'rewrite' 			=> array('slug' => 'classes', 'with_front' => false ),
-		'supports' 			=> $supports,
+		'supports' 			=> array( 'title', 'editor', 'author', 'revisions', 'custom-fields', ),
 		'menu_position' 	=> 5,
 		'taxonomies'		=> $taxonomies,
 	    
 	 );
 	 register_post_type('classes',$post_type_args);
 }
-add_action('init', 'register_classes_posttype');
+add_action('init', 'register_classes_posttype',0);
 
 
 // registration code for semester taxonomy
