@@ -158,7 +158,7 @@ function create_post_name( $post_id ){
 	  	$my_post = array(
 	      'ID'           => $post_id,
 	      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name,
-	      'post_author'  => 18
+	      'post_author'  => $teacher
 	  	);
 
 			// Update the post into the database
