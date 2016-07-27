@@ -798,9 +798,7 @@ function my_action_javascript() { ?>
          // respond and append to table
 
          $("tr.row-" + response).hide();
-         $(this).css('background-color','red');
-
-
+ 
        }
      })
 

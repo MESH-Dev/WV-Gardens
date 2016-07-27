@@ -154,17 +154,25 @@ $module_id = 42;
 
 
 
- 	new Chartist.Bar('#q1', {
+ new Chartist.Bar('#q1', {
 
-  	labels: [<?php echo $labels; ?>],
+ //  	labels: [<?php echo $labels; ?>],
   	
-  	series: [<?php echo $vals; ?>]
-	}, {
-  	distributeSeries: true,
-  	axisY: {
-   	   onlyInteger: true
-  	}
-	});
+ //  	series: [<?php echo $vals; ?>]
+	// }, {
+ //  	distributeSeries: true,
+ //  	axisY: {
+ //   	   onlyInteger: true
+ //  	}
+
+ labels: ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+  series: [20, 60, 120, 200, 180, 20, 10]
+}, {
+  distributeSeries: true
+
+
+
+});
 
 
 </script>
