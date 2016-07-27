@@ -93,7 +93,7 @@ function add_custom_roles() {
     //     )
     // );
 }
-add_action('init', 'add_custom_roles' );
+add_action('admin_init', 'add_custom_roles' );
 
 
 
