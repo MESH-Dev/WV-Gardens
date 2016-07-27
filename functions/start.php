@@ -28,6 +28,8 @@ function my_remove_menu_pages() {
 			remove_menu_page( 'edit-comments.php' );
 			remove_menu_page( 'edit.php' );
 			remove_menu_page( 'tools.php' );
+			remove_menu_page( 'edit.php?post_type=questions' );
+			remove_menu_page( 'edit.php?post_type=modules' );
     }
 }
 
@@ -113,8 +115,7 @@ function add_custom_role_caps() {
 
 	}
 
-	$role = get_role('teacher');
-		
+	$role = get_role('teacher');	
 	$role->add_cap( 'read' );
 	$role->add_cap( 'read_class');
 	$role->add_cap( 'edit_class' );
@@ -126,9 +127,34 @@ function add_custom_role_caps() {
 
 
 
+
+
 }
 
+// show admin bar only for admins
+if (!current_user_can('manage_options')) {
+	add_filter('show_admin_bar', '__return_false');
+}
 
+//block users from admin
+add_action( 'init', 'blockusers_init' );
+function blockusers_init() {
+	if ( is_admin() && !current_user_can( 'edit_class' ) && !( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_redirect( home_url() );
+		exit;
+	}
+}
+
+//teacher redirect
+add_action( 'wp_login', 'teacher_redirect' );
+function teacher_redirect(){
+	$user = wp_get_current_user();
+	if ( in_array( 'teacher', (array) $user->roles ) ) {
+	   wp_redirect( home_url() ."/wp-admin/edit.php?post_type=classes" );
+	   exit;
+
+	}
+}
 
 
 
