@@ -118,6 +118,28 @@ function add_custom_role_caps() {
 	     $role->add_cap( 'delete_private_classes' );
 	     $role->add_cap( 'delete_published_classes' );
 
+	     $role->add_cap( 'read_question');
+	     $role->add_cap( 'read_private_questions' );
+	     $role->add_cap( 'edit_question' );
+	     $role->add_cap( 'edit_questions' );
+	     $role->add_cap( 'edit_others_questions' );
+	     $role->add_cap( 'edit_published_questions' );
+	     $role->add_cap( 'publish_questions' );
+	     $role->add_cap( 'delete_others_questions' );
+	     $role->add_cap( 'delete_private_questions' );
+	     $role->add_cap( 'delete_published_questions' );
+
+	     $role->add_cap( 'read_module');
+	     $role->add_cap( 'read_private_modules' );
+	     $role->add_cap( 'edit_module' );
+	     $role->add_cap( 'edit_modules' );
+	     $role->add_cap( 'edit_others_modules' );
+	     $role->add_cap( 'edit_published_modules' );
+	     $role->add_cap( 'publish_modules' );
+	     $role->add_cap( 'delete_others_modules' );
+	     $role->add_cap( 'delete_private_modules' );
+	     $role->add_cap( 'delete_published_modules' );
+
 	}
 
 	$role = get_role('teacher');	
@@ -129,22 +151,6 @@ function add_custom_role_caps() {
 	$role->add_cap( 'publish_classes' );
 	$role->add_cap( 'delete_published_classes' );
 	$role->add_cap( 'delete_classes' );
-
-	$role = get_role('facilitator');
-	
-	$role->add_cap( 'read' );
-	$role->add_cap( 'read_post');
-	$role->add_cap( 'edit_others_post' );
-	$role->add_cap( 'edit_others_posts' );
-	$role->add_cap( 'edit_published_posts' );
-	$role->add_cap( 'publish_posts' );
-	$role->add_cap( 'delete_others_posts' );
-	$role->add_cap( 'delete_posts' );
-
-	var_dump($role);
-
-
-
 
 
 }
