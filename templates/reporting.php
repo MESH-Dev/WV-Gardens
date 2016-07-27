@@ -130,6 +130,7 @@ foreach ($all as $k=>$subArray) {
 foreach ($sumArray as $qid => $answer_string) {
 	$question_title = get_the_title($qid);
 
+	rtrim($answer_string, ",");
 	$answer_array = explode(',', $answer_string);
 
 	$counted = array_count_values($answer_array);
@@ -143,7 +144,7 @@ foreach ($sumArray as $qid => $answer_string) {
 	    $sep = ',';
 	}
 
-	echo "<h2>" . $$question_title . "</h2>";
+	echo "<h2>" . $question_title . "</h2>";
 	echo "<br><strong>Labels</strong>:" . $labels;
 	echo "<br><strong>Vals</strong>:" . $vals;
  
