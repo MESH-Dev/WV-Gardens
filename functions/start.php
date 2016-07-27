@@ -74,33 +74,33 @@ function add_custom_roles() {
         )
     );
 
-    // global $wp_roles;
-    // if ( ! isset( $wp_roles ) )
-    //     $wp_roles = new WP_Roles();
+    global $wp_roles;
+    if ( ! isset( $wp_roles ) )
+        $wp_roles = new WP_Roles();
 
-    // $adm = $wp_roles->get_role('editor');
+    $adm = $wp_roles->get_role('editor');
 
-    // //Adding a facilitator role  with all editor caps
-    // $wp_roles->add_role('facilitator', 'Garden Facilitator', $adm->capabilities);
+    //Adding a facilitator role  with all editor caps
+    $wp_roles->add_role('facilitator', 'Garden Facilitator', $adm->capabilities);
 
-    //$adm = $wp_roles->get_role('editor');
-    add_role( 'facilitator', 'Garden Facilitator',
-        array(
-            'read' => true,
-            'edit_posts' => true,
-            'delete_posts' => true,
-            'publish_posts' => true,
-            'edit_others_posts' => true,
-            'delete_others_posts' => true,
-            'edit_published_posts' => true,
-            'delete_published_posts' => true,
-            'upload_files' => false,
-            'manage_categories' => true,
+ 
+    // add_role( 'facilitator', 'Garden Facilitator',
+    //     array(
+    //         'read' => true,
+    //         'edit_posts' => true,
+    //         'delete_posts' => true,
+    //         'publish_posts' => true,
+    //         'edit_others_posts' => true,
+    //         'delete_others_posts' => true,
+    //         'edit_published_posts' => true,
+    //         'delete_published_posts' => true,
+    //         'upload_files' => false,
+    //         'manage_categories' => true,
             
             
 
-        )
-    );
+    //     )
+    // );
 }
 add_action('init', 'add_custom_roles' );
 
