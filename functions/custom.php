@@ -112,6 +112,16 @@ function register_classes_posttype() {
 		'supports' 			=> array( 'title', 'editor', 'author', 'revisions', 'custom-fields', ),
 		'menu_position' 	=> 5,
 		'taxonomies'		=> $taxonomies,
+		'capabilities' => array(
+	        'edit_post' => 'edit_class',
+	        'edit_posts' => 'edit_classes',
+	        'edit_others_posts' => 'edit_other_classes',
+	        'publish_posts' => 'publish_classes',
+	        'read_post' => 'read_class',
+	        'read_private_posts' => 'read_private_classes',
+	        'delete_post' => 'delete_class'
+	    ),
+    'map_meta_cap' => true
 	    
 	 );
 	 register_post_type('classes',$post_type_args);

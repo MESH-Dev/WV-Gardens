@@ -35,27 +35,51 @@ $teacher_permissions = array (
         'read'         => true,  // true allows this capability
         'edit_posts'   => true,
         'delete_posts' => false, // Use false to explicitly deny
+        'edit_others_posts' => true, // Allows user to edit others posts not just their own
+        'delete_others_posts' => false, // Allows user to edit others posts not just their own
+        'manage_categories' => false, // Allows user to edit others posts not just their own
+        
 );
 
 add_role( 'facilitator', 'Garden Facilitator', $teacher_permissions);
 add_role( 'teacher', 'Teacher', $teacher_permissions);
-add_role( 'student', 'Student', $teacher_permissions);
+add_role( 'student', __('Student' ),
 
-$teacher = get_role( 'teacher' );
-$teacher->add_cap( 'edit_class' );
-$teacher->add_cap( 'publish_classes' );
+	array(
 
+	'read' => true, // true allows this capability
 
+	)
 
-function add_capability() {
-    // gets the author role
-    $role = get_role( 'teacher' );
-    // This only works, because it accesses the class instance.
- 
+);
 
  
-}
-add_action( 'admin_init', 'add_capability');
+
+// $result = add_role( 'teacher', __('Teacher' ),
+
+// 	array(
+
+// 	'read' => true, // true allows this capability
+// 	'edit_posts' => true, // Allows user to edit their own posts
+// 	'edit_pages' => true, // Allows user to edit pages
+// 	'edit_others_posts' => true, // Allows user to edit others posts not just their own
+// 	'create_posts' => true, // Allows user to create new posts
+// 	'manage_categories' => false, // Allows user to manage post categories
+// 	'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
+// 	'edit_themes' => false, // false denies this capability. User can’t edit your theme
+// 	'install_plugins' => false, // User cant add new plugins
+// 	'update_plugin' => false, // User can’t update any plugins
+// 	'update_core' => false // user cant perform core updates
+
+// 	)
+
+// );
+ 
+
+// $teacher = get_role( 'teacher' );
+// $teacher->add_cap( 'edit_class' );
+// $teacher->add_cap( 'publish_classes' );
+ 
 
 remove_role( 'subscriber' );
 remove_role( 'editor' );
