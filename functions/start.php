@@ -151,16 +151,16 @@ function blockusers_init() {
 	}
 }
 
-//teacher redirect
-add_action( 'wp_login', 'teacher_redirect' );
-function teacher_redirect(){
-	$user = wp_get_current_user();
-	if ( in_array( 'teacher', (array) $user->roles ) ) {
-	   wp_redirect( home_url() ."/wp-admin/edit.php?post_type=classes" );
-	   exit;
+// //teacher redirect
+// add_action( 'wp_login', 'teacher_redirect' );
+// function teacher_redirect(){
+// 	$user = wp_get_current_user();
+// 	if ( in_array( 'teacher', (array) $user->roles ) ) {
+// 	   wp_redirect( home_url() ."/wp-admin/edit.php?post_type=classes" );
+// 	   exit;
 
-	}
-}
+// 	}
+// }
 
 
 
