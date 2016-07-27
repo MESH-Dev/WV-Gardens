@@ -12,10 +12,7 @@ add_action('login_head', 'my_custom_login_logo'); //Add custom logo to admin
 
 //Clean up Dashboard
 function remove_dashboard_widgets(){
-    // show admin bar only for admins
-    if (!current_user_can('manage_options')) {
-        add_filter('show_admin_bar', '__return_false');
-    }
+    
 
     remove_meta_box('dashboard_right_now','dashboard','core'); // right now overview box
     remove_meta_box('dashboard_incoming_links','dashboard','core'); // incoming links box

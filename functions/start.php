@@ -136,6 +136,12 @@ function add_custom_role_caps() {
 //block users from admin
 add_action( 'init', 'blockusers_init' );
 function blockusers_init() {
+	
+	// show admin bar only for admins
+    if (current_user_can('teacher')) {
+        add_filter('show_admin_bar', '__return_false');
+    }
+
 	if ( is_admin() && !current_user_can( 'edit_class' ) && !( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 		wp_redirect( home_url() );
 		exit;
