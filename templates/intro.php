@@ -10,7 +10,6 @@ get_header(); ?>
     <div class="container">
       <div class="row">
         <div class="six columns">
-          <div class="module-section introsection">
             <div class="intro-image intro-image-1 intro-image-top">
               <img src="<?php echo get_template_directory_uri(); ?>/img/food-cloud.png" class="animated" />
             </div>
@@ -23,7 +22,7 @@ get_header(); ?>
           </div>
         </div>
         <div class="six columns">
-          <div class="module-section">
+          <div class="module-section introsection">
             <div class="intro-bubble intro-bubble-1">
               <div class="bubble-text">
                 <h1>Hey! I'm Sprout.<br/>I love healthy foods!</h1>
