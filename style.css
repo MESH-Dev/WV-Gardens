@@ -2472,38 +2472,36 @@ html, body {
 @media screen and (max-width: 1080px) {
   /* line 1655, sass/layout/_main.scss */
   .intro-image-bottom {
-    width: 100%;
+    margin: -30px auto;
     float: left;
-    margin-bottom: 20px;
-    margin-left: 0%;
   }
 }
 
-/* line 1667, sass/layout/_main.scss */
+/* line 1666, sass/layout/_main.scss */
 .intro-image-2 {
   display: none;
 }
 
-/* line 1672, sass/layout/_main.scss */
+/* line 1671, sass/layout/_main.scss */
 .intro .next, .intro .start {
   background-color: white;
   color: #7f3198;
 }
-/* line 1676, sass/layout/_main.scss */
+/* line 1675, sass/layout/_main.scss */
 .intro .next .next-arrow, .intro .start .next-arrow {
   border-left: 20px solid #7f3198;
 }
-/* line 1680, sass/layout/_main.scss */
+/* line 1679, sass/layout/_main.scss */
 .intro .next:hover, .intro .start:hover {
   background-color: #7f3198;
   color: white;
 }
-/* line 1684, sass/layout/_main.scss */
+/* line 1683, sass/layout/_main.scss */
 .intro .next:hover .next-arrow, .intro .start:hover .next-arrow {
   border-left: 20px solid white;
 }
 
-/* line 1692, sass/layout/_main.scss */
+/* line 1691, sass/layout/_main.scss */
 .intro-bubble {
   float: left;
   position: relative;
@@ -2515,33 +2513,39 @@ html, body {
   appearance: none;
 }
 
-/* line 1703, sass/layout/_main.scss */
+/* line 1702, sass/layout/_main.scss */
 .intro-bubble-1 {
   background: url(img/purple-bubble.png) no-repeat center;
   height: 260px;
   max-width: 100%;
   background-size: contain;
 }
+@media screen and (max-width: 1080px) {
+  /* line 1707, sass/layout/_main.scss */
+  .intro-bubble-1 .bubble-text {
+    margin-top: 30px;
+  }
+}
 
-/* line 1710, sass/layout/_main.scss */
+/* line 1715, sass/layout/_main.scss */
 .intro-bubble-2 {
   background: url(img/purple-bubble-2.png) no-repeat center;
   display: none;
   height: 289px;
   background-size: cover;
 }
-/* line 1717, sass/layout/_main.scss */
+/* line 1722, sass/layout/_main.scss */
 .intro-bubble-2 .bubble-text h1 {
   font-size: 2em;
   margin: 1em 0;
 }
 
-/* line 1724, sass/layout/_main.scss */
+/* line 1729, sass/layout/_main.scss */
 .module-image-reward {
   width: 200px;
 }
 
-/* line 1728, sass/layout/_main.scss */
+/* line 1733, sass/layout/_main.scss */
 .module-tools {
   float: right;
   padding: 5px 0px;
@@ -2555,13 +2559,13 @@ html, body {
   margin-bottom: 20px;
   text-align: right;
 }
-/* line 1741, sass/layout/_main.scss */
+/* line 1746, sass/layout/_main.scss */
 .module-tools a {
   color: white;
   font-weight: bold;
 }
 
-/* line 1747, sass/layout/_main.scss */
+/* line 1752, sass/layout/_main.scss */
 .menu-tools {
   float: left;
   padding: 5px 10px;
@@ -2574,19 +2578,19 @@ html, body {
   letter-spacing: 0.08em;
   right: 100px;
 }
-/* line 1759, sass/layout/_main.scss */
+/* line 1764, sass/layout/_main.scss */
 .menu-tools a {
   color: white;
   font-weight: bold;
 }
 
-/* line 1765, sass/layout/_main.scss */
+/* line 1770, sass/layout/_main.scss */
 .menu-tool {
   display: inline;
   padding-right: 20px;
 }
 
-/* line 1770, sass/layout/_main.scss */
+/* line 1775, sass/layout/_main.scss */
 .modules-image-left {
   width: 50%;
   float: left;
