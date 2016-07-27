@@ -30,7 +30,7 @@ get_header(); ?>
                 <!-- text that logged in users will see -->
                 <h1>Hi <span><?php echo wp_get_current_user()->user_firstname; ?>!</span></h1>
               <?php } ?>
-              <h1>Start your next <span>adventure</span> to the right!</h1>
+              <h1 class="directions">Start your next <span>adventure</span> to the right!</h1>
             </div>
             <br/>
             <div class="modules-image">
@@ -166,8 +166,9 @@ jQuery(document).ready(function($){
   var complete = getUrlParameter('complete');
   console.log('c =' + complete);
 
-  if(complete === 'true'){
-    $('.module-next').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
+  if(complete == 'true'){
+    $('h1.directions').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
+    $('.modules-image').addClass('animated pulse');
   }
 
 });
