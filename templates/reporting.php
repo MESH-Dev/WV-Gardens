@@ -114,8 +114,13 @@ $module_id = 118;
  
 var_dump($all);
 
+foreach ($all as $k=>$subArray) {
+  foreach ($subArray as $id=>$value) {
+    $sumArray[$id].=$value;
+  }
+}
 
-
+print_r($sumArray);
 
 
 
