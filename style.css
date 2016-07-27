@@ -2469,7 +2469,7 @@ html, body {
   width: 100%;
   margin-left: 45%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080) {
   /* line 1655, sass/layout/_main.scss */
   .intro-image-bottom {
     width: 100%;
