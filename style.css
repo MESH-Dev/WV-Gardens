@@ -2537,7 +2537,7 @@ html, body {
 @media screen and (max-width: 1080px) {
   /* line 1715, sass/layout/_main.scss */
   .intro-bubble-2 {
-    max-width: 70%;
+    max-width: 100%;
   }
 }
 /* line 1728, sass/layout/_main.scss */
