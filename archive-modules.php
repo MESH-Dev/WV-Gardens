@@ -146,12 +146,7 @@ get_header(); ?>
 jQuery(document).ready(function($){
 
 
-  var complete = getUrlParameter('complete');
-  console.log('c =' + complete);
 
-  if(complete === 'true'){
-    $('.module-next').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
-  }
 
   var getUrlParameter = function getUrlParameter(sParam) {
       var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -167,6 +162,13 @@ jQuery(document).ready(function($){
           }
       }
   };
+
+  var complete = getUrlParameter('complete');
+  console.log('c =' + complete);
+
+  if(complete === 'true'){
+    $('.module-next').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
+  }
 
 });
 
