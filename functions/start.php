@@ -54,7 +54,7 @@ function my_remove_menu_pages() {
  
 
 remove_role( 'subscriber' );
-remove_role( 'editor' );
+//remove_role( 'editor' );
 remove_role( 'contributor' );
 remove_role( 'author' );
 
@@ -73,6 +73,17 @@ function add_custom_roles() {
             'upload_files' => false,
         )
     );
+
+    // global $wp_roles;
+    // if ( ! isset( $wp_roles ) )
+    //     $wp_roles = new WP_Roles();
+
+    // $adm = $wp_roles->get_role('editor');
+
+    // //Adding a facilitator role  with all editor caps
+    // $wp_roles->add_role('facilitator', 'Garden Facilitator', $adm->capabilities);
+
+    $adm = $wp_roles->get_role('editor');
     add_role( 'facilitator', 'Garden Facilitator',
         array(
             'read' => true,
@@ -84,12 +95,14 @@ function add_custom_roles() {
             'edit_published_posts' => true,
             'delete_published_posts' => true,
             'upload_files' => false,
+            'manage_categories' => true,
+            
             
 
         )
     );
 }
-register_activation_hook( __FILE__, 'add_custom_roles' );
+add_action('init', 'add_custom_roles' );
 
 
 
