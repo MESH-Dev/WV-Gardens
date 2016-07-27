@@ -129,7 +129,7 @@
 }
 
 #submit {
-  position: absolute;
+ 
   right: 0;
   bottom: 0;
   border: 0;
@@ -144,6 +144,7 @@
   color: $purple;
   font-weight: bold;
   padding-right: 20px;
+  float: right;
 
   .submit-arrow {
     width: 0;
@@ -324,7 +325,7 @@
 }
 
 .button-control {
-  position: absolute;
+  
   right: 0;
   bottom: 0;
   border: 0;
@@ -337,6 +338,7 @@
   height: 50px;
   font-weight: bold;
   z-index: 9999999;
+  float: right;
 
 
   .button-control-arrow {
@@ -1646,12 +1648,14 @@
 }
 
 .intro-image-top {
-  margin: 25px;
+  margin: 10px;
+  max-width: 90%;
 }
 
 .intro-image-bottom {
-  margin: 50px auto 0;
+  margin: 50px auto ;
   width: 100%;
+  margin-left: 40% 
 }
 
 .intro-image-2 {
@@ -1692,8 +1696,9 @@
 
 .intro-bubble-1 {
   background: url(img/purple-bubble.png) no-repeat center;
-  height: 210px;
-  background-size: cover;
+  height: 260px;
+  max-width: 100%;
+  background-size: contain;
 }
 
 .intro-bubble-2 {
