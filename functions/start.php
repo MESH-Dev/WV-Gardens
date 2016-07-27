@@ -31,60 +31,109 @@ function my_remove_menu_pages() {
     }
 }
 
-$teacher_permissions = array (
-        'read'         => true,  // true allows this capability
-        'edit_posts'   => true,
-        'delete_posts' => false, // Use false to explicitly deny
-        'edit_others_posts' => true, // Allows user to edit others posts not just their own
-        'delete_others_posts' => false, // Allows user to edit others posts not just their own
-        'manage_categories' => false, // Allows user to edit others posts not just their own
+// $teacher_permissions = array (
+//         'read'         => true,  // true allows this capability
+//         'edit_posts'   => true,
+//         'delete_posts' => false, // Use false to explicitly deny
+//         'edit_others_posts' => true, // Allows user to edit others posts not just their own
+//         'delete_others_posts' => false, // Allows user to edit others posts not just their own
+//         'manage_categories' => false, // Allows user to edit others posts not just their own
         
-);
-
-add_role( 'facilitator', 'Garden Facilitator', $teacher_permissions);
-add_role( 'teacher', 'Teacher', $teacher_permissions);
-add_role( 'student', __('Student' ),
-
-	array(
-
-	'read' => true, // true allows this capability
-
-	)
-
-);
-
- 
-
-// $result = add_role( 'teacher', __('Teacher' ),
-
-// 	array(
-
-// 	'read' => true, // true allows this capability
-// 	'edit_posts' => true, // Allows user to edit their own posts
-// 	'edit_pages' => true, // Allows user to edit pages
-// 	'edit_others_posts' => true, // Allows user to edit others posts not just their own
-// 	'create_posts' => true, // Allows user to create new posts
-// 	'manage_categories' => false, // Allows user to manage post categories
-// 	'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
-// 	'edit_themes' => false, // false denies this capability. User can’t edit your theme
-// 	'install_plugins' => false, // User cant add new plugins
-// 	'update_plugin' => false, // User can’t update any plugins
-// 	'update_core' => false // user cant perform core updates
-
-// 	)
-
 // );
+
+// add_role( 'facilitator', 'Garden Facilitator', $teacher_permissions);
+// add_role( 'teacher', 'Teacher', $teacher_permissions);
+
  
 
-$teacher = get_role( 'teacher' );
-$teacher->add_cap( 'edit_class' );
-$teacher->add_cap( 'publish_classes' );
+// $teacher = get_role( 'teacher' );
+// $teacher->add_cap( 'edit_class' );
+// $teacher->add_cap( 'publish_classes' );
  
 
 remove_role( 'subscriber' );
 remove_role( 'editor' );
 remove_role( 'contributor' );
 remove_role( 'author' );
+
+
+//---------NEW ROLES -----------//
+add_role( 'student', __('Student' ),array(	'read' => true, ) );
+
+function add_custom_roles() {
+ 	add_role('teacher',
+        'Teacher',
+        array(
+            'read' => true,
+            'edit_posts' => false,
+            'delete_posts' => false,
+            'publish_posts' => false,
+            'upload_files' => false,
+        )
+    );
+    add_role( 'facilitator', 'Garden Facilitator',
+        array(
+            'read' => true,
+            'edit_posts' => true,
+            'delete_posts' => true,
+            'publish_posts' => true,
+            'upload_files' => false,
+            'edit_others_posts' => true,
+            'delete_others_posts' => true,
+
+        )
+    );
+}
+register_activation_hook( __FILE__, 'add_custom_roles' );
+
+
+
+add_action('admin_init','add_custom_role_caps',999);
+function add_custom_role_caps() {
+
+	// Add the roles you'd like to administer the custom post types
+	$roles = array('facilitator','administrator');
+
+	// Loop through each role and assign class capabilities for 
+	foreach($roles as $the_role) { 
+
+	     $role = get_role($the_role);
+		
+	     $role->add_cap( 'read' );
+	     $role->add_cap( 'read_class');
+	     $role->add_cap( 'read_private_classes' );
+	     $role->add_cap( 'edit_class' );
+	     $role->add_cap( 'edit_classes' );
+	     $role->add_cap( 'edit_others_classes' );
+	     $role->add_cap( 'edit_published_classes' );
+	     $role->add_cap( 'publish_classes' );
+	     $role->add_cap( 'delete_others_classes' );
+	     $role->add_cap( 'delete_private_classes' );
+	     $role->add_cap( 'delete_published_classes' );
+
+	}
+
+	$role = get_role('teacher');
+		
+	$role->add_cap( 'read' );
+	$role->add_cap( 'read_class');
+	$role->add_cap( 'edit_class' );
+	$role->add_cap( 'edit_classes' );
+	$role->add_cap( 'edit_published_classes' );
+	$role->add_cap( 'publish_classes' );
+	$role->add_cap( 'delete_published_classes' );
+	$role->add_cap( 'delete_classes' );
+
+
+
+}
+
+
+
+
+
+
+
 
 //Name the post
 
