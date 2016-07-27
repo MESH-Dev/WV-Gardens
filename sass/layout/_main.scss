@@ -1596,10 +1596,8 @@
   width: 100px;
 }
 
-.final-image{
-  img{
+.final-image > img{
     max-width: 365px;
-  }
 }
 .modules-image >  img{
     max-width: 365px;
