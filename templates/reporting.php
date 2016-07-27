@@ -105,9 +105,12 @@ $module_id = 118;
  	$arr = json_decode($json,true);
  
  	//loop here to push all questions - maybe change $arr1 to 2d array
- 	array_push($arr1, $arr['1']);
+ 	//array_push($arr1, $arr['1']);
 
  	var_dump($arr);
+
+
+
  }
  
 
