@@ -73,16 +73,7 @@ function add_custom_roles() {
             'upload_files' => false,
         )
     );
-
-    global $wp_roles;
-    if ( ! isset( $wp_roles ) )
-        $wp_roles = new WP_Roles();
-
-    $adm = $wp_roles->get_role('editor');
-
-    //Adding a facilitator role  with all editor caps
-    $wp_roles->add_role('facilitator', 'Garden Facilitator', $adm->capabilities);
-
+ 
  
     // add_role( 'facilitator', 'Garden Facilitator',
     //     array(
