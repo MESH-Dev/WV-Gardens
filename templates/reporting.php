@@ -11,8 +11,7 @@ get_header(); ?>
 		<li>By County</li>
 		<li>By School</li>
 		<li>By Class</li>
-		<li>By Module</li>
-		<li>By Date Range</li>
+		<li>By Year/Semester</li>
 	</ul>
 
 <!-- 	Get module#
@@ -70,6 +69,7 @@ function get_classes_by_date_range($year_start,$year_end){
 
 //Get all individual arrays of ids
 $schools = get_classes_by_school(22);
+ 
 
 
 //Find Where Array Intersect (AND)
@@ -83,8 +83,10 @@ print_r($result);
 
 
 <?php 
+
+//send in an array of class ids in the where clause of sql
 global $wpdb;
-$module_id = 118;
+$class_ids = 118;
 
 // 	$answers = $wpdb->get_results( 
 // 	"
@@ -101,8 +103,7 @@ $answers = $wpdb->get_results(
 	" 
 );
 
-	$all = array();
-
+$all = array();
 
 //Get all json answers from db and convert to one large array
  foreach ($answers as $answer) {
