@@ -1598,9 +1598,15 @@
 
 .final-image > img{
     max-width: 365px;
+    @include mq('1080px', 'max-width') {
+      margin-left: -9em;  
+    }
 }
 .modules-image >  img{
     max-width: 365px;
+    @include mq('1080px', 'max-width') {
+      margin-left: -9em;  
+    }
   
 }
 
@@ -1608,11 +1614,7 @@
   position: absolute;
   left: 20px;
   top: 170px;
-  @include mq('1080px', 'max-width') {
-    left: 20px;
-    top: 170px;
  
-  }
 }
 
 
