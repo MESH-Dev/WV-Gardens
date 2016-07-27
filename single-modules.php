@@ -1040,6 +1040,14 @@ jQuery(document).ready(function($){
       $(this).toggle();
     });
 
+    if(autoplay)
+    {
+      var res = 'audio-' + (step - 1);
+      document.getElementById(res).play();
+      jQuery('.play').hide();
+      $('.stop').show();
+    }
+
   });
 
   //CLICK TO NEXT QUESTION ------------------------------------------------------------------------------------------------------------------------
