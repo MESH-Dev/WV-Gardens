@@ -75,23 +75,23 @@ function add_custom_roles() {
     );
  
  
-    // add_role( 'facilitator', 'Garden Facilitator',
-    //     array(
-    //         'read' => true,
-    //         'edit_posts' => true,
-    //         'delete_posts' => true,
-    //         'publish_posts' => true,
-    //         'edit_others_posts' => true,
-    //         'delete_others_posts' => true,
-    //         'edit_published_posts' => true,
-    //         'delete_published_posts' => true,
-    //         'upload_files' => false,
-    //         'manage_categories' => true,
+    add_role( 'facilitator', 'Garden Facilitator',
+        array(
+            'read' => true,
+            'edit_posts' => true,
+            'delete_posts' => true,
+            'publish_posts' => true,
+            'edit_others_posts' => true,
+            'delete_others_posts' => true,
+            'edit_published_posts' => true,
+            'delete_published_posts' => true,
+            'upload_files' => false,
+            'manage_categories' => true,
             
             
 
-    //     )
-    // );
+        )
+    );
 }
 add_action('admin_init', 'add_custom_roles' );
 
@@ -131,6 +131,17 @@ function add_custom_role_caps() {
 	$role->add_cap( 'publish_classes' );
 	$role->add_cap( 'delete_published_classes' );
 	$role->add_cap( 'delete_classes' );
+
+	$role = get_role('facilitator');
+	$role->add_cap( 'read' );
+	$role->add_cap( 'read_post');
+	$role->add_cap( 'edit_post' );
+	$role->add_cap( 'edit_posts' );
+	$role->add_cap( 'edit_published_posts' );
+	$role->add_cap( 'publish_posts' );
+	$role->add_cap( 'delete_published_posts' );
+	$role->add_cap( 'delete_posts' );
+
 
 
 
