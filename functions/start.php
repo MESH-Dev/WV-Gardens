@@ -79,9 +79,12 @@ function add_custom_roles() {
             'edit_posts' => true,
             'delete_posts' => true,
             'publish_posts' => true,
-            'upload_files' => false,
             'edit_others_posts' => true,
             'delete_others_posts' => true,
+            'edit_published_posts' => true,
+            'delete_published_posts' => true,
+            'upload_files' => false,
+            
 
         )
     );
@@ -136,7 +139,7 @@ function add_custom_role_caps() {
 //block users from admin
 add_action( 'init', 'blockusers_init' );
 function blockusers_init() {
-	
+
 	// show admin bar only for admins
     if (current_user_can('teacher')) {
         add_filter('show_admin_bar', '__return_false');
