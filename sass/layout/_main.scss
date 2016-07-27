@@ -325,7 +325,7 @@
 }
 
 .button-control {
-  
+  position: absolute;
   right: 0;
   bottom: 0;
   border: 0;
@@ -338,7 +338,7 @@
   height: 50px;
   font-weight: bold;
   z-index: 9999999;
-  float: right;
+ 
 
 
   .button-control-arrow {
@@ -348,7 +348,10 @@
     border-bottom: 10px solid transparent;
   }
 }
-
+.introsection .button-control {
+  position: relative;
+   float: right;
+}
 .next-arrow {
   float: right;
 }

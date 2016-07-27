@@ -10,7 +10,7 @@ get_header(); ?>
     <div class="container">
       <div class="row">
         <div class="six columns">
-          <div class="module-section">
+          <div class="module-section introsection">
             <div class="intro-image intro-image-1 intro-image-top">
               <img src="<?php echo get_template_directory_uri(); ?>/img/food-cloud.png" class="animated" />
             </div>
