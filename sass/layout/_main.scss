@@ -1596,10 +1596,22 @@
   width: 100px;
 }
 
+.final-image{
+  img{
+    max-width: 365px;
+  }
+  
+}
+
 .reward-image-final-0 {
   position: absolute;
   left: 20px;
   top: 170px;
+  @include mq('1080px', 'max-width') {
+    left: 20px;
+    top: 170px;
+ 
+  }
 }
 
 
