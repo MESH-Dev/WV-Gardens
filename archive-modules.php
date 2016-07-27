@@ -147,6 +147,7 @@ jQuery(document).ready(function($){
 
 
 var complete = getUrlParameter('complete');
+console.log('c =' + complete);
 
 if(complete === 'true'){
   $('.module-next').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
