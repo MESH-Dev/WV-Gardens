@@ -133,14 +133,15 @@ function add_custom_role_caps() {
 	$role->add_cap( 'delete_classes' );
 
 	$role = get_role('facilitator');
-	$role->add_cap( 'read' );
-	$role->add_cap( 'read_post');
-	$role->add_cap( 'edit_post' );
-	$role->add_cap( 'edit_posts' );
-	$role->add_cap( 'edit_published_posts' );
-	$role->add_cap( 'publish_posts' );
-	$role->add_cap( 'delete_published_posts' );
-	$role->add_cap( 'delete_posts' );
+	var_dump($role);
+	// $role->add_cap( 'read' );
+	// $role->add_cap( 'read_post');
+	// $role->add_cap( 'edit_post' );
+	// $role->add_cap( 'edit_posts' );
+	// $role->add_cap( 'edit_published_posts' );
+	// $role->add_cap( 'publish_posts' );
+	// $role->add_cap( 'delete_published_posts' );
+	// $role->add_cap( 'delete_posts' );
 
 
 
