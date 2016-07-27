@@ -76,9 +76,9 @@ add_role( 'student', __('Student' ),
 // );
  
 
-// $teacher = get_role( 'teacher' );
-// $teacher->add_cap( 'edit_class' );
-// $teacher->add_cap( 'publish_classes' );
+$teacher = get_role( 'teacher' );
+$teacher->add_cap( 'edit_class' );
+$teacher->add_cap( 'publish_classes' );
  
 
 remove_role( 'subscriber' );
