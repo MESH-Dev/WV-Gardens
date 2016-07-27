@@ -131,10 +131,7 @@ function add_custom_role_caps() {
 
 }
 
-// show admin bar only for admins
-if (!current_user_can('manage_options')) {
-	add_filter('show_admin_bar', '__return_false');
-}
+
 
 //block users from admin
 add_action( 'init', 'blockusers_init' );
