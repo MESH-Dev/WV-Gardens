@@ -577,7 +577,7 @@ get_header(); ?>
         <div class="row">
           <div class="three columns offset-by-nine">
             <div class="module-section">
-              <a href="<?php echo get_home_url(); ?>/modules/"><button class="return button-control" style="display: inline-block;">Print My Full Healthy Plate <div class="return-arrow button-control-arrow"></div></button></a>
+              <a href="<?php echo get_home_url(); ?>/modules/?complete=true"><button class="return button-control" style="display: inline-block;">Print My Full Healthy Plate <div class="return-arrow button-control-arrow"></div></button></a>
             </div>
           </div>
         </div>
