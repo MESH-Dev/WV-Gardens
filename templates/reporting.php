@@ -3,7 +3,7 @@
 */
 get_header(); ?>
 
-
+<script src="<?php echo get_template_directory_uri(); ?>/js/chartist.min.js"></script>
 <div class="container">
 	<h1>Reporting</h1>
 	<ul>
@@ -133,6 +133,7 @@ foreach ($sumArray as $qid => $answer_string) {
 	rtrim($answer_string, ",");
 	$answer_array = explode(',', $answer_string);
 
+	//count up values
 	$counted = array_count_values($answer_array);
 
 	$labels ='';
@@ -146,63 +147,12 @@ foreach ($sumArray as $qid => $answer_string) {
 
 	echo "<h2>" . $question_title . "</h2>";
 	echo "<br><strong>Labels</strong>:" . $labels;
-	echo "<br><strong>Vals</strong>:" . $vals;
+	echo "<br><strong>Vals</strong>:" . $vals; ?>
+
+	<div id="<?php echo 'question' . $qid; ?>" class="ct-chart ct-golden-section "></div>
+	<script>
  
-
- 
-}
-
-
-
-
-//Get labels? use actual questions from post here
-//$labels1 = array_unique($arr1);
-
-
-  
-
- //print_r(array_count_values($arr1));
-
- //counts up values for each and store in assoc array
- $counted = array_count_values($arr1);
-
-  $labels ='';
-  $vals = '';
-  $sep = '';
-	foreach( $counted as $key => $value ) {
-	    $labels .= $sep . "'" .$key. "'";
-	    $vals .= $sep . $value;
-	    $sep = ',';
-	}
-
-	echo $labels;
-	echo " ";
-	echo $vals;
-
- 
-
-	?>
-
-
-
-	<div id="q1" class="ct-chart ct-golden-section "></div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-<script src="<?php echo get_template_directory_uri(); ?>/js/chartist.min.js"></script>
-
-<script>
- 
- new Chartist.Bar('#q1', {
+ new Chartist.Bar(<?php echo '#question' . $qid; ?>, {
 
   	labels: [<?php echo $labels; ?>],
   	
@@ -217,6 +167,35 @@ foreach ($sumArray as $qid => $answer_string) {
 });
  
 </script>
+
+	<?php 
+ 
+
+ 
+}
+
+
+?>
+ 
+
+
+
+	
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
