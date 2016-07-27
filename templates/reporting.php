@@ -95,24 +95,30 @@ $module_id = 118;
 );
 
 
-	$arr1 = array();
+	$answers = array();
 
  foreach ($answers as $answer) {
 
  	//get json string for each, decode, and push to answers array
  	$json = $answer->answers;
  	$json = stripslashes($json);
- 	$arr = json_decode($json,true);
+ 	$row = json_decode($json,true);
  
  	//loop here to push all questions - maybe change $arr1 to 2d array
- 	//array_push($arr1, $arr['1']);
+ 	array_push($all, $row);
+ 
 
- 	var_dump($arr);
-
-
-
+ 	
+ 
  }
  
+var_dump($all);
+
+
+
+
+
+
 
 //Get labels? use actual questions from post here
  $labels1 = array_unique($arr1);
