@@ -721,7 +721,7 @@ function remove_student() {
   wp_delete_user( $user_id );
 
   echo $user_id;
-  // create this students array
+ 
 
   die;
 
@@ -797,7 +797,9 @@ function my_action_javascript() { ?>
 
          // respond and append to table
 
-         $(".row-" + response).hide();
+         $("tr.row-" + response).hide();
+         $(this).css('background-color','red');
+
 
        }
      })

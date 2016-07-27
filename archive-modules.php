@@ -168,7 +168,7 @@ jQuery(document).ready(function($){
 
   if(complete == 'true'){
     $('h1.directions').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
-    $('.modules-image').addClass('animated pulse');
+    $('.modules-image').addClass('animated tada');
   }
 
 });
