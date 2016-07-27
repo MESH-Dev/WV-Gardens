@@ -103,6 +103,8 @@ $answers = $wpdb->get_results(
 
 	$all = array();
 
+
+//Get all json answers from db and convert to one large array
  foreach ($answers as $answer) {
 
  	//get json string for each, decode, and push to answers array
@@ -112,27 +114,48 @@ $answers = $wpdb->get_results(
  
  	//loop here to push all questions - maybe change $arr1 to 2d array
  	array_push($all, $row);
- 
-
- 	
- 
  }
  
-var_dump($all);
+ 
 
+//organize into array with [question_id] => string of answers
 foreach ($all as $k=>$subArray) {
   foreach ($subArray as $id=>$value) {
-    $sumArray[$id] = $sumArray[$id] . ',' .$value ;
+    $sumArray[$id] = $sumArray[$id]  .$value . ',' ;
   }
 }
 
-print_r($sumArray);
+ 
+//for each question get question name, label list, and count
+foreach ($sumArray as $qid => $answer_string) {
+	$question_title = get_the_title($qid);
+
+	$answer_array = explode(',', $answer_string);
+
+	$counted = array_count_values($answer_array);
+
+	$labels ='';
+	$vals = '';
+	$sep = '';
+	foreach( $counted as $key => $value ) {
+	    $labels .= $sep . "'" .$key. "'";
+	    $vals .= $sep . $value;
+	    $sep = ',';
+	}
+
+	echo "<h2>" . $$question_title . "</h2>";
+	echo "<br><strong>Labels</strong>:" . $labels;
+	echo "<br><strong>Vals</strong>:" . $vals;
+ 
+
+ 
+}
 
 
 
 
 //Get labels? use actual questions from post here
- $labels1 = array_unique($arr1);
+//$labels1 = array_unique($arr1);
 
 
   
