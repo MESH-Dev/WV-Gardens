@@ -152,7 +152,7 @@ foreach ($sumArray as $qid => $answer_string) {
 	<div id="<?php echo 'question' . $qid; ?>" class="ct-chart ct-golden-section "></div>
 	<script>
  
- new Chartist.Bar(<?php echo '#question' . $qid; ?>, {
+ new Chartist.Bar(<?php echo '"#question' . $qid.'"'; ?>, {
 
   	labels: [<?php echo $labels; ?>],
   	
