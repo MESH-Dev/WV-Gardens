@@ -151,6 +151,37 @@ function register_semester_tax() {
 }
 add_action('init', 'register_semester_tax');
 
+// registration code for county taxonomy
+function register_county_tax() {
+	$labels = array(
+		'name' 					=> _x( 'Counties', 'taxonomy general name' ),
+		'singular_name' 		=> _x( 'County', 'taxonomy singular name' ),
+		'add_new' 				=> _x( 'Add New County', 'County'),
+		'add_new_item' 			=> __( 'Add New County' ),
+		'edit_item' 			=> __( 'Edit County' ),
+		'new_item' 				=> __( 'New County' ),
+		'view_item' 			=> __( 'View County' ),
+		'search_items' 			=> __( 'Search Counties' ),
+		'not_found' 			=> __( 'No County found' ),
+		'not_found_in_trash' 	=> __( 'No County found in Trash' ),
+	);
+
+	$pages = array('classes');
+
+	$args = array(
+		'labels' 			=> $labels,
+		'singular_label' 	=> __('County'),
+		'public' 			=> true,
+		'show_ui' 			=> true,
+		'hierarchical' 		=> false,
+		'show_tagcloud' 	=> false,
+		'show_in_nav_menus' => true,
+		'rewrite' 			=> array('slug' => 'county', 'with_front' => false ),
+	 );
+	register_taxonomy('county', $pages, $args);
+}
+add_action('init', 'register_county_tax');
+
 // registration code for school taxonomy
 function register_school_tax() {
 	$labels = array(
