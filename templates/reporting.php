@@ -129,11 +129,11 @@ foreach ($all as $k=>$subArray) {
 //for each question get question name, label list, and count
 foreach ($sumArray as $qid => $answer_string) {
 	$question_title = get_the_title($qid);
-	
-	rtrim($answer_string, ",");echo $answer_string;
+
+	$answer_string = rtrim($answer_string, ","); 
 	$answer_array = explode(',', $answer_string);
 
-	//count up values
+	//count up values and set up strings for chartists
 	$counted = array_count_values($answer_array);
 
 	$labels ='';
@@ -146,28 +146,29 @@ foreach ($sumArray as $qid => $answer_string) {
 	}
 
 	echo "<h2>" . $question_title . "</h2>";
-	echo "<br><strong>Labels</strong>:" . $labels;
-	echo "<br><strong>Vals</strong>:" . $vals; ?>
+	//echo "<br><strong>Labels</strong>:" . $labels;
+	//echo "<br><strong>Vals</strong>:" . $vals; ?>
 
 	<div id="<?php echo 'question' . $qid; ?>" class="ct-chart ct-golden-section "></div>
 	<script>
  
- new Chartist.Bar(<?php echo '"#question' . $qid.'"'; ?>, {
+		 new Chartist.Bar(<?php echo '"#question' . $qid.'"'; ?>, {
 
-  	labels: [<?php echo $labels; ?>],
-  	
-  	series: [<?php echo $vals; ?>]
-	}, {
-  	distributeSeries: true,
-  	axisY: {
-   	   onlyInteger: true
-  	}
+		  	labels: [<?php echo $labels; ?>],
+		  	
+		  	series: [<?php echo $vals; ?>]
+			}, {
+		  	distributeSeries: true,
+		  	axisY: {
+		   	   onlyInteger: true
+		  	}
 
 
-});
+		});
  
-</script>
+	</script>
 
+	<hr>
 	<?php 
  
 
