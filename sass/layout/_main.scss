@@ -1659,6 +1659,7 @@
   @include mq('1080px', 'max-width') {
     margin: -30px auto ;
     float: left;
+    margin-left: 45%;
  
   }
 }
@@ -1705,10 +1706,9 @@
   max-width: 100%;
   background-size: contain;
   .bubble-text{
-      @include mq('1080px', 'max-width') {
-        margin-top: 30px;
-         
-    }
+ 
+        margin-top: 45px;
+ 
   }
 }
 
@@ -1716,7 +1716,13 @@
   background: url(img/purple-bubble-2.png) no-repeat center;
   display: none;
   height: 289px;
-  background-size: cover;
+  background-size: contain;
+  max-width: 70%;
+
+  @include mq('1080px', 'max-width') {
+    max-width: 70%;
+ 
+  }
 
   .bubble-text {
     h1 {
