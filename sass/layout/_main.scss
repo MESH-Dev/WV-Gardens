@@ -1598,14 +1598,16 @@
 
 .final-image > img{
     max-width: 365px;
+    margin-left: -9em;
     @include mq('1080px', 'max-width') {
-      margin-left: -9em;  
+      margin-left: 0em;  
     }
 }
 .modules-image >  img{
     max-width: 365px;
+    margin-left: -9em;
     @include mq('1080px', 'max-width') {
-      margin-left: -9em;  
+      margin-left: 0em;  
     }
   
 }
