@@ -1653,9 +1653,15 @@
 }
 
 .intro-image-bottom {
-  margin: 50px auto ;
+  margin: -10px auto ;
   width: 100%;
-  margin-left: 40% 
+  margin-left: 45%;
+  @include mq($tablet-width, 'max-width') {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 0%;
+  }
 }
 
 .intro-image-2 {
