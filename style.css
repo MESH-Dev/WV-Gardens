@@ -2408,7 +2408,7 @@ html, body {
 /* line 1599, sass/layout/_main.scss */
 .final-image > img {
   max-width: 365px;
-  margin-left: -9em;
+  margin-left: 0em;
 }
 @media screen and (max-width: 1080px) {
   /* line 1599, sass/layout/_main.scss */
