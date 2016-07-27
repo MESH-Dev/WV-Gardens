@@ -84,13 +84,13 @@ print_r($result);
 
 <?php 
 global $wpdb;
-$module_id = 42;
+$module_id = 118;
 
 	$answers = $wpdb->get_results( 
 	"
 	SELECT answers
 	FROM sessions
-	WHERE module_id = '$module_id'
+	WHERE class_id = '$module_id'
 	" 
 );
 
@@ -106,6 +106,8 @@ $module_id = 42;
  
  	//loop here to push all questions - maybe change $arr1 to 2d array
  	array_push($arr1, $arr['1']);
+
+ 	var_dump($arr);
  }
  
 
@@ -141,6 +143,10 @@ $module_id = 42;
 
 	<div id="q1" class="ct-chart ct-golden-section "></div>
 
+
+
+
+
 </div>
 
 
@@ -151,9 +157,7 @@ $module_id = 42;
 <script src="<?php echo get_template_directory_uri(); ?>/js/chartist.min.js"></script>
 
 <script>
-
-
-
+ 
  new Chartist.Bar('#q1', {
 
   	labels: [<?php echo $labels; ?>],
@@ -167,8 +171,7 @@ $module_id = 42;
 
 
 });
-
-
+ 
 </script>
 
 
