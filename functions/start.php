@@ -83,7 +83,7 @@ function add_custom_roles() {
     // //Adding a facilitator role  with all editor caps
     // $wp_roles->add_role('facilitator', 'Garden Facilitator', $adm->capabilities);
 
-    $adm = $wp_roles->get_role('editor');
+    //$adm = $wp_roles->get_role('editor');
     add_role( 'facilitator', 'Garden Facilitator',
         array(
             'read' => true,
