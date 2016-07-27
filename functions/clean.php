@@ -21,6 +21,7 @@ function remove_dashboard_widgets(){
     remove_meta_box('dashboard_recent_comments','dashboard','core'); // recent comments box
     remove_meta_box('dashboard_primary','dashboard','core'); // wordpress development blog box
     remove_meta_box('dashboard_secondary','dashboard','core'); // other wordpress news box
+    remove_meta_box('dashboard_activity','dashboard','core'); // other wordpress news box
 }
 
 // Remove menus froms the admin area
