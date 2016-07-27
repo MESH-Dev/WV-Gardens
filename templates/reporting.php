@@ -95,7 +95,7 @@ $module_id = 118;
 );
 
 
-	$answers = array();
+	$all = array();
 
  foreach ($answers as $answer) {
 
