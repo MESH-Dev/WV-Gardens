@@ -86,14 +86,20 @@ print_r($result);
 global $wpdb;
 $module_id = 118;
 
-	$answers = $wpdb->get_results( 
+// 	$answers = $wpdb->get_results( 
+// 	"
+// 	SELECT answers
+// 	FROM sessions
+// 	WHERE class_id = '$module_id'
+// 	" 
+// );
+
+$answers = $wpdb->get_results( 
 	"
 	SELECT answers
 	FROM sessions
-	WHERE class_id = '$module_id'
 	" 
 );
-
 
 	$all = array();
 
@@ -116,7 +122,7 @@ var_dump($all);
 
 foreach ($all as $k=>$subArray) {
   foreach ($subArray as $id=>$value) {
-    $sumArray[$id].=$value;
+    $sumArray[$id] = $sumArray[$id] . ',' .$value ;
   }
 }
 
