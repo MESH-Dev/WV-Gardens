@@ -129,7 +129,7 @@ foreach ($all as $k=>$subArray) {
 //for each question get question name, label list, and count
 foreach ($sumArray as $qid => $answer_string) {
 	$question_title = get_the_title($qid);
-
+	echo $answer_string;
 	rtrim($answer_string, ",");
 	$answer_array = explode(',', $answer_string);
 
