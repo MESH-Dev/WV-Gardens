@@ -65,11 +65,18 @@ get_header();
 					</div>
 				</div>
 			</div>
+			<audio class="audioDemo" id="audio-intro">
+	           <source src="<?php bloginfo( url ); ?>/wp-content/uploads/2016/07/welcome.mp3" type="audio/mpeg">
+	        </audio>
 
 
 
 
       <script type="text/javascript">
+
+      var res = 'audio-intro';
+      document.getElementById(res).play();
+       
 
         var schoolList = <?php echo json_encode($tax_array); ?>
 
