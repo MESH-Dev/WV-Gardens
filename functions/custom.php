@@ -35,6 +35,7 @@ function register_modules_posttype() {
 		'rewrite' 			=> array('slug' => 'modules', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
+		'menu_icon'           => 'dashicons-admin-page',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('modules',$post_type_args);
@@ -74,6 +75,7 @@ function register_questions_posttype() {
 		'rewrite' 			=> array('slug' => 'questions', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
+		'menu_icon'           => 'dashicons-admin-page',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('questions',$post_type_args);
@@ -113,6 +115,7 @@ function register_classes_posttype() {
 		'rewrite' 			=> array('slug' => 'classes', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
+		'menu_icon'           => 'dashicons-admin-users',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('classes',$post_type_args);
