@@ -18,11 +18,7 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php bloginfo('name'); ?></title>
-
-	<!-- Meta / og: tags -->
-	<meta name="description" content="">
-	<meta name="author" content="">
-
+ 
 
 	<!-- Mobile Specific Metas
 	================================================== -->
@@ -33,12 +29,10 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css" />
-	<?php if(is_page()){ ?>
+		<?php if(is_page()){ ?>
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/chartist.css" />
 
 	<?php } ?>
-	
-	
 
 	<!-- Favicons
 	================================================== -->

@@ -18,6 +18,31 @@ function my_custom_login_logo() {
 		          background-image:url('.get_bloginfo('template_directory').'/images/logo.png) !important; }
 		    </style>';
 }
+ 
+
+add_filter( 'gettext', 'change_publish_text', 10, 2 );
+add_filter( 'gettext', 'change_draft_text', 10, 2 );
+
+function change_publish_text( $translation, $text ) {
+ 
+if ( $text == 'Published' )
+    return 'Active';
+
+return $translation;
+}
+
+function change_draft_text( $translation, $text ) {
+ 
+if ( $text == 'Draft' )
+    return 'Inactive';
+
+return $translation;
+}
+
+
+
+
+
 
 function get_classes() {
 
@@ -721,7 +746,7 @@ function remove_student() {
   wp_delete_user( $user_id );
 
   echo $user_id;
- 
+  // create this students array
 
   die;
 
@@ -797,8 +822,8 @@ function my_action_javascript() { ?>
 
          // respond and append to table
 
-         $("tr.row-" + response).hide();
- 
+         $(".row-" + response).hide();
+
        }
      })
 

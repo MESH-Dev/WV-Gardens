@@ -28,163 +28,33 @@ function my_remove_menu_pages() {
 			remove_menu_page( 'edit-comments.php' );
 			remove_menu_page( 'edit.php' );
 			remove_menu_page( 'tools.php' );
-			remove_menu_page( 'edit.php?post_type=questions' );
-			remove_menu_page( 'edit.php?post_type=modules' );
+    }
+    if ( current_user_can( 'facilitator' ) ) {
+			remove_menu_page( 'edit-comments.php' );
+			remove_menu_page( 'edit.php' );
+			remove_menu_page( 'tools.php' );
     }
 }
 
-// $teacher_permissions = array (
-//         'read'         => true,  // true allows this capability
-//         'edit_posts'   => true,
-//         'delete_posts' => false, // Use false to explicitly deny
-//         'edit_others_posts' => true, // Allows user to edit others posts not just their own
-//         'delete_others_posts' => false, // Allows user to edit others posts not just their own
-//         'manage_categories' => false, // Allows user to edit others posts not just their own
-        
-// );
-
-// add_role( 'facilitator', 'Garden Facilitator', $teacher_permissions);
-// add_role( 'teacher', 'Teacher', $teacher_permissions);
-
  
-
-// $teacher = get_role( 'teacher' );
-// $teacher->add_cap( 'edit_class' );
-// $teacher->add_cap( 'publish_classes' );
- 
-
 remove_role( 'subscriber' );
-//remove_role( 'editor' );
+remove_role( 'editor' );
 remove_role( 'contributor' );
 remove_role( 'author' );
-
-
-//---------NEW ROLES -----------//
-add_role( 'student', __('Student' ),array(	'read' => true, ) );
-
-function add_custom_roles() {
- 	add_role('teacher',
-        'Teacher',
-        array(
-            'read' => true,
-            'edit_posts' => false,
-            'delete_posts' => false,
-            'publish_posts' => false,
-            'upload_files' => false,
-        )
-    );
- 
- 
-    add_role( 'facilitator', 'Garden Facilitator',
-        array(
-            'read' => true,
-            'edit_posts' => true,
-            'delete_posts' => true,
-            'publish_posts' => true,
-            'edit_others_posts' => true,
-            'delete_others_posts' => true,
-            'edit_published_posts' => true,
-            'delete_published_posts' => true,
-            'upload_files' => false,
-            'manage_categories' => true,
-
-        )
-    );
-}
-add_action('admin_init', 'add_custom_roles' );
-
-
-
-add_action('admin_init','add_custom_role_caps',999);
-function add_custom_role_caps() {
-
-	// Add the roles you'd like to administer the custom post types
-	$roles = array('facilitator','administrator');
-
-	// Loop through each role and assign class capabilities for 
-	foreach($roles as $the_role) { 
-
-	     $role = get_role($the_role);
-		
-	     $role->add_cap( 'read' );
-	     $role->add_cap( 'read_class');
-	     $role->add_cap( 'read_private_classes' );
-	     $role->add_cap( 'edit_class' );
-	     $role->add_cap( 'edit_classes' );
-	     $role->add_cap( 'edit_others_classes' );
-	     $role->add_cap( 'edit_published_classes' );
-	     $role->add_cap( 'publish_classes' );
-	     $role->add_cap( 'delete_others_classes' );
-	     $role->add_cap( 'delete_private_classes' );
-	     $role->add_cap( 'delete_published_classes' );
-
-	     $role->add_cap( 'read_question');
-	     $role->add_cap( 'read_private_questions' );
-	     $role->add_cap( 'edit_question' );
-	     $role->add_cap( 'edit_questions' );
-	     $role->add_cap( 'edit_others_questions' );
-	     $role->add_cap( 'edit_published_questions' );
-	     $role->add_cap( 'publish_questions' );
-	     $role->add_cap( 'delete_others_questions' );
-	     $role->add_cap( 'delete_private_questions' );
-	     $role->add_cap( 'delete_published_questions' );
-
-	     $role->add_cap( 'read_module');
-	     $role->add_cap( 'read_private_modules' );
-	     $role->add_cap( 'edit_module' );
-	     $role->add_cap( 'edit_modules' );
-	     $role->add_cap( 'edit_others_modules' );
-	     $role->add_cap( 'edit_published_modules' );
-	     $role->add_cap( 'publish_modules' );
-	     $role->add_cap( 'delete_others_modules' );
-	     $role->add_cap( 'delete_private_modules' );
-	     $role->add_cap( 'delete_published_modules' );
-
-	}
-
-	$role = get_role('teacher');	
-	$role->add_cap( 'read' );
-	$role->add_cap( 'read_class');
-	$role->add_cap( 'edit_class' );
-	$role->add_cap( 'edit_classes' );
-	$role->add_cap( 'edit_published_classes' );
-	$role->add_cap( 'publish_classes' );
-	$role->add_cap( 'delete_published_classes' );
-	$role->add_cap( 'delete_classes' );
-
-
-}
-
 
 
 //block users from admin
 add_action( 'init', 'blockusers_init' );
 function blockusers_init() {
-
 	// show admin bar only for admins
     if (current_user_can('teacher')) {
         add_filter('show_admin_bar', '__return_false');
     }
-
 	if ( is_admin() && !current_user_can( 'edit_class' ) && !( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 		wp_redirect( home_url() );
 		exit;
 	}
 }
-
-// //teacher redirect
-// add_action( 'wp_login', 'teacher_redirect' );
-// function teacher_redirect(){
-// 	$user = wp_get_current_user();
-// 	if ( in_array( 'teacher', (array) $user->roles ) ) {
-// 	   wp_redirect( home_url() ."/wp-admin/edit.php?post_type=classes" );
-// 	   exit;
-
-// 	}
-// }
-
-
-
 
 
 
@@ -193,6 +63,8 @@ function blockusers_init() {
 function create_post_name( $post_id ){
 	if ( ! wp_is_post_revision( $post_id ) ){
 		if ( get_post_type( get_the_ID() ) == 'classes' ) {
+
+
 
 			// unhook this function so it doesn't loop infinitely
 			remove_action('save_post', 'create_post_name');
@@ -205,6 +77,7 @@ function create_post_name( $post_id ){
 			$grade = get_the_terms( $post_id, 'grade' );
 
 			$teacher = get_field('teacher', $post_id);
+			$pre_or_post = get_field('pre_or_post', $post_id);
 
 
 			// This is the list of students previously on the CMS
@@ -225,11 +98,11 @@ function create_post_name( $post_id ){
 			// check if the repeater field has rows of data
 			if( have_rows('students') ):
 
-			 	// loop through the rows of data
-		    while ( have_rows('students') ) : the_row();
+				// loop through the rows of data
+			    while ( have_rows('students') ) : the_row();
 
-	        // display a sub field value
-	        $first_name = get_sub_field('first_name');
+		        	// display a sub field value
+		       		$first_name = get_sub_field('first_name');
 					$last_name = get_sub_field('last_name');
 
 					$student = array (
@@ -239,16 +112,17 @@ function create_post_name( $post_id ){
 
 					$students[$i][] = $student;
 					$i++;
+			    endwhile;
 
-		    endwhile;
+				else :
 
-			else :
-
-			    // no rows found
+				    // no rows found
 
 			endif;
 
 			update_post_meta($post_id, 'post', get_field('students', $post_id));
+			
+
 
 
 			// Check the current list of students against the list of previous students
@@ -274,28 +148,25 @@ function create_post_name( $post_id ){
 
 				}
 			}
+ 
 
+		  	$my_post = array(
+		      'ID'           => $post_id,
+		      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name ." - " . $pre_or_post,
+		  	);
 
-			// for ($x = 0; $x < $prev_students_count[0]; $x++) {
-		  //   array_push($prev_students, $students);
-			// }
-
-
-	  	$my_post = array(
-	      'ID'           => $post_id,
-	      'post_title'   => $teacher['display_name'] . " - " . $semester[0]->name . " " . $year[0]->name . " - " . $grade[0]->name,
-	      'post_author'  => $teacher['ID']
-	  	);
-
-			// Update the post into the database
+			// Update the post into the database with net name
 			wp_update_post( $my_post );
-			// update_post_meta( $post_id, 'studentlist', $students );
+
+
+
+ 
 
 			// re-hook this function
 			add_action('save_post', 'create_post_name', 10);
 
-		}
-	}
+		} //end if post is class
+	} //end if revision
 }
 add_action('save_post', 'create_post_name');
 

@@ -28,14 +28,12 @@ function register_modules_posttype() {
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
-		'capability_type' 	=> array('module','modules'),
-		'map_meta_cap'      => true,
+		'capability_type' 	=> 'post',
 		'has_archive' 		=> true,
 		'hierarchical' 		=> false,
 		'rewrite' 			=> array('slug' => 'modules', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
-		'menu_icon'           => 'dashicons-admin-page',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('modules',$post_type_args);
@@ -68,14 +66,12 @@ function register_questions_posttype() {
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
-		'capability_type' 	=> array('question','questions'),
-		'map_meta_cap'      => true,
+		'capability_type' 	=> 'post',
 		'has_archive' 		=> true,
 		'hierarchical' 		=> false,
 		'rewrite' 			=> array('slug' => 'questions', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
-		'menu_icon'           => 'dashicons-admin-page',
 		'taxonomies'		=> $taxonomies
 	 );
 	 register_post_type('questions',$post_type_args);
@@ -99,7 +95,7 @@ function register_classes_posttype() {
 
 	$taxonomies = array();
 
-	$supports = array('title','editor','author','custom-fields','revisions');
+	$supports = array('title','editor','author','thumbnail','excerpt','custom-fields','comments','revisions');
 
 	$post_type_args = array(
 		'labels' 			=> $labels,
@@ -108,19 +104,69 @@ function register_classes_posttype() {
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
-		'capability_type' 	=> array('class','classes'),
-		'map_meta_cap'      => true,
+		'capability_type' 	=> 'class',
 		'has_archive' 		=> true,
 		'hierarchical' 		=> false,
 		'rewrite' 			=> array('slug' => 'classes', 'with_front' => false ),
 		'supports' 			=> $supports,
 		'menu_position' 	=> 5,
-		'menu_icon'           => 'dashicons-admin-users',
-		'taxonomies'		=> $taxonomies
+		'taxonomies'		=> $taxonomies,
+	    'capabilities' => array(
+		    'publish_posts' => 'publish_classes',
+		    'edit_posts' => 'edit_classes',
+		    'edit_others_posts' => 'edit_others_classes',
+		    'delete_posts' => 'delete_classes',
+		    'delete_others_posts' => 'delete_others_classes',
+		    'read_private_posts' => 'read_private_classes',
+		    'edit_post' => 'edit_class',
+		    'delete_post' => 'delete_class',
+		    'read_post' => 'read_class'
+		)
 	 );
 	 register_post_type('classes',$post_type_args);
 }
 add_action('init', 'register_classes_posttype');
+
+/* MAP META CAPABILITIES */
+
+add_filter( 'map_meta_cap', 'class_map_meta_cap', 10, 4 );
+
+function class_map_meta_cap( $caps, $cap, $user_id, $args )
+{
+
+    if ( 'edit_class' == $cap || 'delete_class' == $cap || 'read_class' == $cap ) {
+        $post = get_post( $args[0] );
+        $post_type = get_post_type_object( $post->post_type );
+        $caps = array();
+    }
+
+    if ( 'edit_class' == $cap ) {
+        if ( $user_id == $post->post_author )
+            $caps[] = $post_type->cap->edit_posts;
+        else
+            $caps[] = $post_type->cap->edit_others_posts;
+    }
+
+    elseif ( 'delete_class' == $cap ) {
+        if ( $user_id == $post->post_author )
+            $caps[] = $post_type->cap->delete_posts;
+        else
+            $caps[] = $post_type->cap->delete_others_posts;
+    }
+
+    elseif ( 'read_class' == $cap ) {
+        if ( 'private' != $post->post_status )
+            $caps[] = 'read';
+        elseif ( $user_id == $post->post_author )
+            $caps[] = 'read';
+        else
+            $caps[] = $post_type->cap->read_private_posts;
+    }
+
+    return $caps;
+}
+
+ 
 
 
 // registration code for semester taxonomy
@@ -153,37 +199,6 @@ function register_semester_tax() {
 	register_taxonomy('semester', $pages, $args);
 }
 add_action('init', 'register_semester_tax');
-
-// registration code for county taxonomy
-function register_county_tax() {
-	$labels = array(
-		'name' 					=> _x( 'Counties', 'taxonomy general name' ),
-		'singular_name' 		=> _x( 'County', 'taxonomy singular name' ),
-		'add_new' 				=> _x( 'Add New County', 'County'),
-		'add_new_item' 			=> __( 'Add New County' ),
-		'edit_item' 			=> __( 'Edit County' ),
-		'new_item' 				=> __( 'New County' ),
-		'view_item' 			=> __( 'View County' ),
-		'search_items' 			=> __( 'Search Counties' ),
-		'not_found' 			=> __( 'No County found' ),
-		'not_found_in_trash' 	=> __( 'No County found in Trash' ),
-	);
-
-	$pages = array('classes');
-
-	$args = array(
-		'labels' 			=> $labels,
-		'singular_label' 	=> __('County'),
-		'public' 			=> true,
-		'show_ui' 			=> true,
-		'hierarchical' 		=> false,
-		'show_tagcloud' 	=> false,
-		'show_in_nav_menus' => true,
-		'rewrite' 			=> array('slug' => 'county', 'with_front' => false ),
-	 );
-	register_taxonomy('county', $pages, $args);
-}
-add_action('init', 'register_county_tax');
 
 // registration code for school taxonomy
 function register_school_tax() {
@@ -423,5 +438,18 @@ function posts_for_current_contributor() {
    }
 
 }
+
+// function add_event_caps() {
+// $role = get_role( 'administrator' );
+
+// $role->add_cap( 'edit_class' ); 
+// $role->add_cap( 'edit_classes' ); 
+// $role->add_cap( 'edit_others_classes' ); 
+// $role->add_cap( 'publish_classes' ); 
+// $role->add_cap( 'read_class' ); 
+// $role->add_cap( 'read_private_classes' ); 
+// $role->add_cap( 'delete_class' ); 
+// }
+// add_action( 'admin_init', 'add_event_caps');
 
 ?>

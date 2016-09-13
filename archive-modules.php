@@ -1,11 +1,8 @@
 <?php
-
 if ( !is_user_logged_in() ) {
-
   wp_redirect( get_home_url() );
     exit;
 }
-
 get_header(); ?>
 
 <div>
@@ -42,63 +39,42 @@ get_header(); ?>
           <div class="module-section">
             <div class="module-list">
               <?php
-
                 $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
-
                 global $wpdb;
                 $class_row = $wpdb->get_row( $sql , ARRAY_A );
-
                 $class = (int)$class_row['class_id'];
-
                 // Get a list of completed modules
-
                 $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
-
-            	?>
-
-              <?php
-
-                // If it's in sessions, that means it's complete
-
-                $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
-
-                global $wpdb;
-                $results = $wpdb->get_results( $sql , ARRAY_A );
-
-                $modules = array();
-
-                foreach ( $results as $result ) {
-                  array_push($modules, $result['module_id']);
-                }
-
-              // 2nd Method - Utilizing the $GLOBALS superglobal. Does not require global keyword ( but may not be best practice )
-
               ?>
 
               <?php
+                // If it's in sessions, that means it's complete
+                $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
+                global $wpdb;
+                $results = $wpdb->get_results( $sql , ARRAY_A );
+                $modules = array();
+                foreach ( $results as $result ) {
+                  array_push($modules, $result['module_id']);
+                }
+              // 2nd Method - Utilizing the $GLOBALS superglobal. Does not require global keyword ( but may not be best practice )
+              ?>
 
+              <?php
               $module_found = false;
-
               if( have_rows('modules', $class) ):
-
                   while ( have_rows('modules', $class) ) : the_row();
-
                       // Your loop code
                       $module = get_sub_field('module', $class);
-
                       $module_complete = false;
-
                       if (in_array($module->ID, $modules)) {
                         $module_complete = true;
                       }
-
                       if ($module_complete == false) {
                         if ($module_found == false) {
                           $module_next = $module->guid;
                           $module_found = true;
                         }
                       }
-
                       ?>
 
                         <div class='module'>
@@ -114,15 +90,10 @@ get_header(); ?>
                         </div>
 
                       <?php
-
                   endwhile;
-
               else :
-
                   // no rows found
-
               endif;
-
               ?>
             </div>
             <?php if ($module_next) { ?>
@@ -144,35 +115,25 @@ get_header(); ?>
 
 <script type="text/javascript">
 jQuery(document).ready(function($){
-
-
-
-
   var getUrlParameter = function getUrlParameter(sParam) {
       var sPageURL = decodeURIComponent(window.location.search.substring(1)),
           sURLVariables = sPageURL.split('&'),
           sParameterName,
           i;
-
       for (i = 0; i < sURLVariables.length; i++) {
           sParameterName = sURLVariables[i].split('=');
-
           if (sParameterName[0] === sParam) {
               return sParameterName[1] === undefined ? true : sParameterName[1];
           }
       }
   };
-
   var complete = getUrlParameter('complete');
   console.log('c =' + complete);
-
   if(complete == 'true'){
     $('h1.directions').html("You've completed Sprout's Adventure and filled your plate with healthy food!");
     $('.modules-image').addClass('animated tada');
   }
-
 });
-
 </script>
 
 <?php get_footer(); ?>

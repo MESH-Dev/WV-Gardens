@@ -77,7 +77,7 @@ jQuery('#submit').on('click', function() {
   jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=check_login&user=' + jQuery('#students :selected').val(), success: function(result) {
 
     if (result == "success") {
-      window.location.href = "http://gardens.bkfk-t5yk.accessdomain.com/modules/";
+      window.location.href = "http://sproutwv.com/modules/";
     } else {
 
     }

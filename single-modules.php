@@ -1,11 +1,8 @@
 <?php
-
 if ( !is_user_logged_in() ) {
-
   wp_redirect( get_home_url() );
     exit;
 }
-
 get_header(); ?>
 
 
@@ -76,22 +73,16 @@ get_header(); ?>
     <?php // QUESTIONS ?>
 
     <?php
-
     if( have_rows('questions') ):
-
       $i = 0;
-
       while ( have_rows('questions') ) : the_row();
-
         $i++;
         $question = get_sub_field('question');
-
         // GET THE CLASS
         $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
         global $wpdb;
         $class_row = $wpdb->get_row( $sql , ARRAY_A );
         $class = (int)$class_row['class_id'];
-
         ?>
 
         <audio class="audioDemo" id="audio-<?php echo $i; ?>">
@@ -103,15 +94,12 @@ get_header(); ?>
           
           <script>
             var autoplay = true;
-
           </script>
 
         <?php } else { ?>
 
           <script>
-
             var autoplay = false;
-
           </script>
 
         <?php } ?>
@@ -233,7 +221,6 @@ get_header(); ?>
     <?php // REWARDS ?>
 
     <?php
-
     $veggies = array(
       "single_name" => "veggie",
       "plural_name" => "veggies",
@@ -246,7 +233,6 @@ get_header(); ?>
       "reward4" => "Green Beans",
       "reward4_image" => get_template_directory_uri() . "/img/beans.png"
     );
-
     $fruits = array(
       "single_name" => "fruit",
       "plural_name" => "fruits",
@@ -259,7 +245,6 @@ get_header(); ?>
       "reward4" => "Pear",
       "reward4_image" => get_template_directory_uri() . "/img/pear.png"
     );
-
     $proteins = array(
       "single_name" => "protein",
       "plural_name" => "proteins",
@@ -272,7 +257,6 @@ get_header(); ?>
       "reward4" => "Chicken",
       "reward4_image" => get_template_directory_uri() . "/img/chicken.png"
     );
-
     $grains = array(
       "single_name" => "grain",
       "plural_name" => "grains",
@@ -285,7 +269,6 @@ get_header(); ?>
       "reward4" => "Rice",
       "reward4_image" => get_template_directory_uri() . "/img/rice.png"
     );
-
     $dairy = array(
       "single_name" => "dairy",
       "plural_name" => "dairy",
@@ -298,18 +281,13 @@ get_header(); ?>
       "reward4" => "Ice Cream",
       "reward4_image" => get_template_directory_uri() . "/img/icecream.png"
     );
-
     $rewards = [ $veggies, $fruits, $proteins, $grains, $dairy ];
-
     ?>
 
     <?php
       $i = 0;
-
       foreach($rewards as $reward) {
-
         $i++;
-
       ?>
 
         <div class="reward reward-<?php echo $i; ?>">
@@ -587,205 +565,165 @@ get_header(); ?>
 </main><!-- #main -->
 
 <?php
-
 // GET THE QUESTIONS
-
 $questions = array();
 $questions_count = count(get_field('questions'));
-
 for ($x = 1; $x <= $questions_count; $x++) {
   array_push($questions, ".question-" . $x);
 }
-
 // GET THE CLASS
 $sql = "SELECT * FROM students WHERE user_id = " . get_current_user_id();
 global $wpdb;
 $class_row = $wpdb->get_row( $sql , ARRAY_A );
 $class = (int)$class_row['class_id'];
-
 // GET A LIST OF MODULES
 $sql = "SELECT * FROM sessions WHERE class_id = " . $class . " AND user_id = " . get_current_user_id();
 $results = $wpdb->get_results( $sql , ARRAY_A );
-
 $modules_complete = count($results);
 $modules_total = count(get_field('modules', $class));
-
 // IF THERE IS ONLY 1 MODULE, USE THIS TRACK
-
 $mod1_0 = array();
 array_push( $mod1_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod1_0, $question);
 }
 array_push( $mod1_0, ".yay", ".reward-1", ".reward-2", ".reward-3", ".reward-4", ".reward-5", ".complete" );
-
 // IF THERE ARE ONLY 2 MODULES, USE THIS TRACK
-
 $mod2_0 = array();
 array_push( $mod2_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod2_0, $question);
 }
 array_push( $mod2_0, ".woohoo", ".reward-1", ".reward-2", ".congratulations" );
-
 $mod2_1 = array();
 array_push( $mod2_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod2_1, $question);
 }
 array_push( $mod2_1, ".yay", ".reward-3", ".reward-4", ".bonus", ".reward-5", ".complete" );
-
 // IF THERE ARE ONLY 3 MODULES, USE THIS TRACK
-
 $mod3_0 = array();
 array_push( $mod3_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_0, $question);
 }
 array_push( $mod3_0, ".woohoo", ".reward-1", ".congratulations" );
-
 $mod3_1 = array();
 array_push( $mod3_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_1, $question);
 }
 array_push( $mod3_1, ".yay", ".reward-2", ".bonus", ".reward-3", ".congratulations" );
-
 $mod3_2 = array();
 array_push( $mod3_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod3_2, $question);
 }
 array_push( $mod3_2, ".woohoo", ".reward-4", ".bonus", ".reward-5", ".complete" );
-
 // IF THERE ARE 4 MODULES, USE THIS TRACK
-
 $mod4_0 = array();
 array_push( $mod4_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_0, $question);
 }
 array_push( $mod4_0, ".yay", ".reward-1", ".congratulations" );
-
 $mod4_1 = array();
 array_push( $mod4_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_1, $question);
 }
 array_push( $mod4_1, ".woohoo", ".reward-2", ".congratulations" );
-
 $mod4_2 = array();
 array_push( $mod4_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_2, $question);
 }
 array_push( $mod4_2, ".yay", ".reward-3", ".congratulations" );
-
 $mod4_3 = array();
 array_push( $mod4_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod4_3, $question);
 }
 array_push( $mod4_3, ".woohoo", ".reward-4", ".bonus", ".reward-5", ".complete" );
-
 // IF THERE ARE 5 MODULES, USE THIS TRACK
-
 $mod5_0 = array();
 array_push( $mod5_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_0, $question);
 }
 array_push( $mod5_0, ".yay", ".reward-1", ".congratulations" );
-
 $mod5_1 = array();
 array_push( $mod5_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_1, $question);
 }
 array_push( $mod5_1, ".woohoo", ".reward-2", ".congratulations" );
-
 $mod5_2 = array();
 array_push( $mod5_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_2, $question);
 }
 array_push( $mod5_2, ".yay", ".reward-3", ".congratulations" );
-
 $mod5_3 = array();
 array_push( $mod5_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_3, $question);
 }
 array_push( $mod5_3, ".woohoo", ".reward-4", ".congratulations" );
-
 $mod5_4 = array();
 array_push( $mod5_4, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod5_4, $question);
 }
 array_push( $mod5_4, ".yay", ".reward-5", ".complete" );
-
 // IF THERE ARE 6 MODULES, USE THIS TRACK
-
 $mod6_0 = array();
 array_push( $mod6_0, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_0, $question);
 }
 array_push( $mod6_0, ".woohoo", ".congratulations-no-reward" );
-
 $mod6_1 = array();
 array_push( $mod6_1, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_1, $question);
 }
 array_push( $mod6_1, ".yay", ".reward-1", ".congratulations" );
-
 $mod6_2 = array();
 array_push( $mod6_2, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_2, $question);
 }
 array_push( $mod6_2, ".woohoo", ".reward-2", ".congratulations" );
-
 $mod6_3 = array();
 array_push( $mod6_3, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_3, $question);
 }
 array_push( $mod6_3, ".yay", ".reward-3", ".congratulations" );
-
 $mod6_4 = array();
 array_push( $mod6_4, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_4, $question);
 }
 array_push( $mod6_4, ".woohoo", ".reward-4", ".congratulations" );
-
 $mod6_5 = array();
 array_push( $mod6_5, ".welcome" );
 foreach ($questions as $question) {
   array_push( $mod6_5, $question);
 }
 array_push( $mod6_5, ".yay", ".reward-5", ".complete" );
-
-
-
 // SELECT WHICH TRACK
-
 $track = array();
-
 if (($modules_complete == 0) && ($modules_total == 1)) {
   $track = $mod1_0;
 }
-
 if (($modules_complete == 0) && ($modules_total == 2)) {
   $track = $mod2_0;
 }
 if (($modules_complete == 1) && ($modules_total == 2)) {
   $track = $mod2_1;
 }
-
 if (($modules_complete == 0) && ($modules_total == 3)) {
   $track = $mod3_0;
 }
@@ -795,7 +733,6 @@ if (($modules_complete == 1) && ($modules_total == 3)) {
 if (($modules_complete == 2) && ($modules_total == 3)) {
   $track = $mod3_2;
 }
-
 if (($modules_complete == 0) && ($modules_total == 4)) {
   $track = $mod4_0;
 }
@@ -808,7 +745,6 @@ if (($modules_complete == 2) && ($modules_total == 4)) {
 if (($modules_complete == 3) && ($modules_total == 4)) {
   $track = $mod4_3;
 }
-
 if (($modules_complete == 0) && ($modules_total == 5)) {
   $track = $mod5_0;
 }
@@ -824,7 +760,6 @@ if (($modules_complete == 3) && ($modules_total == 5)) {
 if (($modules_complete == 4) && ($modules_total == 5)) {
   $track = $mod5_4;
 }
-
 if (($modules_complete == 0) && ($modules_total == 6)) {
   $track = $mod6_0;
 }
@@ -843,8 +778,6 @@ if (($modules_complete == 4) && ($modules_total == 6)) {
 if (($modules_complete == 5) && ($modules_total == 6)) {
   $track = $mod6_5;
 }
-
-
 ?>
 
 <?php // PROGRESS FARMER ?>
@@ -856,7 +789,6 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
       <div class="progress-farmer"></div>
 
         <?php
-
           for ($x = 0; $x < $questions_count; $x++) {
             ?>
             <div class="progress-farm-point" style="width: <?php echo (100/$questions_count); ?>%">
@@ -874,30 +806,21 @@ if (($modules_complete == 5) && ($modules_total == 6)) {
 </div>
 
 <script type="text/javascript">
-
 jQuery(document).ready(function($){
-
   jQuery('.play').hide();
-
-	jQuery('.welcome').show();
+  jQuery('.welcome').show();
   var step = 1;
-
   var track = <?php echo json_encode($track); ?>
-
   var distanceTraveled = 0;
   var interval = parseInt('<?php echo (100/$questions_count); ?>');
   var totalQuestions = parseInt('<?php echo $questions_count; ?>');
-
   function stopTheRain(){
     $('#page').snowfall('clear');
   }
-
   function makeItRain(){
-
     var rn = Math.floor(Math.random() * 4) + 1;
     var color = "#7f3198";
     var dark_color = "#5c007a";
-
     if (rn == 1) {
      color = "#7f3198";
      dark_color = "#5c007a";
@@ -918,7 +841,6 @@ jQuery(document).ready(function($){
      color = "#ffcd2b";
      dark_color = "#de9f27";
     }
-
     $('.page-template-login').css('background-color', color);
     $('.login-button').css('color', color);
     $('.login-button').hover(function() {
@@ -928,17 +850,12 @@ jQuery(document).ready(function($){
      $(this).css('background-color', 'white');
      $(this).css('color', color);
     });
-
     $('#page').snowfall({
      image :"http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/fish.png", minSize: 10, maxSize:10, maxSpeed: 1, flakeCount: 10
     });
-
-
     $('.snowfall-flakes').each(function(i, el){
      var randomNumber = Math.floor(Math.random() * 21) + 1;
-
      var newSrc = "";
-
      if (randomNumber == 1) {
        newSrc = 'apple.png';
      }
@@ -1003,43 +920,30 @@ jQuery(document).ready(function($){
        newSrc = 'yogurt.png';
      }
      else {
-
      }
-
      $(this).attr("src", "http://gardens.bkfk-t5yk.accessdomain.com/wp-content/themes/WV-Gardens/img/" + newSrc);
     });
-
   }
-
-
   //CLICK TO START FIRST QUESTION ---------------------------------------------------------------------------------------------------------------------
   jQuery('.start').click(function(){
-
     jQuery('.play').show();
-
     jQuery('.welcome').hide();
     jQuery('.question-1').show();
-
     jQuery(track[step]).find('.answer').addClass('bounceIn');
-
     step = step + 1;
-
     jQuery('.play').click(function(){
       var res = 'audio-' + (step - 1);
       document.getElementById(res).play();
       $(this).toggle();
       $('.stop').toggle();
     });
-
     jQuery('.stop').click(function(){
       var res = 'audio-' + (step - 1);
       document.getElementById(res).pause();
       document.getElementById(res).load();
-
       $('.play').toggle();
       $(this).toggle();
     });
-
     if(autoplay)
     {
       var res = 'audio-' + (step - 1);
@@ -1047,85 +951,62 @@ jQuery(document).ready(function($){
       jQuery('.play').hide();
       $('.stop').show();
     }
-
   });
-
   //CLICK TO NEXT QUESTION ------------------------------------------------------------------------------------------------------------------------
   jQuery('.next').click(function(){
-
     jQuery(track[step - 1]).hide();
     jQuery(track[step]).show();
-
     if (track[step] == ".yay" || track[step] == ".woohoo") {
       makeItRain();
     } else {
       stopTheRain();
     }
-
     jQuery(track[step]).find('.answer').addClass('bounceIn');
     jQuery(track[step]).find('.bonus-image img').addClass('bounceIn');
-
     if (track[step] == ".congratulations" || track[step] == ".complete") {
       jQuery('.progress-plate').hide();
-
       var data = JSON.stringify(answers);
       var rewardData = JSON.stringify(rewards);
-
       var rewardText = "";
       var len = Object.keys(rewards).length;
       var i = 1;
       jQuery.each( rewards, function( key, value ) {
-
         if (i == len) {
           rewardText = rewardText.concat(value);
         } else {
           rewardText = rewardText.concat(value + " and one ");
         }
-
         i = i + 1;
-
       });
-
       jQuery('.reward-item').text(rewardText);
-
       // Add rest of data to string
       jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
         jQuery('.final-image').html(result);
       }});
     }
-
     step = step + 1;
-
     distanceTraveled = distanceTraveled + interval;
-
     if ((step - 2) < totalQuestions) {
       jQuery('.progress-farmer').css('left', distanceTraveled + '%');
     }
-
     var stop = 'audio-' + (step - 2);
     document.getElementById(stop).pause();
     document.getElementById(stop).load();
-
     $('.play').show();
     $('.stop').hide();
-
     jQuery('.play').click(function(){
       var res = 'audio-' + (step - 1);
       document.getElementById(res).play();
-
       $(this).hide();
       $('.stop').show();
     });
-
     jQuery('.stop').click(function(){
       var res = 'audio-' + (step - 1);
       document.getElementById(res).pause();
       document.getElementById(res).load();
-
       $(this).hide();
       $('.play').show();
     });
-
     //AUTO PLAY ON CLICK NEXT
     if(autoplay)
     {
@@ -1134,54 +1015,36 @@ jQuery(document).ready(function($){
       jQuery('.play').hide();
       $('.stop').show();
     }
-
-
-
-
   });
-
-
-
-
   //CLICK TO PREVIOUS QUESTION ---------------------------------------------------------------------------------------------------------------------
   jQuery('.prev').click(function(){
-
     if (step != 2) {
       step = step - 1;
       jQuery(track[step]).hide();
       jQuery(track[step - 1]).show();
-
       distanceTraveled = distanceTraveled - interval;
-
       if ((step - 2) >= 0) {
         jQuery('.progress-farmer').css('left', distanceTraveled + '%');
       }
     }
-
     var stop = 'audio-' + (step);
     document.getElementById(stop).pause();
     document.getElementById(stop).load();
-
     $('.play').show();
     $('.stop').hide();
-
     jQuery('.play').click(function(){
       var res = 'audio-' + (step - 1);
       document.getElementById(res).play();
-
       $('.stop').show();
       $(this).hide();
     });
-
     jQuery('.stop').click(function(){
       var res = 'audio-' + (step - 1);
       document.getElementById(res).pause();
       document.getElementById(res).load();
-
       $('.play').show();
       $(this).hide();
     });
-
     //AUTO PLAY ON CLICK NEXT
     if(autoplay)
     {
@@ -1190,129 +1053,82 @@ jQuery(document).ready(function($){
       jQuery('.play').hide();
       $('.stop').show();
     }
-
   });
-
-
-
-
   var answers = {};
   var rewards = {};
-
   jQuery(".question").each(function() {
-
     var question = jQuery(this);
     var questionClass = '.' + jQuery(this).attr('class').split(' ')[1];
     var questionNum = jQuery(this).attr('class').split(' ')[2];
-
     question.find('.next').hide();
-
     jQuery(this).find(".answer").each(function() {
       jQuery(this).click(function() {
-
         // Make next button active
         question.find('.next').show();
-
         // First remove the current hovers
         for (var i = 1; i <= 4; i++) {
           question.find(".answer-image").removeClass('answer-image-' + i + '-hover');
           question.find(".answer-image").removeClass('answer-image-hover');
         }
         question.find('.answer').removeClass('answer-hover');
-
         // Next, add the new hover
         var answerClass = jQuery(this).attr('class').split(' ')[1];
         answerNum = answerClass.substr(answerClass.length - 1);
-
         jQuery(this).find('.answer-image').addClass('answer-image-' + answerNum + '-hover');
         jQuery(this).find('.answer-image').addClass('answer-image-hover');
         jQuery(this).addClass('answer-hover');
-
         answers[questionNum] = jQuery(this).find('.answer-text').text();
-
         // Next, update the progress bar
         jQuery('.progress-farm-point:eq(' + (step - 2) + ')').find('.progress-farm-point-plant').show();
         jQuery('.progress-farm-point:eq(' + (step - 2) + ')').find('.progress-farm-point-sprout').hide();
-
       });
     });
   });
-
   jQuery(".reward").each(function() {
-
     var rewardClass = jQuery(this).attr('class').split(' ')[1];
     var rewardNum = rewardClass.substr(rewardClass.length - 1);
-
     var reward = jQuery(this);
-
     reward.find('.next').hide();
-
     jQuery(this).find(".reward-answer").each(function() {
-
       jQuery(this).click(function() {
-
         reward.find('.next').show();
-
         // First, remove the other hovers
         jQuery(this).find(".reward-image").removeClass('reward-image-hover');
         jQuery('.reward-answer').removeClass('reward-hover');
         jQuery(".reward-image").removeClass('reward-image-hover');
-
         // Next, add the new hovers
         jQuery(this).find('.reward-image').addClass('reward-image-hover');
         jQuery(this).addClass('reward-hover');
-
         rewards[rewardNum] = jQuery(this).find('.reward-text').text();
-
         // Assign it to span on next page
         jQuery('.reward-item').text(jQuery(this).find('.reward-text').text());
-
       });
-
     });
-
-
   });
-
   // SEND IT TO THE DATABASE
-
   jQuery(".print").click(function() {
-
     if ((jQuery('.question').length - 1) == index) {
-
     } else {
-
       var currentQuestion = ('.question-').concat(index);
       index = index + 1;
-
       var nextQuestion = ('.question-').concat(index);
-
       jQuery(currentQuestion).hide();
       jQuery(nextQuestion).show();
-
     }
-
     jQuery('.progress-plate').hide();
-
     var data = JSON.stringify(answers);
     var rewardData = JSON.stringify(rewards);
-
     // // Add rest of data to string
     jQuery.ajax({ url: '<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php', data: 'action=save_answer&answers=' + data + '&module=<?php echo $post->ID; ?>&user=<?php echo get_current_user_id(); ?>&class=<?php echo $class; ?>&reward=' + rewardData, success: function(result) {
       jQuery('.final-image').html(result);
     }});
-
   });
-
   // jQuery(".menu-sound").mouseenter(function() {
   //     jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
   // }).mouseleave(function() {
   //     jQuery(this).find('i').toggleClass('fa-volume-up fa-volume-off');
   // });
-
-
 });
-
 </script>
 
 <?php get_footer(); ?>

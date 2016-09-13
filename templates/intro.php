@@ -48,14 +48,6 @@ get_header(); ?>
     </div>
   </div>
 
-  <audio class="audioDemo" id="audio-intro-one">
-     <source src="<?php bloginfo( url ); ?>/wp-content/uploads/2016/07/intro-hi.mp3" type="audio/mpeg">
-  </audio>
-
-  <audio class="audioDemo" id="audio-intro-two">
-     <source src="<?php bloginfo( url ); ?>/wp-content/uploads/2016/07/intro-help.mp3" type="audio/mpeg">
-  </audio>
-
 </main><!-- #main -->
 
 <script type="text/javascript">
@@ -67,8 +59,6 @@ get_header(); ?>
     jQuery(".intro-image-2").show();
     jQuery(this).hide();
     jQuery(".intro .start").show();
-    var res = 'audio-intro-two';
-    document.getElementById(res).play();
   });
 
   jQuery(".intro .start").hide();
@@ -76,9 +66,6 @@ get_header(); ?>
   jQuery(".intro .start").click(function() {
     window.location.href = "<?php echo get_post_type_archive_link( 'modules' ); ?>";
   });
-
-  var res = 'audio-intro-one';
-  document.getElementById(res).play();
 
 </script>
 
